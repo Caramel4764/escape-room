@@ -19,10 +19,16 @@ img{
 }
 #wood-floor {
   width:1000px;
-  bottom:0px;
 }
 #exit-door {
   width: 200px;
-  top:20px;
-  left:450px;
+  top:82px;
+  left:400px;
+  z-index:7
+}
+#floor {
+  position: absolute;
+  bottom:150px;
+  width:1000px;
+
 }
