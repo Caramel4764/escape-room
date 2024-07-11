@@ -16,19 +16,19 @@ let rooms = {
     'entities': [
       {
         "name": 'hatHanger',
-        'src': './assets/furniture/hat-stand.png',
-        "desc": "It's a hat hanger",
+        'src': './assets/furniture/shelf.png',
+        "desc": "It's a shelf",
         'dims': {
-          'x': "600px",
-          'y': "140px",
-          "width": "400px",
+          'x': "650px",
+          'y': "115px",
+          "width": "300px",
           'z': "3",
         }
       },
       {
         "name": 'welcomeMat',
         'src': './assets/floor/carpet.png',
-        "desc": "It's a hat hanger",
+        "desc": "There's something underneath",
         'dims': {
           'x': "303px",
           'y': "480px",
@@ -53,7 +53,6 @@ let rooms = {
 function newRoom(room) {
   floor.src = currRoom.floor;
   floor.style.y='200px';
-
   floor.setAttribute('id', 'wood-floor');
   woodFloorDiv.appendChild(floor);
   wall.src = currRoom.wall;
@@ -69,8 +68,7 @@ function newRoom(room) {
     entityImg.style.width=entity.dims.width;
     entityImg.style.zIndex=entity.dims.z;
     entityImg.addEventListener('click', () => {
-      console.log(entity.desc);
-      console.log('hi')
+      alert(entity.desc);
     })
     setting.appendChild(entityImg);
   })
