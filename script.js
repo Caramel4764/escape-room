@@ -53,6 +53,7 @@ let rooms = {
 function newRoom(room) {
   floor.src = currRoom.floor;
   floor.style.y='200px';
+
   floor.setAttribute('id', 'wood-floor');
   woodFloorDiv.appendChild(floor);
   wall.src = currRoom.wall;
@@ -67,6 +68,10 @@ function newRoom(room) {
     entityImg.style.left=entity.dims.x;
     entityImg.style.width=entity.dims.width;
     entityImg.style.zIndex=entity.dims.z;
+    entityImg.addEventListener('click', () => {
+      console.log(entity.desc);
+      console.log('hi')
+    })
     setting.appendChild(entityImg);
   })
 }
