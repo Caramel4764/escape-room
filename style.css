@@ -11,14 +11,17 @@ img{
   background-color: pink;
   width:1000px;
   height:600px;
-  overflow: hidden;
+  z-index: -5;
+  /*overflow: hidden;*/
   position: relative;
 }
 #wood-wall {
   width:1000px;
+  z-index: -1;
 }
 #wood-floor {
   width:1000px;
+  z-index:3
 }
 #exit-door {
   width: 200px;
@@ -30,5 +33,8 @@ img{
   position: absolute;
   bottom:150px;
   width:1000px;
+}
 
+#wood-floor-divider {
+  z-index: 4;
 }
