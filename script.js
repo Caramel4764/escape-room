@@ -1,6 +1,7 @@
 import {rooms} from './javascript/data/rooms.js';
 import {inspectMenuInfo} from './javascript/data/inspectInfoMenu.js';
 import {toggleInspectMenu} from './javascript/functions/toggleInspectMenu.js';
+import {displayInspect} from './javascript/functions/displayInspectMenu.js';
 const woodFloorDiv = document.querySelector('#wood-floor-div')
 const setting = document.querySelector('#room');
 const wallDiv = document.querySelector('#wall-div');
@@ -27,35 +28,7 @@ gameMask.addEventListener('click', ()=>{
     toggleInspectMenu();
   }
 })
-function displayInspect(text, limit) {
-  inspectMenuInfo.chunkedText = [];
-  inspectMenuInfo.textSplitter = 0;
-  let snipTime = Math.floor(text.length/limit)+1;
-  if (snipTime == 1) {
-    return inspectMenuInfo.chunkedText.push(text);
-  }
-  for(let i = 0; i<snipTime;i++) {
-    if (i==0) {
-      inspectMenuInfo.textSplitter = limit;
-      while (text[inspectMenuInfo.textSplitter] != " " && text[inspectMenuInfo.textSplitter] != "") {
-        inspectMenuInfo.textSplitter++;
-      }
-      inspectMenuInfo.chunkedText.push(text.slice(0, inspectMenuInfo.textSplitter));
-    } else {
-      inspectMenuInfo.prevTextSplitter = inspectMenuInfo.textSplitter;
-      inspectMenuInfo.textSplitter = inspectMenuInfo.prevTextSplitter + limit;
-      while (text[inspectMenuInfo.textSplitter] != " " && inspectMenuInfo.textSplitter < text.length) {
-        inspectMenuInfo.textSplitter++;
-        if (inspectMenuInfo.textSplitter == text.length-1) {
-          return inspectMenuInfo.chunkedText.push(text.slice(inspectMenuInfo.prevTextSplitter, inspectMenuInfo.textSplitter));
-        }
-      }
-      inspectMenuInfo.chunkedText.push(text.slice(inspectMenuInfo.prevTextSplitter, inspectMenuInfo.textSplitter))
-    }
 
-  }
-  return inspectMenuInfo.chunkedText;
-}
 function newRoom(room) {
   floor.src = currRoom.floor;
   floor.style.y='200px';
