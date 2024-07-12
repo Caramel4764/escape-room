@@ -4,6 +4,8 @@ let wallDiv = document.querySelector('#wall-div');
 let floor = document.createElement('img');
 let wall = document.createElement('img')
 let divider = document.createElement('img');
+let inspectText = document.querySelector('#inspect-text');
+//280 char max
 let rooms = {
   "dims": {
     x: 1000,
@@ -68,12 +70,12 @@ function newRoom(room) {
     entityImg.style.width=entity.dims.width;
     entityImg.style.zIndex=entity.dims.z;
     entityImg.addEventListener('click', () => {
-      alert(entity.desc);
+      inspectText.innerHTML=entity.desc;
+      console.log(inspectText)
     })
     setting.appendChild(entityImg);
   })
 }
-
 let currRoom = rooms.entrance
 newRoom(currRoom);
 

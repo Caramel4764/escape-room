@@ -4,6 +4,7 @@ body {
   z-index: -5;
   width:0;
   height:0;
+  font-family:'Courier New', Courier, monospace;
 }
 img{
   position:absolute;
@@ -45,4 +46,19 @@ img{
 
 #wood-floor-divider {
   z-index: 1;
+}
+
+#inspect-menu {
+  background-color: rgb(217, 217, 217);
+  z-index:30;
+  width: 985px;
+  left: 5px;
+  top: 5px;
+  height: 120px;
+  position:absolute;
+  border-radius: 15px;
+}
+#inspect-menu p{
+  margin: 10px;
+  font-size:22px;
 }
