@@ -12,10 +12,11 @@ let chunkedText = [];
 let textCounter = 1;
 let prevTextSplitter;
 gameMask.addEventListener('click', ()=>{
-  if (chunkedText.length > 1) {
-      textCounter++;
+  if (chunkedText.length >= 1) {
+    console.log(textCounter)
       inspectText.innerHTML = chunkedText[textCounter];
-      if (textCounter >= chunkedText.length) {
+      textCounter++;
+      if (textCounter > chunkedText.length) {
         textCounter = 1;
         gameMask.style.visibility='hidden';
         inspectMenu.style.visibility='hidden';
@@ -39,7 +40,7 @@ let rooms = {
       {
         "name": 'shelf',
         'src': './assets/furniture/shelf.png',
-        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "desc": "The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brownAddingLong TextToTestFunction..plzwork fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog1123. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.",
         'dims': {
           'x': "640px",
           'y': "90px",
@@ -95,21 +96,19 @@ function displayInspect(text, limit) {
   for(let i = 0; i<snipTime;i++) {
     if (i==0) {
       textSplitter = limit;
-      while (text[textSplitter] != " " && textSplitter>=text.length) {
+      while (text[textSplitter] != " " && text[textSplitter] != "") {
         textSplitter++;
       }
       chunkedText.push(text.slice(0, textSplitter));
     } else {
       prevTextSplitter = textSplitter;
-      //prevTextSplitter
       textSplitter = prevTextSplitter + limit;
-      while (text[textSplitter] != " " && text[textSplitter] != "" && textSplitter < text.length) {
-      console.log(`i: ${i} | splitter: ${textSplitter}`)
+      while (text[textSplitter] != " " && textSplitter < text.length) {
         textSplitter++;
+        if (textSplitter == text.length-1) {
+          return chunkedText.push(text.slice(prevTextSplitter, textSplitter));
+        }
       }
-      console.log(`index: ${text[textSplitter]}`)
-
-      // && textSplitter>=text.length && 
       chunkedText.push(text.slice(prevTextSplitter, textSplitter))
     }
 
