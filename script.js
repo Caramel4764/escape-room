@@ -38,9 +38,9 @@ let rooms = {
         'src': './assets/floor/carpet.png',
         "desc": "There's something underneath",
         'dims': {
-          'x': "303px",
-          'y': "480px",
-          "width": "400px",
+          'x': "320px",
+          'y': "400px",
+          "width": "350px",
           'z': "3",
         }
       },
@@ -52,6 +52,17 @@ let rooms = {
           'x': "400px",
           'y': "82px",
           "width": "200px",
+          'z': 3,
+        }
+      },
+      {
+        "name": 'shoeRack',
+        'src': './assets/furniture/shoe-rack.webp',
+        "desc": "All the shoes are brand new and look unworn. The sizes from left to right are 8, 10, 15",
+        'dims': {
+          'x': "-5px",
+          'y': "190px",
+          "width": "400px",
           'z': 3,
         }
       },
