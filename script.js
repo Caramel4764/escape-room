@@ -4,7 +4,13 @@ let wallDiv = document.querySelector('#wall-div');
 let floor = document.createElement('img');
 let wall = document.createElement('img')
 let divider = document.createElement('img');
+let inspectMenu = document.querySelector('#inspect-menu')
 let inspectText = document.querySelector('#inspect-text');
+let gameMask = document.querySelector('#screen-mask');
+gameMask.addEventListener('click', ()=>{
+  gameMask.style.visibility='hidden';
+  inspectMenu.style.visibility='hidden';
+})
 //280 char max
 let rooms = {
   "dims": {
@@ -71,7 +77,8 @@ function newRoom(room) {
     entityImg.style.zIndex=entity.dims.z;
     entityImg.addEventListener('click', () => {
       inspectText.innerHTML=entity.desc;
-      console.log(inspectText)
+      inspectMenu.style.visibility ='visible';
+      gameMask.style.visibility='visible';
     })
     setting.appendChild(entityImg);
   })

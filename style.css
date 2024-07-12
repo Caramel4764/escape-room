@@ -50,6 +50,7 @@ img{
 
 #inspect-menu {
   background-color: rgb(217, 217, 217);
+  opacity: 0.7;
   z-index:30;
   width: 985px;
   left: 5px;
@@ -57,8 +58,16 @@ img{
   height: 120px;
   position:absolute;
   border-radius: 15px;
+  visibility: hidden;
 }
 #inspect-menu p{
   margin: 10px;
   font-size:22px;
+}
+#screen-mask {
+  width: 1000px;
+  height: 600px;
+  position: absolute;
+  z-index: 80;
+  visibility: hidden;
 }
