@@ -1,20 +1,29 @@
-let woodFloorDiv = document.querySelector('#wood-floor-div')
-let setting = document.querySelector('#room');
-let wallDiv = document.querySelector('#wall-div');
-let floor = document.createElement('img');
-let wall = document.createElement('img')
-let divider = document.createElement('img');
-let inspectMenu = document.querySelector('#inspect-menu')
-let inspectText = document.querySelector('#inspect-text');
-let gameMask = document.querySelector('#screen-mask');
-let inspectImg = document.querySelector('#inspect-image');
-let chunkedText = [];
 import {rooms} from './javascript/data/rooms.js';
+const woodFloorDiv = document.querySelector('#wood-floor-div')
+const setting = document.querySelector('#room');
+const wallDiv = document.querySelector('#wall-div');
+const floor = document.createElement('img');
+const wall = document.createElement('img')
+const divider = document.createElement('img');
+const inspectMenu = document.querySelector('#inspect-menu')
+const inspectText = document.querySelector('#inspect-text');
+const gameMask = document.querySelector('#screen-mask');
+const inspectImg = document.querySelector('#inspect-image');
+
+let chunkedText = [];
 let textCounter = 1;
+let textSplitter = 0;
 let prevTextSplitter;
 let inspectMenuOpened = false;
+
+let inspectMenuInfo = {
+  opened: false,
+  chunkedText: [],
+  textCounter: 1,
+  textSplitter: 0,
+  prevTextSplitter: 0,
+}
 function toggleInspectMenu() {
-  console.log(inspectMenuOpened);
   if (inspectMenuOpened) {
     gameMask.style.visibility='hidden';
     inspectMenu.style.visibility='hidden';
@@ -38,9 +47,6 @@ gameMask.addEventListener('click', ()=>{
     toggleInspectMenu();
   }
 })
-
-let textSplitter = 0;
-
 function displayInspect(text, limit) {
   chunkedText = [];
   textSplitter = 0;
