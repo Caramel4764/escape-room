@@ -10,24 +10,23 @@ let gameMask = document.querySelector('#screen-mask');
 let inspectImg = document.querySelector('#inspect-image');
 let chunkedText = [];
 import {rooms} from './javascript/data/rooms.js';
-console.log(rooms)
 let textCounter = 1;
 let prevTextSplitter;
 let inspectMenuOpened = false;
 function toggleInspectMenu() {
+  console.log(inspectMenuOpened);
   if (inspectMenuOpened) {
-    gameMask.style.visibility='visible';
-    inspectMenu.style.visibility='visible';
-    inspectMenuOpened = true;
-  } else {
     gameMask.style.visibility='hidden';
     inspectMenu.style.visibility='hidden';
     inspectMenuOpened = false;
+  } else {
+    gameMask.style.visibility='visible';
+    inspectMenu.style.visibility='visible';
+    inspectMenuOpened = true;
   }
 }
 gameMask.addEventListener('click', ()=>{
   if (chunkedText.length >= 1) {
-    console.log(textCounter)
       inspectText.innerHTML = chunkedText[textCounter];
       textCounter++;
       if (textCounter >= chunkedText.length) {
@@ -92,8 +91,7 @@ function newRoom(room) {
       displayInspect(entity.desc, 100);
       inspectText.innerHTML= chunkedText[0];
       inspectImg.src=entity.src;
-      inspectMenu.style.visibility ='visible';
-      gameMask.style.visibility='visible';
+      toggleInspectMenu();
     })
     setting.appendChild(entityImg);
   })
