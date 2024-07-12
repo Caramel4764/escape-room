@@ -1,33 +1,19 @@
 import {rooms} from './javascript/data/rooms.js';
+import {inspectMenuInfo} from './javascript/data/inspectInfoMenu.js';
+import {toggleInspectMenu} from './javascript/functions/toggleInspectMenu.js';
 const woodFloorDiv = document.querySelector('#wood-floor-div')
 const setting = document.querySelector('#room');
 const wallDiv = document.querySelector('#wall-div');
 const floor = document.createElement('img');
 const wall = document.createElement('img')
 const divider = document.createElement('img');
-const inspectMenu = document.querySelector('#inspect-menu')
 const inspectText = document.querySelector('#inspect-text');
-const gameMask = document.querySelector('#screen-mask');
 const inspectImg = document.querySelector('#inspect-image');
 
-let inspectMenuInfo = {
-  opened: false,
-  chunkedText: [],
-  textCounter: 1,
-  textSplitter: 0,
-  prevTextSplitter: 0,
-}
-function toggleInspectMenu() {
-  if (inspectMenuInfo.opened) {
-    gameMask.style.visibility='hidden';
-    inspectMenu.style.visibility='hidden';
-    inspectMenuInfo.opened = false;
-  } else {
-    gameMask.style.visibility='visible';
-    inspectMenu.style.visibility='visible';
-    inspectMenuInfo.opened = true;
-  }
-}
+const gameMask = document.querySelector('#screen-mask');
+const inspectMenu = document.querySelector('#inspect-menu')
+
+
 gameMask.addEventListener('click', ()=>{
   if (inspectMenuInfo.chunkedText.length >= 1) {
       inspectText.innerHTML = inspectMenuInfo.chunkedText[inspectMenuInfo.textCounter];
