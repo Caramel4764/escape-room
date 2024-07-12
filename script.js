@@ -10,6 +10,7 @@ let gameMask = document.querySelector('#screen-mask');
 let inspectImg = document.querySelector('#inspect-image');
 let chunkedText = [];
 let textCounter = 1;
+let prevTextSplitter;
 gameMask.addEventListener('click', ()=>{
   if (chunkedText.length > 1) {
       textCounter++;
@@ -82,18 +83,36 @@ let rooms = {
     ]
   },
 }
-function displayInspect(text) {
+let textSplitter = 0;
+
+function displayInspect(text, limit) {
   chunkedText = [];
-  let snipTime = Math.floor(text.length/100)+1;
+  textSplitter = 0;
+  let snipTime = Math.floor(text.length/limit)+1;
   if (snipTime == 1) {
     return chunkedText.push(text);
   }
   for(let i = 0; i<snipTime;i++) {
     if (i==0) {
-      chunkedText.push(text.slice(0, 100))
+      textSplitter = limit;
+      while (text[textSplitter] != " " && textSplitter>=text.length) {
+        textSplitter++;
+      }
+      chunkedText.push(text.slice(0, textSplitter));
     } else {
-      chunkedText.push(text.slice(1+(i*100), 100+100*i))
+      prevTextSplitter = textSplitter;
+      //prevTextSplitter
+      textSplitter = prevTextSplitter + limit;
+      while (text[textSplitter] != " " && text[textSplitter] != "" && textSplitter < text.length) {
+      console.log(`i: ${i} | splitter: ${textSplitter}`)
+        textSplitter++;
+      }
+      console.log(`index: ${text[textSplitter]}`)
+
+      // && textSplitter>=text.length && 
+      chunkedText.push(text.slice(prevTextSplitter, textSplitter))
     }
+
   }
   return chunkedText;
 }
@@ -115,7 +134,7 @@ function newRoom(room) {
     entityImg.style.width=entity.dims.width;
     entityImg.style.zIndex=entity.dims.z;
     entityImg.addEventListener('click', () => {
-      displayInspect(entity.desc);
+      displayInspect(entity.desc, 100);
       inspectText.innerHTML= chunkedText[0];
       inspectImg.src=entity.src;
       inspectMenu.style.visibility ='visible';
