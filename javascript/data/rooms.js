@@ -24,9 +24,9 @@ let rooms = {
         'src': './assets/floor/carpet.png',
         "desc": "You feel a bump near the corner.There's something underneath",
         'dims': {
-          'x': "320px",
-          'y': "400px",
-          "width": "350px",
+          'x': "343px",
+          'y': "475px",
+          "width": "315px",
           'z': "3",
         }
       },
