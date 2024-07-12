@@ -27,7 +27,7 @@ let rooms = {
       {
         "name": 'shelf',
         'src': './assets/furniture/shelf.png',
-        "desc": "It's a shelf",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         'dims': {
           'x': "640px",
           'y': "90px",
@@ -71,6 +71,22 @@ let rooms = {
     ]
   },
 }
+function displayInspect(text) {
+  let chunkedText = [];
+  let snipTime = Math.floor(text.length/100)+1;
+  if (snipTime == 1) {
+    console.log('short')
+    return text;
+  }
+  for(let i = 0; i<snipTime;i++) {
+    if (i==0) {
+      chunkedText.push(text.slice(0, 100))
+    } else {
+      chunkedText.push(text.slice(1+(i*100), 100+100*i))
+    }
+  }
+  return chunkedText;
+}
 function newRoom(room) {
   floor.src = currRoom.floor;
   floor.style.y='200px';
@@ -89,7 +105,7 @@ function newRoom(room) {
     entityImg.style.width=entity.dims.width;
     entityImg.style.zIndex=entity.dims.z;
     entityImg.addEventListener('click', () => {
-      inspectText.innerHTML=entity.desc;
+      inspectText.innerHTML= displayInspect(entity.desc);
       inspectImg.src=entity.src
       inspectMenu.style.visibility ='visible';
       gameMask.style.visibility='visible';
