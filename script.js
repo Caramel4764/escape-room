@@ -10,24 +10,8 @@ const wall = document.createElement('img')
 const divider = document.createElement('img');
 const inspectText = document.querySelector('#inspect-text');
 const inspectImg = document.querySelector('#inspect-image');
-
 const gameMask = document.querySelector('#screen-mask');
 const inspectMenu = document.querySelector('#inspect-menu')
-
-
-gameMask.addEventListener('click', ()=>{
-  if (inspectMenuInfo.chunkedText.length >= 1) {
-      inspectText.innerHTML = inspectMenuInfo.chunkedText[inspectMenuInfo.textCounter];
-      inspectMenuInfo.textCounter++;
-      if (inspectMenuInfo.textCounter >= inspectMenuInfo.chunkedText.length) {
-        inspectMenuInfo.textCounter = 1;
-        toggleInspectMenu();
-
-      }
-  } else {
-    toggleInspectMenu();
-  }
-})
 
 function newRoom(room) {
   floor.src = currRoom.floor;

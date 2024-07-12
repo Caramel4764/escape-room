@@ -1,6 +1,21 @@
 import {inspectMenuInfo} from '../data/inspectInfoMenu.js'
 const gameMask = document.querySelector('#screen-mask');
 const inspectMenu = document.querySelector('#inspect-menu')
+const inspectText = document.querySelector('#inspect-text');
+
+gameMask.addEventListener('click', ()=>{
+  if (inspectMenuInfo.chunkedText.length >= 1) {
+      inspectText.innerHTML = inspectMenuInfo.chunkedText[inspectMenuInfo.textCounter];
+      inspectMenuInfo.textCounter++;
+      if (inspectMenuInfo.textCounter >= inspectMenuInfo.chunkedText.length) {
+        inspectMenuInfo.textCounter = 1;
+        toggleInspectMenu();
+
+      }
+  } else {
+    toggleInspectMenu();
+  }
+})
 
 function toggleInspectMenu() {
   if (inspectMenuInfo.opened) {
