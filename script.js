@@ -10,12 +10,6 @@ const inspectText = document.querySelector('#inspect-text');
 const gameMask = document.querySelector('#screen-mask');
 const inspectImg = document.querySelector('#inspect-image');
 
-let chunkedText = [];
-let textCounter = 1;
-let textSplitter = 0;
-let prevTextSplitter;
-let inspectMenuOpened = false;
-
 let inspectMenuInfo = {
   opened: false,
   chunkedText: [],
@@ -24,22 +18,22 @@ let inspectMenuInfo = {
   prevTextSplitter: 0,
 }
 function toggleInspectMenu() {
-  if (inspectMenuOpened) {
+  if (inspectMenuInfo.opened) {
     gameMask.style.visibility='hidden';
     inspectMenu.style.visibility='hidden';
-    inspectMenuOpened = false;
+    inspectMenuInfo.opened = false;
   } else {
     gameMask.style.visibility='visible';
     inspectMenu.style.visibility='visible';
-    inspectMenuOpened = true;
+    inspectMenuInfo.opened = true;
   }
 }
 gameMask.addEventListener('click', ()=>{
-  if (chunkedText.length >= 1) {
-      inspectText.innerHTML = chunkedText[textCounter];
-      textCounter++;
-      if (textCounter >= chunkedText.length) {
-        textCounter = 1;
+  if (inspectMenuInfo.chunkedText.length >= 1) {
+      inspectText.innerHTML = inspectMenuInfo.chunkedText[inspectMenuInfo.textCounter];
+      inspectMenuInfo.textCounter++;
+      if (inspectMenuInfo.textCounter >= inspectMenuInfo.chunkedText.length) {
+        inspectMenuInfo.textCounter = 1;
         toggleInspectMenu();
 
       }
@@ -48,33 +42,33 @@ gameMask.addEventListener('click', ()=>{
   }
 })
 function displayInspect(text, limit) {
-  chunkedText = [];
-  textSplitter = 0;
+  inspectMenuInfo.chunkedText = [];
+  inspectMenuInfo.textSplitter = 0;
   let snipTime = Math.floor(text.length/limit)+1;
   if (snipTime == 1) {
-    return chunkedText.push(text);
+    return inspectMenuInfo.chunkedText.push(text);
   }
   for(let i = 0; i<snipTime;i++) {
     if (i==0) {
-      textSplitter = limit;
-      while (text[textSplitter] != " " && text[textSplitter] != "") {
-        textSplitter++;
+      inspectMenuInfo.textSplitter = limit;
+      while (text[inspectMenuInfo.textSplitter] != " " && text[inspectMenuInfo.textSplitter] != "") {
+        inspectMenuInfo.textSplitter++;
       }
-      chunkedText.push(text.slice(0, textSplitter));
+      inspectMenuInfo.chunkedText.push(text.slice(0, inspectMenuInfo.textSplitter));
     } else {
-      prevTextSplitter = textSplitter;
-      textSplitter = prevTextSplitter + limit;
-      while (text[textSplitter] != " " && textSplitter < text.length) {
-        textSplitter++;
-        if (textSplitter == text.length-1) {
-          return chunkedText.push(text.slice(prevTextSplitter, textSplitter));
+      inspectMenuInfo.prevTextSplitter = inspectMenuInfo.textSplitter;
+      inspectMenuInfo.textSplitter = inspectMenuInfo.prevTextSplitter + limit;
+      while (text[inspectMenuInfo.textSplitter] != " " && inspectMenuInfo.textSplitter < text.length) {
+        inspectMenuInfo.textSplitter++;
+        if (inspectMenuInfo.textSplitter == text.length-1) {
+          return inspectMenuInfo.chunkedText.push(text.slice(inspectMenuInfo.prevTextSplitter, inspectMenuInfo.textSplitter));
         }
       }
-      chunkedText.push(text.slice(prevTextSplitter, textSplitter))
+      inspectMenuInfo.chunkedText.push(text.slice(inspectMenuInfo.prevTextSplitter, inspectMenuInfo.textSplitter))
     }
 
   }
-  return chunkedText;
+  return inspectMenuInfo.chunkedText;
 }
 function newRoom(room) {
   floor.src = currRoom.floor;
@@ -95,7 +89,7 @@ function newRoom(room) {
     entityImg.style.zIndex=entity.dims.z;
     entityImg.addEventListener('click', () => {
       displayInspect(entity.desc, 100);
-      inspectText.innerHTML= chunkedText[0];
+      inspectText.innerHTML= inspectMenuInfo.chunkedText[0];
       inspectImg.src=entity.src;
       toggleInspectMenu();
     })
