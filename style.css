@@ -61,7 +61,7 @@ img{
 }
 #inspect-image-div {
   flex:0 0 120px;
-  background-color: rgb(116, 116, 116);
+  background-color: rgb(116, 116, 116, 0.7);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -74,7 +74,7 @@ img{
 }
 #inspect-menu p{
   margin: 10px;
-  font-size:22px;
+  font-size:30px;
 }
 #screen-mask {
   width: 1000px;

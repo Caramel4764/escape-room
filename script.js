@@ -13,7 +13,7 @@ gameMask.addEventListener('click', ()=>{
   gameMask.style.visibility='hidden';
   inspectMenu.style.visibility='hidden';
 })
-//280 char max
+//100 char max
 let rooms = {
   "dims": {
     x: 1000,
@@ -25,13 +25,13 @@ let rooms = {
     'divider': "./assets/floor/floor-divider.png",
     'entities': [
       {
-        "name": 'hatHanger',
+        "name": 'shelf',
         'src': './assets/furniture/shelf.png',
         "desc": "It's a shelf",
         'dims': {
-          'x': "650px",
-          'y': "115px",
-          "width": "300px",
+          'x': "640px",
+          'y': "90px",
+          "width": "350px",
           'z': "3",
         }
       },
@@ -59,12 +59,12 @@ let rooms = {
       },
       {
         "name": 'shoeRack',
-        'src': './assets/furniture/shoe-rack.webp',
+        'src': './assets/furniture/shoe-rack.png',
         "desc": "All the shoes are brand new and look unworn. The sizes from left to right are 8, 10, 15",
         'dims': {
-          'x': "-5px",
-          'y': "190px",
-          "width": "400px",
+          'x': "40px",
+          'y': "380px",
+          "width": "280px",
           'z': 3,
         }
       },
