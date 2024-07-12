@@ -7,6 +7,8 @@ let divider = document.createElement('img');
 let inspectMenu = document.querySelector('#inspect-menu')
 let inspectText = document.querySelector('#inspect-text');
 let gameMask = document.querySelector('#screen-mask');
+let inspectImg = document.querySelector('#inspect-image');
+
 gameMask.addEventListener('click', ()=>{
   gameMask.style.visibility='hidden';
   inspectMenu.style.visibility='hidden';
@@ -36,7 +38,7 @@ let rooms = {
       {
         "name": 'welcomeMat',
         'src': './assets/floor/carpet.png',
-        "desc": "There's something underneath",
+        "desc": "You feel a bump near the corner.There's something underneath",
         'dims': {
           'x': "320px",
           'y': "400px",
@@ -88,6 +90,7 @@ function newRoom(room) {
     entityImg.style.zIndex=entity.dims.z;
     entityImg.addEventListener('click', () => {
       inspectText.innerHTML=entity.desc;
+      inspectImg.src=entity.src
       inspectMenu.style.visibility ='visible';
       gameMask.style.visibility='visible';
     })

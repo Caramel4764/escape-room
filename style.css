@@ -49,8 +49,7 @@ img{
 }
 
 #inspect-menu {
-  background-color: rgb(217, 217, 217);
-  opacity: 0.7;
+  background-color: rgb(217, 217, 217, 0.7);
   z-index:30;
   width: 985px;
   left: 5px;
@@ -61,7 +60,7 @@ img{
   border-radius: 15px;
 }
 #inspect-image-div {
-  width: 120px;
+  flex:0 0 120px;
   background-color: rgb(116, 116, 116);
   display: flex;
   justify-content: center;
@@ -69,8 +68,9 @@ img{
 }
 #inspect-menu img {
   position: static;
-  width: 140px;
-  height:auto;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 #inspect-menu p{
   margin: 10px;
