@@ -13,19 +13,30 @@ import {rooms} from './javascript/data/rooms.js';
 console.log(rooms)
 let textCounter = 1;
 let prevTextSplitter;
+let inspectMenuOpened = false;
+function toggleInspectMenu() {
+  if (inspectMenuOpened) {
+    gameMask.style.visibility='visible';
+    inspectMenu.style.visibility='visible';
+    inspectMenuOpened = true;
+  } else {
+    gameMask.style.visibility='hidden';
+    inspectMenu.style.visibility='hidden';
+    inspectMenuOpened = false;
+  }
+}
 gameMask.addEventListener('click', ()=>{
   if (chunkedText.length >= 1) {
     console.log(textCounter)
       inspectText.innerHTML = chunkedText[textCounter];
       textCounter++;
-      if (textCounter > chunkedText.length) {
+      if (textCounter >= chunkedText.length) {
         textCounter = 1;
-        gameMask.style.visibility='hidden';
-        inspectMenu.style.visibility='hidden';
+        toggleInspectMenu();
+
       }
   } else {
-    gameMask.style.visibility='hidden';
-    inspectMenu.style.visibility='hidden';
+    toggleInspectMenu();
   }
 })
 
