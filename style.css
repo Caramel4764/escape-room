@@ -56,9 +56,21 @@ img{
   left: 5px;
   top: 5px;
   height: 120px;
+  display:flex;
   position:absolute;
   border-radius: 15px;
-  visibility: hidden;
+}
+#inspect-image-div {
+  width: 120px;
+  background-color: rgb(116, 116, 116);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#inspect-menu img {
+  position: static;
+  width: 140px;
+  height:auto;
 }
 #inspect-menu p{
   margin: 10px;
@@ -68,6 +80,6 @@ img{
   width: 1000px;
   height: 600px;
   position: absolute;
-  z-index: 80;
   visibility: hidden;
+  z-index: 80;
 }
