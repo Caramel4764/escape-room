@@ -8,10 +8,21 @@ let inspectMenu = document.querySelector('#inspect-menu')
 let inspectText = document.querySelector('#inspect-text');
 let gameMask = document.querySelector('#screen-mask');
 let inspectImg = document.querySelector('#inspect-image');
-
+let chunkedText = [];
+let textCounter = 1;
 gameMask.addEventListener('click', ()=>{
-  gameMask.style.visibility='hidden';
-  inspectMenu.style.visibility='hidden';
+  if (chunkedText.length > 1) {
+      textCounter++;
+      inspectText.innerHTML = chunkedText[textCounter];
+      if (textCounter >= chunkedText.length) {
+        textCounter = 1;
+        gameMask.style.visibility='hidden';
+        inspectMenu.style.visibility='hidden';
+      }
+  } else {
+    gameMask.style.visibility='hidden';
+    inspectMenu.style.visibility='hidden';
+  }
 })
 //100 char max
 let rooms = {
@@ -72,11 +83,10 @@ let rooms = {
   },
 }
 function displayInspect(text) {
-  let chunkedText = [];
+  chunkedText = [];
   let snipTime = Math.floor(text.length/100)+1;
   if (snipTime == 1) {
-    console.log('short')
-    return text;
+    return chunkedText.push(text);
   }
   for(let i = 0; i<snipTime;i++) {
     if (i==0) {
@@ -105,8 +115,9 @@ function newRoom(room) {
     entityImg.style.width=entity.dims.width;
     entityImg.style.zIndex=entity.dims.z;
     entityImg.addEventListener('click', () => {
-      inspectText.innerHTML= displayInspect(entity.desc);
-      inspectImg.src=entity.src
+      displayInspect(entity.desc);
+      inspectText.innerHTML= chunkedText[0];
+      inspectImg.src=entity.src;
       inspectMenu.style.visibility ='visible';
       gameMask.style.visibility='visible';
     })
