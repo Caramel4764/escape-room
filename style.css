@@ -58,6 +58,7 @@ img{
   display:flex;
   position:absolute;
   border-radius: 15px;
+  visibility: hidden;
 }
 #inspect-image-div {
   flex:0 0 120px;
