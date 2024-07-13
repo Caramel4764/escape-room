@@ -50,7 +50,19 @@ let rooms = {
           'y': "380px",
           "width": "280px",
           'z': 3,
-        }
+        },
+      },
+      {
+        "name": 'key',
+        'item': true,
+        'src': './assets/object/key.png',
+        "desc": "It's a key",
+        'dims': {
+          'x': "600px",
+          'y': "540px",
+          "width": "30px",
+          'z': 3,
+        },
       },
     ]
   },
