@@ -5,3 +5,4 @@ let currRoom = rooms.entrance;
 displayRoom(currRoom);
 
 
+export {currRoom}

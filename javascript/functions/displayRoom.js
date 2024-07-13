@@ -1,7 +1,7 @@
 import {inspectMenuInfo} from '../data/inspectInfoMenu.js'
 import {displayInspect} from './displayInspectMenu.js';
 import {toggleInspectMenu} from './toggleInspectMenu.js';
-
+import {addItem} from './addItem.js'
 const floor = document.createElement('img');
 const wall = document.createElement('img')
 const divider = document.createElement('img');
@@ -10,7 +10,6 @@ const setting = document.querySelector('#room');
 const wallDiv = document.querySelector('#wall-div');
 const inspectText = document.querySelector('#inspect-text');
 const inspectImg = document.querySelector('#inspect-image');
-const inventory = document.querySelector('#inventory')
 
 function displayRoom(currRoom) {
   floor.src = currRoom.floor;
@@ -36,21 +35,7 @@ function displayRoom(currRoom) {
       toggleInspectMenu();
       //if item, add to inventory
       if (entity.isItem) {
-        let newItemDiv = document.createElement('div')
-        let newItem = document.createElement('img')
-        newItem.src=entity.src;
-        newItemDiv.appendChild(newItem);
-        newItemDiv.classList.add('item');
-        inventory.appendChild(newItemDiv);
-        newItemDiv.addEventListener('click', ()=>{
-          currRoom.entities.map((entity1)=>{
-            entity1.selected = false;
-            //entity1.classList.remove("selectedItem");
-          })
-          entity.selected = true;
-          newItemDiv.classList.add('selectedItem');
-          console.log(inventory.children.length)
-        })
+        addItem(entity);
       }
     })
     setting.appendChild(entityImg);
