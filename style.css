@@ -84,6 +84,7 @@ img{
   background-color: rgb(255, 255, 255);
   width:80px;
   height:600px;
+  overflow:scroll;
 }
 .item img{
   position: static;
@@ -94,6 +95,12 @@ img{
 .item {
   width:80px;
   height: 80px;
+  border-bottom: rgb(0, 0, 0) 2px solid;
+}
+.item:hover {
+  width:80px;
+  height: 80px;
+  background-color: yellow;
   border-bottom: rgb(0, 0, 0) 2px solid;
 }
 #interfaceDiv {
@@ -116,6 +123,7 @@ img{
   margin-right: auto; 
   margin-top: auto;
   margin-bottom: auto;
+  z-index: -20;
   left: 0; 
   right: 0; 
   top: 0;
