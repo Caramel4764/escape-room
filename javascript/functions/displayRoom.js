@@ -42,6 +42,11 @@ function displayRoom(currRoom) {
         newItemDiv.appendChild(newItem);
         newItemDiv.classList.add('item');
         inventory.appendChild(newItemDiv);
+        newItemDiv.addEventListener('click', ()=>{
+          entity.selected = true;
+          newItemDiv.classList.add('selectedItem')
+          console.log(inventory.children.length)
+        })
       }
     })
     setting.appendChild(entityImg);

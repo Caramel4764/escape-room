@@ -135,3 +135,6 @@ img{
   height:600px;
   width: 1080px;
 }
+.selectedItem {
+  background-color: rgb(190, 166, 101);
+}
