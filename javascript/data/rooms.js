@@ -54,7 +54,7 @@ let rooms = {
       },
       {
         "name": 'key',
-        'item': true,
+        'isItem': true,
         'src': './assets/object/key.png',
         "desc": "It's a key",
         'dims': {

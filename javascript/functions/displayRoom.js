@@ -10,6 +10,7 @@ const setting = document.querySelector('#room');
 const wallDiv = document.querySelector('#wall-div');
 const inspectText = document.querySelector('#inspect-text');
 const inspectImg = document.querySelector('#inspect-image');
+const inventory = document.querySelector('#inventory')
 
 function displayRoom(currRoom) {
   floor.src = currRoom.floor;
@@ -33,6 +34,15 @@ function displayRoom(currRoom) {
       inspectText.innerHTML= inspectMenuInfo.chunkedText[0];
       inspectImg.src=entity.src;
       toggleInspectMenu();
+      //if item, add to inventory
+      if (entity.isItem) {
+        let newItemDiv = document.createElement('div')
+        let newItem = document.createElement('img')
+        newItem.src=entity.src;
+        newItemDiv.appendChild(newItem);
+        newItemDiv.classList.add('item');
+        inventory.appendChild(newItemDiv);
+      }
     })
     setting.appendChild(entityImg);
   })
