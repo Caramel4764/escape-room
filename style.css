@@ -5,7 +5,7 @@ body {
   width:0;
   height:0;
   font-family:'Courier New', Courier, monospace;
-  background-color: rgb(106, 65, 38);
+  background-color: rgb(94, 94, 94);
 }
 img{
   position:absolute;
@@ -81,7 +81,7 @@ img{
 #inventory {
   display:flex;
   flex-direction: column;
-  background-color: rgb(255, 255, 255);
+  background-color: #ffe499;
   width:80px;
   height:600px;
   overflow:scroll;
@@ -98,15 +98,14 @@ img{
 .item {
   width:80px;
   height: 80px;
-  border-bottom: rgb(0, 0, 0) 2px solid;
+  border-bottom: rgb(179, 90, 27) 2px solid;
 }
 
 
 .item:hover {
   width:80px;
   height: 80px;
-  background-color: yellow;
-  border-bottom: rgb(0, 0, 0) 2px solid;
+  background-color: #ffeebf;
 }
 #interfaceDiv {
   display:flex;
