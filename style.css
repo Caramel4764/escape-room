@@ -86,6 +86,9 @@ img{
   height:600px;
   overflow:scroll;
 }
+#inventory::-webkit-scrollbar {
+  display: none;
+}
 .item img{
   position: static;
   width:100%;
@@ -97,6 +100,8 @@ img{
   height: 80px;
   border-bottom: rgb(0, 0, 0) 2px solid;
 }
+
+
 .item:hover {
   width:80px;
   height: 80px;
