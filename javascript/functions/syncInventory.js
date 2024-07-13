@@ -9,6 +9,7 @@ function syncInventory () {
     if (singleItem.selected==true) {
       inventory.children[index].style.backgroundColor='#BEA665';
       player.selectedItem = singleItem;
+      player.selectedItemDom=inventory.children[index];
     }
   })
 }
