@@ -1,7 +1,17 @@
 import {currRoom} from '../../script.js';
-const inventory = document.querySelector('#inventory')
+import {inventoryInfo} from '../data/inventory.js';
+let inventory = document.querySelector('#inventory')
 
 function addItem (entity) {
+  //add item in inventory object
+  let newInventoryInfo = {
+    name: entity.name,
+    src: entity.src,
+    desc: entity.desc,
+    selected: false,
+  }
+  inventoryInfo.push(newInventoryInfo);
+  //creates new item
   let newItemDiv = document.createElement('div')
   let newItem = document.createElement('img')
   newItem.src=entity.src;
