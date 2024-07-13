@@ -99,18 +99,27 @@ img{
 #interfaceDiv {
   display:flex;
   width:1080px;
-  position:static;
+  position:relative;
+  z-index: -5;
 }
 #room {
   margin:0;
   width:1000px;
   height:600px;
-  z-index: 100;
+  z-index: -5;
   position: relative;
   overflow: hidden;
 }
-.centerDiv {
-  width:1400px;
-  display:flex;
-  justify-content: center;
+#centerDiv {
+  position:absolute;
+  margin-left: auto; 
+  margin-right: auto; 
+  margin-top: auto;
+  margin-bottom: auto;
+  left: 0; 
+  right: 0; 
+  top: 0;
+  bottom: 0;
+  height:600px;
+  width: 1080px;
 }
