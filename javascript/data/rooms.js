@@ -65,6 +65,19 @@ let rooms = {
           'z': 3,
         },
       },
+      {
+        "name": 'key2',
+        'isItem': true,
+        'selected': false,
+        'src': './assets/object/key2.png',
+        "desc": "It's a key",
+        'dims': {
+          'x': "800px",
+          'y': "540px",
+          "width": "50px",
+          'z': 3,
+        },
+      },
     ]
   },
 }
