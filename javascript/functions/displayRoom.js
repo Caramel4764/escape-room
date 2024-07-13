@@ -38,7 +38,6 @@ function displayRoom(currRoom) {
       //if item, add to inventory
       if (entity.isItem) {
         addItem(entity);
-        syncInventory();
       }
     })
     setting.appendChild(entityImg);

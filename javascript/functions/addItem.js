@@ -1,7 +1,8 @@
 import {currRoom} from '../../script.js';
 import {inventoryInfo} from '../data/inventory.js';
-let inventory = document.querySelector('#inventory')
+import { syncInventory } from './syncInventory.js';
 
+let inventory = document.querySelector('#inventory')
 function addItem (entity) {
   //add item in inventory object
   let newInventoryInfo = {
@@ -20,18 +21,18 @@ function addItem (entity) {
   newItemDiv.classList.add('item');
   inventory.appendChild(newItemDiv);
   newItemDiv.addEventListener('click', ()=>{
-    inventoryInfo.map((singleItem)=>{
+    inventoryInfo.map((singleItem)=> {
       singleItem.selected = false;
-      newItemDiv.style.backgroundColor='red'
       //target
-      console.log(`single: ${singleItem.name} newDiv: ${newItemDiv.id}`);
+      //console.log(`single: ${singleItem.name} newDiv: ${newItemDiv.id}`);
       if (singleItem.name==newItemDiv.id) {
         singleItem.selected = true;
-        newItemDiv.style.backgroundColor='green'
-        console.log(newItemDiv.style.backgroundColor)
+
+        //console.log(newItemDiv.style.backgroundColor)
       }
     })
-    console.log(inventoryInfo)
+    syncInventory();
+    //console.log(inventoryInfo)
     //entity.selected = true;
     //.style.backgroundColor#ffe499
   })
