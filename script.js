@@ -1,8 +1,5 @@
 import {rooms} from './javascript/data/rooms.js';
 import {displayRoom} from './javascript/functions/displayRoom.js';
-
-let currRoom = rooms.entrance;
-displayRoom(currRoom);
-
-
-export {currRoom}
+import {player} from './javascript/data/player.js'
+player.currRoom = rooms.entrance;
+displayRoom(player.currRoom);

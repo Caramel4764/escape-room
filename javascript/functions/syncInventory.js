@@ -8,7 +8,6 @@ function syncInventory () {
     //&&inventory.children[index].id==singleItem.name)
     if (singleItem.selected==true) {
       inventory.children[index].style.backgroundColor='#BEA665';
-      console.log(singleItem)
       player.selectedItem = singleItem;
     }
   })

@@ -55,7 +55,7 @@ let rooms = {
       {
         "name": 'lockBox',
         "isItemNeeded": true,
-        "solveDescription": "test",
+        "solveDescription": "The key fits perfectly into the lock and you open the box",
         "itemNeeded": 'key2',
         'src': './assets/furniture/box.png',
         "desc": "Surprise, surprise. It's locked",

@@ -41,7 +41,6 @@ function displayRoom(currRoom) {
       }
       if (entity.isItemNeeded==true && player.selectedItem.name==entity.itemNeeded) {
         displayInspect(entity.solveDescription, 100);
-        console.log('unlocked')
       }
       inspectText.innerHTML = inspectMenuInfo.chunkedText[0];
     })
