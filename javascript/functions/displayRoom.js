@@ -2,6 +2,7 @@ import {inspectMenuInfo} from '../data/inspectInfoMenu.js'
 import {displayInspect} from './displayInspectMenu.js';
 import {toggleInspectMenu} from './toggleInspectMenu.js';
 import {addItem} from './addItem.js'
+import { syncInventory } from './syncInventory.js';
 const floor = document.createElement('img');
 const wall = document.createElement('img')
 const divider = document.createElement('img');
@@ -37,29 +38,7 @@ function displayRoom(currRoom) {
       //if item, add to inventory
       if (entity.isItem) {
         addItem(entity);
-        let newItemDiv = document.createElement('div')
-        let newItem = document.createElement('img')
-        newItem.src=entity.src;
-        newItemDiv.appendChild(newItem);
-        console.log(entity.name)
-        newItemDiv.setAttribute('id', entity.name)
-        newItemDiv.classList.add('item');
-        inventory.appendChild(newItemDiv);
-        newItemDiv.addEventListener('click', ()=>{
-          inventoryInfo.map((singleItem)=>{
-            singleItem.selected = false;
-            console.log(`single: ${singleItem.name}`)
-            console.log(`newDiv: ${newItemDiv.id}`)
-
-            if (singleItem.name==newItemDiv.id) {
-              singleItem.selected = true;
-            }
-          })
-          console.log(inventoryInfo)
-
-          entity.selected = true;
-          newItemDiv.classList.add('selectedItem');
-        })
+        syncInventory();
       }
     })
     setting.appendChild(entityImg);
