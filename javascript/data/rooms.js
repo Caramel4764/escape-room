@@ -53,9 +53,19 @@ let rooms = {
         },
       },
       {
+        "name": 'key2',
+        'src': './assets/furniture/box.png',
+        "desc": "Surprise, surprise. It's locked",
+        'dims': {
+          'x': "700px",
+          'y': "305px",
+          "width": "120px",
+          'z': 3,
+        },
+      },
+      {
         "name": 'key',
         'isItem': true,
-        'selected': false,
         'src': './assets/object/key.png',
         "desc": "It's a key",
         'dims': {
@@ -68,7 +78,6 @@ let rooms = {
       {
         "name": 'key2',
         'isItem': true,
-        'selected': false,
         'src': './assets/object/key2.png',
         "desc": "It's a key",
         'dims': {
