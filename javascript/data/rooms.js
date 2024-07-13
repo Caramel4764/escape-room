@@ -53,7 +53,10 @@ let rooms = {
         },
       },
       {
-        "name": 'key2',
+        "name": 'lockBox',
+        "isItemNeeded": true,
+        "solveDescription": "test",
+        "itemNeeded": 'key2',
         'src': './assets/furniture/box.png',
         "desc": "Surprise, surprise. It's locked",
         'dims': {

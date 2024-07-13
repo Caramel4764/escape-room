@@ -2,6 +2,7 @@ import {inspectMenuInfo} from '../data/inspectInfoMenu.js'
 import {displayInspect} from './displayInspectMenu.js';
 import {toggleInspectMenu} from './toggleInspectMenu.js';
 import {addItem} from './addItem.js'
+import {player} from "../data/player.js"
 import { syncInventory } from './syncInventory.js';
 const floor = document.createElement('img');
 const wall = document.createElement('img')
@@ -32,13 +33,17 @@ function displayRoom(currRoom) {
     entityImg.style.zIndex=entity.dims.z;
     entityImg.addEventListener('click', () => {
       displayInspect(entity.desc, 100);
-      inspectText.innerHTML = inspectMenuInfo.chunkedText[0];
       inspectImg.src = entity.src;
       toggleInspectMenu();
       //if item, add to inventory
       if (entity.isItem) {
         addItem(entity);
       }
+      if (entity.isItemNeeded==true && player.selectedItem.name==entity.itemNeeded) {
+        displayInspect(entity.solveDescription, 100);
+        console.log('unlocked')
+      }
+      inspectText.innerHTML = inspectMenuInfo.chunkedText[0];
     })
     setting.appendChild(entityImg);
   })
