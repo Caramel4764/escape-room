@@ -1,0 +1,2 @@
+let createdRoom = [];
+export {createdRoom}

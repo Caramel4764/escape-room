@@ -8,11 +8,13 @@ import {inventoryInfo} from '../data/inventory.js';
 import {player} from "../data/player.js"
 import {resetSelectedItem} from "./resetSelectedItem.js"
 import { syncInventory } from './syncInventory.js';
+import {createdRoom} from '../data/createdRoom.js';
 const inspectText = document.querySelector('#inspect-text');
 
 function createRoomElement (currRoom) {
   let roomContainer = document.createElement('div');
-  roomContainer.setAttribute('id', 'room-container');
+  roomContainer.classList.add('room-container');
+  roomContainer.setAttribute('id', currRoom.name);
   setting.appendChild(roomContainer);
   let floor = document.createElement('img')
   floor.src = currRoom.floor;
@@ -67,7 +69,8 @@ function createRoomElement (currRoom) {
         inspectText.innerHTML = inspectMenuInfo.chunkedText[0];
       })
       roomContainer.appendChild(entityImg);
-      roomContainer.style.visibility="hidden"
     })
+    console.log(roomContainer);
+    createdRoom.push(roomContainer)
 }
 export {createRoomElement}
