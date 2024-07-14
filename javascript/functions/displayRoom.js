@@ -42,8 +42,6 @@ function displayRoom(currRoom) {
         addItem(entity);
         setting.removeChild(entityImg);
       }
-      // && player.selectedItem.name==entity.puzzle.itemNeeded
-      //&& player.selectedItem.name==entity.puzzle.itemNeeded
       if (entity.puzzle && entity.puzzle.type=='item' && player.selectedItem.name == entity.puzzle.itemNeeded) {
         displayInspect(entity.puzzle.solveDescription, 100);
         for (let i = 0; i < inventoryInfo.length; i++) {

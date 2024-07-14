@@ -55,10 +55,10 @@ let rooms = {
       {
         "name": 'lockBox',
         'src': './assets/furniture/box.png',
-        "desc": "Surprise, surprise. It's locked",
+        "desc": "Surprise, surprise. It's locked. There's this hidden rule that if there isn't a locked container in plain sight, it's not a real escape room.",
         'dims': {
           'x': "700px",
-          'y': "305px",
+          'y': "340px",
           "width": "120px",
           'z': 3,
         },
@@ -72,7 +72,7 @@ let rooms = {
         "name": 'key',
         'isItem': true,
         'src': './assets/object/key.png',
-        "desc": "It's a key",
+        "desc": "You've found a key!",
         'dims': {
           'x': "600px",
           'y': "540px",
