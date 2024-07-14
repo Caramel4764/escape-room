@@ -130,6 +130,13 @@ img{
   position: relative;
   overflow: hidden;
 }
+.roomContainer {
+  margin:0;
+  width:1000px;
+  height:600px;
+  z-index: -5;
+  position: relative;
+}
 #centerDiv {
   position:absolute;
   margin-left: auto; 
