@@ -25,7 +25,6 @@ function displayInspect(text, limit) {
       }
       inspectMenuInfo.chunkedText.push(text.slice(inspectMenuInfo.prevTextSplitter, inspectMenuInfo.textSplitter))
     }
-
   }
   return inspectMenuInfo.chunkedText;
 }

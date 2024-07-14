@@ -1,7 +1,7 @@
 import {player} from "../data/player.js"
-
-let inventory = document.querySelector('#inventory')
 import {inventoryInfo} from "../data/inventory.js"
+let inventory = document.querySelector('#inventory')
+
 function syncInventory () {
   inventoryInfo.map((singleItem, index)=>{
     inventory.children[index].style.backgroundColor='#ffe499';

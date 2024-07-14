@@ -16,3 +16,4 @@ player.currRoom = rooms.lounge;
 displayRoom(player.currRoom);
 player.currRoom = rooms.entrance;
 displayRoom(player.currRoom);
+goRoom('entrance');

@@ -123,7 +123,12 @@ let rooms = {
           'y': "260px",
           "width": "300px",
           'z': "3",
-        }
+        },
+        "puzzle": {
+          "type": 'item',
+          "solveDescription": "The key fits perfectly into the lock and you open the box",
+          "itemNeeded": 'key',
+        },
       },
       {
         "name": 'window',
@@ -167,11 +172,6 @@ let rooms = {
           'y': "220px",
           "width": "160px",
           'z': "4",
-        },
-        "puzzle": {
-          "type": 'item',
-          "solveDescription": "The key fits perfectly into the lock and you open the box",
-          "itemNeeded": 'key',
         },
       },
     ]

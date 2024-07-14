@@ -1,5 +1,3 @@
-const setting = document.querySelector('#room');
-const inspectImg = document.querySelector('#inspect-image');
 import {toggleInspectMenu} from './toggleInspectMenu.js';
 import { displayInspect } from "./displayInspectMenu.js";
 import {inspectMenuInfo} from '../data/inspectInfoMenu.js'
@@ -7,8 +5,9 @@ import {addItem} from './addItem.js'
 import {inventoryInfo} from '../data/inventory.js';
 import {player} from "../data/player.js"
 import {resetSelectedItem} from "./resetSelectedItem.js"
-import { syncInventory } from './syncInventory.js';
 import {createdRoom} from '../data/createdRoom.js';
+const setting = document.querySelector('#room');
+const inspectImg = document.querySelector('#inspect-image');
 const inspectText = document.querySelector('#inspect-text');
 
 function createRoomElement (currRoom) {
@@ -35,42 +34,39 @@ function createRoomElement (currRoom) {
   wallDiv.append(wall);
   roomContainer.appendChild(wallDiv);
   woodFloorDiv.append(divider);
-  //roomContainer.style.visibility='hidden';
-
-    //gives interactivity
-    currRoom.entities.map((entity)=>{
-      let entityImg = document.createElement("img");
-      entityImg.src=entity.src;
-      entityImg.style.top=entity.dims.y;
-      entityImg.style.left=entity.dims.x;
-      entityImg.style.width=entity.dims.width;
-      entityImg.style.zIndex=entity.dims.z;
-      entityImg.addEventListener('click', () => {
-        displayInspect(entity.desc, 100);
-        inspectImg.src = entity.src;
-        toggleInspectMenu();
-        //if item, add to inventory
-        if (entity.isItem) {
-          addItem(entity);
-          setting.removeChild(entityImg);
-        }
-        if (entity.puzzle && entity.puzzle.type=='item' && player.selectedItem.name == entity.puzzle.itemNeeded) {
-          displayInspect(entity.puzzle.solveDescription, 100);
-          for (let i = 0; i < inventoryInfo.length; i++) {
-            if (inventoryInfo[i].name == entity.puzzle.itemNeeded) {
-              inventoryInfo.splice(i, 1);
-              inventory.removeChild(inventory.children[i]);
-              resetSelectedItem();
-            }
+  //gives interactivity
+  currRoom.entities.map((entity)=>{
+    let entityImg = document.createElement("img");
+    entityImg.src=entity.src;
+    entityImg.style.top=entity.dims.y;
+    entityImg.style.left=entity.dims.x;
+    entityImg.style.width=entity.dims.width;
+    entityImg.style.zIndex=entity.dims.z;
+    entityImg.addEventListener('click', () => {
+      displayInspect(entity.desc, 100);
+      inspectImg.src = entity.src;
+      toggleInspectMenu();
+      //if item, add to inventory
+      if (entity.isItem) {
+        addItem(entity);
+        roomContainer.removeChild(entityImg);
+      }
+      if (entity.puzzle && entity.puzzle.type=='item' && player.selectedItem.name == entity.puzzle.itemNeeded) {
+        displayInspect(entity.puzzle.solveDescription, 100);
+        for (let i = 0; i < inventoryInfo.length; i++) {
+          if (inventoryInfo[i].name == entity.puzzle.itemNeeded) {
+            inventoryInfo.splice(i, 1);
+            inventory.removeChild(inventory.children[i]);
+            resetSelectedItem();
           }
-        } else if (entity.puzzle && entity.puzzle.type=='item' && player.selectedItem.name != 'none' && player.selectedItem.name && player.selectedItem.name!=entity.puzzle.itemNeeded) {
-          displayInspect("Unfortunately, that doesn't go there", 100);
         }
-        inspectText.innerHTML = inspectMenuInfo.chunkedText[0];
-      })
-      roomContainer.appendChild(entityImg);
+      } else if (entity.puzzle && entity.puzzle.type=='item' && player.selectedItem.name != 'none' && player.selectedItem.name && player.selectedItem.name!=entity.puzzle.itemNeeded) {
+        displayInspect("Unfortunately, that doesn't go there", 100);
+      }
+      inspectText.innerHTML = inspectMenuInfo.chunkedText[0];
     })
-    createdRoom.push(roomContainer)
-    console.log(createdRoom)
+    roomContainer.appendChild(entityImg);
+  })
+  createdRoom.push(roomContainer)
 }
 export {createRoomElement}
