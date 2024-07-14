@@ -59,8 +59,8 @@ let rooms = {
         "desc": "Surprise, surprise. It's locked. There's this hidden rule that if there isn't a locked container in plain sight, it's not a real escape room.",
         'dims': {
           'x': "700px",
-          'y': "340px",
-          "width": "120px",
+          'y': "348px",
+          "width": "100px",
           'z': 3,
         },
         "puzzle": {
@@ -99,8 +99,8 @@ let rooms = {
 
   "lounge": {
     'name': 'lounge',
-    'wall': './assets/wall/wood-wall.jpg',
-    "floor": './assets/floor/wood-floor.png',
+    'wall': './assets/wall/light-orange-wall.png',
+    "floor": './assets/floor/carpet-floor.jpg',
     'divider': "./assets/floor/floor-divider.png",
     'entities': [
       {
@@ -109,7 +109,7 @@ let rooms = {
         "desc": "Cushy",
         'dims': {
           'x': "660px",
-          'y': "130px",
+          'y': "200px",
           "width": "350px",
           'z': "3",
         }
