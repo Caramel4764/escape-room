@@ -70,7 +70,7 @@ function createRoomElement (currRoom) {
       })
       roomContainer.appendChild(entityImg);
     })
-    console.log(roomContainer);
     createdRoom.push(roomContainer)
+    console.log(createdRoom)
 }
 export {createRoomElement}
