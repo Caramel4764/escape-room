@@ -39,19 +39,17 @@ function displayRoom(currRoom) {
       //if item, add to inventory
       if (entity.isItem) {
         addItem(entity);
-        //console.log(entityImg)
         setting.removeChild(entityImg);
       }
       if (entity.isItemNeeded==true && player.selectedItem.name==entity.itemNeeded) {
         displayInspect(entity.solveDescription, 100);
-        //setting.removeChild(player.selectedItemDom);
+        setting.removeChild(player.selectedItemDom);
         //inventory.removeChild(inventory.children[0]);
-        //remove from listgit
+        //remove from list
         if (inventory.children[0] == 't') {
           inventoryInfo(inventory.children[0])
         }
-
-      } else if (entity.isItemNeeded==true && player.selectedItem.name!='none' && player.selectedItem.name!=entity.itemNeeded) {
+      } else if (entity.isItemNeeded==true && player.selectedItem.name != 'none' && player.selectedItem.name && player.selectedItem.name!=entity.itemNeeded) {
         displayInspect("Unfortunately, that doesn't go there", 100);
       }
       inspectText.innerHTML = inspectMenuInfo.chunkedText[0];

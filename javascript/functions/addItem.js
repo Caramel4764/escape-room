@@ -12,7 +12,6 @@ function addItem (entity) {
     selected: false,
   }
   inventoryInfo.push(newInventoryInfo);
-
   let newItemDiv = document.createElement('div')
   let newItem = document.createElement('img')
   newItem.src=entity.src;
@@ -24,19 +23,11 @@ function addItem (entity) {
     inventoryInfo.map((singleItem)=> {
       singleItem.selected = false;
       //target
-      //console.log(`single: ${singleItem.name} newDiv: ${newItemDiv.id}`);
       if (singleItem.name==newItemDiv.id) {
         singleItem.selected = true;
-
-        //console.log(newItemDiv.style.backgroundColor)
       }
     })
     syncInventory();
-    //console.log(inventoryInfo)
-    //entity.selected = true;
-    //.style.backgroundColor#ffe499
   })
-
-
 }
 export {addItem}

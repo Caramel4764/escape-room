@@ -10,7 +10,6 @@ gameMask.addEventListener('click', ()=>{
       if (inspectMenuInfo.textCounter >= inspectMenuInfo.chunkedText.length) {
         inspectMenuInfo.textCounter = 1;
         toggleInspectMenu();
-
       }
   } else {
     toggleInspectMenu();
