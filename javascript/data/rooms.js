@@ -54,9 +54,6 @@ let rooms = {
       },
       {
         "name": 'lockBox',
-        "isItemNeeded": true,
-        "solveDescription": "The key fits perfectly into the lock and you open the box",
-        "itemNeeded": 'key2',
         'src': './assets/furniture/box.png',
         "desc": "Surprise, surprise. It's locked",
         'dims': {
@@ -64,6 +61,11 @@ let rooms = {
           'y': "305px",
           "width": "120px",
           'z': 3,
+        },
+        "puzzle": {
+          "type": 'item',
+          "solveDescription": "The key fits perfectly into the lock and you open the box",
+          "itemNeeded": 'key2',
         },
       },
       {
