@@ -23,7 +23,16 @@ img{
 }
 #wood-floor {
   width:1000px;
-  z-index:3
+  z-index:3;
+}
+#wood-floor-div {
+  z-index: 1;
+  width: 1080px;
+  height: 192px;
+  position:absolute;
+  bottom:0px;
+  background-color: red;
+  
 }
 #exit-door {
   width: 200px;
@@ -46,7 +55,7 @@ img{
   background-color: rgb(217, 217, 217, 0.7);
   z-index:30;
   width: 985px;
-  left: 5px;
+  left: 8px;
   top: 5px;
   height: 120px;
   display:flex;
