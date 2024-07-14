@@ -4,6 +4,7 @@ import {toggleInspectMenu} from './toggleInspectMenu.js';
 import {addItem} from './addItem.js'
 import {inventoryInfo} from '../data/inventory.js';
 import {player} from "../data/player.js"
+import {createRoomElement} from "./createRoomElement.js"
 import {resetSelectedItem} from "./resetSelectedItem.js"
 import { syncInventory } from './syncInventory.js';
 const setting = document.querySelector('#room');
@@ -12,26 +13,9 @@ const inspectImg = document.querySelector('#inspect-image');
 
 //this function creates the setting
 function displayRoom(currRoom) {
-  let floor = document.createElement('img')
-  floor.src = currRoom.floor;
-  floor.setAttribute('id', 'wood-floor');
-  let woodFloorDiv = document.createElement('div');
-  woodFloorDiv.setAttribute('id', 'wood-floor-div');
-  woodFloorDiv.appendChild(floor);
-  setting.appendChild(woodFloorDiv);
-  let divider = document.createElement('img');
-  divider.src = currRoom.divider;
-  divider.setAttribute('id', 'wood-floor-divider')
-  divider.style.zIndex = '10';
-  let wall = document.createElement('img')
-  wall.src = currRoom.wall;
-  wall.setAttribute('id', 'wall');
-  let wallDiv = document.createElement('div');
-  wallDiv.setAttribute('id', 'wall-div');
-  wallDiv.append(wall);
-  setting.appendChild(wallDiv);
-  woodFloorDiv.append(divider);
-  
+  //update room dom
+  createRoomElement(currRoom);
+  //gives interactivity
   currRoom.entities.map((entity)=>{
     let entityImg = document.createElement("img");
     entityImg.src=entity.src;

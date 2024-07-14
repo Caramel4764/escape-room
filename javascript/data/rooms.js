@@ -11,7 +11,7 @@ let rooms = {
       {
         "name": 'shelf',
         'src': './assets/furniture/shelf.png',
-        "desc": "The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brownAddingLongTextToTestFunction.. fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog1123. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.",
+        "desc": "The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.",
         'dims': {
           'x': "640px",
           'y': "90px",
