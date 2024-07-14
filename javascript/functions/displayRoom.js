@@ -3,6 +3,7 @@ import {displayInspect} from './displayInspectMenu.js';
 import {toggleInspectMenu} from './toggleInspectMenu.js';
 import {addItem} from './addItem.js'
 import {player} from "../data/player.js"
+import {resetSelectedItem} from "./resetSelectedItem.js"
 import { syncInventory } from './syncInventory.js';
 const floor = document.createElement('img');
 const wall = document.createElement('img')
@@ -43,11 +44,12 @@ function displayRoom(currRoom) {
       }
       if (entity.isItemNeeded==true && player.selectedItem.name==entity.itemNeeded) {
         displayInspect(entity.solveDescription, 100);
-        setting.removeChild(player.selectedItemDom);
-        //inventory.removeChild(inventory.children[0]);
-        //remove from list
-        if (inventory.children[0] == 't') {
-          inventoryInfo(inventory.children[0])
+        for (let i = 0; i < inventoryInfo.length; i++) {
+          if (inventoryInfo[i].name == entity.itemNeeded) {
+            inventoryInfo.splice(i, 1);
+            inventory.removeChild(inventory.children[i]);
+            resetSelectedItem();
+          }
         }
       } else if (entity.isItemNeeded==true && player.selectedItem.name != 'none' && player.selectedItem.name && player.selectedItem.name!=entity.itemNeeded) {
         displayInspect("Unfortunately, that doesn't go there", 100);
