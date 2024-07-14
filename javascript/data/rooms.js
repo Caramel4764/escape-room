@@ -314,6 +314,44 @@ let rooms = {
           'z': "2",
         }
       },
+      {
+        "name": 'vase',
+        'src': './assets/furniture/vase.png',
+        "desc": "There is not a single drop of water left inside",
+        'dims': {
+          'x': "155px",
+          'y': "120px",
+          "width": "160px",
+          'z': "5",
+        }
+      },
+      {
+        "name": 'deadRose',
+        'src': './assets/furniture/dead-rose.png',
+        "desc": "It's completely dried up",
+        'dims': {
+          'x': "190px",
+          'y': "64px",
+          "width": "80px",
+          'z': "4",
+        }
+      },
+      {
+        "name": 'umbrellaStand',
+        'src': './assets/furniture/umbrella-stand.png',
+        "desc": "There's a bunch of umbrellas here",
+        'dims': {
+          'x': "470px",
+          'y': "220px",
+          "width": "160px",
+          'z': "4",
+        },
+        "puzzle": {
+          "type": 'item',
+          "solveDescription": "The key fits perfectly into the lock and you open the box",
+          "itemNeeded": 'key',
+        },
+      },
     ]
   }
   //insert new rooms here
