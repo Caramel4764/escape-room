@@ -66,8 +66,8 @@ function createRoomElement (currRoom) {
         }
         inspectText.innerHTML = inspectMenuInfo.chunkedText[0];
       })
-      console.log(roomContainer)
-      setting.appendChild(entityImg);
+      roomContainer.appendChild(entityImg);
+      roomContainer.style.visibility="hidden"
     })
 }
 export {createRoomElement}

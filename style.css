@@ -127,6 +127,7 @@ img{
   width:1000px;
   height:600px;
   z-index: -5;
+  background-color: rgb(74, 78, 68);
   position: relative;
   overflow: hidden;
 }
