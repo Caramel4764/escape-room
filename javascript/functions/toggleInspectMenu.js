@@ -4,12 +4,7 @@ const inspectMenu = document.querySelector('#inspect-menu')
 const inspectText = document.querySelector('#inspect-text');
 
 gameMask.addEventListener('click', ()=>{
-  console.log('test')
   if (inspectMenuInfo.chunkedText.length > 1) {
-    if (!(inspectMenuInfo.textCounter in inspectMenuInfo.chunkedText)) {
-      return toggleInspectMenu(); 
-    }
-    console.log(`%c ${inspectMenuInfo.chunkedText[inspectMenuInfo.textCounter]} `, 'background: #222; color: #bada55')
       inspectText.innerHTML = inspectMenuInfo.chunkedText[inspectMenuInfo.textCounter];
       inspectMenuInfo.textCounter++;
       if (inspectMenuInfo.textCounter > inspectMenuInfo.chunkedText.length) {
