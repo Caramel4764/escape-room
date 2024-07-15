@@ -183,7 +183,7 @@ let rooms = {
       {
         "name": 'chimney',
         'src': './assets/furniture/chimney.png',
-        "desc": "The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.",
+        "desc": "A fat white-bearded man dressed in red is rumored to enter houses through these.",
         'dims': {
           'x': "170px",
           'y': "0px",
@@ -194,7 +194,7 @@ let rooms = {
       {
         "name": 'fireplace',
         'src': './assets/furniture/fireplace.png',
-        "desc": "The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.",
+        "desc": "Sooty",
         'dims': {
           'x': "60px",
           'y': "110px",
@@ -216,7 +216,7 @@ let rooms = {
       {
         "name": 'picture2',
         'src': './assets/wall/picture-frame-2.png',
-        "desc": 'This painting is titled "Monarach". The captions below says: "Meow"',
+        "desc": 'This painting is titled "Monarach". The captions below says: "Meow, meow, meow"',
         'dims': {
           'x': "530px",
           'y': "220px",
