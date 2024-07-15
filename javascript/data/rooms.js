@@ -176,7 +176,7 @@ let rooms = {
   },
   "fireplace": {
     'name': 'fireplace',
-    'wall': './assets/wall/green-wall.jpeg',
+    'wall': './assets/wall/green-wall.png',
     "floor": './assets/floor/fireplace-carpet-floor.jpg',
     'divider': "./assets/floor/floor-divider.png",
     'entities': [
@@ -185,9 +185,9 @@ let rooms = {
         'src': './assets/furniture/chimney.png',
         "desc": "A fat white-bearded man dressed in red is rumored to enter houses through these.",
         'dims': {
-          'x': "170px",
+          'x': "150px",
           'y': "0px",
-          "width": "230px",
+          "width": "192px",
           'z': "3",
         }
       },
@@ -197,8 +197,8 @@ let rooms = {
         "desc": "Sooty",
         'dims': {
           'x': "60px",
-          'y': "110px",
-          "width": "450px",
+          'y': "180px",
+          "width": "380px",
           'z': "3",
         }
       },
@@ -209,7 +209,7 @@ let rooms = {
         'dims': {
           'x': "760px",
           'y': "10px",
-          "width": "150px",
+          "width": "100px",
           'z': "3",
         }
       },
@@ -220,7 +220,7 @@ let rooms = {
         'dims': {
           'x': "530px",
           'y': "220px",
-          "width": "150px",
+          "width": "100px",
           'z': "3",
         }
       },
@@ -231,7 +231,7 @@ let rooms = {
         'dims': {
           'x': "550px",
           'y': "20px",
-          "width": "150px",
+          "width": "100px",
           'z': "3",
         }
       },
@@ -242,7 +242,7 @@ let rooms = {
         'dims': {
           'x': "700px",
           'y': "220px",
-          "width": "280px",
+          "width": "200px",
           'z': "3",
         }
       },

@@ -18,8 +18,6 @@ function displayInspect(text, limit) {
     } else {
       inspectMenuInfo.prevTextSplitter = inspectMenuInfo.textSplitter;
       inspectMenuInfo.textSplitter = inspectMenuInfo.prevTextSplitter + limit;
-      console.log(`%c ${text.slice(inspectMenuInfo.prevTextSplitter, inspectMenuInfo.textSplitter) == ''}`, 'background-color:green')
-
       while (text[inspectMenuInfo.textSplitter] != " " && inspectMenuInfo.textSplitter < text.length) {
         inspectMenuInfo.textSplitter++;
 
@@ -35,8 +33,6 @@ function displayInspect(text, limit) {
       if (!choppedText == '') {
         inspectMenuInfo.chunkedText.push(choppedText)
       }
-      console.log(`big (more): ${choppedText}`)
-      inspectMenuInfo.chunkedText.map((info) => console.log(`%c ${info}`, "background-color: red;"))
     }
   }
   return inspectMenuInfo.chunkedText;
