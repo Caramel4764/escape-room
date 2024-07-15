@@ -97,7 +97,7 @@ let rooms = {
   },
   "lounge": {
     'name': 'lounge',
-    'wall': './assets/wall/light-orange-wall.png',
+    'wall': './assets/wall/gray-wall.webp',
     "floor": './assets/floor/carpet-floor.jpg',
     'divider': "./assets/floor/floor-divider.png",
     'entities': [
@@ -204,8 +204,8 @@ let rooms = {
       },
       {
         "name": 'picture1',
-        'src': './assets/wall/picture-frame-1.png',
-        "desc": "Picure 1.",
+        'src': './assets/wall/picture-frame-1.png', // "Only you and you alone can conquer yourself."
+        "desc": 'This painting is titled "Anxiety". The captions below says: "Only you and you alone can conquer yourself"',
         'dims': {
           'x': "760px",
           'y': "10px",
@@ -216,7 +216,7 @@ let rooms = {
       {
         "name": 'picture2',
         'src': './assets/wall/picture-frame-2.png',
-        "desc": "Picure 2.",
+        "desc": 'This painting is titled "Monarach". The captions below says: "Meow"',
         'dims': {
           'x': "530px",
           'y': "220px",
@@ -227,7 +227,7 @@ let rooms = {
       {
         "name": 'picture3',
         'src': './assets/wall/picture-frame-3.png',
-        "desc": "Picure 3.",
+        "desc": 'This painting is titled "Best Boi" with no context...You are suddenly filled with a strange urge to feed it scraps.',
         'dims': {
           'x': "550px",
           'y': "20px",
