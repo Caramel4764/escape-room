@@ -95,8 +95,6 @@ let rooms = {
       },
     ]
   },
-
-
   "lounge": {
     'name': 'lounge',
     'wall': './assets/wall/light-orange-wall.png',
@@ -175,7 +173,81 @@ let rooms = {
         },
       },
     ]
-  }
+  },
+  "fireplace": {
+    'name': 'fireplace',
+    'wall': './assets/wall/green-wall.jpeg',
+    "floor": './assets/floor/fireplace-carpet-floor.jpg',
+    'divider': "./assets/floor/floor-divider.png",
+    'entities': [
+      {
+        "name": 'chimney',
+        'src': './assets/furniture/chimney.png',
+        "desc": "The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.",
+        'dims': {
+          'x': "170px",
+          'y': "0px",
+          "width": "230px",
+          'z': "3",
+        }
+      },
+      {
+        "name": 'fireplace',
+        'src': './assets/furniture/fireplace.png',
+        "desc": "The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.",
+        'dims': {
+          'x': "60px",
+          'y': "110px",
+          "width": "450px",
+          'z': "3",
+        }
+      },
+      {
+        "name": 'picture1',
+        'src': './assets/wall/picture-frame-1.png',
+        "desc": "Picure 1.",
+        'dims': {
+          'x': "760px",
+          'y': "10px",
+          "width": "150px",
+          'z': "3",
+        }
+      },
+      {
+        "name": 'picture2',
+        'src': './assets/wall/picture-frame-2.png',
+        "desc": "Picure 2.",
+        'dims': {
+          'x': "530px",
+          'y': "220px",
+          "width": "150px",
+          'z': "3",
+        }
+      },
+      {
+        "name": 'picture3',
+        'src': './assets/wall/picture-frame-3.png',
+        "desc": "Picure 3.",
+        'dims': {
+          'x': "550px",
+          'y': "20px",
+          "width": "150px",
+          'z': "3",
+        }
+      },
+      {
+        "name": 'picture4',
+        'src': './assets/wall/picture-frame-4.png',
+        "desc": "Picure 4.",
+        'dims': {
+          'x': "700px",
+          'y': "220px",
+          "width": "280px",
+          'z': "3",
+        }
+      },
+    ]
+  },
   //insert new rooms here
 }
 
@@ -183,6 +255,7 @@ export {rooms};
 
 /*
 "entrance": {
+    'name': 'fireplace',
     'wall': './assets/wall/wood-wall.jpg',
     "floor": './assets/floor/wood-floor.png',
     'divider': "./assets/floor/floor-divider.png",
