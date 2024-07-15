@@ -205,7 +205,7 @@ let rooms = {
       {
         "name": 'picture1',
         'src': './assets/wall/picture-frame-1.png', // "Only you and you alone can conquer yourself."
-        "desc": 'This painting is titled "Anxiety". The captions below says: "Only you and you alone can conquer yourself"',
+        "desc": 'This painting is titled "Anxiety".',//The captions below says: "Only you and you alone can conquer yourself"
         'dims': {
           'x': "760px",
           'y': "10px",
