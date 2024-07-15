@@ -5,6 +5,7 @@ function displayInspect(text, limit) {
   inspectMenuInfo.textSplitter = 0;
   let snipTime = Math.floor(text.length/limit)+1;
   if (snipTime == 1) {
+    console.log(`small: ${text}`)
     return inspectMenuInfo.chunkedText.push(text);
   }
   for(let i = 0; i<snipTime;i++) {
@@ -13,7 +14,9 @@ function displayInspect(text, limit) {
       while (text[inspectMenuInfo.textSplitter] != " " && text[inspectMenuInfo.textSplitter] != "") {
         inspectMenuInfo.textSplitter++;
       }
-      inspectMenuInfo.chunkedText.push(text.slice(0, inspectMenuInfo.textSplitter));
+      let test = text.slice(0, inspectMenuInfo.textSplitter)
+      inspectMenuInfo.chunkedText.push(test);
+      console.log(`big (first): ${test}`)
     } else {
       inspectMenuInfo.prevTextSplitter = inspectMenuInfo.textSplitter;
       inspectMenuInfo.textSplitter = inspectMenuInfo.prevTextSplitter + limit;
@@ -23,7 +26,10 @@ function displayInspect(text, limit) {
           return inspectMenuInfo.chunkedText.push(text.slice(inspectMenuInfo.prevTextSplitter, inspectMenuInfo.textSplitter));
         }
       }
-      inspectMenuInfo.chunkedText.push(text.slice(inspectMenuInfo.prevTextSplitter, inspectMenuInfo.textSplitter))
+      let test = text.slice(inspectMenuInfo.prevTextSplitter, inspectMenuInfo.textSplitter)
+      inspectMenuInfo.chunkedText.push(test)
+      console.log(`big (more): ${test}`)
+      inspectMenuInfo.chunkedText.map((info) => console.log(info))
     }
   }
   return inspectMenuInfo.chunkedText;
