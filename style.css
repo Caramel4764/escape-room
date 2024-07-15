@@ -16,7 +16,9 @@ img{
   -webkit-user-select: none;
   -ms-user-select: none;
 }
-
+#wall {
+  width:1000px;
+}
 #wall-div {
   width:1000px;
   z-index: -1;
