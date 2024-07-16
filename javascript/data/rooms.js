@@ -15,7 +15,7 @@ let rooms = {
         "desc": "The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.",
         'dims': {
           'x': "640px",
-          'y': "90px",
+          'y': "50px",
           "width": "350px",
           'z': "3",
         }
@@ -26,7 +26,7 @@ let rooms = {
         "desc": "You feel a bump near the corner.There's something underneath",
         'dims': {
           'x': "343px",
-          'y': "475px",
+          'y': "450px",
           "width": "315px",
           'z': "3",
         }
@@ -37,7 +37,7 @@ let rooms = {
         "desc": "The door which you came in",
         'dims': {
           'x': "400px",
-          'y': "82px",
+          'y': "54px",
           "width": "200px",
           'z': 3,
         }
@@ -48,7 +48,7 @@ let rooms = {
         "desc": "All the shoes are brand new and look unworn. The sizes from left to right are 8, 10, 15",
         'dims': {
           'x': "40px",
-          'y': "380px",
+          'y': "370px",
           "width": "280px",
           'z': 3,
         },
@@ -59,7 +59,7 @@ let rooms = {
         "desc": "Surprise, surprise. It's locked. There's this hidden rule that if there isn't a locked container in plain sight, it's not a real escape room.",
         'dims': {
           'x': "700px",
-          'y': "348px",
+          'y': "307px",
           "width": "100px",
           'z': 3,
         },
@@ -75,21 +75,9 @@ let rooms = {
         'src': './assets/object/key.png',
         "desc": "You've found a key!",
         'dims': {
-          'x': "600px",
-          'y': "540px",
+          'x': "590px",
+          'y': "510px",
           "width": "30px",
-          'z': 3,
-        },
-      },
-      {
-        "name": 'key2',
-        'isItem': true,
-        'src': './assets/object/key2.png',
-        "desc": "It's a key",
-        'dims': {
-          'x': "800px",
-          'y': "540px",
-          "width": "50px",
           'z': 3,
         },
       },
@@ -118,7 +106,7 @@ let rooms = {
         "desc": "It's covered in dust. The drawer is locked.",
         'dims': {
           'x': "80px",
-          'y': "260px",
+          'y': "290px",
           "width": "300px",
           'z': "3",
         },
@@ -145,7 +133,7 @@ let rooms = {
         "desc": "There is not a single drop of water left inside",
         'dims': {
           'x': "155px",
-          'y': "120px",
+          'y': "150px",
           "width": "160px",
           'z': "5",
         }
@@ -156,7 +144,7 @@ let rooms = {
         "desc": "It's completely dried up",
         'dims': {
           'x': "190px",
-          'y': "64px",
+          'y': "84px",
           "width": "80px",
           'z': "4",
         }
@@ -170,6 +158,18 @@ let rooms = {
           'y': "220px",
           "width": "160px",
           'z': "4",
+        },
+      },
+      {
+        "name": 'key2',
+        'isItem': true,
+        'src': './assets/object/key2.png',
+        "desc": "It's a key",
+        'dims': {
+          'x': "830px",
+          'y': "330px",
+          "width": "50px",
+          'z': 3,
         },
       },
     ]
@@ -197,52 +197,52 @@ let rooms = {
         "desc": "Sooty",
         'dims': {
           'x': "60px",
-          'y': "180px",
+          'y': "230px",
           "width": "380px",
           'z': "3",
         }
       },
       {
         "name": 'picture1',
-        'src': './assets/wall/picture-frame-1.png',
-        "desc": 'This painting is titled "Anxiety". The captions below says: "Only you and you alone can conquer yourself"',
+        'src': './assets/wall/artwork/anxiety.png',
+        "desc": 'This piece is titled "Anxiety". The captions below says: "Only you and you alone can conquer yourself"',
         'dims': {
-          'x': "760px",
+          'x': "410px",
           'y': "10px",
-          "width": "100px",
+          "width": "140px",
           'z': "3",
         }
       },
       {
         "name": 'picture2',
         'src': './assets/wall/picture-frame-2.png',
-        "desc": 'This painting is titled "Monarach". The captions below says: "Meow, meow, meow"',
+        "desc": 'This piece is titled "Monarach". The captions below says: "Meow, meow, meow"',
         'dims': {
-          'x': "530px",
-          'y': "220px",
-          "width": "100px",
+          'x': "620px",
+          'y': "20px",
+          "width": "120px",
           'z': "3",
         }
       },
       {
         "name": 'picture3',
         'src': './assets/wall/picture-frame-3.png',
-        "desc": 'This painting is titled "Best Boi" with no context...You are suddenly filled with a strange urge to feed it scraps.',
+        "desc": 'This piece is titled "Best Boi" with no context...You are suddenly filled with a strange urge to give it scraps.',
         'dims': {
-          'x': "550px",
-          'y': "20px",
-          "width": "100px",
+          'x': "470px",
+          'y': "200px",
+          "width": "140px",
           'z': "3",
         }
       },
       {
-        "name": 'picture4',
-        'src': './assets/wall/picture-frame-4.png',
-        "desc": "Picure 4.",
+        "name": 'elevatedShelf',
+        'src': './assets/furniture/elevated-shelf.png',
+        "desc": "What an elevated Design!",
         'dims': {
-          'x': "700px",
-          'y': "220px",
-          "width": "200px",
+          'x': "630px",
+          'y': "150px",
+          "width": "350px",
           'z': "3",
         }
       },
