@@ -67,6 +67,10 @@ let rooms = {
           "type": 'item',
           "solveDescription": "The key fits perfectly into the lock and you open the box",
           "itemNeeded": 'key2',
+          "solveFunction": () => {
+            console.log('test')
+          },
+          "solveImg": "./assets/furniture/vase.png"
         },
       },
       {

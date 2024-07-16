@@ -22,11 +22,6 @@ function createRoomElement (currRoom) {
   woodFloorDiv.setAttribute('id', 'wood-floor-div');
   woodFloorDiv.appendChild(floor);
   roomContainer.appendChild(woodFloorDiv);
-  /*let divider = document.createElement('img');
-  divider.src = currRoom.divider;
-  divider.setAttribute('id', 'wood-floor-divider')
-  divider.style.zIndex = '10';
-  woodFloorDiv.append(divider);*/
   let wall = document.createElement('img')
   wall.src = currRoom.wall;
   wall.setAttribute('id', 'wall');
@@ -53,6 +48,10 @@ function createRoomElement (currRoom) {
       }
       if (entity.puzzle && entity.puzzle.type=='item' && player.selectedItem.name == entity.puzzle.itemNeeded) {
         displayInspect(entity.puzzle.solveDescription, 100);
+        if (entity.puzzle.solveFunction) {
+          entity.puzzle.solveFunction();
+          entityImg.src=entity.puzzle.solveImg
+        }
         for (let i = 0; i < inventoryInfo.length; i++) {
           if (inventoryInfo[i].name == entity.puzzle.itemNeeded) {
             inventoryInfo.splice(i, 1);
