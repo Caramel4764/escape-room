@@ -292,7 +292,7 @@ let rooms = {
       {
         "name": 'bush1',
         'src': './assets/furniture/long-bush.png',
-        "desc": "It's a statue of a frog. There's something gleaming inside its throat but your hands are too big to reach inside",
+        "desc": "It's a bushy bush",
         'dims': {
           'x': "-30px",
           'y': "310px",
@@ -303,7 +303,7 @@ let rooms = {
       {
         "name": 'bush2',
         'src': './assets/furniture/long-bush.png',
-        "desc": "It's a statue of a frog. There's something gleaming inside its throat but your hands are too big to reach inside",
+        "desc": "It's a bushy bush",
         'dims': {
           'x': "500px",
           'y': "310px",
@@ -357,7 +357,7 @@ let rooms = {
         "puzzle": {
           "type": 'item',
           'isSolved': false,
-          'src': './assets/furniture/fountain.png',
+          'solveImg': './assets/furniture/fountain.png',
           "solveDescription": "You fill up your cup with the fountain.",
           'afterDesc': "It's still gross",
           "itemNeeded": 'emptyGlass',
