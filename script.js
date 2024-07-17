@@ -5,6 +5,7 @@ import {goRoom} from './javascript/functions/goRoom.js';
 let fireplaceBtn = document.querySelector('#fireplace-btn');
 let entranceBtn = document.querySelector('#entrance-btn');
 let loungeBtn = document.querySelector('#lounge-btn');
+let courtyardBtn = document.querySelector('#courtyard-btn');
 entranceBtn.addEventListener('click', function() {
   goRoom('entrance');
 })
@@ -14,12 +15,15 @@ loungeBtn.addEventListener('click', function() {
 fireplaceBtn.addEventListener('click', function() {
   goRoom('fireplace');
 })
+courtyardBtn.addEventListener('click', function() {
+  goRoom('courtyard');
+})
 player.currRoom = rooms.lounge;
 displayRoom(player.currRoom);
 player.currRoom = rooms.entrance;
 displayRoom(player.currRoom);
 player.currRoom = rooms.fireplace;
 displayRoom(player.currRoom);
-player.currRoom = rooms.courthouse;
+player.currRoom = rooms.courtyard;
 displayRoom(player.currRoom);
-goRoom('courthouse');
+goRoom('courtyard');

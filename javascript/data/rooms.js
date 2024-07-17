@@ -258,11 +258,23 @@ let rooms = {
           'z': "3",
         }
       },
+      {
+        "name": 'emptyGlass',
+        'isItem': true,
+        'src': './assets/object/empty-glass.png',
+        "desc": "You've obtained an empty glass!",
+        'dims': {
+          'x': "790px",
+          'y': "200px",
+          "width": "50px",
+          'z': 3,
+        },
+      },
     ]
   },
-  "courthouse": {
-    'name': 'courthouse',
-    'wall': './assets/wall/courthouse-wall.jpg',
+  "courtyard": {
+    'name': 'courtyard',
+    'wall': './assets/wall/courtyard-wall.jpg',
     "floor": './assets/floor/tile-floor.png',
     'divider': "./assets/floor/floor-divider.png",
     'entities': [
@@ -271,22 +283,88 @@ let rooms = {
         'src': './assets/furniture/frog-statue.png',
         "desc": "It's a statue of a frog. There's something gleaming inside its throat but your hands are too big to reach inside",
         'dims': {
-          'x': "790px",
+          'x': "600px",
           'y': "420px",
           "width": "150px",
+          'z': "4",
+        }
+      },
+      {
+        "name": 'bush1',
+        'src': './assets/furniture/long-bush.png',
+        "desc": "It's a statue of a frog. There's something gleaming inside its throat but your hands are too big to reach inside",
+        'dims': {
+          'x': "-30px",
+          'y': "310px",
+          "width": "600px",
+          'z': "3",
+        }
+      },
+      {
+        "name": 'bush2',
+        'src': './assets/furniture/long-bush.png',
+        "desc": "It's a statue of a frog. There's something gleaming inside its throat but your hands are too big to reach inside",
+        'dims': {
+          'x': "500px",
+          'y': "310px",
+          "width": "600px",
+          'z': "3",
+        }
+      },
+      {
+        "name": 'gnome',
+        'src': './assets/furniture/gnome.webp',
+        "desc": "Okay, tell me that isn't creepy looking",
+        'dims': {
+          'x': "260px",
+          'y': "340px",
+          "width": "80px",
+          'z': "3",
+        }
+      },
+      {
+        "name": 'blueFlower',
+        'src': './assets/furniture/blue-flower.png',
+        "desc": "Very healthy looking",
+        'dims': {
+          'x': "-75px",
+          'y': "442px",
+          "width": "320px",
+          'z': "3",
+        }
+      },
+      {
+        "name": 'pinkFlower',
+        'src': './assets/furniture/pink-flower.png',
+        "desc": "Very healthy looking",
+        'dims': {
+          'x': "780px",
+          'y': "440px",
+          "width": "370px",
           'z': "3",
         }
       },
       {
         "name": 'fountain',
         'src': './assets/furniture/fountain.png',
-        "desc": "It's a fountain",
+        "desc": "There's a bunch of dead flies in the fountain. Gross.",
         'dims': {
-          'x': "380px",
+          'x': "340px",
           'y': "120px",
           "width": "300px",
           'z': "3",
-        }
+        },
+        "puzzle": {
+          "type": 'item',
+          'isSolved': false,
+          'src': './assets/furniture/fountain.png',
+          "solveDescription": "You fill up your cup with the fountain.",
+          'afterDesc': "It's still gross",
+          "itemNeeded": 'emptyGlass',
+          "solveFunction": () => {
+            console.log('test')
+          },
+        },
       },
     ]
   },

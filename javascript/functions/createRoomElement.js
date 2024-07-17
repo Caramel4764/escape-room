@@ -12,7 +12,11 @@ const inspectText = document.querySelector('#inspect-text');
 
 function showImg (entity, entityImg) {
   if (entity.puzzle && entity.puzzle.isSolved) {
+    if (entity.puzzle.solveImg) {
     entityImg.src=entity.puzzle.solveImg;
+    } else {
+      entityImg.src=entity.src;
+    }
   } else {
     entityImg.src=entity.src;
   }
