@@ -65,12 +65,14 @@ let rooms = {
         },
         "puzzle": {
           "type": 'item',
+          'isSolve': false,
+          "solveImg": "./assets/furniture/vase.png",
           "solveDescription": "The key fits perfectly into the lock and you open the box",
+          'afterDesc': "The drawer is already unlocked.",
           "itemNeeded": 'key2',
           "solveFunction": () => {
             console.log('test')
           },
-          "solveImg": "./assets/furniture/vase.png"
         },
       },
       {
@@ -116,8 +118,14 @@ let rooms = {
         },
         "puzzle": {
           "type": 'item',
+          'isSolve': false,
+          'solveImg': './assets/furniture/key.png',
           "solveDescription": "The key fits perfectly into the lock and you open the box",
+          'afterDesc': "The drawer is already unlocked.",
           "itemNeeded": 'key',
+          "solveFunction": () => {
+            console.log('test')
+          },
         },
       },
       {
