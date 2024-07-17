@@ -115,6 +115,7 @@ let rooms = {
           'y': "290px",
           "width": "300px",
           'z': "3",
+          
         },
         "puzzle": {
           "type": 'item',
