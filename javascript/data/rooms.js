@@ -68,7 +68,7 @@ let rooms = {
           'isSolved': false,
           "solveImg": "./assets/furniture/vase.png",
           "solveDescription": "The key fits perfectly into the lock and you open the box",
-          'afterDesc': "The drawer is already unlocked.",
+          'afterDesc': "There's no more stuff in here. Look elsewhere",
           "itemNeeded": 'key2',
           "solveFunction": () => {
             console.log('test')
