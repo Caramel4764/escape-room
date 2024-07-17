@@ -20,4 +20,6 @@ player.currRoom = rooms.entrance;
 displayRoom(player.currRoom);
 player.currRoom = rooms.fireplace;
 displayRoom(player.currRoom);
-goRoom('fireplace');
+player.currRoom = rooms.courthouse;
+displayRoom(player.currRoom);
+goRoom('courthouse');

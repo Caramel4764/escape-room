@@ -260,6 +260,36 @@ let rooms = {
       },
     ]
   },
+  "courthouse": {
+    'name': 'courthouse',
+    'wall': './assets/wall/courthouse-wall.jpg',
+    "floor": './assets/floor/tile-floor.png',
+    'divider': "./assets/floor/floor-divider.png",
+    'entities': [
+      {
+        "name": 'frogStatue',
+        'src': './assets/furniture/frog-statue.png',
+        "desc": "It's a statue of a frog. There's something gleaming inside its throat but your hands are too big to reach inside",
+        'dims': {
+          'x': "790px",
+          'y': "420px",
+          "width": "150px",
+          'z': "3",
+        }
+      },
+      {
+        "name": 'fountain',
+        'src': './assets/furniture/fountain.png',
+        "desc": "It's a fountain",
+        'dims': {
+          'x': "380px",
+          'y': "120px",
+          "width": "300px",
+          'z': "3",
+        }
+      },
+    ]
+  },
   //insert new rooms here
 }
 
