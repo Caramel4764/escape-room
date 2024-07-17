@@ -32,7 +32,12 @@ function createRoomElement (currRoom) {
   //gives interactivity
   currRoom.entities.map((entity)=>{
     let entityImg = document.createElement("img");
-    entityImg.src=entity.src;
+    if (entity.puzzle && entity.puzzle.isSolved) {
+      entityImg.src=entity.puzzle.solveImg;
+    } else {
+      entityImg.src=entity.src;
+    }
+    
     entityImg.style.top=entity.dims.y;
     entityImg.style.left=entity.dims.x;
     entityImg.style.width=entity.dims.width;
