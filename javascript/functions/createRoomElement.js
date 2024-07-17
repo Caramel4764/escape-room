@@ -5,7 +5,7 @@ import {addItem} from './addItem.js'
 import {inventoryInfo} from '../data/inventory.js';
 import {player} from "../data/player.js"
 import {resetSelectedItem} from "./resetSelectedItem.js"
-import {createdRoom} from '../data/createdRoom.js';
+import {locations} from '../data/locations.js';
 const setting = document.querySelector('#room');
 const inspectImg = document.querySelector('#inspect-image');
 const inspectText = document.querySelector('#inspect-text');
@@ -83,6 +83,8 @@ function createRoomElement (currRoom) {
     })
     roomContainer.appendChild(entityImg);
   })
-  createdRoom.push(roomContainer)
+  console.log(roomContainer)
+
+  locations.push(roomContainer)
 }
 export {createRoomElement}

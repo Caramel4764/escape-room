@@ -1,2 +1,0 @@
-let createdRoom = [];
-export {createdRoom}

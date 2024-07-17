@@ -1,9 +1,9 @@
 import {player} from '../data/player.js';
-import {createdRoom} from "../data/createdRoom.js";
+import {locations} from "../data/locations.js";
 
 function goRoom (currRoom) {
   player.currRoom = currRoom;
-  createdRoom.map((room, index) => {
+  locations.map((room, index) => {
     room.style.visibility = 'hidden';
     if (room.id == player.currRoom) {
       room.style.visibility = 'visible';
