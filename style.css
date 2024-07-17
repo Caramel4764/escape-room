@@ -89,17 +89,6 @@ img{
   visibility: hidden;
   z-index: 80;
 }
-#inventory {
-  display:flex;
-  flex-direction: column;
-  background-color: #ffe499;
-  width:80px;
-  height:600px;
-  overflow:scroll;
-}
-#inventory::-webkit-scrollbar {
-  display: none;
-}
 .item img{
   position: static;
   width:100%;
@@ -156,4 +145,41 @@ img{
 }
 .selectedItem {
   background-color: rgb(190, 166, 101);
+}
+#mapIcon {
+  width: 80px;
+  height: 80px;
+  right: 0px;
+  z-index: 50;
+  background-color: #c79200;
+  position:relative;
+  -webkit-filter: brightness(80%);
+
+}
+#mapIcon:hover {
+  -webkit-filter: brightness(100%);
+  background-color: #c79200;;
+}
+#inventoryColumn {
+  display:flex;
+  flex-direction: column;
+  width: 80px;
+  height: 600px;
+  position:absolute;
+  right: 0px;
+  z-index: 50;
+  margin:0px;
+  padding:0px;
+}
+#inventory {
+  display:flex;
+  flex-direction: column;
+  background-color: #ffe499;
+  width:80px;
+  position:relative;
+  height:520px;
+  overflow:scroll;
+}
+#inventory::-webkit-scrollbar {
+  display: none;
 }
