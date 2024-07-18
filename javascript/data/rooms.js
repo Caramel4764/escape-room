@@ -5,6 +5,11 @@ let rooms = {
   },
   "entrance": {
     'name': 'entrance',
+    'icon': {
+      "src":'./assets/misc/exit-icon.jpg',
+      'x': "0px",
+      'y': "100px",
+    },
     'wall': './assets/wall/wood-wall.jpg',
     "floor": './assets/floor/wood-floor.png',
     'divider': "./assets/floor/floor-divider.png",
@@ -12,7 +17,7 @@ let rooms = {
       {
         "name": 'shelf',
         'src': './assets/furniture/shelf.png',
-        "desc": "The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.",
+        "desc": "Smells like freshly cut pine wood.",
         'dims': {
           'x': "640px",
           'y': "50px",
@@ -34,7 +39,7 @@ let rooms = {
       {
         "name": 'exitDoor',
         'src': './assets/wall/exit-door.png',
-        "desc": "The door which you came in",
+        "desc": "The door which you came in from",
         'dims': {
           'x': "400px",
           'y': "54px",
@@ -65,13 +70,16 @@ let rooms = {
         },
         "puzzle": {
           "type": 'item',
+          'isSolved': false,
+          /*"solveImg": "./assets/furniture/vase.png",*/
+          "solveDescription": "The key fits perfectly into the lock and you open the box",
+          'afterDesc': "There's no more stuff in here. Look elsewhere",
           'isSolve': false,
           "solveImg": "./assets/furniture/vase.png",
           "solveDescription": "The key fits perfectly into the lock and you open the box",
           'afterDesc': "The drawer is already unlocked.",
           "itemNeeded": 'key2',
           "solveFunction": () => {
-            console.log('test')
           },
         },
       },
@@ -91,6 +99,11 @@ let rooms = {
   },
   "lounge": {
     'name': 'lounge',
+    'icon': {
+      "src":'./assets/misc/lounge-icon.png',
+      'x': "-160px",
+      'y': "220px",
+    },
     'wall': './assets/wall/gray-wall.webp',
     "floor": './assets/floor/carpet-floor.jpg',
     'divider': "./assets/floor/floor-divider.png",
@@ -118,13 +131,11 @@ let rooms = {
         },
         "puzzle": {
           "type": 'item',
-          'isSolve': false,
-          'solveImg': './assets/furniture/key.png',
+          'isSolved': false,
           "solveDescription": "The key fits perfectly into the lock and you open the box",
           'afterDesc': "The drawer is already unlocked.",
           "itemNeeded": 'key',
           "solveFunction": () => {
-            console.log('test')
           },
         },
       },
@@ -188,6 +199,11 @@ let rooms = {
   },
   "fireplace": {
     'name': 'fireplace',
+    'icon': {
+      "src":'./assets/misc/fireplace-icon.png',
+      'x': "0px",
+      'y': "300px",
+    },
     'wall': './assets/wall/green-wall.png',
     "floor": './assets/floor/fireplace-carpet-floor.jpg',
     'divider': "./assets/floor/floor-divider.png",
@@ -257,6 +273,117 @@ let rooms = {
           "width": "350px",
           'z': "3",
         }
+      },
+      {
+        "name": 'emptyGlass',
+        'isItem': true,
+        'src': './assets/object/empty-glass.png',
+        "desc": "You've obtained an empty glass!",
+        'dims': {
+          'x': "790px",
+          'y': "200px",
+          "width": "50px",
+          'z': 3,
+        },
+      },
+    ]
+  },
+  "courtyard": {
+    'name': 'courtyard',
+    'icon': {
+      "src":'./assets/misc/courtyard-icon.png',
+      'x': "160px",
+      'y': "200px",
+    },
+    'wall': './assets/wall/courtyard-wall.jpg',
+    "floor": './assets/floor/tile-floor.png',
+    'divider': "./assets/floor/floor-divider.png",
+    'entities': [
+      {
+        "name": 'frogStatue',
+        'src': './assets/furniture/frog-statue.png',
+        "desc": "It's a statue of a frog. There's something gleaming inside its throat but your hands are too big to reach inside",
+        'dims': {
+          'x': "600px",
+          'y': "420px",
+          "width": "150px",
+          'z': "4",
+        }
+      },
+      {
+        "name": 'bush1',
+        'src': './assets/furniture/long-bush.png',
+        "desc": "It's a bushy bush",
+        'dims': {
+          'x': "-30px",
+          'y': "310px",
+          "width": "600px",
+          'z': "3",
+        }
+      },
+      {
+        "name": 'bush2',
+        'src': './assets/furniture/long-bush.png',
+        "desc": "It's a bushy bush",
+        'dims': {
+          'x': "500px",
+          'y': "310px",
+          "width": "600px",
+          'z': "3",
+        }
+      },
+      {
+        "name": 'gnome',
+        'src': './assets/furniture/gnome.webp',
+        "desc": "Okay, tell me that isn't creepy looking",
+        'dims': {
+          'x': "260px",
+          'y': "340px",
+          "width": "80px",
+          'z': "3",
+        }
+      },
+      {
+        "name": 'blueFlower',
+        'src': './assets/furniture/blue-flower.png',
+        "desc": "Very healthy looking",
+        'dims': {
+          'x': "-75px",
+          'y': "442px",
+          "width": "320px",
+          'z': "3",
+        }
+      },
+      {
+        "name": 'pinkFlower',
+        'src': './assets/furniture/pink-flower.png',
+        "desc": "It's some pretty flowers",
+        'dims': {
+          'x': "780px",
+          'y': "440px",
+          "width": "370px",
+          'z': "3",
+        }
+      },
+      {
+        "name": 'fountain',
+        'src': './assets/furniture/fountain.png',
+        "desc": "There's a bunch of dead flies in the fountain. Gross.",
+        'dims': {
+          'x': "340px",
+          'y': "120px",
+          "width": "300px",
+          'z': "3",
+        },
+        "puzzle": {
+          "type": 'item',
+          'isSolved': false,
+          "solveDescription": "You fill up your cup with the fountain.",
+          'afterDesc': "It's still gross",
+          "itemNeeded": 'emptyGlass',
+          "solveFunction": () => {
+          },
+        },
       },
     ]
   },

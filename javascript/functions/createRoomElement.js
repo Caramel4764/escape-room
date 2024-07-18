@@ -5,11 +5,18 @@ import {addItem} from './addItem.js'
 import {inventoryInfo} from '../data/inventory.js';
 import {player} from "../data/player.js"
 import {resetSelectedItem} from "./resetSelectedItem.js"
-import {createdRoom} from '../data/createdRoom.js';
+import {locations} from '../data/locations.js';
 const setting = document.querySelector('#room');
 const inspectImg = document.querySelector('#inspect-image');
 const inspectText = document.querySelector('#inspect-text');
 
+function showImg (entity, entityImg) {
+  if (entity.puzzle && entity.puzzle.isSolved&&entity.puzzle.solveImg) {
+    entityImg.src=entity.puzzle.solveImg;
+  } else {
+    entityImg.src=entity.src;
+  }
+}
 function createRoomElement (currRoom) {
   let roomContainer = document.createElement('div');
   roomContainer.classList.add('room-container');
@@ -32,25 +39,31 @@ function createRoomElement (currRoom) {
   //gives interactivity
   currRoom.entities.map((entity)=>{
     let entityImg = document.createElement("img");
-    entityImg.src=entity.src;
+    showImg(entity, entityImg);
     entityImg.style.top=entity.dims.y;
     entityImg.style.left=entity.dims.x;
     entityImg.style.width=entity.dims.width;
     entityImg.style.zIndex=entity.dims.z;
     entityImg.addEventListener('click', () => {
+      if (entity.puzzle && entity.puzzle.isSolved) {
+        displayInspect(entity.puzzle.afterDesc, 100);
+      } else {
       displayInspect(entity.desc, 100);
-      inspectImg.src = entity.src;
+      }
+      showImg(entity, inspectImg);
       toggleInspectMenu();
       //if item, add to inventory
       if (entity.isItem) {
         addItem(entity);
         roomContainer.removeChild(entityImg);
       }
+      //solved
       if (entity.puzzle && entity.puzzle.type=='item' && player.selectedItem.name == entity.puzzle.itemNeeded) {
         displayInspect(entity.puzzle.solveDescription, 100);
+        entity.puzzle.isSolved=true;
         if (entity.puzzle.solveFunction) {
           entity.puzzle.solveFunction();
-          entityImg.src=entity.puzzle.solveImg
+          showImg(entity, entityImg);
         }
         for (let i = 0; i < inventoryInfo.length; i++) {
           if (inventoryInfo[i].name == entity.puzzle.itemNeeded) {
@@ -66,6 +79,6 @@ function createRoomElement (currRoom) {
     })
     roomContainer.appendChild(entityImg);
   })
-  createdRoom.push(roomContainer)
+  locations.push(roomContainer)
 }
 export {createRoomElement}

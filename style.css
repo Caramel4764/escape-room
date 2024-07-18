@@ -33,7 +33,7 @@ img{
   height: 150px;
   position:absolute;
   bottom:0px;
-  background-color: red;
+  background-color: rgb(255, 201, 114);
   
 }
 #exit-door {
@@ -88,17 +88,6 @@ img{
   position: absolute;
   visibility: hidden;
   z-index: 80;
-}
-#inventory {
-  display:flex;
-  flex-direction: column;
-  background-color: #ffe499;
-  width:80px;
-  height:600px;
-  overflow:scroll;
-}
-#inventory::-webkit-scrollbar {
-  display: none;
 }
 .item img{
   position: static;
@@ -156,4 +145,82 @@ img{
 }
 .selectedItem {
   background-color: rgb(190, 166, 101);
+}
+
+#inventoryColumn {
+  display:flex;
+  flex-direction: column;
+  width: 80px;
+  height: 600px;
+  position:absolute;
+  right: 0px;
+  z-index: 50;
+  margin:0px;
+  padding:0px;
+}
+#inventory {
+  display:flex;
+  flex-direction: column;
+  background-color: #ffe499;
+  width:80px;
+  position:relative;
+  height:520px;
+  overflow:scroll;
+}
+#inventory::-webkit-scrollbar {
+  display: none;
+}
+#map-div {
+  width: 900px;
+  display:flex;
+  justify-content: center;
+  visibility: hidden;
+  z-index:100px;
+}
+#map {
+  width: 100%;
+  position:relative;
+  height: 100%;
+  object-fit: contain;
+}
+.center-div {
+  display:flex;
+  width:1000px;
+  height: 600px;
+  z-index: -4;
+  position:absolute;
+  visibility: hidden;
+  justify-content: center;
+}
+#map-icon-div {
+  position: absolute;
+}
+.map-icon {
+  width: 90px;
+}
+.map-icon-div {
+  width: 90px;
+  height: 90px;
+  position: absolute;
+  z-index: 60;
+}
+.map-icon-div-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: 100;
+}
+#mapIcon {
+  width: 80px;
+  height: 80px;
+  right: 0px;
+  z-index: 50;
+  background-color: #c79200;
+  position:relative;
+  -webkit-filter: brightness(92%);
+
+}
+#mapIcon:hover {
+  -webkit-filter: brightness(100%);
+  background-color: #c79200;;
 }
