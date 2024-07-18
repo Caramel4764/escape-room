@@ -11,15 +11,30 @@ const inspectImg = document.querySelector('#inspect-image');
 const inspectText = document.querySelector('#inspect-text');
 
 function showImg (entity, entityImg) {
-  if (entity.puzzle && entity.puzzle.isSolved) {
-    if (entity.puzzle.solveImg) {
-    entityImg.src=entity.puzzle.solveImg;
+  entityImg.src=entity.src;
+  console.log('test')
+  //console.log(&&entity.puzzle.isSolved!=undefined&&entity.puzzle.solveImg!=undefined)
+  if (entity.puzzle) {
+    console.log('fired')
+    //entityImg.src=entity.puzzle.solveImg;
+  }
+  /*if (entity.puzzle) {
+    //console.log(entity.puzzle.solveImg)
+    //solved
+    if (entity.puzzle.isSolved) {
+      //console.log(entity.puzzle.solveImg)
+      if (entity.puzzle.solveImg) {
+        entityImg.src=entity.puzzle.solveImg;
+      } else {
+        entityImg.src=entity.src;
+      }
+      //not solved
     } else {
       entityImg.src=entity.src;
     }
   } else {
     entityImg.src=entity.src;
-  }
+  }*/
 }
 function createRoomElement (currRoom) {
   let roomContainer = document.createElement('div');

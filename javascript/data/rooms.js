@@ -72,7 +72,7 @@ let rooms = {
         "puzzle": {
           "type": 'item',
           'isSolved': false,
-          "solveImg": "./assets/furniture/vase.png",
+          /*"solveImg": "./assets/furniture/vase.png",*/
           "solveDescription": "The key fits perfectly into the lock and you open the box",
           'afterDesc': "There's no more stuff in here. Look elsewhere",
           "itemNeeded": 'key2',
