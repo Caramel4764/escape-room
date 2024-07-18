@@ -25,7 +25,6 @@ function createMapIcons() {
         mapIcon.style.y = currRoom.icon.y;
         mapIcon.style.width = '100px';
         mapIcon.addEventListener('click', ()=>{
-          console.log('click')
           goRoom(currRoom.name);
           toggleMap();
         })
