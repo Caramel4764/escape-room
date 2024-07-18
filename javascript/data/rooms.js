@@ -74,6 +74,10 @@ let rooms = {
           /*"solveImg": "./assets/furniture/vase.png",*/
           "solveDescription": "The key fits perfectly into the lock and you open the box",
           'afterDesc': "There's no more stuff in here. Look elsewhere",
+          'isSolve': false,
+          "solveImg": "./assets/furniture/vase.png",
+          "solveDescription": "The key fits perfectly into the lock and you open the box",
+          'afterDesc': "The drawer is already unlocked.",
           "itemNeeded": 'key2',
           "solveFunction": () => {
           },
