@@ -1,5 +1,4 @@
 import {player} from '../data/player.js';
-import {inventoryInfo} from '../data/inventory.js';
 import { syncInventory } from './syncInventory.js';
 let inventory = document.querySelector('#inventory')
 function addItem (entity) {
