@@ -12,24 +12,30 @@ function displayRoom(currRoom) {
 }
 function createMapIcons() {
   locations.map((location)=>{
+    let mapIconDiv = document.createElement('div');
+    mapIconDiv.setAttribute('class', 'map-icon-div');
+
     let mapIcon = document.createElement('img');
     mapIcon.setAttribute('id', location.id);
-    mapIcon.setAttribute('class', 'mapIcon');
+    mapIcon.setAttribute('class', 'map-icon-div-img');
     mapIcon.style.zIndex=100;
-    document.querySelector('#map-icon-div').appendChild(mapIcon);
     for (let i = 1; i < Object.keys(rooms).length; i++) {
       let currRoom = rooms[Object.keys(rooms)[i]];
       if (location.id == Object.keys(rooms)[i]) {
-        mapIcon.style.x = currRoom.icon.x;
+       // mapIconDiv.style.position = 'absolute';
+        //mapIcon.style.position='';
+        mapIconDiv.style.left = currRoom.icon.x;
         mapIcon.src = currRoom.icon.src;
-        mapIcon.style.y = currRoom.icon.y;
-        mapIcon.style.width = '100px';
-        mapIcon.addEventListener('click', ()=>{
+        mapIconDiv.style.top = currRoom.icon.y;
+        //mapIconDiv.style.width = '100px';
+        mapIconDiv.addEventListener('click', ()=>{
           goRoom(currRoom.name);
           toggleMap();
         })
       }
     }
+    document.querySelector('#map-icon-div').appendChild(mapIconDiv);
+    mapIconDiv.appendChild(mapIcon);
   })
 }
 export {displayRoom, createMapIcons}

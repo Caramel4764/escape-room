@@ -146,20 +146,7 @@ img{
 .selectedItem {
   background-color: rgb(190, 166, 101);
 }
-#mapIcon {
-  width: 80px;
-  height: 80px;
-  right: 0px;
-  z-index: 50;
-  background-color: #c79200;
-  position:relative;
-  -webkit-filter: brightness(80%);
 
-}
-#mapIcon:hover {
-  -webkit-filter: brightness(100%);
-  background-color: #c79200;;
-}
 #inventoryColumn {
   display:flex;
   flex-direction: column;
@@ -214,9 +201,26 @@ img{
 .map-icon-div {
   width: 90px;
   height: 90px;
+  position: absolute;
+  z-index: 60;
 }
 .map-icon-div-img {
-  height:100%;
-  width:100%;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
+  z-index: 100;
+}
+#mapIcon {
+  width: 80px;
+  height: 80px;
+  right: 0px;
+  z-index: 50;
+  background-color: #c79200;
+  position:relative;
+  -webkit-filter: brightness(95%);
+
+}
+#mapIcon:hover {
+  -webkit-filter: brightness(100%);
+  background-color: #c79200;;
 }
