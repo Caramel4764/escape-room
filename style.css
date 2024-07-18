@@ -187,6 +187,7 @@ img{
   width: 900px;
   display:flex;
   justify-content: center;
+  visibility: hidden;
 }
 #map {
   width: 100%;
