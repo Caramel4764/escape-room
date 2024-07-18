@@ -39,6 +39,6 @@ player.currRoom = rooms.fireplace;
 displayRoom(player.currRoom);
 player.currRoom = rooms.courtyard;
 displayRoom(player.currRoom);
-goRoom('courtyard');
+goRoom('entrance');
 
 createMapIcons();

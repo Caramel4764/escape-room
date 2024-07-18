@@ -18,7 +18,7 @@ let rooms = {
       {
         "name": 'shelf',
         'src': './assets/furniture/shelf.png',
-        "desc": "The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.",
+        "desc": "Smells like freshly cut pine wood.",
         'dims': {
           'x': "640px",
           'y': "50px",
@@ -40,7 +40,7 @@ let rooms = {
       {
         "name": 'exitDoor',
         'src': './assets/wall/exit-door.png',
-        "desc": "The door which you came in",
+        "desc": "The door which you came in from",
         'dims': {
           'x': "400px",
           'y': "54px",
@@ -358,7 +358,7 @@ let rooms = {
       {
         "name": 'pinkFlower',
         'src': './assets/furniture/pink-flower.png',
-        "desc": "Very healthy looking",
+        "desc": "It's some pretty flowers",
         'dims': {
           'x': "780px",
           'y': "440px",
