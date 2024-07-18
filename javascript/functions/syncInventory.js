@@ -3,7 +3,7 @@ import {inventoryInfo} from "../data/inventory.js"
 let inventory = document.querySelector('#inventory')
 
 function syncInventory () {
-  inventoryInfo.map((singleItem, index)=>{
+  player.inventory.map((singleItem, index)=>{
       inventory.children[index].style.backgroundColor='#ffe499';
     if (singleItem.selected==true) {
       inventory.children[index].style.backgroundColor='#BEA665';

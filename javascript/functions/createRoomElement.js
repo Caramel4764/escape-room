@@ -65,9 +65,9 @@ function createRoomElement (currRoom) {
           entity.puzzle.solveFunction();
           showImg(entity, entityImg);
         }
-        for (let i = 0; i < inventoryInfo.length; i++) {
-          if (inventoryInfo[i].name == entity.puzzle.itemNeeded) {
-            inventoryInfo.splice(i, 1);
+        for (let i = 0; i < player.inventory.length; i++) {
+          if (player.inventory[i].name == entity.puzzle.itemNeeded) {
+            player.inventory.splice(i, 1);
             inventory.removeChild(inventory.children[i]);
             resetSelectedItem();
           }

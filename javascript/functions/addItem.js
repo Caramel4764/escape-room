@@ -1,7 +1,6 @@
 import {player} from '../data/player.js';
 import {inventoryInfo} from '../data/inventory.js';
 import { syncInventory } from './syncInventory.js';
-
 let inventory = document.querySelector('#inventory')
 function addItem (entity) {
   //add item in inventory object
@@ -11,7 +10,7 @@ function addItem (entity) {
     desc: entity.desc,
     selected: false,
   }
-  inventoryInfo.push(newInventoryInfo);
+  player.inventory.push(newInventoryInfo);
   let newItemDiv = document.createElement('div')
   let newItem = document.createElement('img')
   newItem.src=entity.src;
@@ -20,7 +19,7 @@ function addItem (entity) {
   newItemDiv.classList.add('item');
   inventory.appendChild(newItemDiv);
   newItemDiv.addEventListener('click', ()=>{
-    inventoryInfo.map((singleItem)=> {
+    player.inventory.map((singleItem)=> {
       singleItem.selected = false;
       //target
       if (singleItem.name==newItemDiv.id) {
