@@ -12,12 +12,16 @@ const inspectText = document.querySelector('#inspect-text');
 
 function showImg (entity, entityImg) {
   entityImg.src=entity.src;
-  console.log('test')
   //console.log(&&entity.puzzle.isSolved!=undefined&&entity.puzzle.solveImg!=undefined)
-  if (entity.puzzle) {
-    console.log('fired')
+    try {
+      if (entity.puzzle) {
+        //entityImg.src=entity.puzzle.solveImg;
+      }
+    } catch (e) {
+      console.log(e)
+      //entityImg.src=entity.src;
+    }
     //entityImg.src=entity.puzzle.solveImg;
-  }
   /*if (entity.puzzle) {
     //console.log(entity.puzzle.solveImg)
     //solved
