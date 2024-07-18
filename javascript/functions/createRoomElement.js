@@ -83,8 +83,6 @@ function createRoomElement (currRoom) {
     })
     roomContainer.appendChild(entityImg);
   })
-  console.log(roomContainer)
-
   locations.push(roomContainer)
 }
 export {createRoomElement}

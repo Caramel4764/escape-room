@@ -3,27 +3,34 @@ import {displayRoom} from './javascript/functions/displayRoom.js';
 import {player} from './javascript/data/player.js';
 import {goRoom} from './javascript/functions/goRoom.js';
 import {toggleMap} from './javascript/functions/toggleMap.js';
-let fireplaceBtn = document.querySelector('#fireplace-btn');
-let entranceBtn = document.querySelector('#entrance-btn');
-let loungeBtn = document.querySelector('#lounge-btn');
-let courtyardBtn = document.querySelector('#courtyard-btn');
+import {locations} from './javascript/data/locations.js';
+import {createMapIcons} from './javascript/functions/displayRoom.js';
+let fireplaceBtn = document.querySelector('#fireplace');
+let entranceBtn = document.querySelector('#entrance');
+let loungeBtn = document.querySelector('#lounge');
+let courtyardBtn = document.querySelector('#courtyard');
 let mapBtn = document.querySelector('#mapIcon');
+
 
 mapIcon.addEventListener('click', function() {
   toggleMap();
 })
-entranceBtn.addEventListener('click', function() {
+/*entranceBtn.addEventListener('click', function() {
   goRoom('entrance');
+  toggleMap();
 })
 loungeBtn.addEventListener('click', function() {
   goRoom('lounge');
+  toggleMap();
 })
 fireplaceBtn.addEventListener('click', function() {
   goRoom('fireplace');
+  toggleMap();
 })
 courtyardBtn.addEventListener('click', function() {
   goRoom('courtyard');
-})
+  toggleMap();
+})*/
 player.currRoom = rooms.lounge;
 displayRoom(player.currRoom);
 player.currRoom = rooms.entrance;
@@ -33,3 +40,5 @@ displayRoom(player.currRoom);
 player.currRoom = rooms.courtyard;
 displayRoom(player.currRoom);
 goRoom('courtyard');
+
+createMapIcons();

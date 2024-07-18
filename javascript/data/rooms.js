@@ -5,6 +5,12 @@ let rooms = {
   },
   "entrance": {
     'name': 'entrance',
+    'icon': {
+      "src":'./assets/misc/exit-icon.jpg',
+      'x': "640px",
+      'y': "50px",
+      "width": "350px",
+    },
     'wall': './assets/wall/wood-wall.jpg',
     "floor": './assets/floor/wood-floor.png',
     'divider': "./assets/floor/floor-divider.png",
@@ -71,7 +77,6 @@ let rooms = {
           'afterDesc': "There's no more stuff in here. Look elsewhere",
           "itemNeeded": 'key2',
           "solveFunction": () => {
-            console.log('test')
           },
         },
       },
@@ -91,6 +96,12 @@ let rooms = {
   },
   "lounge": {
     'name': 'lounge',
+    'icon': {
+      "src":'./assets/misc/lounge-icon.png',
+      'x': "640px",
+      'y': "50px",
+      "width": "350px",
+    },
     'wall': './assets/wall/gray-wall.webp',
     "floor": './assets/floor/carpet-floor.jpg',
     'divider': "./assets/floor/floor-divider.png",
@@ -124,7 +135,6 @@ let rooms = {
           'afterDesc': "The drawer is already unlocked.",
           "itemNeeded": 'key',
           "solveFunction": () => {
-            console.log('test')
           },
         },
       },
@@ -188,6 +198,12 @@ let rooms = {
   },
   "fireplace": {
     'name': 'fireplace',
+    'icon': {
+      "src":'./assets/misc/fireplace-icon.png',
+      'x': "640px",
+      'y': "50px",
+      "width": "350px",
+    },
     'wall': './assets/wall/green-wall.png',
     "floor": './assets/floor/fireplace-carpet-floor.jpg',
     'divider': "./assets/floor/floor-divider.png",
@@ -274,6 +290,12 @@ let rooms = {
   },
   "courtyard": {
     'name': 'courtyard',
+    'icon': {
+      "src":'./assets/misc/courtyard-icon.png',
+      'x': "640px",
+      'y': "50px",
+      "width": "350px",
+    },
     'wall': './assets/wall/courtyard-wall.jpg',
     "floor": './assets/floor/tile-floor.png',
     'divider': "./assets/floor/floor-divider.png",
@@ -362,7 +384,6 @@ let rooms = {
           'afterDesc': "It's still gross",
           "itemNeeded": 'emptyGlass',
           "solveFunction": () => {
-            console.log('test')
           },
         },
       },
