@@ -29,7 +29,6 @@ function createMapIcons() {
           goRoom(currRoom.name);
           toggleMap();
         })
-        //Object.keys(rooms)[i]
       }
     }
   })
