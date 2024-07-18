@@ -130,7 +130,6 @@ let rooms = {
         "puzzle": {
           "type": 'item',
           'isSolved': false,
-          'solveImg': './assets/object/key.png',
           "solveDescription": "The key fits perfectly into the lock and you open the box",
           'afterDesc': "The drawer is already unlocked.",
           "itemNeeded": 'key',
@@ -379,7 +378,6 @@ let rooms = {
         "puzzle": {
           "type": 'item',
           'isSolved': false,
-          'solveImg': './assets/furniture/fountain.png',
           "solveDescription": "You fill up your cup with the fountain.",
           'afterDesc': "It's still gross",
           "itemNeeded": 'emptyGlass',

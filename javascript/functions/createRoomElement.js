@@ -11,34 +11,11 @@ const inspectImg = document.querySelector('#inspect-image');
 const inspectText = document.querySelector('#inspect-text');
 
 function showImg (entity, entityImg) {
-  entityImg.src=entity.src;
-  //console.log(&&entity.puzzle.isSolved!=undefined&&entity.puzzle.solveImg!=undefined)
-    try {
-      if (entity.puzzle) {
-        //entityImg.src=entity.puzzle.solveImg;
-      }
-    } catch (e) {
-      console.log(e)
-      //entityImg.src=entity.src;
-    }
-    //entityImg.src=entity.puzzle.solveImg;
-  /*if (entity.puzzle) {
-    //console.log(entity.puzzle.solveImg)
-    //solved
-    if (entity.puzzle.isSolved) {
-      //console.log(entity.puzzle.solveImg)
-      if (entity.puzzle.solveImg) {
-        entityImg.src=entity.puzzle.solveImg;
-      } else {
-        entityImg.src=entity.src;
-      }
-      //not solved
-    } else {
-      entityImg.src=entity.src;
-    }
+  if (entity.puzzle && entity.puzzle.isSolved&&entity.puzzle.solveImg) {
+    entityImg.src=entity.puzzle.solveImg;
   } else {
     entityImg.src=entity.src;
-  }*/
+  }
 }
 function createRoomElement (currRoom) {
   let roomContainer = document.createElement('div');
@@ -86,7 +63,7 @@ function createRoomElement (currRoom) {
         entity.puzzle.isSolved=true;
         if (entity.puzzle.solveFunction) {
           entity.puzzle.solveFunction();
-          entityImg.src=entity.puzzle.solveImg
+          showImg(entity, entityImg);
         }
         for (let i = 0; i < inventoryInfo.length; i++) {
           if (inventoryInfo[i].name == entity.puzzle.itemNeeded) {
