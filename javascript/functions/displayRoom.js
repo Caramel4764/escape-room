@@ -3,6 +3,7 @@ import {createRoomElement} from "./createRoomElement.js"
 import {locations} from '../data/locations.js'
 import {rooms} from '../data/rooms.js'
 import { goRoom } from "./goRoom.js";
+import {toggleMap} from "./toggleMap.js";
 
 //this function creates the setting
 function displayRoom(currRoom) {
@@ -25,8 +26,8 @@ function createMapIcons() {
         mapIcon.style.width = '100px';
         mapIcon.addEventListener('click', ()=>{
           console.log('click')
-          //goRoom(Object.keys(rooms)[i]);
-          //toggleMap();
+          goRoom(currRoom.name);
+          toggleMap();
         })
         //Object.keys(rooms)[i]
       }
