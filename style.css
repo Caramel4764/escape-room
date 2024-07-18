@@ -188,6 +188,7 @@ img{
   display:flex;
   justify-content: center;
   visibility: hidden;
+  z-index:100px;
 }
 #map {
   width: 100%;
@@ -199,8 +200,9 @@ img{
   display:flex;
   width:1000px;
   height: 600px;
+  z-index: -4;
   position:absolute;
-  z-index: 700;
+  visibility: hidden;
   justify-content: center;
 }
 #map-icon-div {
