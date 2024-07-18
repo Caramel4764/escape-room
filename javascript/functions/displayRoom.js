@@ -22,12 +22,9 @@ function createMapIcons() {
     for (let i = 1; i < Object.keys(rooms).length; i++) {
       let currRoom = rooms[Object.keys(rooms)[i]];
       if (location.id == Object.keys(rooms)[i]) {
-       // mapIconDiv.style.position = 'absolute';
-        //mapIcon.style.position='';
         mapIconDiv.style.left = currRoom.icon.x;
         mapIcon.src = currRoom.icon.src;
         mapIconDiv.style.top = currRoom.icon.y;
-        //mapIconDiv.style.width = '100px';
         mapIconDiv.addEventListener('click', ()=>{
           goRoom(currRoom.name);
           toggleMap();
