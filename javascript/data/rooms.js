@@ -7,7 +7,7 @@ let rooms = {
     'name': 'entrance',
     'icon': {
       "src":'./assets/misc/exit-icon.jpg',
-      'x': "640px",
+      'x': "300px",
       'y': "50px",
       "width": "350px",
     },
