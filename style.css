@@ -202,3 +202,24 @@ img{
   z-index: 700;
   justify-content: center;
 }
+#map-icon-div {
+  position: absolute;
+}
+.map-icon {
+  width: 90px;
+}
+#entrance {
+  top: 120px;
+}
+#fireplace{
+  top: 370px;
+  left: 0px;
+}
+#courtyard {
+  top: 220px;
+  left:160px;
+}
+#lounge {
+  top: 100px;
+  left:-200px;
+}
