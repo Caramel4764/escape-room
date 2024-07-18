@@ -183,3 +183,22 @@ img{
 #inventory::-webkit-scrollbar {
   display: none;
 }
+#map-div {
+  width: 900px;
+  display:flex;
+  justify-content: center;
+}
+#map {
+  width: 100%;
+  position:relative;
+  height: 100%;
+  object-fit: contain;
+}
+.center-div {
+  display:flex;
+  width:1000px;
+  height: 600px;
+  position:absolute;
+  z-index: 700;
+  justify-content: center;
+}
