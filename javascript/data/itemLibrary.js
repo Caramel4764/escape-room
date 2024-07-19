@@ -15,10 +15,10 @@ let itemLibrary = [
     "desc": "You got a plush!",
   },
   {
-    "name": 'plushNote',
-    'openSrc': './assets/object/plushNote.png',
-    'src': './assets/object/plushNote.png',
-    "desc": "You got a plush!",
+    "name": 'plushPaper',
+    'openSrc': './assets/object/enlarged/plush-paper-big.png',
+    'src': './assets/object/plush-paper.png',
+    "desc": "You got a note!",
   }
 ]
 
