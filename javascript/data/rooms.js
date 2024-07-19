@@ -1,3 +1,5 @@
+import { addItem } from "../functions/addItem.js";
+
 let rooms = {
   "dims": {
     x: 1000,
@@ -377,6 +379,7 @@ let rooms = {
           'afterDesc': "It's still gross",
           "itemNeeded": 'emptyGlass',
           "solveFunction": () => {
+            addItem('key2');
           },
         },
       },

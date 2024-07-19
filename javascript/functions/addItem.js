@@ -5,24 +5,32 @@ import {rooms} from '../data/rooms.js';
 let inventory = document.querySelector('#inventory')
 function addItem (entity) {
   //add item in inventory object
-  if (typeof entity == object) {
-    let newInventoryInfo = {
+  let newInventoryInfo = {};
+  if (typeof entity == 'object') {
+    newInventoryInfo = {
     name: entity.name,
     src: entity.src,
     desc: entity.desc,
     selected: false,
     }
   } else {
-    rooms.map((room)=>{
-      Object.keys(rooms).map((room)=>{
-        room.entities.map((prop)=>{
+      let roomArray = Object.keys(rooms);
+      for (let i = 1; i < roomArray.length; i++) {
+        //console.log(roomArray[i])
+        rooms[roomArray[i]].entities.map((prop)=>{
           if (prop.name==entity) {
-            let newInventoryInfo = prop;
+            newInventoryInfo = prop;
+            console.log(newInventoryInfo.prop)
           }
         })
-      })
-    })
+        /*room.entities.map((prop)=>{
+          if (prop.name==entity) {
+            newInventoryInfo = prop;
+          }
+        })*/
+      }
   }
+  //console.log(newInventoryInfo)
   player.inventory.push(newInventoryInfo);
   let newItemDiv = document.createElement('div')
   let newItem = document.createElement('img')
