@@ -313,7 +313,7 @@ let rooms = {
           'afterDesc': "It's a frog statue",
           "itemNeeded": 'filledGlass',
           "solveFunction": () => {
-            addItem('key2');
+            addItem('coin');
           },
         },
       },
@@ -397,6 +397,11 @@ let rooms = {
   },
   "attic": {
     'name': 'attic',
+    'icon': {
+      "src":'./assets/misc/fireplace-icon.png',
+      'x': "0px",
+      'y': "150px",
+    },
     'wall': './assets/wall/wood-wall.jpg',
     "floor": './assets/floor/attic-floor.jpg',
     'divider': "./assets/floor/floor-divider.png",
@@ -454,7 +459,17 @@ let rooms = {
           'y': "120px",
           "width": "270px",
           'z': "3",
-        }
+        },
+        "puzzle": {
+          "type": 'item',
+          'isSolved': false,
+          "solveDescription": "Congrats! Against all odds and due to plot armor, you've obtained a plush",
+          'afterDesc': "No more. That's enough",
+          "itemNeeded": 'coin',
+          "solveFunction": () => {
+            addItem('plush');
+          },
+        },
       },
     ]
   },
