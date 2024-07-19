@@ -4,9 +4,11 @@ import {player} from './javascript/data/player.js';
 import {goRoom} from './javascript/functions/goRoom.js';
 import {toggleMap} from './javascript/functions/toggleMap.js';
 import {createMapIcons} from './javascript/functions/displayRoom.js';
+import {addItem} from './javascript/functions/addItem.js';
 
 mapIcon.addEventListener('click', function() {
-  toggleMap();
+  //toggleMap();
+  addItem('plushNote');
 })
 player.currRoom = rooms.lounge;
 displayRoom(player.currRoom);

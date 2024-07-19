@@ -13,6 +13,12 @@ let itemLibrary = [
     "name": 'plush',
     'src': './assets/object/plush.png',
     "desc": "You got a plush!",
+  },
+  {
+    "name": 'plushNote',
+    'openable': true,
+    'src': './assets/object/plushNote.png',
+    "desc": "You got a plush!",
   }
 ]
 
