@@ -471,6 +471,28 @@ let rooms = {
           },
         },
       },
+      {
+        "name": 'picture-frame-5',
+        'src': './assets/wall/picture-frame-5.png',
+        "desc": 'This work is titled "Pizzeria"',
+        'dims': {
+          'x': "680px",
+          'y': "20px",
+          "width": "120px",
+          'z': "3",
+        }
+      },
+      {
+        "name": 'light-switch',
+        'src': './assets/wall/light-switch.png',
+        "desc": 'Flicking this does nothing.',
+        'dims': {
+          'x': "30px",
+          'y': "220px",
+          "width": "40px",
+          'z': "3",
+        }
+      },
     ]
   },
   //insert new rooms here
