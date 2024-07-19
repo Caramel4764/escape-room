@@ -35,7 +35,6 @@ function addItem (entity) {
     player.inventory.map((singleItem)=> {
       //target
       if (singleItem.name==newItemDiv.id) {
-        console.log(singleItem.selected)
         if (singleItem.selected == true) {
           singleItem.selected = false;
           resetSelectedItem();

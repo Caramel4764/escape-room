@@ -395,6 +395,69 @@ let rooms = {
       },
     ]
   },
+  "attic": {
+    'name': 'attic',
+    'wall': './assets/wall/wood-wall.jpg',
+    "floor": './assets/floor/attic-floor.jpg',
+    'divider': "./assets/floor/floor-divider.png",
+    'entities': [
+      {
+        "name": 'hangingLight',
+        'src': './assets/wall/hanging-light.png',
+        "desc": "The bulb is completely burned out.",
+        'dims': {
+          'x': "500px",
+          'y': "0px",
+          "width": "100px",
+          'z': "5",
+        }
+      },
+      {
+        "name": 'stool',
+        'src': './assets/furniture/stool.png',
+        "desc": "Stool",
+        'dims': {
+          'x': "800px",
+          'y': "300px",
+          "width": "170px",
+          'z': "3",
+        }
+      },
+      {
+        "name": 'packingBox',
+        'src': './assets/furniture/packing-box.png',
+        "desc": "The box is filled with folders, books, and papers. With a quick skim, none of them seem particularly useful",
+        'dims': {
+          'x': "20px",
+          'y': "220px",
+          "width": "400px",
+          'z': "3",
+        }
+      },
+      {
+        "name": 'singlePackingBox',
+        'src': './assets/furniture/single-packing-box.png',
+        "desc": "There's a slipped of paper inside the box.",
+        'dims': {
+          'x': "660px",
+          'y': "420px",
+          "width": "140px",
+          'z': "3",
+        }
+      },
+      {
+        "name": 'craneMachine',
+        'src': './assets/furniture/crane-machine.png',
+        "desc": "Gambling: Children's edition.",
+        'dims': {
+          'x': "400px",
+          'y': "120px",
+          "width": "270px",
+          'z': "3",
+        }
+      },
+    ]
+  },
   //insert new rooms here
 }
 
