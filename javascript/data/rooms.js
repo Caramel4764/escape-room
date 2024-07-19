@@ -398,9 +398,9 @@ let rooms = {
   "attic": {
     'name': 'attic',
     'icon': {
-      "src":'./assets/misc/fireplace-icon.png',
-      'x': "0px",
-      'y': "150px",
+      "src":'./assets/misc/attic-icon.png',
+      'x': "-200px",
+      'y': "80px",
     },
     'wall': './assets/wall/wood-wall.jpg',
     "floor": './assets/floor/attic-floor.jpg',
