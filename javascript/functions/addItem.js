@@ -3,7 +3,10 @@ import { syncInventory } from './syncInventory.js';
 import {rooms} from '../data/rooms.js';
 import { itemLibrary } from '../data/itemLibrary.js';
 import { resetSelectedItem } from './resetSelectedItem.js';
-let inventory = document.querySelector('#inventory')
+let inventory = document.querySelector('#inventory');
+let openItemImage = document.querySelector('#open-item-image');
+let openItemDiv = document.querySelector('#open-item-div');
+
 function addItem (entity) {
   let newInventoryInfo = {};
   if (typeof entity == 'object') {
@@ -20,6 +23,10 @@ function addItem (entity) {
         newInventoryInfo.src = itemLibrary[i].src;
         newInventoryInfo.desc = itemLibrary[i].desc;
         newInventoryInfo.selected = false;
+        console.log(itemLibrary[i].openSrc)
+        if (itemLibrary[i].openSrc) {
+          newInventoryInfo.openSrc = itemLibrary[i].openSrc;
+        }
       }
     }
   }
@@ -34,6 +41,14 @@ function addItem (entity) {
   newItemDiv.addEventListener('click', ()=>{
     player.inventory.map((singleItem)=> {
       //target
+      if (newInventoryInfo.openSrc) {
+        openItemImage.src = newInventoryInfo.openSrc;
+        if (openItemDiv.style.visibility == 'visible') {
+          openItemDiv.style.visibility = 'hidden';
+        } else {
+          openItemDiv.style.visibility = 'visible';
+        }
+      }
       if (singleItem.name==newItemDiv.id) {
         if (singleItem.selected == true) {
           singleItem.selected = false;

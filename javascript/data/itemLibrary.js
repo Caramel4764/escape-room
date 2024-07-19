@@ -16,7 +16,7 @@ let itemLibrary = [
   },
   {
     "name": 'plushNote',
-    'openable': true,
+    'openSrc': './assets/object/plushNote.png',
     'src': './assets/object/plushNote.png',
     "desc": "You got a plush!",
   }
