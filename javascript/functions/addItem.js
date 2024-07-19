@@ -8,10 +8,10 @@ function addItem (entity) {
   let newInventoryInfo = {};
   if (typeof entity == 'object') {
     newInventoryInfo = {
-    name: entity.name,
-    src: entity.src,
-    desc: entity.desc,
-    selected: false,
+      name: entity.name,
+      src: entity.src,
+      desc: entity.desc,
+      selected: false,
     }
   } else {
       let roomArray = Object.keys(rooms);
@@ -19,24 +19,22 @@ function addItem (entity) {
         //console.log(roomArray[i])
         rooms[roomArray[i]].entities.map((prop)=>{
           if (prop.name==entity) {
-            newInventoryInfo = prop;
-            console.log(newInventoryInfo.prop)
+            newInventoryInfo.name = entity;
+            newInventoryInfo.src = prop.src;
+            newInventoryInfo.desc = prop.desc;
+            newInventoryInfo.selected = false;
+            console.log(newInventoryInfo)
           }
         })
-        /*room.entities.map((prop)=>{
-          if (prop.name==entity) {
-            newInventoryInfo = prop;
-          }
-        })*/
       }
   }
   //console.log(newInventoryInfo)
   player.inventory.push(newInventoryInfo);
   let newItemDiv = document.createElement('div')
   let newItem = document.createElement('img')
-  newItem.src=entity.src;
+  newItem.src=newInventoryInfo.src;
   newItemDiv.appendChild(newItem);
-  newItemDiv.setAttribute('id', entity.name)
+  newItemDiv.setAttribute('id', newInventoryInfo.name)
   newItemDiv.classList.add('item');
   inventory.appendChild(newItemDiv);
   newItemDiv.addEventListener('click', ()=>{
