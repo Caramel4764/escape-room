@@ -7,8 +7,7 @@ import {createMapIcons} from './javascript/functions/displayRoom.js';
 import {addItem} from './javascript/functions/addItem.js';
 
 mapIcon.addEventListener('click', function() {
-  //toggleMap();
-  addItem('plushPaper');
+  toggleMap();
 })
 player.currRoom = rooms.lounge;
 displayRoom(player.currRoom);
