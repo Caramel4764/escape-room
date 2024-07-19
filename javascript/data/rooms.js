@@ -379,7 +379,7 @@ let rooms = {
           'afterDesc': "It's still gross",
           "itemNeeded": 'emptyGlass',
           "solveFunction": () => {
-            addItem('key2');
+            addItem('filledGlass');
           },
         },
       },

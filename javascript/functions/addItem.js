@@ -1,6 +1,7 @@
 import {player} from '../data/player.js';
 import { syncInventory } from './syncInventory.js';
 import {rooms} from '../data/rooms.js';
+import { itemLibrary } from '../data/itemLibrary.js';
 
 let inventory = document.querySelector('#inventory')
 function addItem (entity) {
@@ -14,18 +15,22 @@ function addItem (entity) {
       selected: false,
     }
   } else {
-      let roomArray = Object.keys(rooms);
-      for (let i = 1; i < roomArray.length; i++) {
-        rooms[roomArray[i]].entities.map((prop)=>{
-          if (prop.name==entity) {
-            newInventoryInfo.name = entity;
-            newInventoryInfo.src = prop.src;
-            newInventoryInfo.desc = prop.desc;
-            newInventoryInfo.selected = false;
-            console.log(newInventoryInfo)
-          }
-        })
-      }
+    //console.log(itemLibrary)
+    //let roomArray = Object.keys(rooms);
+    //console.log(itemLibrary)
+
+    for (let i = 0; i < itemLibrary.length; i++) {
+      //rooms[roomArray[i]].entities.map((prop)=>{
+        //console.log(itemLibrary[i].name)
+        if (itemLibrary[i].name==entity) {
+          newInventoryInfo.name = entity;
+          newInventoryInfo.src = itemLibrary[i].src;
+          newInventoryInfo.desc = itemLibrary[i].desc;
+          newInventoryInfo.selected = false;
+          //console.log(newInventoryInfo)
+        }
+      //})
+    }
   }
   player.inventory.push(newInventoryInfo);
   let newItemDiv = document.createElement('div')
