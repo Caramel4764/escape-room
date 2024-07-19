@@ -16,7 +16,6 @@ function addItem (entity) {
   } else {
       let roomArray = Object.keys(rooms);
       for (let i = 1; i < roomArray.length; i++) {
-        //console.log(roomArray[i])
         rooms[roomArray[i]].entities.map((prop)=>{
           if (prop.name==entity) {
             newInventoryInfo.name = entity;
@@ -28,7 +27,6 @@ function addItem (entity) {
         })
       }
   }
-  //console.log(newInventoryInfo)
   player.inventory.push(newInventoryInfo);
   let newItemDiv = document.createElement('div')
   let newItem = document.createElement('img')
