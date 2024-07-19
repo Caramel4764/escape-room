@@ -5,7 +5,6 @@ import { itemLibrary } from '../data/itemLibrary.js';
 
 let inventory = document.querySelector('#inventory')
 function addItem (entity) {
-  //add item in inventory object
   let newInventoryInfo = {};
   if (typeof entity == 'object') {
     newInventoryInfo = {
@@ -15,21 +14,13 @@ function addItem (entity) {
       selected: false,
     }
   } else {
-    //console.log(itemLibrary)
-    //let roomArray = Object.keys(rooms);
-    //console.log(itemLibrary)
-
     for (let i = 0; i < itemLibrary.length; i++) {
-      //rooms[roomArray[i]].entities.map((prop)=>{
-        //console.log(itemLibrary[i].name)
-        if (itemLibrary[i].name==entity) {
-          newInventoryInfo.name = entity;
-          newInventoryInfo.src = itemLibrary[i].src;
-          newInventoryInfo.desc = itemLibrary[i].desc;
-          newInventoryInfo.selected = false;
-          //console.log(newInventoryInfo)
-        }
-      //})
+      if (itemLibrary[i].name==entity) {
+        newInventoryInfo.name = entity;
+        newInventoryInfo.src = itemLibrary[i].src;
+        newInventoryInfo.desc = itemLibrary[i].desc;
+        newInventoryInfo.selected = false;
+      }
     }
   }
   player.inventory.push(newInventoryInfo);

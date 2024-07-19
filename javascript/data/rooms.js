@@ -305,7 +305,17 @@ let rooms = {
           'y': "420px",
           "width": "150px",
           'z': "4",
-        }
+        },
+        "puzzle": {
+          "type": 'item',
+          'isSolved': false,
+          "solveDescription": "You pour the water into the frog's mouth and the water raises the object inside. You grab the key. Key Obtained!",
+          'afterDesc': "It's a frog statue",
+          "itemNeeded": 'filledGlass',
+          "solveFunction": () => {
+            addItem('key2');
+          },
+        },
       },
       {
         "name": 'bush1',
@@ -316,7 +326,7 @@ let rooms = {
           'y': "310px",
           "width": "600px",
           'z': "3",
-        }
+        },
       },
       {
         "name": 'bush2',
