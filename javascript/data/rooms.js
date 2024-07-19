@@ -473,12 +473,12 @@ let rooms = {
       },
       {
         "name": 'picture-frame-5',
-        'src': './assets/wall/picture-frame-5.png',
+        'src': './assets/wall/artwork/pizzaria.JPG',
         "desc": 'This work is titled "Pizzeria"',
         'dims': {
           'x': "680px",
           'y': "20px",
-          "width": "120px",
+          "width": "300px",
           'z': "3",
         }
       },
