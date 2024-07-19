@@ -2,7 +2,7 @@ import {player} from '../data/player.js';
 import { syncInventory } from './syncInventory.js';
 import {rooms} from '../data/rooms.js';
 import { itemLibrary } from '../data/itemLibrary.js';
-
+import { resetSelectedItem } from './resetSelectedItem.js';
 let inventory = document.querySelector('#inventory')
 function addItem (entity) {
   let newInventoryInfo = {};
@@ -33,10 +33,17 @@ function addItem (entity) {
   inventory.appendChild(newItemDiv);
   newItemDiv.addEventListener('click', ()=>{
     player.inventory.map((singleItem)=> {
-      singleItem.selected = false;
       //target
       if (singleItem.name==newItemDiv.id) {
-        singleItem.selected = true;
+        console.log(singleItem.selected)
+        if (singleItem.selected == true) {
+          singleItem.selected = false;
+          resetSelectedItem();
+        } else {
+          singleItem.selected = true;
+        }
+      } else {
+        singleItem.selected = false;
       }
     })
     syncInventory();
