@@ -53,6 +53,7 @@ function createRoomElement (currRoom) {
       toggleInspectMenu();
       //if item, add to inventory
       if (entity.isItem) {
+        console.log(entity)
         addItem(entity);
         roomContainer.removeChild(entityImg);
       }
