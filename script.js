@@ -6,15 +6,12 @@ import {toggleMap} from './javascript/functions/toggleMap.js';
 import {createMapIcons} from './javascript/functions/displayRoom.js';
 import {addItem} from './javascript/functions/addItem.js';
 let flashlight = document.querySelector('#flashlight');
-
-flashlight.addEventListener('mousemove', function(e) {
-  let mouseX = e.offsetX;
-  let mouseY = e.offsetY;
-  console.log(mouseX)
-  
-  //background-image: radial-gradient(circle 5em at 50% 50%, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+let room = document.querySelector('#room');
+room.addEventListener('mousemove', function(e) {
+  let mouseX = e.clientX;
+  let mouseY = e.clientY;
   flashlight.style.backgroundImage = `radial-gradient(circle 5em at ${mouseX}px ${mouseY}px, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1))`;
-  //flashlight.style.top = mouseY + 'px';
+
 })
 mapIcon.addEventListener('click', function() {
   toggleMap();
