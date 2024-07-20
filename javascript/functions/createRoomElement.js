@@ -80,6 +80,8 @@ function createRoomElement (currRoom) {
       } else if (entity.puzzle && entity.puzzle.type=='inspect') {
         if (entity.puzzle.solveFunction && entity.puzzle.isSolved==false) {
           entity.puzzle.solveFunction();
+          displayInspect(entity.desc, 100);
+        } else {
           displayInspect(entity.puzzle.afterDesc, 100);
         }
         entity.puzzle.isSolved=true;

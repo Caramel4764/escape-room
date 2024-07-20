@@ -135,6 +135,7 @@ let rooms = {
           'afterDesc': "The drawer is already unlocked.",
           "itemNeeded": 'key',
           "solveFunction": () => {
+            addItem('battery');
           },
         },
       },
@@ -180,6 +181,15 @@ let rooms = {
           'y': "220px",
           "width": "160px",
           'z': "4",
+        },
+        "puzzle": {
+          "type": 'inspect',
+          'isSolved': false,
+          "solveDescription": "Dummy text",
+          'afterDesc': "You already got an umbrella.",
+          "solveFunction": () => {
+            addItem('umbrella');
+          },
         },
       },
       {
