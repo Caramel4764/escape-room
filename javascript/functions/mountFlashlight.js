@@ -3,11 +3,12 @@ import {rooms} from "../data/rooms.js";
 
 let room = document.querySelector('#room');
 let roomBox = room.getBoundingClientRect();
+let flashlight = document.querySelector('#flashlight');
 
 function mountFlashlight() {
+  flashlight.style.visibility = 'hidden';
   let mouseX;
   let mouseY;
-  let flashlight = document.querySelector('#flashlight');
   room.addEventListener('mousemove', function(e) {
     if (rooms[player.currRoom].isDark) {
       mouseX = e.clientX-roomBox.x;

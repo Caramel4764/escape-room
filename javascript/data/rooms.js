@@ -401,7 +401,7 @@ let rooms = {
   },
   "attic": {
     'name': 'attic',
-    'isDark': true,
+    'isDark': false,
     'icon': {
       "src":'./assets/misc/attic-icon.png',
       'x': "-200px",
@@ -453,7 +453,16 @@ let rooms = {
           'y': "420px",
           "width": "140px",
           'z': "3",
-        }
+        },
+        "puzzle": {
+          "type": 'inspect',
+          'isSolved': false,
+          "solveDescription": "Congrats! Against all odds and due to plot armor, you've obtained a plush",
+          'afterDesc': "No more. That's enough",
+          "solveFunction": () => {
+            addItem('password-paper');
+          },
+        },
       },
       {
         "name": 'craneMachine',
