@@ -5,17 +5,10 @@ import {goRoom} from './javascript/functions/goRoom.js';
 import {toggleMap} from './javascript/functions/toggleMap.js';
 import {createMapIcons} from './javascript/functions/displayRoom.js';
 import {addItem} from './javascript/functions/addItem.js';
-let flashlight = document.querySelector('#flashlight');
-let room = document.querySelector('#room');
+import { mountFlashlight } from './javascript/functions/mountFlashlight.js';
 
-let roomBox = room.getBoundingClientRect();
 // the position related to the viewport
 
-room.addEventListener('mousemove', function(e) {
-  let mouseX = e.clientX-roomBox.x;
-  let mouseY = e.clientY-roomBox.y;
-  flashlight.style.backgroundImage = `radial-gradient(circle 5em at ${mouseX}px ${mouseY}px, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 1))`;
-})
 mapIcon.addEventListener('click', function() {
   toggleMap();
 })
@@ -32,3 +25,5 @@ displayRoom(player.currRoom);
 goRoom('attic');
 
 createMapIcons();
+
+mountFlashlight();

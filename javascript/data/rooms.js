@@ -7,6 +7,7 @@ let rooms = {
   },
   "entrance": {
     'name': 'entrance',
+    'isDark': false,
     'icon': {
       "src":'./assets/misc/exit-icon.jpg',
       'x': "0px",
@@ -96,6 +97,7 @@ let rooms = {
   },
   "lounge": {
     'name': 'lounge',
+    'isDark': false,
     'icon': {
       "src":'./assets/misc/lounge-icon.png',
       'x': "-160px",
@@ -196,6 +198,7 @@ let rooms = {
   },
   "fireplace": {
     'name': 'fireplace',
+    'isDark': false,
     'icon': {
       "src":'./assets/misc/fireplace-icon.png',
       'x': "0px",
@@ -287,6 +290,7 @@ let rooms = {
   },
   "courtyard": {
     'name': 'courtyard',
+    'isDark': false,
     'icon': {
       "src":'./assets/misc/courtyard-icon.png',
       'x': "160px",
@@ -397,6 +401,7 @@ let rooms = {
   },
   "attic": {
     'name': 'attic',
+    'isDark': true,
     'icon': {
       "src":'./assets/misc/attic-icon.png',
       'x': "-200px",
@@ -474,7 +479,7 @@ let rooms = {
       {
         "name": 'picture-frame-5',
         'src': './assets/wall/artwork/pizzaria.JPG',
-        "desc": 'This work is titled "Pizzeria"',
+        "desc": 'This work is titled "Pizzeria". The caption below says: "Terrible things come in small packages."',
         'dims': {
           'x': "680px",
           'y': "20px",

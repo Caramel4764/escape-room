@@ -4,6 +4,7 @@ import {locations} from '../data/locations.js'
 import {rooms} from '../data/rooms.js'
 import { goRoom } from "./goRoom.js";
 import {toggleMap} from "./toggleMap.js";
+let flashlight = document.querySelector('#flashlight');
 
 //this function creates the setting
 function displayRoom(currRoom) {
@@ -27,6 +28,11 @@ function createMapIcons() {
         mapIconDiv.style.top = currRoom.icon.y;
         mapIconDiv.addEventListener('click', ()=>{
           goRoom(currRoom.name);
+          if (currRoom.isDark) {
+            flashlight.style.visibility = 'visible';
+          } else {
+            flashlight.style.visibility = 'hidden';
+          }
           toggleMap();
         })
       }
