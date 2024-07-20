@@ -242,5 +242,5 @@ img{
   height:100%;
   z-index: -4;
   position:absolute;
-  /*pointer-events: none;*/
+  pointer-events: none;
 }
