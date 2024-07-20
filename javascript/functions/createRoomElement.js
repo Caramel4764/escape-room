@@ -5,6 +5,7 @@ import {addItem} from './addItem.js'
 import {player} from "../data/player.js"
 import {resetSelectedItem} from "./resetSelectedItem.js"
 import {locations} from '../data/locations.js';
+import {itemLibrary} from '../data/itemLibrary.js';
 const setting = document.querySelector('#room');
 const inspectImg = document.querySelector('#inspect-image');
 const inspectText = document.querySelector('#inspect-text');
@@ -43,6 +44,9 @@ function createRoomElement (currRoom) {
     entityImg.style.left=entity.dims.x;
     entityImg.style.width=entity.dims.width;
     entityImg.style.zIndex=entity.dims.z;
+    if (entity.isItem) {
+      itemLibrary.push(entity);
+    }
     entityImg.addEventListener('click', () => {
       if (entity.puzzle && entity.puzzle.isSolved) {
         displayInspect(entity.puzzle.afterDesc, 100);

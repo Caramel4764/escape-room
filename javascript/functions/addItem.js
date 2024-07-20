@@ -1,10 +1,13 @@
 import {player} from '../data/player.js';
 import { syncInventory } from './syncInventory.js';
 import {rooms} from '../data/rooms.js';
+import { itemLibrary } from '../data/itemLibrary.js';
+import { resetSelectedItem } from './resetSelectedItem.js';
+let inventory = document.querySelector('#inventory');
+let openItemImage = document.querySelector('#open-item-image');
+let openItemDiv = document.querySelector('#open-item-div');
 
-let inventory = document.querySelector('#inventory')
 function addItem (entity) {
-  //add item in inventory object
   let newInventoryInfo = {};
   if (typeof entity == 'object') {
     newInventoryInfo = {
@@ -14,18 +17,18 @@ function addItem (entity) {
       selected: false,
     }
   } else {
-      let roomArray = Object.keys(rooms);
-      for (let i = 1; i < roomArray.length; i++) {
-        rooms[roomArray[i]].entities.map((prop)=>{
-          if (prop.name==entity) {
-            newInventoryInfo.name = entity;
-            newInventoryInfo.src = prop.src;
-            newInventoryInfo.desc = prop.desc;
-            newInventoryInfo.selected = false;
-            console.log(newInventoryInfo)
-          }
-        })
+    for (let i = 0; i < itemLibrary.length; i++) {
+      if (itemLibrary[i].name==entity) {
+        newInventoryInfo.name = entity;
+        newInventoryInfo.src = itemLibrary[i].src;
+        newInventoryInfo.desc = itemLibrary[i].desc;
+        newInventoryInfo.selected = false;
+        console.log(itemLibrary[i].openSrc)
+        if (itemLibrary[i].openSrc) {
+          newInventoryInfo.openSrc = itemLibrary[i].openSrc;
+        }
       }
+    }
   }
   player.inventory.push(newInventoryInfo);
   let newItemDiv = document.createElement('div')
@@ -37,10 +40,24 @@ function addItem (entity) {
   inventory.appendChild(newItemDiv);
   newItemDiv.addEventListener('click', ()=>{
     player.inventory.map((singleItem)=> {
-      singleItem.selected = false;
       //target
+      if (newInventoryInfo.openSrc) {
+        openItemImage.src = newInventoryInfo.openSrc;
+        if (openItemDiv.style.visibility == 'visible') {
+          openItemDiv.style.visibility = 'hidden';
+        } else {
+          openItemDiv.style.visibility = 'visible';
+        }
+      }
       if (singleItem.name==newItemDiv.id) {
-        singleItem.selected = true;
+        if (singleItem.selected == true) {
+          singleItem.selected = false;
+          resetSelectedItem();
+        } else {
+          singleItem.selected = true;
+        }
+      } else {
+        singleItem.selected = false;
       }
     })
     syncInventory();

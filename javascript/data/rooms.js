@@ -7,6 +7,7 @@ let rooms = {
   },
   "entrance": {
     'name': 'entrance',
+    'isDark': false,
     'icon': {
       "src":'./assets/misc/exit-icon.jpg',
       'x': "0px",
@@ -96,6 +97,7 @@ let rooms = {
   },
   "lounge": {
     'name': 'lounge',
+    'isDark': false,
     'icon': {
       "src":'./assets/misc/lounge-icon.png',
       'x': "-160px",
@@ -196,6 +198,7 @@ let rooms = {
   },
   "fireplace": {
     'name': 'fireplace',
+    'isDark': false,
     'icon': {
       "src":'./assets/misc/fireplace-icon.png',
       'x': "0px",
@@ -287,6 +290,7 @@ let rooms = {
   },
   "courtyard": {
     'name': 'courtyard',
+    'isDark': false,
     'icon': {
       "src":'./assets/misc/courtyard-icon.png',
       'x': "160px",
@@ -305,7 +309,17 @@ let rooms = {
           'y': "420px",
           "width": "150px",
           'z': "4",
-        }
+        },
+        "puzzle": {
+          "type": 'item',
+          'isSolved': false,
+          "solveDescription": "You pour the water into the frog's mouth and the water raises the object inside. You grab the key. Key Obtained!",
+          'afterDesc': "It's a frog statue",
+          "itemNeeded": 'filledGlass',
+          "solveFunction": () => {
+            addItem('coin');
+          },
+        },
       },
       {
         "name": 'bush1',
@@ -316,7 +330,7 @@ let rooms = {
           'y': "310px",
           "width": "600px",
           'z': "3",
-        }
+        },
       },
       {
         "name": 'bush2',
@@ -379,9 +393,110 @@ let rooms = {
           'afterDesc': "It's still gross",
           "itemNeeded": 'emptyGlass',
           "solveFunction": () => {
-            addItem('key2');
+            addItem('filledGlass');
           },
         },
+      },
+    ]
+  },
+  "attic": {
+    'name': 'attic',
+    'isDark': true,
+    'icon': {
+      "src":'./assets/misc/attic-icon.png',
+      'x': "-200px",
+      'y': "80px",
+    },
+    'wall': './assets/wall/wood-wall.jpg',
+    "floor": './assets/floor/attic-floor.jpg',
+    'divider': "./assets/floor/floor-divider.png",
+    'entities': [
+      {
+        "name": 'hangingLight',
+        'src': './assets/wall/hanging-light.png',
+        "desc": "The bulb is completely burned out.",
+        'dims': {
+          'x': "500px",
+          'y': "0px",
+          "width": "100px",
+          'z': "5",
+        }
+      },
+      {
+        "name": 'stool',
+        'src': './assets/furniture/stool.png',
+        "desc": "Stool",
+        'dims': {
+          'x': "800px",
+          'y': "300px",
+          "width": "170px",
+          'z': "3",
+        }
+      },
+      {
+        "name": 'packingBox',
+        'src': './assets/furniture/packing-box.png',
+        "desc": "The box is filled with folders, books, and papers. With a quick skim, none of them seem particularly useful",
+        'dims': {
+          'x': "20px",
+          'y': "220px",
+          "width": "400px",
+          'z': "3",
+        }
+      },
+      {
+        "name": 'singlePackingBox',
+        'src': './assets/furniture/single-packing-box.png',
+        "desc": "There's a slipped of paper inside the box.",
+        'dims': {
+          'x': "660px",
+          'y': "420px",
+          "width": "140px",
+          'z': "3",
+        }
+      },
+      {
+        "name": 'craneMachine',
+        'src': './assets/furniture/crane-machine.png',
+        "desc": "Gambling: Children's edition.",
+        'dims': {
+          'x': "400px",
+          'y': "120px",
+          "width": "270px",
+          'z': "3",
+        },
+        "puzzle": {
+          "type": 'item',
+          'isSolved': false,
+          "solveDescription": "Congrats! Against all odds and due to plot armor, you've obtained a plush",
+          'afterDesc': "No more. That's enough",
+          "itemNeeded": 'coin',
+          "solveFunction": () => {
+            addItem('plush');
+          },
+        },
+      },
+      {
+        "name": 'picture-frame-5',
+        'src': './assets/wall/artwork/pizzaria.JPG',
+        "desc": 'This work is titled "Pizzeria". The caption below says: "Terrible things come in small packages."',
+        'dims': {
+          'x': "680px",
+          'y': "20px",
+          "width": "300px",
+          'z': "3",
+        }
+      },
+      {
+        "name": 'light-switch',
+        'src': './assets/wall/light-switch.png',
+        "desc": 'Flicking this does nothing.',
+        'dims': {
+          'x': "30px",
+          'y': "220px",
+          "width": "40px",
+          'z': "3",
+        }
       },
     ]
   },
