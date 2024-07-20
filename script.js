@@ -7,11 +7,14 @@ import {createMapIcons} from './javascript/functions/displayRoom.js';
 import {addItem} from './javascript/functions/addItem.js';
 import { mountFlashlight } from './javascript/functions/mountFlashlight.js';
 
-// the position related to the viewport
-
 mapIcon.addEventListener('click', function() {
   toggleMap();
 })
+/*for (let i = 1; i < Object.keys(rooms).length; i++) {
+  player.currRoom = rooms[Object.keys(rooms)[i]];
+  displayRoom(player.currRoom);
+}*/
+
 player.currRoom = rooms.lounge;
 displayRoom(player.currRoom);
 player.currRoom = rooms.entrance;
