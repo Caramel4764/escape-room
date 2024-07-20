@@ -457,10 +457,10 @@ let rooms = {
         "puzzle": {
           "type": 'inspect',
           'isSolved': false,
-          "solveDescription": "Congrats! Against all odds and due to plot armor, you've obtained a plush",
-          'afterDesc': "No more. That's enough",
+          "solveDescription": "Dummy text",
+          'afterDesc': "There's nothing else of interest now",
           "solveFunction": () => {
-            addItem('password-paper');
+            addItem('passwordPaper');
           },
         },
       },

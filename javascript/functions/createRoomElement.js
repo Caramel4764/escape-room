@@ -10,7 +10,7 @@ const setting = document.querySelector('#room');
 const inspectImg = document.querySelector('#inspect-image');
 const inspectText = document.querySelector('#inspect-text');
 
-function showImg (entity, entityImg) {
+function showSolvedImg (entity, entityImg) {
   if (entity.puzzle && entity.puzzle.isSolved&&entity.puzzle.solveImg) {
     entityImg.src=entity.puzzle.solveImg;
   } else {
@@ -39,7 +39,7 @@ function createRoomElement (currRoom) {
   //gives interactivity
   currRoom.entities.map((entity)=>{
     let entityImg = document.createElement("img");
-    showImg(entity, entityImg);
+    showSolvedImg(entity, entityImg);
     entityImg.style.top=entity.dims.y;
     entityImg.style.left=entity.dims.x;
     entityImg.style.width=entity.dims.width;
@@ -53,7 +53,7 @@ function createRoomElement (currRoom) {
       } else {
       displayInspect(entity.desc, 100);
       }
-      showImg(entity, inspectImg);
+      showSolvedImg(entity, inspectImg);
       toggleInspectMenu();
       //if item, add to inventory
       if (entity.isItem) {
@@ -66,7 +66,7 @@ function createRoomElement (currRoom) {
         entity.puzzle.isSolved=true;
         if (entity.puzzle.solveFunction) {
           entity.puzzle.solveFunction();
-          showImg(entity, entityImg);
+          showSolvedImg(entity, entityImg);
         }
         for (let i = 0; i < player.inventory.length; i++) {
           if (player.inventory[i].name == entity.puzzle.itemNeeded) {
@@ -77,6 +77,13 @@ function createRoomElement (currRoom) {
         }
       } else if (entity.puzzle && entity.puzzle.type=='item' && player.selectedItem.name != 'none' && player.selectedItem.name && player.selectedItem.name!=entity.puzzle.itemNeeded) {
         displayInspect("Unfortunately, that doesn't go there", 100);
+      } else if (entity.puzzle && entity.puzzle.type=='inspect') {
+        if (entity.puzzle.solveFunction && entity.puzzle.isSolved==false) {
+          entity.puzzle.solveFunction();
+          displayInspect(entity.puzzle.afterDesc, 100);
+        }
+        entity.puzzle.isSolved=true;
+        showSolvedImg(entity, entityImg);
       }
       inspectText.innerHTML = inspectMenuInfo.chunkedText[0];
     })
