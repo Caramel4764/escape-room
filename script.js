@@ -13,7 +13,7 @@ let roomBox = room.getBoundingClientRect();
 
 room.addEventListener('mousemove', function(e) {
   let mouseX = e.clientX-roomBox.x;
-  let mouseY = e.clientY-roomBox.x;
+  let mouseY = e.clientY-roomBox.y;
   flashlight.style.backgroundImage = `radial-gradient(circle 5em at ${mouseX}px ${mouseY}px, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 1))`;
 })
 mapIcon.addEventListener('click', function() {
