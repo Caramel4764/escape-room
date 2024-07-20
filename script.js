@@ -8,8 +8,8 @@ import {addItem} from './javascript/functions/addItem.js';
 let flashlight = document.querySelector('#flashlight');
 
 flashlight.addEventListener('mousemove', function(e) {
-  let mouseX = e.clientX;
-  let mouseY = e.clientY;
+  let mouseX = e.offsetX;
+  let mouseY = e.offsetY;
   console.log(mouseX)
   
   //background-image: radial-gradient(circle 5em at 50% 50%, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
