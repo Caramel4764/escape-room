@@ -6,7 +6,7 @@ let roomBox = room.getBoundingClientRect();
 let flashlight = document.querySelector('#flashlight');
 
 function mountFlashlight() {
-  flashlight.style.visibility = 'hidden';
+  //flashlight.style.visibility = 'hidden';
   let mouseX;
   let mouseY;
   room.addEventListener('mousemove', function(e) {
