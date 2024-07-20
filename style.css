@@ -175,19 +175,21 @@ img{
   display:flex;
   justify-content: center;
   visibility: hidden;
-  z-index:100px;
+  z-index:100;
+  position:relative;
 }
 #map {
   width: 100%;
   position:relative;
   height: 100%;
   object-fit: contain;
+
 }
 .center-div {
   display:flex;
   width:1000px;
   height: 600px;
-  z-index: -4;
+  z-index: 0;
   position:absolute;
   visibility: hidden;
   justify-content: center;
@@ -197,6 +199,7 @@ img{
 }
 .map-icon {
   width: 90px;
+  z-index: 2;
 }
 .map-icon-div {
   width: 90px;

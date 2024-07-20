@@ -7,11 +7,14 @@ import {createMapIcons} from './javascript/functions/displayRoom.js';
 import {addItem} from './javascript/functions/addItem.js';
 let flashlight = document.querySelector('#flashlight');
 let room = document.querySelector('#room');
-room.addEventListener('mousemove', function(e) {
-  let mouseX = e.clientX;
-  let mouseY = e.clientY;
-  flashlight.style.backgroundImage = `radial-gradient(circle 5em at ${mouseX}px ${mouseY}px, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1))`;
 
+let roomBox = room.getBoundingClientRect();
+// the position related to the viewport
+
+room.addEventListener('mousemove', function(e) {
+  let mouseX = e.clientX-roomBox.x;
+  let mouseY = e.clientY-roomBox.x;
+  flashlight.style.backgroundImage = `radial-gradient(circle 5em at ${mouseX}px ${mouseY}px, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 1))`;
 })
 mapIcon.addEventListener('click', function() {
   toggleMap();
