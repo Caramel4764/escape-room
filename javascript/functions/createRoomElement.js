@@ -6,6 +6,9 @@ import {player} from "../data/player.js"
 import {resetSelectedItem} from "./resetSelectedItem.js"
 import {locations} from '../data/locations.js';
 import {itemLibrary} from '../data/itemLibrary.js';
+import { displayPuzzleInspect } from './displayPuzzleInspect.js';
+import { grabObject } from './grabObject.js';
+import { solvePuzzle } from './solvePuzzle.js';
 const setting = document.querySelector('#room');
 const inspectImg = document.querySelector('#inspect-image');
 const inspectText = document.querySelector('#inspect-text');
@@ -44,33 +47,23 @@ function createRoomElement (currRoom) {
     entityImg.style.left=entity.dims.x;
     entityImg.style.width=entity.dims.width;
     entityImg.style.zIndex=entity.dims.z;
+    //if item, add to item library
     if (entity.isItem) {
       itemLibrary.push(entity);
     }
     entityImg.addEventListener('click', () => {
-      if (entity.puzzle && entity.puzzle.isSolved) {
-        displayInspect(entity.puzzle.afterDesc, 100);
-      } else {
-      displayInspect(entity.desc, 100);
-      }
+      displayPuzzleInspect(entity)
       showSolvedImg(entity, inspectImg);
       toggleInspectMenu();
       //if item, add to inventory
-      if (entity.isItem) {
-        addItem(entity);
-        roomContainer.removeChild(entityImg);
-      }
+      grabObject(entity, roomContainer, entityImg)
       //solved
       if (entity.puzzle && entity.puzzle.type=='item' && player.selectedItem.name == entity.puzzle.itemNeeded) {
-        displayInspect(entity.puzzle.solveDescription, 100);
-        entity.puzzle.isSolved=true;
-        if (entity.puzzle.solveFunction) {
-          entity.puzzle.solveFunction();
-          showSolvedImg(entity, entityImg);
-        }
+        solvePuzzle(entity);
         for (let i = 0; i < player.inventory.length; i++) {
           if (player.inventory[i].name == entity.puzzle.itemNeeded) {
             player.inventory.splice(i, 1);
+            console.log(inventory)
             inventory.removeChild(inventory.children[i]);
             resetSelectedItem();
           }
@@ -93,4 +86,4 @@ function createRoomElement (currRoom) {
   })
   locations.push(roomContainer)
 }
-export {createRoomElement}
+export {createRoomElement, showSolvedImg}
