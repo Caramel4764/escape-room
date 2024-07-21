@@ -10,6 +10,10 @@ let itemLibrary = [
   {
     "name": 'plush',
     'src': './assets/object/plush.png',
+    'combine': {
+      'requiredItem':'scissor',
+      'newItem': 'key'
+    }
   },
   {
     "name": 'plushPaper',
@@ -39,6 +43,14 @@ let itemLibrary = [
     'combine': {
       'requiredItem':'flashLightItem',
       'newItem': 'flashlightWBattery'
+    }
+  },
+  {
+    "name": 'scissor',
+    'src': './assets/object/scissor.png',
+    'combine': {
+      'requiredItem':'plush',
+      'newItem': 'key'
     }
   },
   {

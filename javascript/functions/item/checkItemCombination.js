@@ -18,7 +18,6 @@ function checkItemCombination (item) {
       }
       removeItem(item.combine.requiredItem);
       removeItem(item.name);
-      //
     }
     syncInventory();
   }

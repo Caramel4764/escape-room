@@ -8,6 +8,8 @@ function toggleMap () {
     //testing
     addItem('flashLightItem')
     addItem('battery')
+    addItem('plush')
+    addItem('scissor')
   } else {
     map.style.visibility = 'visible';
   }
