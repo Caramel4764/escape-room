@@ -63,8 +63,6 @@ function addItem (entity) {
           if (player.selectedItem=='none') {
             syncInventory();
           }
-          console.log(`selected item: ${player.selectedItem.name}`)
-          console.log(`needs: ${singleItem.combine}`)
           if (player.selectedItem.name == singleItem.combine) {
             console.log('trigger')
           }
