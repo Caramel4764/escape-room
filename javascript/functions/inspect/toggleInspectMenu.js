@@ -12,7 +12,9 @@ gameMask.addEventListener('click', ()=>{
         toggleInspectMenu();
       }
   } else {
+    inspectText.innerHTML = inspectMenuInfo.chunkedText[0];
     toggleInspectMenu();
+
   }
 })
 
