@@ -1,5 +1,5 @@
 let map = document.querySelector('#map-div');
-import {addItem} from './addItem.js';
+import {addItem} from './item/addItem.js';
 function toggleMap () {
   if (map.style.visibility == 'visible') {
     map.style.visibility = 'hidden';

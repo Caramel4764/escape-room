@@ -1,4 +1,4 @@
-import {player} from '../data/player.js';
+import {player} from '../../data/player.js';
 import { syncInventory } from './syncInventory.js';
 import { enlargeItem } from './enlargeItem.js';
 import { toggleItemSelection } from './toggleItemSelection.js';
@@ -9,7 +9,6 @@ let inventory = document.querySelector('#inventory');
 
 function addItem (entity) {
   let newInventoryInfo = getItemInfo(entity);
-
   player.inventory.push(newInventoryInfo);
   let newItemDiv = document.createElement('div')
   let newItem = document.createElement('img')
@@ -18,7 +17,6 @@ function addItem (entity) {
   newItemDiv.setAttribute('id', newInventoryInfo.name)
   newItemDiv.classList.add('item');
   inventory.appendChild(newItemDiv);
-
   newItemDiv.addEventListener('click', ()=>{
     player.inventory.map((singleItem)=> {
       enlargeItem(newInventoryInfo);

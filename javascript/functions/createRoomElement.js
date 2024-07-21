@@ -1,7 +1,7 @@
 import {toggleInspectMenu} from './toggleInspectMenu.js';
 import { displayInspect } from "./displayInspectMenu.js";
 import {inspectMenuInfo} from '../data/inspectInfoMenu.js'
-import {addItem} from './addItem.js'
+import {addItem} from './item/addItem.js'
 import {player} from "../data/player.js"
 import {resetSelectedItem} from "./resetSelectedItem.js"
 import {locations} from '../data/locations.js';

@@ -1,4 +1,4 @@
-import {itemLibrary} from '../data/itemLibrary.js';
+import {itemLibrary} from '../../data/itemLibrary.js';
 
 //return the needed properties of an inputted object or searches a string to find an object
 function getItemInfo (entity) {

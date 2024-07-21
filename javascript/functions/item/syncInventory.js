@@ -1,4 +1,4 @@
-import {player} from "../data/player.js"
+import {player} from "../../data/player.js"
 let inventory = document.querySelector('#inventory')
 
 function syncInventory () {
