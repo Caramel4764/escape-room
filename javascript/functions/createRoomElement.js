@@ -1,13 +1,11 @@
 import {toggleInspectMenu} from './toggleInspectMenu.js';
-import { displayInspect } from "./displayInspectMenu.js";
 import {inspectMenuInfo} from '../data/inspectInfoMenu.js'
-import {player} from "../data/player.js"
 import {locations} from '../data/locations.js';
 import {itemLibrary} from '../data/itemLibrary.js';
 import { displayPuzzleInspect } from './displayPuzzleInspect.js';
 import { grabObject } from './grabObject.js';
-import { solvePuzzle } from './solvePuzzle.js';
-import { removeItem } from './removeItem.js';
+import { handlePuzzle } from './handlePuzzle.js';
+
 const setting = document.querySelector('#room');
 const inspectImg = document.querySelector('#inspect-image');
 const inspectText = document.querySelector('#inspect-text');
@@ -58,22 +56,7 @@ function createRoomElement (currRoom) {
       grabObject(entity, roomContainer, entityImg)
       //solved
       if (entity.puzzle) {
-        if (entity.puzzle.type=='item' && player.selectedItem.name == entity.puzzle.itemNeeded) {
-          solvePuzzle(entity);
-          showSolvedImg(entity, entityImg);
-          removeItem(entity);
-        } else if (entity.puzzle.type=='item' && player.selectedItem.name != 'none' && player.selectedItem.name && player.selectedItem.name!=entity.puzzle.itemNeeded) {
-          displayInspect("Unfortunately, that doesn't go there", 100);
-        } else if (entity.puzzle.type=='inspect') {
-          if (entity.puzzle.solveFunction && entity.puzzle.isSolved==false) {
-            entity.puzzle.solveFunction();
-            displayInspect(entity.desc, 100);
-          } else {
-            displayInspect(entity.puzzle.afterDesc, 100);
-          }
-          entity.puzzle.isSolved=true;
-          showSolvedImg(entity, entityImg);
-        }
+        handlePuzzle(entity, entityImg)
       }
       inspectText.textContent = inspectMenuInfo.chunkedText[0];
     })
