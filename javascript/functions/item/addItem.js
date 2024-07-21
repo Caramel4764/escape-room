@@ -1,9 +1,10 @@
 import {player} from '../../data/player.js';
 import { syncInventory } from './syncInventory.js';
 import { enlargeItem } from './enlargeItem.js';
+import { getItemInfo } from './getItemInfo.js';
+import { findItemWithLib } from './findItemWithLib.js';
 import { toggleItemSelection } from './toggleItemSelection.js';
 import { checkItemCombination } from './checkItemCombination.js';
-import { getItemInfo } from './getItemInfo.js';
 
 let inventory = document.querySelector('#inventory');
 
@@ -17,18 +18,12 @@ function addItem (entity) {
   newItemDiv.setAttribute('id', newInventoryInfo.name)
   newItemDiv.classList.add('item');
   inventory.appendChild(newItemDiv);
-  newItemDiv.addEventListener('click', ()=>{
-    player.inventory.map((singleItem)=> {
-      enlargeItem(newInventoryInfo);
-      //inventory item matches library item?
-      if (singleItem.name == newItemDiv.id) {
-        toggleItemSelection(singleItem);
-        checkItemCombination(singleItem);
-      } else {
-        singleItem.selected = false;
-      }
-    })
+  newItemDiv.addEventListener('click', () => {
+    let targetItem = findItemWithLib(newItemDiv);
+    toggleItemSelection(targetItem);
+    checkItemCombination(targetItem);
     syncInventory();
+    enlargeItem(newInventoryInfo);
   })
 }
 export {addItem}
