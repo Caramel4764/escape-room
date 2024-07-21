@@ -1,14 +1,13 @@
 import {toggleInspectMenu} from './toggleInspectMenu.js';
 import { displayInspect } from "./displayInspectMenu.js";
 import {inspectMenuInfo} from '../data/inspectInfoMenu.js'
-import {addItem} from './item/addItem.js'
 import {player} from "../data/player.js"
-import {resetSelectedItem} from "./resetSelectedItem.js"
 import {locations} from '../data/locations.js';
 import {itemLibrary} from '../data/itemLibrary.js';
 import { displayPuzzleInspect } from './displayPuzzleInspect.js';
 import { grabObject } from './grabObject.js';
 import { solvePuzzle } from './solvePuzzle.js';
+import { removeItem } from './removeItem.js';
 const setting = document.querySelector('#room');
 const inspectImg = document.querySelector('#inspect-image');
 const inspectText = document.querySelector('#inspect-text');
@@ -58,29 +57,25 @@ function createRoomElement (currRoom) {
       //if item, add to inventory
       grabObject(entity, roomContainer, entityImg)
       //solved
-      if (entity.puzzle && entity.puzzle.type=='item' && player.selectedItem.name == entity.puzzle.itemNeeded) {
-        solvePuzzle(entity);
-        for (let i = 0; i < player.inventory.length; i++) {
-          if (player.inventory[i].name == entity.puzzle.itemNeeded) {
-            player.inventory.splice(i, 1);
-            console.log(inventory)
-            inventory.removeChild(inventory.children[i]);
-            resetSelectedItem();
+      if (entity.puzzle) {
+        if (entity.puzzle.type=='item' && player.selectedItem.name == entity.puzzle.itemNeeded) {
+          solvePuzzle(entity);
+          showSolvedImg(entity, entityImg);
+          removeItem(entity);
+        } else if (entity.puzzle.type=='item' && player.selectedItem.name != 'none' && player.selectedItem.name && player.selectedItem.name!=entity.puzzle.itemNeeded) {
+          displayInspect("Unfortunately, that doesn't go there", 100);
+        } else if (entity.puzzle.type=='inspect') {
+          if (entity.puzzle.solveFunction && entity.puzzle.isSolved==false) {
+            entity.puzzle.solveFunction();
+            displayInspect(entity.desc, 100);
+          } else {
+            displayInspect(entity.puzzle.afterDesc, 100);
           }
+          entity.puzzle.isSolved=true;
+          showSolvedImg(entity, entityImg);
         }
-      } else if (entity.puzzle && entity.puzzle.type=='item' && player.selectedItem.name != 'none' && player.selectedItem.name && player.selectedItem.name!=entity.puzzle.itemNeeded) {
-        displayInspect("Unfortunately, that doesn't go there", 100);
-      } else if (entity.puzzle && entity.puzzle.type=='inspect') {
-        if (entity.puzzle.solveFunction && entity.puzzle.isSolved==false) {
-          entity.puzzle.solveFunction();
-          displayInspect(entity.desc, 100);
-        } else {
-          displayInspect(entity.puzzle.afterDesc, 100);
-        }
-        entity.puzzle.isSolved=true;
-        showSolvedImg(entity, entityImg);
       }
-      inspectText.innerHTML = inspectMenuInfo.chunkedText[0];
+      inspectText.textContent = inspectMenuInfo.chunkedText[0];
     })
     roomContainer.appendChild(entityImg);
   })

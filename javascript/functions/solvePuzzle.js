@@ -6,7 +6,7 @@ function solvePuzzle (entity, entityImg) {
   entity.puzzle.isSolved=true;
   if (entity.puzzle.solveFunction) {
     entity.puzzle.solveFunction();
-    showSolvedImg(entity, entityImg);
+    //showSolvedImg(entity, entityImg);
   }
 }
 
