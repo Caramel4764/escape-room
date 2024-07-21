@@ -1,4 +1,4 @@
-import { player } from "../data/player.js";
+import { player } from "../../data/player.js";
 import { resetSelectedItem } from "./resetSelectedItem.js";
 let inventory = document.querySelector('#inventory');
 

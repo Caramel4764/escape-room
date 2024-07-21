@@ -1,8 +1,8 @@
 import { player } from "../data/player.js";
 import { solvePuzzle } from "./solvePuzzle.js";
-import { removeItem } from "./removeItem.js";
+import { removeItem } from "./item/removeItem.js";
 import { displayInspect } from "./displayInspectMenu.js";
-import { showSolvedImg } from "./createRoomElement.js";
+import { showSolvedImg } from "./room/createRoomElement.js";
 
 function handlePuzzle (entity, entityImg) {
   if (entity.puzzle.type=='item' && player.selectedItem.name == entity.puzzle.itemNeeded) {

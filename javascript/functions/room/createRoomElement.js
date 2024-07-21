@@ -1,12 +1,12 @@
-import {toggleInspectMenu} from './toggleInspectMenu.js';
-import {inspectMenuInfo} from '../data/inspectInfoMenu.js'
-import {locations} from '../data/locations.js';
-import {itemLibrary} from '../data/itemLibrary.js';
-import { displayPuzzleInspect } from './displayPuzzleInspect.js';
-import { grabObject } from './grabObject.js';
-import { handlePuzzle } from './handlePuzzle.js';
+import {toggleInspectMenu} from '../toggleInspectMenu.js';
+import {inspectMenuInfo} from '../../data/inspectInfoMenu.js'
+import {locations} from '../../data/locations.js';
+import {itemLibrary} from '../../data/itemLibrary.js';
+import { displayPuzzleInspect } from '../displayPuzzleInspect.js';
+import { grabObject } from '../item/grabObject.js';
+import { handlePuzzle } from '../handlePuzzle.js';
+import { createRoomVisual } from './createRoomVisual.js';
 
-const setting = document.querySelector('#room');
 const inspectImg = document.querySelector('#inspect-image');
 const inspectText = document.querySelector('#inspect-text');
 
@@ -18,24 +18,7 @@ function showSolvedImg (entity, entityImg) {
   }
 }
 function createRoomElement (currRoom) {
-  let roomContainer = document.createElement('div');
-  roomContainer.classList.add('room-container');
-  roomContainer.setAttribute('id', currRoom.name);
-  setting.appendChild(roomContainer);
-  let floor = document.createElement('img')
-  floor.src = currRoom.floor;
-  floor.setAttribute('id', 'wood-floor');
-  let woodFloorDiv = document.createElement('div');
-  woodFloorDiv.setAttribute('id', 'wood-floor-div');
-  woodFloorDiv.appendChild(floor);
-  roomContainer.appendChild(woodFloorDiv);
-  let wall = document.createElement('img')
-  wall.src = currRoom.wall;
-  wall.setAttribute('id', 'wall');
-  let wallDiv = document.createElement('div');
-  wallDiv.setAttribute('id', 'wall-div');
-  wallDiv.append(wall);
-  roomContainer.appendChild(wallDiv);
+  let roomContainer = createRoomVisual(currRoom);
   //gives interactivity
   currRoom.entities.map((entity)=>{
     let entityImg = document.createElement("img");

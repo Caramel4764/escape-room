@@ -1,9 +1,9 @@
 
 import {createRoomElement} from "./createRoomElement.js"
-import {locations} from '../data/locations.js'
-import {rooms} from '../data/rooms.js'
+import {locations} from '../../data/locations.js'
+import {rooms} from '../../data/rooms.js'
 import { goRoom } from "./goRoom.js";
-import {toggleMap} from "./toggleMap.js";
+import {toggleMap} from "../toggleMap.js";
 let flashlight = document.querySelector('#flashlight');
 
 //this function creates the setting

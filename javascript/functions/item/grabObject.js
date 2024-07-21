@@ -1,4 +1,4 @@
-import {addItem} from "../functions/item/addItem.js";
+import {addItem} from "./addItem.js";
 
 function grabObject (entity, roomContainer, entityImg) {
   if (entity.isItem) {

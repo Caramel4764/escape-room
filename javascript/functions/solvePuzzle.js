@@ -1,5 +1,5 @@
 import {displayInspect} from './displayInspectMenu.js';
-import {showSolvedImg} from './createRoomElement.js';
+import {showSolvedImg} from './room/createRoomElement.js';
 
 function solvePuzzle (entity, entityImg) {
   displayInspect(entity.puzzle.solveDescription, 100);
@@ -7,7 +7,6 @@ function solvePuzzle (entity, entityImg) {
   if (entity.puzzle.solveFunction) {
     entity.puzzle.solveFunction();
     showSolvedImg(entity, entityImg);
-    
   }
 }
 
