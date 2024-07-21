@@ -20,10 +20,11 @@ function addItem (entity) {
     for (let i = 0; i < itemLibrary.length; i++) {
       if (itemLibrary[i].name==entity) {
         newInventoryInfo.name = entity;
+        console.log(itemLibrary[i].src)
+
         newInventoryInfo.src = itemLibrary[i].src;
         newInventoryInfo.desc = itemLibrary[i].desc;
         newInventoryInfo.selected = false;
-        console.log(itemLibrary[i].openSrc)
         if (itemLibrary[i].openSrc) {
           newInventoryInfo.openSrc = itemLibrary[i].openSrc;
         }

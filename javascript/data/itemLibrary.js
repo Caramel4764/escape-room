@@ -1,7 +1,7 @@
 let itemLibrary = [
   {
-  "name": 'filledGlass',
-  'src': './assets/object/filled-glass.png',
+    "name": 'filledGlass',
+    'src': './assets/object/filled-glass.png',
   },
   {
     "name": 'coin',
@@ -26,13 +26,13 @@ let itemLibrary = [
     'src': './assets/object/umbrella.png',
   },
   {
+    "name": 'flashLightItem',
+    'src': './assets/object/flashlight.png',
+  },
+  {
     "name": 'battery',
     'src': './assets/object/battery.png',
   },
-  {
-    "name": 'flashlight',
-    'src': './assets/object/flashlight.png',
-  }
 ]
 
 export {itemLibrary}

@@ -411,7 +411,7 @@ let rooms = {
   },
   "attic": {
     'name': 'attic',
-    'isDark': true,
+    'isDark': false,
     'icon': {
       "src":'./assets/misc/attic-icon.png',
       'x': "-200px",
