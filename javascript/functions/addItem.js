@@ -20,13 +20,14 @@ function addItem (entity) {
     for (let i = 0; i < itemLibrary.length; i++) {
       if (itemLibrary[i].name==entity) {
         newInventoryInfo.name = entity;
-        console.log(itemLibrary[i].src)
-
         newInventoryInfo.src = itemLibrary[i].src;
         newInventoryInfo.desc = itemLibrary[i].desc;
         newInventoryInfo.selected = false;
         if (itemLibrary[i].openSrc) {
           newInventoryInfo.openSrc = itemLibrary[i].openSrc;
+        }
+        if (itemLibrary[i].combine) {
+          newInventoryInfo.combine = itemLibrary[i].combine;
         }
       }
     }
@@ -41,7 +42,7 @@ function addItem (entity) {
   inventory.appendChild(newItemDiv);
   newItemDiv.addEventListener('click', ()=>{
     player.inventory.map((singleItem)=> {
-      //target
+      //open if openable
       if (newInventoryInfo.openSrc) {
         openItemImage.src = newInventoryInfo.openSrc;
         if (openItemDiv.style.visibility == 'visible') {
@@ -50,12 +51,24 @@ function addItem (entity) {
           openItemDiv.style.visibility = 'visible';
         }
       }
+      //is correct item?
       if (singleItem.name==newItemDiv.id) {
         if (singleItem.selected == true) {
           singleItem.selected = false;
           resetSelectedItem();
         } else {
           singleItem.selected = true;
+        }
+        if (singleItem.combine) {
+          if (player.selectedItem=='none') {
+            syncInventory();
+          }
+          console.log(`selected item: ${player.selectedItem.name}`)
+          console.log(`needs: ${singleItem.combine}`)
+          if (player.selectedItem.name == singleItem.combine) {
+            console.log('trigger')
+          }
+          syncInventory();
         }
       } else {
         singleItem.selected = false;
