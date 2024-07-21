@@ -10,13 +10,13 @@ function checkItemCombination (item) {
     if (player.selectedItem == 'none') {
       syncInventory();
     }
-    if (player.selectedItem.name == item.combine) {
+    if (player.selectedItem.name == item.combine.requiredItem) {
       for (let i = 0; i < itemLibrary.length; i++) {
         if (itemLibrary[i].name == item.name) {
-          addItem(itemLibrary[i].newItem);
+          addItem(itemLibrary[i].combine.newItem);
         }
       }
-      removeItem(item.combine);
+      removeItem(item.combine.requiredItem);
       removeItem(item.name);
       //
     }
