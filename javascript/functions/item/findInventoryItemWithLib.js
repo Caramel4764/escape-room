@@ -1,6 +1,6 @@
 import {player} from "../../data/player.js";
 
-function findItemWithLib (searchQuery) {
+function findInventoryItemWithLib (searchQuery) {
   let targetItem = 'none';
   player.inventory.map((singleItem)=> {
     //inventory item matches library item?
@@ -12,4 +12,4 @@ function findItemWithLib (searchQuery) {
   })
   return targetItem;
 }
-export {findItemWithLib}
+export {findInventoryItemWithLib}

@@ -1,6 +1,6 @@
 import { player } from "../../data/player.js";
 import { resetSelectedItem } from "./resetSelectedItem.js";
-import { findItemWithLib } from "./findItemWithLib.js";
+import { findInventoryItemWithLib } from "./findInventoryItemWithLib.js";
 let inventory = document.querySelector('#inventory');
 
 function removeItem (entity) {

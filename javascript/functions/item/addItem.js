@@ -2,7 +2,7 @@ import {player} from '../../data/player.js';
 import { syncInventory } from './syncInventory.js';
 import { enlargeItem } from './enlargeItem.js';
 import { getItemInfo } from './getItemInfo.js';
-import { findItemWithLib } from './findItemWithLib.js';
+import { findInventoryItemWithLib } from './findInventoryItemWithLib.js';
 import { toggleItemSelection } from './toggleItemSelection.js';
 import { checkItemCombination } from './checkItemCombination.js';
 
@@ -19,7 +19,7 @@ function addItem (entity) {
   newItemDiv.classList.add('item');
   inventory.appendChild(newItemDiv);
   newItemDiv.addEventListener('click', () => {
-    let targetItem = findItemWithLib(newItemDiv.id);
+    let targetItem = findInventoryItemWithLib(newItemDiv.id);
     toggleItemSelection(targetItem);
     checkItemCombination(targetItem);
     syncInventory();
