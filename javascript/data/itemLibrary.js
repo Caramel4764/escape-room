@@ -28,12 +28,18 @@ let itemLibrary = [
   {
     "name": 'flashLightItem',
     'src': './assets/object/flashlight.png',
-    'combine': 'battery'
+    'combine': 'battery',
+    'newItem': 'flashlightWBattery'
   },
   {
     "name": 'battery',
     'src': './assets/object/battery.png',
-    'combine': 'flashLightItem'
+    'combine': 'flashLightItem',
+    'newItem': 'flashlightWBattery'
+  },
+  {
+    "name": 'flashlightWBattery',
+    'src': './assets/object/combo/flashlightWBattery.png',
   },
 ]
 
