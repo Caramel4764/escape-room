@@ -12,13 +12,12 @@ gameMask.addEventListener('click', ()=>{
         toggleInspectMenu();
       }
   } else {
-    inspectText.innerHTML = inspectMenuInfo.chunkedText[0];
     toggleInspectMenu();
-
   }
 })
 
 function toggleInspectMenu() {
+  inspectText.textContent = inspectMenuInfo.chunkedText[0];
   if (inspectMenuInfo.opened) {
     gameMask.style.visibility='hidden';
     inspectMenu.style.visibility='hidden';
