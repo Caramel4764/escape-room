@@ -34,9 +34,9 @@ let itemLibrary = [
     "name": 'flashLightItem',
     'src': './assets/object/flashlight.png',
     'combine': {
-      'item':'battery',
-      'newItem': 'flashlightWBattery',
-      'desc': "After you slot the batteries into the flashlight and flick the switch, a bright beam comes out. This should help with dark rooms."
+      'requiredItem':'battery',
+      //'newItem': 'flashlightWBattery',
+      //'desc': "After you slot the batteries into the flashlight and flick the switch, a bright beam comes out. This should help with dark rooms."
     }
   },
   {
