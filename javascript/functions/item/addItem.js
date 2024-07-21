@@ -19,7 +19,7 @@ function addItem (entity) {
   newItemDiv.classList.add('item');
   inventory.appendChild(newItemDiv);
   newItemDiv.addEventListener('click', () => {
-    let targetItem = findItemWithLib(newItemDiv);
+    let targetItem = findItemWithLib(newItemDiv.id);
     toggleItemSelection(targetItem);
     checkItemCombination(targetItem);
     syncInventory();

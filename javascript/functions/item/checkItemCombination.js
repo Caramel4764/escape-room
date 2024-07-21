@@ -8,6 +8,9 @@ function checkItemCombination (item) {
     }
     if (player.selectedItem.name == item.combine) {
       console.log('trigger')
+      removeItem(item.combine);
+      removeItem(item.name);
+
     }
     syncInventory();
   }
