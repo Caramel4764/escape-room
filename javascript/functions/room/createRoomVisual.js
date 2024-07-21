@@ -19,13 +19,6 @@ function createRoomVisual (roomName) {
   wallDiv.setAttribute('id', 'wall-div');
   wallDiv.append(wall);
   roomContainer.appendChild(wallDiv);
-  /*let domElements = {
-    roomContainer: roomContainer,
-    floor: floor,
-    woodFloorDiv: woodFloorDiv,
-    wall: wall,
-    wallDiv: wallDiv,
-  }*/
   return roomContainer;
 }
 export {createRoomVisual}

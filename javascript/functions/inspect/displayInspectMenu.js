@@ -1,4 +1,4 @@
-import {inspectMenuInfo} from '../data/inspectInfoMenu.js';
+import {inspectMenuInfo} from '../../data/inspectInfoMenu.js';
 
 function displayInspect(text, limit) {
   inspectMenuInfo.chunkedText = [];

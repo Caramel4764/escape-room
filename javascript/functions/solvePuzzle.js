@@ -1,4 +1,4 @@
-import {displayInspect} from './displayInspectMenu.js';
+import {displayInspect} from './inspect/displayInspectMenu.js';
 import {showSolvedImg} from './room/createRoomElement.js';
 
 function solvePuzzle (entity, entityImg) {

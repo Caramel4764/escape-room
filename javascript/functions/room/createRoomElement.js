@@ -1,8 +1,8 @@
-import {toggleInspectMenu} from '../toggleInspectMenu.js';
+import {toggleInspectMenu} from '../inspect/toggleInspectMenu.js';
 import {inspectMenuInfo} from '../../data/inspectInfoMenu.js'
 import {locations} from '../../data/locations.js';
 import {itemLibrary} from '../../data/itemLibrary.js';
-import { displayPuzzleInspect } from '../displayPuzzleInspect.js';
+import { displayPuzzleInspect } from '../inspect/displayPuzzleInspect.js';
 import { grabObject } from '../item/grabObject.js';
 import { handlePuzzle } from '../handlePuzzle.js';
 import { createRoomVisual } from './createRoomVisual.js';

@@ -1,4 +1,4 @@
-import {inspectMenuInfo} from '../data/inspectInfoMenu.js'
+import {inspectMenuInfo} from '../../data/inspectInfoMenu.js'
 const gameMask = document.querySelector('#screen-mask');
 const inspectMenu = document.querySelector('#inspect-menu')
 const inspectText = document.querySelector('#inspect-text');
