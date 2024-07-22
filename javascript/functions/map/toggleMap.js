@@ -6,10 +6,10 @@ function toggleMap () {
   if (map.style.visibility == 'visible') {
     map.style.visibility = 'hidden';
     //testing
-    addItem('flashLightItem')
+    /*addItem('flashLightItem')
     addItem('battery')
     addItem('plush')
-    addItem('scissor')
+    addItem('scissor')*/
   } else {
     map.style.visibility = 'visible';
   }
