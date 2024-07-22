@@ -8,15 +8,6 @@ let itemLibrary = [
     'src': './assets/object/coin.png',
   },
   {
-    "name": 'plush',
-    'src': './assets/object/plush.png',
-    'combine': {
-      'requiredItem':'scissor',
-      'newItem': 'key2',
-      'desc': "You use the scissor to cut open the plush. Digging inside the stuffing, you find a hidden key."
-    }
-  },
-  {
     "name": 'plushPaper',
     'openSrc': './assets/object/enlarged/plush-paper-big.png',
     'src': './assets/object/plush-paper.png',
@@ -35,8 +26,6 @@ let itemLibrary = [
     'src': './assets/object/flashlight.png',
     'combine': {
       'requiredItem':'battery',
-      //'newItem': 'flashlightWBattery',
-      //'desc': "After you slot the batteries into the flashlight and flick the switch, a bright beam comes out. This should help with dark rooms."
     }
   },
   {
@@ -53,6 +42,13 @@ let itemLibrary = [
     'src': './assets/object/scissor.png',
     'combine': {
       'requiredItem':'plush',
+    }
+  },
+  {
+    "name": 'plush',
+    'src': './assets/object/plush.png',
+    'combine': {
+      'requiredItem':'scissor',
       'newItem': 'key2',
       'desc': "You use the scissor to cut open the plush. Digging inside the stuffing, you find a hidden key."
     }

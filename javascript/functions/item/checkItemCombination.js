@@ -21,7 +21,6 @@ function checkItemCombination (item) {
             displayInspect(itemLibrary[i].combine.desc, 100);
           } else if (itemLibrary[i].combine.requiredItem) {
             console.log('2trigger');
-            //console.log(itemLibrary["battery"].combine.desc);
             for (let j = 0; j < itemLibrary.length; j++) {
               if (itemLibrary[j].name == itemLibrary[i].combine.requiredItem) {
                 if (itemLibrary[j].combine.desc) {
