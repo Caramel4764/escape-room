@@ -277,7 +277,6 @@ img{
 
 #password-input {
   color:rgb(17, 62, 17);
-  /*height: 30px;*/
   width: 150px;
   font-size:20px;
 }
@@ -291,4 +290,17 @@ img{
   display:flex;
   justify-content: center;
   margin-top: 30px;
+}
+#exit-arrow {
+  width: 80px;
+  bottom:0px;
+}
+.flex {
+  display: flex;
+  justify-content: center;
+}
+#desktop {
+  width: 100%;
+  height: 100%;
+  background-color: black;
 }

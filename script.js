@@ -3,17 +3,27 @@ import {createRoomElement} from './javascript/functions/room/createRoomElement.j
 import {player} from './javascript/data/player.js';
 import {goRoom} from './javascript/functions/room/goRoom.js';
 import {toggleMap} from './javascript/functions/map/toggleMap.js';
+import {toggle} from './javascript/functions/toggle.js';
 import {createMapIcons} from './javascript/functions/map/createMapIcons.js';
 import { mountFlashlight } from './javascript/functions/mountFlashlight.js';
 let computerScreen = document.getElementById('computer-content');
 let computerPasswordBtn = document.getElementById('password-btn');
+let computerDiv = document.querySelector('#computer-screen')
 let computerInput= document.getElementById('password-input');
+let exitArrow = document.getElementById('exit-arrow');
 
 computerPasswordBtn.addEventListener('click', function() {
   if (computerInput.value == '123') {
-    computerScreen.textContent='correct';
+    let desktop = document.createElement('div');
+    desktop.setAttribute('id', 'desktop');
+    computerScreen.textContent='';
+    computerScreen.appendChild(desktop)
   }
 })
+exitArrow.addEventListener('click', function() {
+  toggle(computerDiv);
+})
+
 mapIcon.addEventListener('click', function() {
   toggleMap();
 })
