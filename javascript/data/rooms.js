@@ -253,23 +253,23 @@ let rooms = {
       },
       {
         "name": 'picture2',
-        'src': './assets/wall/picture-frame-2.png',
-        "desc": 'This piece is titled "Monarach". The captions below says: "Meow, meow, meow"',
+        'src': './assets/wall/artwork/monarch.png',
+        "desc": 'This piece is titled "Monarch". The captions below says: "Meow, meow, meow"',
         'dims': {
           'x': "620px",
           'y': "20px",
-          "width": "120px",
+          "width": "200px",
           'z': "3",
         }
       },
       {
         "name": 'picture3',
-        'src': './assets/wall/picture-frame-3.png',
-        "desc": 'This piece is titled "Best Boi" with no context...You are suddenly filled with a strange urge to give it scraps.',
+        'src': './assets/wall/artwork/arcade.png',
+        "desc": 'This piece is titled "Arcade". It features two familar friends.',
         'dims': {
-          'x': "470px",
+          'x': "450px",
           'y': "200px",
-          "width": "140px",
+          "width": "160px",
           'z': "3",
         }
       },
