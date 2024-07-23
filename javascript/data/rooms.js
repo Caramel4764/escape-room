@@ -203,6 +203,10 @@ let rooms = {
           "width": "100px",
           'z': 3,
         },
+        'combine': {
+          'requiredItem':'plush',
+          'newItem': 'key2',
+        }
       },
     ]
   },
