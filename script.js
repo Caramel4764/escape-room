@@ -5,7 +5,15 @@ import {goRoom} from './javascript/functions/room/goRoom.js';
 import {toggleMap} from './javascript/functions/map/toggleMap.js';
 import {createMapIcons} from './javascript/functions/map/createMapIcons.js';
 import { mountFlashlight } from './javascript/functions/mountFlashlight.js';
+let computerScreen = document.getElementById('computer-content');
+let computerPasswordBtn = document.getElementById('password-btn');
+let computerInput= document.getElementById('password-input');
 
+computerPasswordBtn.addEventListener('click', function() {
+  if (computerInput.value == '123') {
+    computerScreen.textContent='correct';
+  }
+})
 mapIcon.addEventListener('click', function() {
   toggleMap();
 })

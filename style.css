@@ -266,4 +266,29 @@ img{
   background-color: rgb(35, 131, 59);
   left: 230px;
   top:90px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  color:rgb(17, 62, 17);
+}
+#login-menu {
+  font-size: 24px;
+}
+
+#password-input {
+  color:rgb(17, 62, 17);
+  /*height: 30px;*/
+  width: 150px;
+  font-size:20px;
+}
+#password-btn {
+  background-color:rgb(17, 62, 17);
+  color:white;
+  padding: 10px 30px;
+  align-self: center;
+}
+#password-btn-div {
+  display:flex;
+  justify-content: center;
+  margin-top: 30px;
 }
