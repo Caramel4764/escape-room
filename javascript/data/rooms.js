@@ -78,6 +78,7 @@ let rooms = {
           'afterDesc': "There's no more stuff in here. Look elsewhere",
           "itemNeeded": 'key2',
           "solveFunction": () => {
+            addItem('blueLightBulb');
           },
         },
       },
