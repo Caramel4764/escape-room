@@ -536,6 +536,31 @@ let rooms = {
       },
     ]
   },
+  "bedroom": {
+    'name': 'bedroom',
+    'isDark': false,
+    'icon': {
+      "src":'./assets/misc/icons/exit-icon.jpg',
+      'x': "0px",
+      'y': "100px",
+    },
+    'wall': './assets/wall/bedroom-wall.png',
+    "floor": './assets/floor/bedroom-floor.png',
+    'divider': "./assets/floor/floor-divider.png",
+    'entities': [
+      {
+        "name": 'bed',
+        'src': './assets/furniture/bedroom/bed.png',
+        "desc": "The sheets and pillows are folded and placed neatly",
+        'dims': {
+          'x': "300px",
+          'y': "300px",
+          "width": "400px",
+          'z': "3",
+        }
+      },
+    ]
+  },
   //insert new rooms here
 }
 
@@ -544,6 +569,12 @@ export {rooms};
 /*
 "entrance": {
     'name': 'fireplace',
+    'isDark': false,
+    'icon': {
+      "src":'./assets/misc/icons/exit-icon.jpg',
+      'x': "0px",
+      'y': "100px",
+    },
     'wall': './assets/wall/wood-wall.jpg',
     "floor": './assets/floor/wood-floor.png',
     'divider': "./assets/floor/floor-divider.png",
@@ -551,7 +582,7 @@ export {rooms};
       {
         "name": 'shelf',
         'src': './assets/furniture/shelf.png',
-        "desc": "The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.",
+        "desc": "Replace",
         'dims': {
           'x': "640px",
           'y': "90px",
