@@ -14,13 +14,10 @@ function checkItemCombination (item) {
     if (player.selectedItem.name == item.combine.requiredItem) {
       for (let i = 0; i < itemLibrary.length; i++) {
         if (itemLibrary[i].name == item.name) {
-          console.log(itemLibrary[i].name)
           if (itemLibrary[i].combine.desc) {
-            console.log('1trigger')
             addItem(itemLibrary[i].combine.newItem);
             displayInspect(itemLibrary[i].combine.desc, 100);
           } else if (itemLibrary[i].combine.requiredItem) {
-            console.log('2trigger');
             for (let j = 0; j < itemLibrary.length; j++) {
               if (itemLibrary[j].name == itemLibrary[i].combine.requiredItem) {
                 if (itemLibrary[j].combine.desc) {

@@ -12,6 +12,8 @@ function getItemInfo (entity) {
     }
   } else {
     for (let i = 0; i < itemLibrary.length; i++) {
+  console.log(itemLibrary[i])
+
       if (itemLibrary[i].name==entity) {
         newInventoryInfo.name = entity;
         newInventoryInfo.src = itemLibrary[i].src;

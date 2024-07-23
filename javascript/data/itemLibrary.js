@@ -42,7 +42,13 @@ let itemLibrary = [
     'src': './assets/object/scissor.png',
     'combine': {
       'requiredItem':'plush',
+      'newItem': 'key2',
+      'desc': "You use the scissor to cut open the plush. Digging inside the stuffing, you find a hidden key."
     }
+  },
+  {
+    "name": 'flashlightWBattery',
+    'src': './assets/object/combo/flashlightWBattery.png',
   },
   {
     "name": 'plush',
@@ -54,8 +60,9 @@ let itemLibrary = [
     }
   },
   {
-    "name": 'flashlightWBattery',
-    'src': './assets/object/combo/flashlightWBattery.png',
+    "name": 'key2',
+    'src': './assets/object/combo/key2.png',
+    'desc': "It's the key from the bear."
   },
 ]
 

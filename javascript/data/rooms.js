@@ -155,7 +155,7 @@ let rooms = {
         'src': './assets/furniture/lounge/vase.png',
         "desc": "There is not a single drop of water left inside",
         'dims': {
-          'x': "155px",
+          'x': "115px",
           'y': "150px",
           "width": "160px",
           'z': "5",
@@ -166,7 +166,7 @@ let rooms = {
         'src': './assets/furniture/lounge/dead-rose.png',
         "desc": "It's completely dried up",
         'dims': {
-          'x': "190px",
+          'x': "150px",
           'y': "84px",
           "width": "80px",
           'z': "4",
@@ -193,14 +193,14 @@ let rooms = {
         },
       },
       {
-        "name": 'key2',
+        "name": 'scissor',
         'isItem': true,
-        'src': './assets/object/key2.png',
-        "desc": "It's a key",
+        'src': './assets/object/scissor.png',
+        "desc": "You grab the scissor",
         'dims': {
-          'x': "830px",
-          'y': "330px",
-          "width": "50px",
+          'x': "240px",
+          'y': "260px",
+          "width": "100px",
           'z': 3,
         },
       },
@@ -313,7 +313,6 @@ let rooms = {
       {
         "name": 'frogStatue',
         'src': './assets/furniture/courtyard/frog-statue.png',
-        //assets/furniture/courtyard/frog-statue.png
         "desc": "It's a statue of a frog. There's something gleaming inside its throat but your hands are too big to reach inside",
         'dims': {
           'x': "600px",
@@ -324,7 +323,7 @@ let rooms = {
         "puzzle": {
           "type": 'item',
           'isSolved': false,
-          "solveDescription": "You pour the water into the frog's mouth and the water raises the object inside. You grab the key. Key Obtained!",
+          "solveDescription": "You pour the water into the frog's mouth and the water raises the object inside. You grab the quarter inside. Coin Obtained!",
           'afterDesc': "It's a frog statue",
           "itemNeeded": 'filledGlass',
           "solveFunction": () => {
