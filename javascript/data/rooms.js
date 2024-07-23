@@ -1,5 +1,6 @@
 import { addItem } from "../functions/item/addItem.js";
-
+import { displayInspect } from "../functions/inspect/displayInspectMenu.js";
+import { toggleInspectMenu } from "../functions/inspect/toggleInspectMenu.js";
 let rooms = {
   "dims": {
     x: 1000,
@@ -433,9 +434,20 @@ let rooms = {
         'dims': {
           'x': "500px",
           'y': "0px",
-          "width": "100px",
+          "width": "50px",
           'z': "5",
-        }
+        },
+        "puzzle": {
+          "type": 'item',
+          'isSolved': false,
+          "solveDescription": "You replace the burned out lightbulb with a new one. Try turning on the switch now",
+          'afterDesc': "It's a new light bulb.",
+          "itemNeeded": 'blueLightBulb',
+          'solveImg': './assets/wall/blue-hanging-light.png',
+          "solveFunction": () => {
+            displayInspect('You replace the burned out lightbulb with a new one. The demo ends here as of now but feel free to look around.', 100);
+          },
+        },
       },
       {
         "name": 'stool',
