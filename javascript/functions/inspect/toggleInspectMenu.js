@@ -1,4 +1,4 @@
-import {inspectMenuInfo} from '../data/inspectInfoMenu.js'
+import {inspectMenuInfo} from '../../data/inspectInfoMenu.js'
 const gameMask = document.querySelector('#screen-mask');
 const inspectMenu = document.querySelector('#inspect-menu')
 const inspectText = document.querySelector('#inspect-text');
@@ -17,6 +17,7 @@ gameMask.addEventListener('click', ()=>{
 })
 
 function toggleInspectMenu() {
+  inspectText.textContent = inspectMenuInfo.chunkedText[0];
   if (inspectMenuInfo.opened) {
     gameMask.style.visibility='hidden';
     inspectMenu.style.visibility='hidden';

@@ -1,5 +1,5 @@
-import {player} from '../data/player.js';
-import {locations} from "../data/locations.js";
+import {player} from '../../data/player.js';
+import {locations} from "../../data/locations.js";
 
 function goRoom (currRoom) {
   player.currRoom = currRoom;

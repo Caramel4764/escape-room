@@ -1,16 +1,10 @@
-
-import {createRoomElement} from "./createRoomElement.js"
-import {locations} from '../data/locations.js'
-import {rooms} from '../data/rooms.js'
-import { goRoom } from "./goRoom.js";
+import {locations} from '../../data/locations.js'
+import {rooms} from '../../data/rooms.js'
+import { goRoom } from "../room/goRoom.js";
 import {toggleMap} from "./toggleMap.js";
 let flashlight = document.querySelector('#flashlight');
 
 //this function creates the setting
-function displayRoom(currRoom) {
-  //update room dom
-  createRoomElement(currRoom);
-}
 function createMapIcons() {
   locations.map((location)=>{
     let mapIconDiv = document.createElement('div');
@@ -41,4 +35,4 @@ function createMapIcons() {
     mapIconDiv.appendChild(mapIcon);
   })
 }
-export {displayRoom, createMapIcons}
+export {createMapIcons}

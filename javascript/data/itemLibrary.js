@@ -1,15 +1,11 @@
 let itemLibrary = [
   {
-  "name": 'filledGlass',
-  'src': './assets/object/filled-glass.png',
+    "name": 'filledGlass',
+    'src': './assets/object/filled-glass.png',
   },
   {
     "name": 'coin',
     'src': './assets/object/coin.png',
-  },
-  {
-    "name": 'plush',
-    'src': './assets/object/plush.png',
   },
   {
     "name": 'plushPaper',
@@ -26,13 +22,42 @@ let itemLibrary = [
     'src': './assets/object/umbrella.png',
   },
   {
-    "name": 'battery',
-    'src': './assets/object/battery.png',
+    "name": 'flashLightItem',
+    'src': './assets/object/flashlight.png',
+    'combine': {
+      'requiredItem':'battery',
+    }
   },
   {
-    "name": 'flashlight',
-    'src': './assets/object/flashlight.png',
-  }
+    "name": 'battery',
+    'src': './assets/object/battery.png',
+    'combine': {
+      'requiredItem':'flashLightItem',
+      'newItem': 'flashlightWBattery',
+      'desc': "After you slot the batteries into the flashlight and flick the switch, a bright beam comes out. This should help with dark rooms."
+    }
+  },
+  {
+    "name": 'flashlightWBattery',
+    'src': './assets/object/combo/flashlightWBattery.png',
+  },
+  {
+    "name": 'plush',
+    'src': './assets/object/plush.png',
+    'combine': {
+      'requiredItem':'scissor',
+      'newItem': 'key2',
+      'desc': "You use the scissor to cut open the plush. Digging inside the stuffing, you find a hidden key."
+    }
+  },
+  {
+    "name": 'key2',
+    'src': './assets/object/combo/key2.png',
+  },
+  {
+    "name": 'blueLightBulb',
+    'src': './assets/object/blue-light-bulb.png',
+  },
 ]
 
 export {itemLibrary}

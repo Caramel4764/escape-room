@@ -1,5 +1,6 @@
-import { addItem } from "../functions/addItem.js";
-
+import { addItem } from "../functions/item/addItem.js";
+import { displayInspect } from "../functions/inspect/displayInspectMenu.js";
+import { toggleInspectMenu } from "../functions/inspect/toggleInspectMenu.js";
 let rooms = {
   "dims": {
     x: 1000,
@@ -9,7 +10,7 @@ let rooms = {
     'name': 'entrance',
     'isDark': false,
     'icon': {
-      "src":'./assets/misc/exit-icon.jpg',
+      "src":'./assets/misc/icons/exit-icon.jpg',
       'x': "0px",
       'y': "100px",
     },
@@ -19,7 +20,7 @@ let rooms = {
     'entities': [
       {
         "name": 'shelf',
-        'src': './assets/furniture/shelf.png',
+        'src': './assets/furniture/entrance/shelf.png',
         "desc": "Smells like freshly cut pine wood.",
         'dims': {
           'x': "640px",
@@ -52,7 +53,7 @@ let rooms = {
       },
       {
         "name": 'shoeRack',
-        'src': './assets/furniture/shoe-rack.png',
+        'src': './assets/furniture/entrance/shoe-rack.png',
         "desc": "All the shoes are brand new and look unworn. The sizes from left to right are 8, 10, 15",
         'dims': {
           'x': "40px",
@@ -63,7 +64,7 @@ let rooms = {
       },
       {
         "name": 'lockBox',
-        'src': './assets/furniture/box.png',
+        'src': './assets/furniture/entrance/box.png',
         "desc": "Surprise, surprise. It's locked. There's this hidden rule that if there isn't a locked container in plain sight, it's not a real escape room.",
         'dims': {
           'x': "700px",
@@ -78,6 +79,7 @@ let rooms = {
           'afterDesc': "There's no more stuff in here. Look elsewhere",
           "itemNeeded": 'key2',
           "solveFunction": () => {
+            addItem('blueLightBulb');
           },
         },
       },
@@ -99,7 +101,7 @@ let rooms = {
     'name': 'lounge',
     'isDark': false,
     'icon': {
-      "src":'./assets/misc/lounge-icon.png',
+      "src":'./assets/misc/icons/lounge-icon.png',
       'x': "-160px",
       'y': "220px",
     },
@@ -109,7 +111,7 @@ let rooms = {
     'entities': [
       {
         "name": 'loungeChair',
-        'src': './assets/furniture/lounge-chair.png',
+        'src': './assets/furniture/lounge/lounge-chair.png',
         "desc": "Cushy",
         'dims': {
           'x': "660px",
@@ -120,7 +122,7 @@ let rooms = {
       },
       {
         "name": 'table',
-        'src': './assets/furniture/table.png',
+        'src': './assets/furniture/lounge/table.png',
         "desc": "It's covered in dust. The drawer is locked.",
         'dims': {
           'x': "80px",
@@ -152,10 +154,10 @@ let rooms = {
       },
       {
         "name": 'vase',
-        'src': './assets/furniture/vase.png',
+        'src': './assets/furniture/lounge/vase.png',
         "desc": "There is not a single drop of water left inside",
         'dims': {
-          'x': "155px",
+          'x': "115px",
           'y': "150px",
           "width": "160px",
           'z': "5",
@@ -163,10 +165,10 @@ let rooms = {
       },
       {
         "name": 'deadRose',
-        'src': './assets/furniture/dead-rose.png',
+        'src': './assets/furniture/lounge/dead-rose.png',
         "desc": "It's completely dried up",
         'dims': {
-          'x': "190px",
+          'x': "150px",
           'y': "84px",
           "width": "80px",
           'z': "4",
@@ -174,7 +176,7 @@ let rooms = {
       },
       {
         "name": 'umbrellaStand',
-        'src': './assets/furniture/umbrella-stand.png',
+        'src': './assets/furniture/lounge/umbrella-stand.png',
         "desc": "There's a bunch of umbrellas here",
         'dims': {
           'x': "470px",
@@ -193,16 +195,20 @@ let rooms = {
         },
       },
       {
-        "name": 'key2',
+        "name": 'scissor',
         'isItem': true,
-        'src': './assets/object/key2.png',
-        "desc": "It's a key",
+        'src': './assets/object/scissor.png',
+        "desc": "You grab the scissor",
         'dims': {
-          'x': "830px",
-          'y': "330px",
-          "width": "50px",
+          'x': "240px",
+          'y': "260px",
+          "width": "100px",
           'z': 3,
         },
+        'combine': {
+          'requiredItem':'plush',
+          'newItem': 'key2',
+        }
       },
     ]
   },
@@ -210,7 +216,7 @@ let rooms = {
     'name': 'fireplace',
     'isDark': false,
     'icon': {
-      "src":'./assets/misc/fireplace-icon.png',
+      "src":'./assets/misc/icons/fireplace-icon.png',
       'x': "0px",
       'y': "300px",
     },
@@ -220,7 +226,7 @@ let rooms = {
     'entities': [
       {
         "name": 'chimney',
-        'src': './assets/furniture/chimney.png',
+        'src': './assets/furniture/fireplace/chimney.png',
         "desc": "A fat white-bearded man dressed in red is rumored to enter houses through these.",
         'dims': {
           'x': "150px",
@@ -231,7 +237,7 @@ let rooms = {
       },
       {
         "name": 'fireplace',
-        'src': './assets/furniture/fireplace.png',
+        'src': './assets/furniture/fireplace/fireplace.png',
         "desc": "Sooty",
         'dims': {
           'x': "60px",
@@ -253,29 +259,29 @@ let rooms = {
       },
       {
         "name": 'picture2',
-        'src': './assets/wall/picture-frame-2.png',
-        "desc": 'This piece is titled "Monarach". The captions below says: "Meow, meow, meow"',
+        'src': './assets/wall/artwork/monarch.png',
+        "desc": 'This piece is titled "Monarch". The captions below says: "Meow, meow, meow"',
         'dims': {
           'x': "620px",
           'y': "20px",
-          "width": "120px",
+          "width": "200px",
           'z': "3",
         }
       },
       {
         "name": 'picture3',
-        'src': './assets/wall/picture-frame-3.png',
-        "desc": 'This piece is titled "Best Boi" with no context...You are suddenly filled with a strange urge to give it scraps.',
+        'src': './assets/wall/artwork/arcade.png',
+        "desc": 'This piece is titled "Arcade". It features two familar friends.',
         'dims': {
-          'x': "470px",
+          'x': "450px",
           'y': "200px",
-          "width": "140px",
+          "width": "160px",
           'z': "3",
         }
       },
       {
         "name": 'elevatedShelf',
-        'src': './assets/furniture/elevated-shelf.png',
+        'src': './assets/furniture/fireplace/elevated-shelf.png',
         "desc": "What an elevated Design!",
         'dims': {
           'x': "630px",
@@ -302,7 +308,7 @@ let rooms = {
     'name': 'courtyard',
     'isDark': false,
     'icon': {
-      "src":'./assets/misc/courtyard-icon.png',
+      "src":'./assets/misc/icons/courtyard-icon.png',
       'x': "160px",
       'y': "200px",
     },
@@ -312,7 +318,7 @@ let rooms = {
     'entities': [
       {
         "name": 'frogStatue',
-        'src': './assets/furniture/frog-statue.png',
+        'src': './assets/furniture/courtyard/frog-statue.png',
         "desc": "It's a statue of a frog. There's something gleaming inside its throat but your hands are too big to reach inside",
         'dims': {
           'x': "600px",
@@ -323,7 +329,7 @@ let rooms = {
         "puzzle": {
           "type": 'item',
           'isSolved': false,
-          "solveDescription": "You pour the water into the frog's mouth and the water raises the object inside. You grab the key. Key Obtained!",
+          "solveDescription": "You pour the water into the frog's mouth and the water raises the object inside. You grab the quarter inside. Coin Obtained!",
           'afterDesc': "It's a frog statue",
           "itemNeeded": 'filledGlass',
           "solveFunction": () => {
@@ -333,7 +339,7 @@ let rooms = {
       },
       {
         "name": 'bush1',
-        'src': './assets/furniture/long-bush.png',
+        'src': './assets/furniture/courtyard/long-bush.png',
         "desc": "It's a bushy bush",
         'dims': {
           'x': "-30px",
@@ -344,7 +350,7 @@ let rooms = {
       },
       {
         "name": 'bush2',
-        'src': './assets/furniture/long-bush.png',
+        'src': './assets/furniture/courtyard//long-bush.png',
         "desc": "It's a bushy bush",
         'dims': {
           'x': "500px",
@@ -355,7 +361,7 @@ let rooms = {
       },
       {
         "name": 'gnome',
-        'src': './assets/furniture/gnome.webp',
+        'src': './assets/furniture/courtyard//gnome.webp',
         "desc": "Okay, tell me that isn't creepy looking",
         'dims': {
           'x': "260px",
@@ -366,7 +372,7 @@ let rooms = {
       },
       {
         "name": 'blueFlower',
-        'src': './assets/furniture/blue-flower.png',
+        'src': './assets/furniture/courtyard//blue-flower.png',
         "desc": "Very healthy looking",
         'dims': {
           'x': "-75px",
@@ -377,7 +383,7 @@ let rooms = {
       },
       {
         "name": 'pinkFlower',
-        'src': './assets/furniture/pink-flower.png',
+        'src': './assets/furniture/courtyard//pink-flower.png',
         "desc": "It's some pretty flowers",
         'dims': {
           'x': "780px",
@@ -388,7 +394,7 @@ let rooms = {
       },
       {
         "name": 'fountain',
-        'src': './assets/furniture/fountain.png',
+        'src': './assets/furniture/courtyard//fountain.png',
         "desc": "There's a bunch of dead flies in the fountain. Gross.",
         'dims': {
           'x': "340px",
@@ -413,7 +419,7 @@ let rooms = {
     'name': 'attic',
     'isDark': true,
     'icon': {
-      "src":'./assets/misc/attic-icon.png',
+      "src":'./assets/misc/icons/attic-icon.png',
       'x': "-200px",
       'y': "80px",
     },
@@ -428,13 +434,24 @@ let rooms = {
         'dims': {
           'x': "500px",
           'y': "0px",
-          "width": "100px",
+          "width": "50px",
           'z': "5",
-        }
+        },
+        "puzzle": {
+          "type": 'item',
+          'isSolved': false,
+          "solveDescription": "You replace the burned out lightbulb with a new one. Try turning on the switch now",
+          'afterDesc': "It's a new light bulb.",
+          "itemNeeded": 'blueLightBulb',
+          'solveImg': './assets/wall/blue-hanging-light.png',
+          "solveFunction": () => {
+            displayInspect('You replace the burned out lightbulb with a new one. The demo ends here as of now but feel free to look around.', 100);
+          },
+        },
       },
       {
         "name": 'stool',
-        'src': './assets/furniture/stool.png',
+        'src': './assets/furniture/attic/stool.png',
         "desc": "Stool",
         'dims': {
           'x': "800px",
@@ -445,7 +462,7 @@ let rooms = {
       },
       {
         "name": 'packingBox',
-        'src': './assets/furniture/packing-box.png',
+        'src': './assets/furniture/attic//packing-box.png',
         "desc": "The box is filled with folders, books, and papers. With a quick skim, none of them seem particularly useful",
         'dims': {
           'x': "20px",
@@ -456,7 +473,7 @@ let rooms = {
       },
       {
         "name": 'singlePackingBox',
-        'src': './assets/furniture/single-packing-box.png',
+        'src': './assets/furniture/attic//single-packing-box.png',
         "desc": "There's a slipped of paper inside the box.",
         'dims': {
           'x': "660px",
@@ -467,7 +484,7 @@ let rooms = {
         "puzzle": {
           "type": 'inspect',
           'isSolved': false,
-          "solveDescription": "Dummy text",
+          "solveDescription": "There's a slip of paper sticking out.",
           'afterDesc': "There's nothing else of interest now",
           "solveFunction": () => {
             addItem('passwordPaper');
@@ -476,7 +493,7 @@ let rooms = {
       },
       {
         "name": 'craneMachine',
-        'src': './assets/furniture/crane-machine.png',
+        'src': './assets/furniture/attic//crane-machine.png',
         "desc": "Gambling: Children's edition.",
         'dims': {
           'x': "400px",
