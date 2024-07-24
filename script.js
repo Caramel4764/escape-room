@@ -12,18 +12,24 @@ let computerPasswordBtn = document.getElementById('password-btn');
 let computerDiv = document.querySelector('#computer-screen')
 let computerInput= document.getElementById('password-input');
 let exitArrow = document.getElementById('exit-arrow');
-
+//let fileMenu = document.getElementById('file-menu');
+function display(fileMenu){
+  toggle(fileMenu);
+}
 //computerPasswordBtn.addEventListener('click', function() {
   //if (computerInput.value == '123') {
     let desktop = document.createElement('div');
     desktop.setAttribute('id', 'desktop');
     computerScreen.textContent='';
+    let fileMenu = document.createElement('div');
+    fileMenu.setAttribute('id', 'file-menu');
+    fileMenu.classList.add('screenMenu');
+    desktop.appendChild(fileMenu);
+
     createDesktopIcon({'parent':desktop, 'type':'file', x:0, y:0, 'text':'text.txt'});
     createDesktopIcon({'parent':desktop, 'type':'folder', x:1, y:2, 'text':'cat'});
     createDesktopIcon({'parent':desktop, 'type':'file', x:3, y:1, 'text':'testing.txt'});
     createDesktopIcon({'parent':desktop, 'type':'file', x:5, y:2, 'text':'family.txt'});
-
-
     computerScreen.appendChild(desktop)
   //}
 //})

@@ -324,3 +324,10 @@ img{
   width: 50px;
   height: 50px;
 }
+#file-menu {
+  width:515px;
+  height:395px;
+  border: green 2px solid;
+  background-color: black;
+  z-index: 20;
+}

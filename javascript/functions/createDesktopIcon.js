@@ -1,6 +1,6 @@
 
 function createDesktopIcon(desktopInfo) {
-  let {parent, type, x, y, text} = desktopInfo;
+  let {parent, type, x, y, text, openContent} = desktopInfo;
   let desktopIconDiv = document.createElement('div');
   desktopIconDiv.style.display='flex';
   desktopIconDiv.style.position='absolute';
@@ -17,7 +17,6 @@ function createDesktopIcon(desktopInfo) {
   imageContainer.style.pointerEvents = 'none';
   desktopIconDiv.appendChild(imageContainer);
 
-
   let desktopIcon = document.createElement('img');
   if (type == 'file') {
     desktopIcon.src='./assets/misc/computer/file.png';
@@ -25,7 +24,6 @@ function createDesktopIcon(desktopInfo) {
     desktopIcon.src='./assets/misc/computer/folder.png';
   }
   desktopIcon.classList.add('desktop-icon-img');
-
   desktopIcon.style.position = 'relative';
   desktopIcon.style.pointerEvents = 'none';
   desktopIconDiv.addEventListener('mouseenter', function() {
@@ -34,9 +32,10 @@ function createDesktopIcon(desktopInfo) {
   desktopIconDiv.addEventListener('mouseout', function() {
     desktopIconDiv.style.backgroundColor = 'black'
   })
-  
+  desktopIconDiv.addEventListener('click', function() {
+    openContent();
+  })
   imageContainer.appendChild(desktopIcon);
-
   let desktopIconText = document.createElement('p');
   desktopIconText.textContent = text;
   desktopIconText.style.margin = '3px';
