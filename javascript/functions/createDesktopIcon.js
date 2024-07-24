@@ -1,12 +1,13 @@
 
-function createDesktopIcon(desktop, type, x, y, text) {
+function createDesktopIcon(desktopInfo) {
+  let {parent, type, x, y, text} = desktopInfo;
   let desktopIconDiv = document.createElement('div');
   desktopIconDiv.style.display='flex';
   desktopIconDiv.style.position='absolute';
   desktopIconDiv.style.flexDirection = 'column';
   desktopIconDiv.style.justifyContent = 'center';
   desktopIconDiv.style.alignItems = 'center';
-  desktopIconDiv.style.left = x * 85 + 'px';
+  desktopIconDiv.style.left = x * 90 + 'px';
   desktopIconDiv.style.top = y * 85 + 'px';
   desktopIconDiv.classList.add('desktop-icon');
 
@@ -43,6 +44,6 @@ function createDesktopIcon(desktop, type, x, y, text) {
   desktopIconText.style.pointerEvents = 'none';
   desktopIconDiv.appendChild(desktopIconText);
 
-  desktop.appendChild(desktopIconDiv);
+  parent.appendChild(desktopIconDiv);
 }
 export {createDesktopIcon}

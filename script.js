@@ -18,8 +18,12 @@ let exitArrow = document.getElementById('exit-arrow');
     let desktop = document.createElement('div');
     desktop.setAttribute('id', 'desktop');
     computerScreen.textContent='';
-    createDesktopIcon(desktop, 'file', 0, 0, 'text.txt');
-    createDesktopIcon(desktop, 'folder', 1, 0, 'cat.txt');
+    createDesktopIcon({'parent':desktop, 'type':'file', x:0, y:0, 'text':'text.txt'});
+    createDesktopIcon({'parent':desktop, 'type':'folder', x:1, y:2, 'text':'cat'});
+    createDesktopIcon({'parent':desktop, 'type':'file', x:3, y:1, 'text':'testing.txt'});
+    createDesktopIcon({'parent':desktop, 'type':'file', x:5, y:2, 'text':'family.txt'});
+
+
     computerScreen.appendChild(desktop)
   //}
 //})
