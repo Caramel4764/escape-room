@@ -240,6 +240,7 @@ img{
   object-fit: contain;
 }
 #flashlight {
+  visibility: hidden;
   background-image: radial-gradient(circle 5em at 50% 50%, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
   pointer-events: none;
 }
@@ -304,11 +305,14 @@ img{
   height: 100%;
   background-color: black;
 }
-.desktop-icon {
-  width: 60px;
-  margin:5px;
-  padding:5px;
+.desktop-icon-img{
+  width: 45px;
   image-rendering: pixelated;
   image-rendering: -moz-crisp-edges;
   image-rendering: crisp-edges;
+}
+.desktop-icon {
+  width: 80px;
+  height: 80px;
+  margin:5px;
 }
