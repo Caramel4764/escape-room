@@ -1,14 +1,20 @@
 
-function createDesktopIcon(desktop, type, x, y) {
+function createDesktopIcon(desktop, type, x, y, text) {
   let desktopIconDiv = document.createElement('div');
   desktopIconDiv.style.display='flex';
   desktopIconDiv.style.position='absolute';
   desktopIconDiv.style.flexDirection = 'column';
   desktopIconDiv.style.justifyContent = 'center';
   desktopIconDiv.style.alignItems = 'center';
-  desktopIconDiv.style.left = x * 70 + 'px';
-  desktopIconDiv.style.top = y * 70 + 'px';
+  desktopIconDiv.style.left = x * 85 + 'px';
+  desktopIconDiv.style.top = y * 85 + 'px';
   desktopIconDiv.classList.add('desktop-icon');
+
+  let imageContainer = document.createElement('div');
+  imageContainer.style.position = 'relative';
+  imageContainer.classList.add('image-container');
+  imageContainer.style.pointerEvents = 'none';
+  desktopIconDiv.appendChild(imageContainer);
 
 
   let desktopIcon = document.createElement('img');
@@ -28,10 +34,11 @@ function createDesktopIcon(desktop, type, x, y) {
     desktopIconDiv.style.backgroundColor = 'black'
   })
   
-  desktopIconDiv.appendChild(desktopIcon);
+  imageContainer.appendChild(desktopIcon);
+
   let desktopIconText = document.createElement('p');
-  desktopIconText.textContent = 'test.txt';
-  //desktopIconText.style.margin = '2px';
+  desktopIconText.textContent = text;
+  desktopIconText.style.margin = '3px';
   desktopIconText.style.fontSize = '12px';
   desktopIconText.style.pointerEvents = 'none';
   desktopIconDiv.appendChild(desktopIconText);
