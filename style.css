@@ -307,6 +307,7 @@ img{
 .desktop-icon {
   width: 60px;
   margin:5px;
+  padding:5px;
   image-rendering: pixelated;
   image-rendering: -moz-crisp-edges;
   image-rendering: crisp-edges;

@@ -6,6 +6,7 @@ import {toggleMap} from './javascript/functions/map/toggleMap.js';
 import {toggle} from './javascript/functions/toggle.js';
 import {createMapIcons} from './javascript/functions/map/createMapIcons.js';
 import { mountFlashlight } from './javascript/functions/mountFlashlight.js';
+import { createDesktopIcon } from './javascript/functions/createDesktopIcon.js';
 let computerScreen = document.getElementById('computer-content');
 let computerPasswordBtn = document.getElementById('password-btn');
 let computerDiv = document.querySelector('#computer-screen')
@@ -17,14 +18,9 @@ let exitArrow = document.getElementById('exit-arrow');
     let desktop = document.createElement('div');
     desktop.setAttribute('id', 'desktop');
     computerScreen.textContent='';
-    let file = document.createElement('img');
-    file.src='./assets/misc/computer/file.png';
-    file.classList.add('desktop-icon');
-    desktop.appendChild(file);
-    let folder = document.createElement('img');
-    folder.src='./assets/misc/computer/folder.png';
-    folder.classList.add('desktop-icon');
-    desktop.appendChild(folder);
+    createDesktopIcon(desktop, 'file', 0, 0);
+    createDesktopIcon(desktop, 'folder', 1, 0);
+
     computerScreen.appendChild(desktop)
   //}
 //})
