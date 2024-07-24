@@ -24,8 +24,11 @@ function display(fileMenu){
     let fileMenu = document.createElement('div');
     fileMenu.setAttribute('id', 'file-menu');
     fileMenu.classList.add('screenMenu');
-    desktop.appendChild(fileMenu);
-
+    let centerFileMenuDiv = document.createElement('div');
+    centerFileMenuDiv.appendChild(fileMenu);
+    centerFileMenuDiv.classList.add('centerDiv');
+    centerFileMenuDiv.setAttribute('id', 'centerFileMenuDiv');
+    desktop.appendChild(centerFileMenuDiv);
     createDesktopIcon({'parent':desktop, 'type':'file', x:0, y:0, 'text':'text.txt'});
     createDesktopIcon({'parent':desktop, 'type':'folder', x:1, y:2, 'text':'cat'});
     createDesktopIcon({'parent':desktop, 'type':'file', x:3, y:1, 'text':'testing.txt'});
