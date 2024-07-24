@@ -12,14 +12,22 @@ let computerDiv = document.querySelector('#computer-screen')
 let computerInput= document.getElementById('password-input');
 let exitArrow = document.getElementById('exit-arrow');
 
-computerPasswordBtn.addEventListener('click', function() {
-  if (computerInput.value == '123') {
+//computerPasswordBtn.addEventListener('click', function() {
+  //if (computerInput.value == '123') {
     let desktop = document.createElement('div');
     desktop.setAttribute('id', 'desktop');
     computerScreen.textContent='';
+    let file = document.createElement('img');
+    file.src='./assets/misc/computer/file.png';
+    file.classList.add('desktop-icon');
+    desktop.appendChild(file);
+    let folder = document.createElement('img');
+    folder.src='./assets/misc/computer/folder.png';
+    folder.classList.add('desktop-icon');
+    desktop.appendChild(folder);
     computerScreen.appendChild(desktop)
-  }
-})
+  //}
+//})
 exitArrow.addEventListener('click', function() {
   toggle(computerDiv);
 })
