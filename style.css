@@ -256,16 +256,20 @@ img{
 
 }
 #computer-screen-image {
-  width: 100%;
+  width: 70%;
   height: 100%;
   object-fit: contain;
+}
+#computer-screen-image-div {
+  width:100%;
+  display:flex;
+  justify-content: center;
 }
 #computer-content {
   width: 545px;
   height: 430px;
   position: relative;
   background-color: rgb(35, 131, 59);
-  left: 230px;
   top:90px;
   display:flex;
   justify-content: center;
@@ -342,6 +346,8 @@ img{
   height:100%;
   display:flex;
   justify-content: center;
+  position: absolute;
+
   align-items: center;
 }
 #file-close-btn {

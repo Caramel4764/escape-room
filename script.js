@@ -15,13 +15,24 @@ let computerInput= document.getElementById('password-input');
 let exitArrow = document.getElementById('exit-arrow');
 
 let computerScreenDiv = document.getElementById('computer-screen-div');
+let computerScreenImage = document.getElementById('computer-screen-image');
 //computerPasswordBtn.addEventListener('click', function() {
   //if (computerInput.value == '123') {
+    computerScreenImage.addEventListener('click', function() {
+      event.stopPropagation();
+    })
+    //computerScreenImage.style.pointerEvents = 'none';
+
     let windowName = document.createElement('p');
     windowName.setAttribute('id', 'window-name');
     let desktop = document.createElement('div');
     desktop.setAttribute('id', 'desktop');
     computerScreen.textContent='';
+    
+    computerScreen.addEventListener('click', function() {
+      event.stopPropagation();
+      
+    })
     let fileContent = document.createElement('div');
     let fileCloseBtn = document.createElement('p');
     fileCloseBtn.textContent = 'X';
@@ -51,8 +62,8 @@ let computerScreenDiv = document.getElementById('computer-screen-div');
     fileHeader.appendChild(windowName);
   //}
 //})
-computerScreenDiv.addEventListener('click', function() {
-  toggle(computerScreenDiv);
+computerDiv.addEventListener('click', function() {
+  toggle(computerDiv);
 })
 
 mapIcon.addEventListener('click', function() {

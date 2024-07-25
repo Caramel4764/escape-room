@@ -1,8 +1,8 @@
 import { addItem } from "../functions/item/addItem.js";
 import { displayInspect } from "../functions/inspect/displayInspectMenu.js";
 import { toggleInspectMenu } from "../functions/inspect/toggleInspectMenu.js";
-let computerScreenDiv = document.getElementById('computer-screen-div');
 import { toggle } from "../functions/toggle.js";
+let computerDiv = document.querySelector('#computer-screen')
 
 let rooms = {
   "dims": {
@@ -609,7 +609,7 @@ let rooms = {
       {
         "name": 'computer',
         'src': './assets/furniture/bedroom/computer.png',
-        "desc": "You power up the old computer.",
+        "desc": "It's a computer",
         'dims': {
           'x': "770px",
           'y': "255px",
@@ -622,7 +622,7 @@ let rooms = {
           "solveDescription": "You power up the old computer.",
           'afterDesc': "There's nothing else of interest now",
           "solveFunction": () => {
-            toggle(computerScreenDiv);
+            toggle(computerDiv);
           },
         },
       },

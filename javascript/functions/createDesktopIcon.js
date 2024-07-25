@@ -1,5 +1,6 @@
 import {toggle} from './toggle.js';
 
+
 function createDesktopIcon(desktopInfo) {
   let {parent, type, x, y, text, windowName, fileContent, fileContentDiv, fileMenu} = desktopInfo;
   let desktopIconDiv = document.createElement('div');
@@ -28,7 +29,6 @@ function createDesktopIcon(desktopInfo) {
     desktopIconDiv.style.backgroundColor = 'black'
   })
   desktopIconDiv.addEventListener('click', function() {
-    event.stopPropagation();
     fileContentDiv.innerHTML=fileContent;
     windowName.textContent = text;
     toggle(fileMenu)
