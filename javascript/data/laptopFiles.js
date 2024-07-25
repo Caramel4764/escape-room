@@ -11,7 +11,7 @@ let laptopFiles = [
     'x':0,
     'y':0, 
     'fileName':'cat.txt',
-    'fileContent': 'meow',
+    'fileContent': "/\\___/\\<br>(=o.o=)<br>(\\/&ensp;\\/)<br>(_)_(_)<br>&ensp;&ensp;||<br>&ensp;&ensp;||<br>&ensp;&ensp;-<br>Meow, a cat is me",
   },
   {
     'type':'file',

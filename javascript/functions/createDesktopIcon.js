@@ -35,12 +35,12 @@ function createDesktopIcon(desktopInfo) {
     desktopIconDiv.style.backgroundColor = 'black'
   })
   desktopIconDiv.addEventListener('click', function() {
-    fileContentDiv.textContent=fileContent;
+    fileContentDiv.innerHTML=fileContent;
     toggle(fileMenu)
   })
   imageContainer.appendChild(desktopIcon);
   let desktopIconText = document.createElement('p');
-  desktopIconText.textContent = text;
+  desktopIconText.write = text;
   desktopIconText.style.margin = '3px';
   desktopIconText.style.fontSize = '12px';
   desktopIconText.style.pointerEvents = 'none';
