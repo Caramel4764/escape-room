@@ -14,6 +14,7 @@ let computerDiv = document.querySelector('#computer-screen')
 let computerInput= document.getElementById('password-input');
 let exitArrow = document.getElementById('exit-arrow');
 
+let computerScreenDiv = document.getElementById('computer-screen-div');
 //computerPasswordBtn.addEventListener('click', function() {
   //if (computerInput.value == '123') {
     let windowName = document.createElement('p');
@@ -25,7 +26,6 @@ let exitArrow = document.getElementById('exit-arrow');
     let fileCloseBtn = document.createElement('p');
     fileCloseBtn.textContent = 'X';
     fileCloseBtn.setAttribute('id', 'file-close-btn');
-
     let fileMenu = document.createElement('div');
     fileMenu.setAttribute('id', 'file-menu');
     fileMenu.appendChild(fileContent);
@@ -51,8 +51,8 @@ let exitArrow = document.getElementById('exit-arrow');
     fileHeader.appendChild(windowName);
   //}
 //})
-exitArrow.addEventListener('click', function() {
-  toggle(computerDiv);
+computerScreenDiv.addEventListener('click', function() {
+  toggle(computerScreenDiv);
 })
 
 mapIcon.addEventListener('click', function() {
