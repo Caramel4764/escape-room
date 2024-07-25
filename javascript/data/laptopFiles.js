@@ -20,12 +20,5 @@ let laptopFiles = [
     'fileName':'helloWorld.txt',
     'fileContent': 'console.log("hello world");',
   },
-  {
-    'type':'folder',
-    'x':2,
-    'y':0, 
-    'fileName':'folder',
-    'fileContent':'a folder',
-    },
 ]
 export {laptopFiles}

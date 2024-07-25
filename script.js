@@ -23,27 +23,28 @@ function display(fileMenu){
     desktop.setAttribute('id', 'desktop');
     computerScreen.textContent='';
     let fileMenu = document.createElement('div');
-    fileMenu.setAttribute('id', 'file-menu');
-    fileMenu.style.visibility = 'hidden';
     let fileCloseBtn = document.createElement('p');
     fileCloseBtn.textContent = 'X';
     fileCloseBtn.setAttribute('id', 'file-close-btn');
-    fileCloseBtn.addEventListener('click', function() {
-      toggle(fileMenu);
-    })
+
     fileMenu.classList.add('screenMenu');
     let centerFileMenuDiv = document.createElement('div');
+    centerFileMenuDiv.setAttribute('id', 'file-menu');
+
     centerFileMenuDiv.appendChild(fileMenu);
     centerFileMenuDiv.classList.add('centerDiv');
     centerFileMenuDiv.setAttribute('id', 'centerFileMenuDiv');
     desktop.appendChild(centerFileMenuDiv);
     laptopFiles.forEach(fileInfo => {
-      createDesktopIcon({'parent':desktop, 'fileDom':fileMenu,'type':fileInfo.type, x:fileInfo.x, y:fileInfo.y, 'text':fileInfo.fileName, 'fileContent':fileInfo.fileContent});
+      createDesktopIcon({'parent':desktop, 'centerFileMenuDiv':centerFileMenuDiv,'fileDom':fileMenu,'type':fileInfo.type, x:fileInfo.x, y:fileInfo.y, 'text':fileInfo.fileName, 'fileContent':fileInfo.fileContent});
+    })
+    fileCloseBtn.addEventListener('click', function() {
+      toggle(centerFileMenuDiv);
     })
     computerScreen.appendChild(desktop);
     let fileHeader = document.createElement('div');
     fileHeader.setAttribute('id', 'file-header');
-
+    centerFileMenuDiv.style.visibility = 'hidden';
     fileHeader.appendChild(fileCloseBtn);
     centerFileMenuDiv.appendChild(fileHeader)
 
