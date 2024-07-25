@@ -21,8 +21,6 @@ let computerScreenImage = document.getElementById('computer-screen-image');
     computerScreenImage.addEventListener('click', function() {
       event.stopPropagation();
     })
-    //computerScreenImage.style.pointerEvents = 'none';
-
     let windowName = document.createElement('p');
     windowName.setAttribute('id', 'window-name');
     let desktop = document.createElement('div');
@@ -64,7 +62,7 @@ let computerScreenImage = document.getElementById('computer-screen-image');
 //})
 computerDiv.addEventListener('click', function() {
   toggle(computerDiv);
-  toggle(fileMenu)
+  fileMenu.style.visibility = 'hidden';
 })
 
 mapIcon.addEventListener('click', function() {

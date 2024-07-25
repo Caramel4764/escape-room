@@ -609,7 +609,7 @@ let rooms = {
       {
         "name": 'computer',
         'src': './assets/furniture/bedroom/computer.png',
-        "desc": "It's a computer",
+        "desc": "It's a really old computer",
         'dims': {
           'x': "770px",
           'y': "255px",
@@ -617,10 +617,9 @@ let rooms = {
           'z': "3",
         },
         "puzzle": {
-          "type": 'inspect',
-          'isSolved': false,
+          "type": 'interact',
+          'isSolved':false,
           "solveDescription": "You power up the old computer.",
-          'afterDesc': "There's nothing else of interest now",
           "solveFunction": () => {
             toggle(computerDiv);
           },

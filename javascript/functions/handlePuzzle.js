@@ -19,6 +19,12 @@ function handlePuzzle (entity, entityImg) {
     }
     entity.puzzle.isSolved=true;
     showSolvedImg(entity, entityImg);
+  } else if (entity.puzzle.type='interact') {
+    if (entity.puzzle.isSolved==false) {
+      entity.puzzle.isSolved=true;
+      displayInspect(entity.puzzle.solveDescription, 100);
+    }
+    entity.puzzle.solveFunction();
   }
 }
 
