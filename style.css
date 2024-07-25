@@ -353,10 +353,20 @@ img{
   width: 100%;
   height: 50px;
   display:flex;
+  justify-content: center;
 }
 #file-content {
   left: 5px;
   position: relative;
   width:98.5%;
   top:35px;
+}
+#window-name {
+  text-align: 'center';
+  position:absolute;
+  left:0px;
+  top:0px;
+  font-size: 20px;
+  margin: 5px;
+  padding: 5px;
 }

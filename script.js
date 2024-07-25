@@ -19,6 +19,8 @@ function display(fileContent){
 }
 //computerPasswordBtn.addEventListener('click', function() {
   //if (computerInput.value == '123') {
+    let windowName = document.createElement('p');
+    windowName.setAttribute('id', 'window-name');
     let desktop = document.createElement('div');
     desktop.setAttribute('id', 'desktop');
     computerScreen.textContent='';
@@ -43,16 +45,17 @@ function display(fileContent){
     desktop.appendChild(centerFileMenuDiv);
     centerFileMenuDiv.appendChild(fileMenu);
     laptopFiles.forEach(fileInfo => {
-      createDesktopIcon({'parent':desktop, 'fileMenu':fileMenu,'fileContentDiv':fileContent,'type':fileInfo.type, x:fileInfo.x, y:fileInfo.y, 'text':fileInfo.fileName, 'fileContent':fileInfo.fileContent});
+      createDesktopIcon({'parent':desktop, 'windowName':windowName,'fileMenu':fileMenu,'fileContentDiv':fileContent,'type':fileInfo.type, x:fileInfo.x, y:fileInfo.y, 'text':fileInfo.fileName, 'fileContent':fileInfo.fileContent});
     })
     computerScreen.appendChild(desktop);
     let fileHeader = document.createElement('div');
     fileHeader.setAttribute('id', 'file-header');
-
     fileHeader.appendChild(fileCloseBtn);
     fileMenu.appendChild(fileHeader)
     fileMenu.style.visibility = 'hidden';
 
+    //fileInfo.fileName
+    fileHeader.appendChild(windowName);
 
   //}
 //})

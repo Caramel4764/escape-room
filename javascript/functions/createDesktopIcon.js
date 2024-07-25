@@ -2,7 +2,7 @@ import {toggle} from './toggle.js';
 
 
 function createDesktopIcon(desktopInfo) {
-  let {parent, type, x, y, text, fileContent, fileContentDiv, fileMenu} = desktopInfo;
+  let {parent, type, x, y, text, windowName, fileContent, fileContentDiv, fileMenu} = desktopInfo;
   let desktopIconDiv = document.createElement('div');
   desktopIconDiv.style.display='flex';
   desktopIconDiv.style.position='absolute';
@@ -12,7 +12,7 @@ function createDesktopIcon(desktopInfo) {
   desktopIconDiv.style.left = x * 90 + 'px';
   desktopIconDiv.style.top = y * 85 + 'px';
   desktopIconDiv.classList.add('desktop-icon');
-
+  windowName.textContent = text;
   let imageContainer = document.createElement('div');
   imageContainer.style.position = 'relative';
   imageContainer.classList.add('image-container');
