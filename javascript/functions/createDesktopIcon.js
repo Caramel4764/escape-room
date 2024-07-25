@@ -40,8 +40,10 @@ function createDesktopIcon(desktopInfo) {
   })
   imageContainer.appendChild(desktopIcon);
   let desktopIconText = document.createElement('p');
-  desktopIconText.write = text;
+  desktopIconText.textContent = text;
+  desktopIconText.style.overflowWrap = 'anywhere';
   desktopIconText.style.margin = '3px';
+  desktopIconText.style.textAlign = 'center';
   desktopIconText.style.fontSize = '12px';
   desktopIconText.style.pointerEvents = 'none';
   desktopIconDiv.appendChild(desktopIconText);
