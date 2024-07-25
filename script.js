@@ -7,6 +7,7 @@ import {toggle} from './javascript/functions/toggle.js';
 import {createMapIcons} from './javascript/functions/map/createMapIcons.js';
 import { mountFlashlight } from './javascript/functions/mountFlashlight.js';
 import { createDesktopIcon } from './javascript/functions/createDesktopIcon.js';
+import { laptopFiles } from './javascript/data/laptopFiles.js'; 
 let computerScreen = document.getElementById('computer-content');
 let computerPasswordBtn = document.getElementById('password-btn');
 let computerDiv = document.querySelector('#computer-screen')
@@ -23,16 +24,17 @@ function display(fileMenu){
     computerScreen.textContent='';
     let fileMenu = document.createElement('div');
     fileMenu.setAttribute('id', 'file-menu');
+    fileMenu.textContent='/----'
+
     fileMenu.classList.add('screenMenu');
     let centerFileMenuDiv = document.createElement('div');
-    centerFileMenuDiv.appendChild(fileMenu);
+    //centerFileMenuDiv.appendChild(fileMenu);
     centerFileMenuDiv.classList.add('centerDiv');
     centerFileMenuDiv.setAttribute('id', 'centerFileMenuDiv');
     desktop.appendChild(centerFileMenuDiv);
-    createDesktopIcon({'parent':desktop, 'type':'file', x:0, y:0, 'text':'text.txt'});
-    createDesktopIcon({'parent':desktop, 'type':'folder', x:1, y:2, 'text':'cat'});
-    createDesktopIcon({'parent':desktop, 'type':'file', x:3, y:1, 'text':'testing.txt'});
-    createDesktopIcon({'parent':desktop, 'type':'file', x:5, y:2, 'text':'family.txt'});
+    laptopFiles.forEach(fileInfo => {
+      createDesktopIcon({'parent':desktop, 'type':fileInfo.type, x:fileInfo.x, y:fileInfo.y, 'text':fileInfo.fileName});
+    })
     computerScreen.appendChild(desktop)
   //}
 //})
