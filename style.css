@@ -314,7 +314,13 @@ img{
   height: 100%;
   object-fit: contain;
 }
-
+.desktop-icon{
+  display:flex;
+  position:absolute;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .desktop-icon {
   margin:5px;
   width: 80px;
