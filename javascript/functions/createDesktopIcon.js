@@ -2,7 +2,7 @@ import {toggle} from './toggle.js';
 
 
 function createDesktopIcon(desktopInfo) {
-  let {parent, type, x, y, text, fileContent, fileMenu} = desktopInfo;
+  let {parent, type, x, y, text, fileContent, fileContentDiv, fileMenu} = desktopInfo;
   let desktopIconDiv = document.createElement('div');
   desktopIconDiv.style.display='flex';
   desktopIconDiv.style.position='absolute';
@@ -35,7 +35,7 @@ function createDesktopIcon(desktopInfo) {
     desktopIconDiv.style.backgroundColor = 'black'
   })
   desktopIconDiv.addEventListener('click', function() {
-    //fileContent.textContent=fileContent;
+    fileContentDiv.textContent=fileContent;
     toggle(fileMenu)
   })
   imageContainer.appendChild(desktopIcon);

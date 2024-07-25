@@ -35,14 +35,15 @@ function display(fileContent){
       toggle(fileMenu);
     })
     fileContent.classList.add('screenMenu');
+    fileContent.setAttribute('id', 'file-content');
     let centerFileMenuDiv = document.createElement('div');
-    centerFileMenuDiv.appendChild(fileContent);
+    //centerFileMenuDiv.appendChild(fileContent);
     centerFileMenuDiv.classList.add('centerDiv');
     centerFileMenuDiv.setAttribute('id', 'centerFileMenuDiv');
     desktop.appendChild(centerFileMenuDiv);
     centerFileMenuDiv.appendChild(fileMenu);
     laptopFiles.forEach(fileInfo => {
-      createDesktopIcon({'parent':desktop, 'fileMenu':fileMenu,'fileContent':fileContent,'type':fileInfo.type, x:fileInfo.x, y:fileInfo.y, 'text':fileInfo.fileName, 'fileContent':fileInfo.fileContent});
+      createDesktopIcon({'parent':desktop, 'fileMenu':fileMenu,'fileContentDiv':fileContent,'type':fileInfo.type, x:fileInfo.x, y:fileInfo.y, 'text':fileInfo.fileName, 'fileContent':fileInfo.fileContent});
     })
     computerScreen.appendChild(desktop);
     let fileHeader = document.createElement('div');
