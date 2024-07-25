@@ -24,16 +24,16 @@ function display(fileMenu){
     computerScreen.textContent='';
     let fileMenu = document.createElement('div');
     fileMenu.setAttribute('id', 'file-menu');
-    fileMenu.textContent='/----'
+    fileMenu.style.visibility = 'hidden';
 
     fileMenu.classList.add('screenMenu');
     let centerFileMenuDiv = document.createElement('div');
-    //centerFileMenuDiv.appendChild(fileMenu);
+    centerFileMenuDiv.appendChild(fileMenu);
     centerFileMenuDiv.classList.add('centerDiv');
     centerFileMenuDiv.setAttribute('id', 'centerFileMenuDiv');
     desktop.appendChild(centerFileMenuDiv);
     laptopFiles.forEach(fileInfo => {
-      createDesktopIcon({'parent':desktop, 'type':fileInfo.type, x:fileInfo.x, y:fileInfo.y, 'text':fileInfo.fileName});
+      createDesktopIcon({'parent':desktop, 'fileDom':fileMenu,'type':fileInfo.type, x:fileInfo.x, y:fileInfo.y, 'text':fileInfo.fileName, 'fileContent':fileInfo.fileContent});
     })
     computerScreen.appendChild(desktop)
   //}

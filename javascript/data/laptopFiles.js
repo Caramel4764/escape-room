@@ -4,27 +4,27 @@ let laptopFiles = [
   'x':3,
   'y':2, 
   'fileName':'text.txt',
-  'fileText': 'testing',
+  'fileContent': 'testing',
   },
   {
     'type':'file',
     'x':0,
     'y':0, 
     'fileName':'cat.txt',
-    'fileText': 'meow',
+    'fileContent': 'meow',
   },
   {
     'type':'file',
     'x':0,
     'y':2, 
     'fileName':'helloWorld.txt',
-    'fileText': 'hello world',
+    'fileContent': 'hello world',
   },
   {
     'type':'folder',
     'x':2,
     'y':0, 
-    'fileName':'a folder',
+    'fileContent':'a folder',
     },
 ]
 export {laptopFiles}
