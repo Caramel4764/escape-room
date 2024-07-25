@@ -536,6 +536,97 @@ let rooms = {
       },
     ]
   },
+  "bedroom": {
+    'name': 'bedroom',
+    'isDark': false,
+    'icon': {
+      "src":'./assets/misc/icons/exit-icon.jpg',
+      'x': "0px",
+      'y': "100px",
+    },
+    'wall': './assets/wall/bedroom-wall.png',
+    "floor": './assets/floor/bedroom-floor.png',
+    'divider': "./assets/floor/floor-divider.png",
+    'entities': [
+      {
+        "name": 'bed',
+        'src': './assets/furniture/bedroom/bed.png',
+        "desc": "The sheets and pillows are folded and placed neatly",
+        'dims': {
+          'x': "300px",
+          'y': "300px",
+          "width": "400px",
+          'z': "3",
+        }
+      },
+      {
+        "name": 'nightstand',
+        'src': './assets/furniture/bedroom/nightstand.png',
+        "desc": "The sheets and pillows are folded and placed neatly",
+        'dims': {
+          'x': "80px",
+          'y': "360px",
+          "width": "200px",
+          'z': "3",
+        }
+      },
+      {
+        "name": 'lamp',
+        'src': './assets/furniture/bedroom/night-light.png',
+        "desc": "There's a bunch of socks, clothing, and dust inside",
+        'dims': {
+          'x': "130px",
+          'y': "210px",
+          "width": "100px",
+          'z': "3",
+        }
+      },
+      {
+        "name": 'desk',
+        'src': './assets/furniture/bedroom/desk.png',
+        "desc": "This is a desk. The chair is missing for unknown reasons which absolutely has nothing to do with blocking the computer",
+        'dims': {
+          'x': "720px",
+          'y': "370px",
+          "width": "230px",
+          'z': "3",
+        }
+      },
+      {
+        "name": 'mouse',
+        'src': './assets/furniture/bedroom/mouse.png',
+        "desc": "It's a mouse",
+        'dims': {
+          'x': "885px",
+          'y': "355px",
+          "width": "30px",
+          'z': "3",
+        }
+      },
+      {
+        "name": 'computer',
+        'src': './assets/furniture/bedroom/computer.png',
+        "desc": "You power up the old computer.",
+        'dims': {
+          'x': "770px",
+          'y': "255px",
+          "width": "110px",
+          'z': "3",
+        }
+      },
+      {
+        "name": 'elkHead',
+        'src': './assets/wall/elk-head.png',
+        "desc": "It's the head of an elk.",
+        'dims': {
+          'x': "400px",
+          'y': "20px",
+          "width": "200px",
+          'z': "3",
+        }
+      },
+    ]
+  },
   //insert new rooms here
 }
 
@@ -544,6 +635,12 @@ export {rooms};
 /*
 "entrance": {
     'name': 'fireplace',
+    'isDark': false,
+    'icon': {
+      "src":'./assets/misc/icons/exit-icon.jpg',
+      'x': "0px",
+      'y': "100px",
+    },
     'wall': './assets/wall/wood-wall.jpg',
     "floor": './assets/floor/wood-floor.png',
     'divider': "./assets/floor/floor-divider.png",
@@ -551,7 +648,7 @@ export {rooms};
       {
         "name": 'shelf',
         'src': './assets/furniture/shelf.png',
-        "desc": "The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.",
+        "desc": "Replace",
         'dims': {
           'x': "640px",
           'y': "90px",

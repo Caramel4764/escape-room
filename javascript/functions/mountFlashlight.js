@@ -5,9 +5,11 @@ let roomBox = room.getBoundingClientRect();
 let flashlight = document.querySelector('#flashlight');
 
 function mountFlashlight() {
-  if (rooms[player.currRoom].isDark) {
+  flashlight.style.visibility = 'hidden';
+
+  if (!rooms[player.currRoom].isDark) {
   } else {
-    flashlight.style.visibility = 'hidden';
+    flashlight.style.visibility = 'visible';
   }
   let mouseX;
   let mouseY;
