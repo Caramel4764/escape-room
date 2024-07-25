@@ -1,6 +1,9 @@
 import { addItem } from "../functions/item/addItem.js";
 import { displayInspect } from "../functions/inspect/displayInspectMenu.js";
 import { toggleInspectMenu } from "../functions/inspect/toggleInspectMenu.js";
+let computerScreenDiv = document.getElementById('computer-screen-div');
+import { toggle } from "../functions/toggle.js";
+
 let rooms = {
   "dims": {
     x: 1000,
@@ -612,7 +615,16 @@ let rooms = {
           'y': "255px",
           "width": "110px",
           'z': "3",
-        }
+        },
+        "puzzle": {
+          "type": 'inspect',
+          'isSolved': false,
+          "solveDescription": "You power up the old computer.",
+          'afterDesc': "There's nothing else of interest now",
+          "solveFunction": () => {
+            toggle(computerScreenDiv);
+          },
+        },
       },
       {
         "name": 'elkHead',

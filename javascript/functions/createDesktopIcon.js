@@ -28,6 +28,7 @@ function createDesktopIcon(desktopInfo) {
     desktopIconDiv.style.backgroundColor = 'black'
   })
   desktopIconDiv.addEventListener('click', function() {
+    event.stopPropagation();
     fileContentDiv.innerHTML=fileContent;
     windowName.textContent = text;
     toggle(fileMenu)
