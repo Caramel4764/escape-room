@@ -64,6 +64,7 @@ let computerScreenImage = document.getElementById('computer-screen-image');
 //})
 computerDiv.addEventListener('click', function() {
   toggle(computerDiv);
+  toggle(fileMenu)
 })
 
 mapIcon.addEventListener('click', function() {
