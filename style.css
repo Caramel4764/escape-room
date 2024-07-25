@@ -326,11 +326,11 @@ img{
   height: 50px;
 }
 #file-menu {
-  width:515px;
-  height:400px;
+  width:535px;
+  height:420px;
   border: green 2px solid;
   background-color: black;
-  z-index: 20;
+  z-index: 2;
 }
 #centerFileMenuDiv {
   width:100%;
@@ -353,4 +353,5 @@ img{
   width: 100%;
   height: 50px;
   display:flex;
+  z-index: 20;
 }
