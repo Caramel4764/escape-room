@@ -17,8 +17,8 @@ let exitArrow = document.getElementById('exit-arrow');
 function display(fileContent){
   toggle(fileContent);
 }
-//computerPasswordBtn.addEventListener('click', function() {
-  //if (computerInput.value == '123') {
+computerPasswordBtn.addEventListener('click', function() {
+  if (computerInput.value == '123') {
     let windowName = document.createElement('p');
     windowName.setAttribute('id', 'window-name');
     let desktop = document.createElement('div');
@@ -57,8 +57,8 @@ function display(fileContent){
     //fileInfo.fileName
     fileHeader.appendChild(windowName);
 
-  //}
-//})
+  }
+})
 exitArrow.addEventListener('click', function() {
   toggle(computerDiv);
 })
