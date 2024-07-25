@@ -349,3 +349,8 @@ img{
   font-size: 30px;
   margin: 0px;
 }
+#file-header {
+  width: 100%;
+  height: 50px;
+  display:flex;
+}

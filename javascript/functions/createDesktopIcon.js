@@ -36,7 +36,7 @@ function createDesktopIcon(desktopInfo) {
   })
   desktopIconDiv.addEventListener('click', function() {
     //openContent();
-    //fileDom.textContent=fileContent;
+    fileDom.textContent=fileContent;
     toggle(fileDom)
   })
   imageContainer.appendChild(desktopIcon);

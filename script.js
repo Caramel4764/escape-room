@@ -41,7 +41,11 @@ function display(fileMenu){
       createDesktopIcon({'parent':desktop, 'fileDom':fileMenu,'type':fileInfo.type, x:fileInfo.x, y:fileInfo.y, 'text':fileInfo.fileName, 'fileContent':fileInfo.fileContent});
     })
     computerScreen.appendChild(desktop);
-    fileMenu.appendChild(fileCloseBtn);
+    let fileHeader = document.createElement('div');
+    fileHeader.setAttribute('id', 'file-header');
+
+    fileHeader.appendChild(fileCloseBtn);
+    centerFileMenuDiv.appendChild(fileHeader)
 
   //}
 //})
