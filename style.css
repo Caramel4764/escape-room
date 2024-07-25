@@ -304,6 +304,7 @@ img{
   width: 100%;
   height: 100%;
   background-color: black;
+  font-weight: bold;
 }
 .desktop-icon-img{
   image-rendering: pixelated;
@@ -337,4 +338,14 @@ img{
   display:flex;
   justify-content: center;
   align-items: center;
+}
+#file-close-btn {
+  position:absolute;
+  right:0px;
+  top:0px;
+  font-size: 30px;
+  z-index: 20;
+  padding: 10px;
+  font-size: 30px;
+  margin: 0px;
 }

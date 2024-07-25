@@ -25,7 +25,12 @@ function display(fileMenu){
     let fileMenu = document.createElement('div');
     fileMenu.setAttribute('id', 'file-menu');
     fileMenu.style.visibility = 'hidden';
-
+    let fileCloseBtn = document.createElement('p');
+    fileCloseBtn.textContent = 'X';
+    fileCloseBtn.setAttribute('id', 'file-close-btn');
+    fileCloseBtn.addEventListener('click', function() {
+      toggle(fileMenu);
+    })
     fileMenu.classList.add('screenMenu');
     let centerFileMenuDiv = document.createElement('div');
     centerFileMenuDiv.appendChild(fileMenu);
@@ -35,7 +40,9 @@ function display(fileMenu){
     laptopFiles.forEach(fileInfo => {
       createDesktopIcon({'parent':desktop, 'fileDom':fileMenu,'type':fileInfo.type, x:fileInfo.x, y:fileInfo.y, 'text':fileInfo.fileName, 'fileContent':fileInfo.fileContent});
     })
-    computerScreen.appendChild(desktop)
+    computerScreen.appendChild(desktop);
+    fileMenu.appendChild(fileCloseBtn);
+
   //}
 //})
 exitArrow.addEventListener('click', function() {

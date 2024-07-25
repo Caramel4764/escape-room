@@ -18,12 +18,13 @@ let laptopFiles = [
     'x':0,
     'y':2, 
     'fileName':'helloWorld.txt',
-    'fileContent': 'hello world',
+    'fileContent': 'console.log("hello world");',
   },
   {
     'type':'folder',
     'x':2,
     'y':0, 
+    'fileName':'folder',
     'fileContent':'a folder',
     },
 ]
