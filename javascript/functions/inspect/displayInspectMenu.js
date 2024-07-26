@@ -6,6 +6,7 @@ function displayInspect(text, limit) {
   inspectMenuInfo.textSplitter = 0;
   let snipTime = Math.floor(text.length/limit)+1;
   if (snipTime == 1) {
+    toggleInspectMenu();
     return inspectMenuInfo.chunkedText.push(text);
   }
   for(let i = 0; i<snipTime;i++) {
@@ -24,8 +25,10 @@ function displayInspect(text, limit) {
 
         if (inspectMenuInfo.textSplitter == text.length-1) {
           if (text.slice(inspectMenuInfo.prevTextSplitter, inspectMenuInfo.textSplitter) == '') {
+            toggleInspectMenu();
             return;
           } else {
+            toggleInspectMenu();
             return inspectMenuInfo.chunkedText.push(text.slice(inspectMenuInfo.prevTextSplitter, inspectMenuInfo.textSplitter));
           }
         }
@@ -37,6 +40,7 @@ function displayInspect(text, limit) {
     }
   }
   //toggleInspectMenu();
+  toggleInspectMenu();
   return inspectMenuInfo.chunkedText;
 }
 

@@ -35,9 +35,10 @@ function createRoomElement (currRoom) {
       displayPuzzleInspect(entity)
       showSolvedImg(entity, inspectImg);
       if (entity.puzzle && entity.puzzle.type=='interact') {
-        console.log('trigger')
+        toggleInspectMenu();
       } else {
         toggleInspectMenu();
+        //toggleInspectMenu
       }
       //if item, add to inventory
       grabObject(entity, roomContainer, entityImg)
@@ -46,6 +47,7 @@ function createRoomElement (currRoom) {
         handlePuzzle(entity, entityImg)
       }
       inspectText.textContent = inspectMenuInfo.chunkedText[0];
+      toggleInspectMenu();
     })
     roomContainer.appendChild(entityImg);
   })
