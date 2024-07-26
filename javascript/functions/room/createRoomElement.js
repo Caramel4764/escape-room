@@ -1,4 +1,3 @@
-import {toggleInspectMenu} from '../inspect/toggleInspectMenu.js';
 import {inspectMenuInfo} from '../../data/inspectInfoMenu.js'
 import {locations} from '../../data/locations.js';
 import {itemLibrary} from '../../data/itemLibrary.js';
@@ -34,12 +33,6 @@ function createRoomElement (currRoom) {
     entityImg.addEventListener('click', () => {
       displayPuzzleInspect(entity)
       showSolvedImg(entity, inspectImg);
-      if (entity.puzzle && entity.puzzle.type=='interact') {
-        toggleInspectMenu();
-      } else {
-        toggleInspectMenu();
-        //toggleInspectMenu
-      }
       //if item, add to inventory
       grabObject(entity, roomContainer, entityImg)
       //solved
@@ -47,7 +40,6 @@ function createRoomElement (currRoom) {
         handlePuzzle(entity, entityImg)
       }
       inspectText.textContent = inspectMenuInfo.chunkedText[0];
-      toggleInspectMenu();
     })
     roomContainer.appendChild(entityImg);
   })
