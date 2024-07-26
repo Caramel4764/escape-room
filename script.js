@@ -56,7 +56,7 @@ let computerScreenImage = document.getElementById('computer-screen-image');
     fileHeader.setAttribute('id', 'file-header');
     fileHeader.appendChild(fileCloseBtn);
     fileMenu.appendChild(fileHeader)
-    fileMenu.style.visibility = 'hidden';
+    fileMenu.style.visibility = 'visible';
     fileHeader.appendChild(windowName);
   //}
 //})

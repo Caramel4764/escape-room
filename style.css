@@ -361,21 +361,26 @@ img{
   top:0px;
   font-size: 30px;
   z-index: 20;
-  padding: 5px;
+  padding: 3px;
   font-size: 30px;
-  margin: 5px;
+  margin: 0px;
 }
 #file-header {
-  width: 100%;
-  height: 50px;
+  width: 98.7%;
+  height: 35px;
   display:flex;
+  position:absolute;
+  top:0px;
+  left:3.5px;
+  background-color: green;
+  border-bottom: green 2px solid;
   justify-content: center;
 }
 #file-content {
   left: 5px;
   position: relative;
   width:98.5%;
-  top:35px;
+  top:45px;
 }
 #window-name {
   text-align: 'center';
