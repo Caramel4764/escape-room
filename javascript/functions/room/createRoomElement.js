@@ -34,7 +34,10 @@ function createRoomElement (currRoom) {
     entityImg.addEventListener('click', () => {
       displayPuzzleInspect(entity)
       showSolvedImg(entity, inspectImg);
-      toggleInspectMenu();
+      if (entity.puzzle && entity.puzzle.type=='interact') {
+      } else {
+        toggleInspectMenu();
+      }
       //if item, add to inventory
       grabObject(entity, roomContainer, entityImg)
       //solved

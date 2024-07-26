@@ -1,4 +1,5 @@
 import {inspectMenuInfo} from '../../data/inspectInfoMenu.js';
+import { toggleInspectMenu } from './toggleInspectMenu.js';
 
 function displayInspect(text, limit) {
   inspectMenuInfo.chunkedText = [];
@@ -35,6 +36,7 @@ function displayInspect(text, limit) {
       }
     }
   }
+  toggleInspectMenu();
   return inspectMenuInfo.chunkedText;
 }
 

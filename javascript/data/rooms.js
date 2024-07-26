@@ -565,7 +565,7 @@ let rooms = {
       {
         "name": 'nightstand',
         'src': './assets/furniture/bedroom/nightstand.png',
-        "desc": "The sheets and pillows are folded and placed neatly",
+        "desc": "There's a bunch of socks, clothing, and dust inside",
         'dims': {
           'x': "80px",
           'y': "360px",
@@ -576,7 +576,7 @@ let rooms = {
       {
         "name": 'lamp',
         'src': './assets/furniture/bedroom/night-light.png',
-        "desc": "There's a bunch of socks, clothing, and dust inside",
+        "desc": "It's a lamp",
         'dims': {
           'x': "130px",
           'y': "210px",
