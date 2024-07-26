@@ -9,22 +9,29 @@ gameMask.addEventListener('click', ()=>{
       inspectMenuInfo.textCounter++;
       if (inspectMenuInfo.textCounter > inspectMenuInfo.chunkedText.length) {
         inspectMenuInfo.textCounter = 1;
-        toggleInspectMenu();
+        toggleInspectMenu('hidden');
       }
   } else {
-    toggleInspectMenu();
+    toggleInspectMenu('hidden');
   }
 })
 
-function toggleInspectMenu() {
+function toggleInspectMenu(direction) {
+  if (direction) {
+  } else {
+    direction = 'show'
+  }
   inspectText.textContent = inspectMenuInfo.chunkedText[0];
-  if (inspectMenuInfo.opened) {
+  if (direction == 'hidden') {
     gameMask.style.visibility='hidden';
     inspectMenu.style.visibility='hidden';
     inspectMenuInfo.opened = false;
+    console.log(direction)
   } else {
     gameMask.style.visibility='visible';
     inspectMenu.style.visibility='visible';
+    console.log('IN')
+
     inspectMenuInfo.opened = true;
   }
 }
