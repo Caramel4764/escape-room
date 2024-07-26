@@ -35,6 +35,7 @@ function createRoomElement (currRoom) {
       displayPuzzleInspect(entity)
       showSolvedImg(entity, inspectImg);
       if (entity.puzzle && entity.puzzle.type=='interact') {
+        console.log('trigger')
       } else {
         toggleInspectMenu();
       }

@@ -36,7 +36,7 @@ function displayInspect(text, limit) {
       }
     }
   }
-  toggleInspectMenu();
+  //toggleInspectMenu();
   return inspectMenuInfo.chunkedText;
 }
 
