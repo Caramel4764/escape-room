@@ -1,3 +1,4 @@
+import {toggleInspectMenu} from '../inspect/toggleInspectMenu.js';
 import {inspectMenuInfo} from '../../data/inspectInfoMenu.js'
 import {locations} from '../../data/locations.js';
 import {itemLibrary} from '../../data/itemLibrary.js';
@@ -33,6 +34,7 @@ function createRoomElement (currRoom) {
     entityImg.addEventListener('click', () => {
       displayPuzzleInspect(entity)
       showSolvedImg(entity, inspectImg);
+      //toggleInspectMenu();
       //if item, add to inventory
       grabObject(entity, roomContainer, entityImg)
       //solved
