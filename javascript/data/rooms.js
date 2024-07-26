@@ -545,7 +545,7 @@ let rooms = {
     'icon': {
       "src":'./assets/misc/icons/exit-icon.jpg',
       'x': "0px",
-      'y': "100px",
+      'y': "200px",
     },
     'wall': './assets/wall/bedroom-wall.png',
     "floor": './assets/floor/bedroom-floor.png',
