@@ -16,8 +16,8 @@ let exitArrow = document.getElementById('exit-arrow');
 
 let computerScreenDiv = document.getElementById('computer-screen-div');
 let computerScreenImage = document.getElementById('computer-screen-image');
-//computerPasswordBtn.addEventListener('click', function() {
-  //if (computerInput.value == '123') {
+computerPasswordBtn.addEventListener('click', function() {
+  if (computerInput.value == '123') {
     computerScreenImage.addEventListener('click', function() {
       event.stopPropagation();
     })
@@ -56,10 +56,10 @@ let computerScreenImage = document.getElementById('computer-screen-image');
     fileHeader.setAttribute('id', 'file-header');
     fileHeader.appendChild(fileCloseBtn);
     fileMenu.appendChild(fileHeader)
-    fileMenu.style.visibility = 'visible';
+    fileMenu.style.visibility = 'hidden';
     fileHeader.appendChild(windowName);
-  //}
-//})
+  }
+})
 computerDiv.addEventListener('click', function() {
   toggle(computerDiv);
   fileMenu.style.visibility = 'hidden';
