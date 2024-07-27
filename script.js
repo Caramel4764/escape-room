@@ -16,7 +16,7 @@ let exitArrow = document.getElementById('exit-arrow');
 let computerScreenDiv = document.getElementById('computer-screen-div');
 let computerScreenImage = document.getElementById('computer-screen-image');
 let fileMenu = document.createElement('div');
-
+let computerScreenImageDiv = document.getElementById('computer-screen-image-div');
 
 computerPasswordBtn.addEventListener('click', function() {
 
@@ -48,8 +48,25 @@ computerPasswordBtn.addEventListener('click', function() {
     
     computerScreen.style.visibility = 'hidden';
     computerScreenDiv.style.visibility = 'hidden';
-    //fileMenu.style.visibility = 'hidden';
     computerDiv.style.visibility = 'hidden';
+
+    /*computerDiv.style.visibility = 'hidden';
+    fileMenu.style.visibility = 'hidden';
+    computerScreen.style.visibility = 'hidden';
+    computerScreenDiv.style.visibility = 'hidden';*/
+    fileMenu.addEventListener('click', function() {
+      event.stopImmediatePropagation()
+    })
+    computerScreenImageDiv.addEventListener('click', function() {
+      event.stopImmediatePropagation()
+      console.log('trgger')
+
+    })
+    computerScreenImage.addEventListener('click', function() {
+      //event.stopImmediatePropagation()
+      console.log('trgger')
+
+    })
 
     fileContent.classList.add('screenMenu');
     fileContent.setAttribute('id', 'file-content');
@@ -70,11 +87,14 @@ computerPasswordBtn.addEventListener('click', function() {
   //}
 })
 computerDiv.addEventListener('click', function() {
+  event.stopImmediatePropagation()
   //toggle(computerDiv);
+  console.log('click')
   computerDiv.style.visibility = 'hidden';
   fileMenu.style.visibility = 'hidden';
   computerScreen.style.visibility = 'hidden';
   computerScreenDiv.style.visibility = 'hidden';
+  console.log(event.target)
 })
 
 mapIcon.addEventListener('click', function() {
