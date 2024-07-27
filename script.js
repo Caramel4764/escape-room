@@ -24,18 +24,11 @@ computerDiv.style.visibility = 'hidden';
 
 computerPasswordBtn.addEventListener('click', function() {
   if (computerInput.value == 'Password123!') {
-    computerScreenImage.addEventListener('click', function() {
-      event.stopPropagation();
-    })
     let windowName = document.createElement('p');
     windowName.setAttribute('id', 'window-name');
     let desktop = document.createElement('div');
     desktop.setAttribute('id', 'desktop');
     computerScreen.textContent='';
-    
-    computerScreen.addEventListener('click', function() {
-      event.stopPropagation();
-    })
     let fileContent = document.createElement('div');
     let fileCloseBtn = document.createElement('p');
     fileCloseBtn.textContent = 'X';

@@ -265,7 +265,7 @@ let rooms = {
       {
         "name": 'picture2',
         'src': './assets/wall/artwork/monarch.png',
-        "desc": 'This piece is titled "Monarch". The captions below says: "Meow, meow, meow"',
+        "desc": 'This piece is titled "Monarch". The captions below says: "A piece of art dedicated to his majesty himself"',
         'dims': {
           'x': "620px",
           'y': "20px",
