@@ -15,8 +15,11 @@ let computerInput= document.getElementById('password-input');
 let exitArrow = document.getElementById('exit-arrow');
 let computerScreenDiv = document.getElementById('computer-screen-div');
 let computerScreenImage = document.getElementById('computer-screen-image');
+let fileMenu = document.createElement('div');
 
-//computerPasswordBtn.addEventListener('click', function() {
+
+computerPasswordBtn.addEventListener('click', function() {
+
   //if (computerInput.value == '123') {
 
 
@@ -36,7 +39,6 @@ let computerScreenImage = document.getElementById('computer-screen-image');
     let fileCloseBtn = document.createElement('p');
     fileCloseBtn.textContent = 'X';
     fileCloseBtn.setAttribute('id', 'file-close-btn');
-    let fileMenu = document.createElement('div');
     fileMenu.setAttribute('id', 'file-menu');
     fileMenu.style.visibility = 'hidden';
     fileMenu.appendChild(fileContent);
@@ -66,9 +68,10 @@ let computerScreenImage = document.getElementById('computer-screen-image');
     fileMenu.appendChild(fileHeader)
     fileHeader.appendChild(windowName);
   //}
-//})
+})
 computerDiv.addEventListener('click', function() {
-  toggle(computerDiv);
+  //toggle(computerDiv);
+  computerDiv.style.visibility = 'hidden';
   fileMenu.style.visibility = 'hidden';
   computerScreen.style.visibility = 'hidden';
   computerScreenDiv.style.visibility = 'hidden';
