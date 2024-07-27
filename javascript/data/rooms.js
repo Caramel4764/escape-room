@@ -35,6 +35,39 @@ let rooms = {
         }
       },
       {
+        "name": 'darkstalker',
+        'src': './assets/furniture/entrance/books/darkstalker.png',
+        "desc": 'This book is titled Darkstalker by Tui T. Sutherland. It tells the tale of three young dragons, an unavoidable destiny, and the dangers of reality warping powers that comes at a terrible cost',
+        'dims': {
+          'x': "760px",
+          'y': "90px",
+          "width": "20px",
+          'z': "3",
+        }
+      },
+      {
+        "name": 'holes',
+        'src': './assets/furniture/entrance/books/holes.png',
+        "desc": 'This book is titled "Holes" by Louis Sachar. It is a young adult novel about a kid who spends his summer at a juvenile detention center after he was falsely accused of theft. In that desert camp, all the boys are forced to dig holes as their punishment but pretty soon, there is more to it than meets the eye. This is a great book for anyone who loves mysteries, a heart-warming story, or that feeling of when everything clicks together.',
+        'dims': {
+          'x': "950px",
+          'y': "86px",
+          "width": "14px",
+          'z': "3",
+        }
+      },
+      {
+        "name": 'holes',
+        'src': './assets/furniture/entrance/books/holes.png',
+        "desc": 'This book is titled "The Joy Luck Club" by Amy Tan. It is a book made up of sixteen short stories about four Chinese Immigrant Mothers and their America-born daughters. Although the stories are constantly written in different points of view, the stories all interconnect and teach a lesson.',
+        'dims': {
+          'x': "950px",
+          'y': "86px",
+          "width": "14px",
+          'z': "3",
+        }
+      },
+      {
         "name": 'welcomeMat',
         'src': './assets/floor/carpet.png',
         "desc": "You feel a bump near the corner.There's something underneath",
