@@ -45,4 +45,5 @@ function createDesktopIcon(desktopInfo) {
   desktopIconDiv.appendChild(desktopIconText);
   parent.appendChild(desktopIconDiv);
 }
+
 export {createDesktopIcon}

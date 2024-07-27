@@ -18,6 +18,10 @@ let computerScreenImage = document.getElementById('computer-screen-image');
 let fileMenu = document.createElement('div');
 let computerScreenImageDiv = document.getElementById('computer-screen-image-div');
 
+computerScreen.style.visibility = 'hidden';
+computerScreenDiv.style.visibility = 'hidden';
+computerDiv.style.visibility = 'hidden';
+
 computerPasswordBtn.addEventListener('click', function() {
 
   //if (computerInput.value == '123') {
@@ -45,16 +49,8 @@ computerPasswordBtn.addEventListener('click', function() {
     fileCloseBtn.addEventListener('click', function() {
       toggle(fileMenu);
     })
-    
-    computerScreen.style.visibility = 'hidden';
-    computerScreenDiv.style.visibility = 'hidden';
-    computerDiv.style.visibility = 'hidden';
 
-    /*computerDiv.style.visibility = 'hidden';
-    fileMenu.style.visibility = 'hidden';
-    computerScreen.style.visibility = 'hidden';
-    computerScreenDiv.style.visibility = 'hidden';*/
-    fileMenu.addEventListener('click', function() {
+    /*fileMenu.addEventListener('click', function() {
       event.stopImmediatePropagation()
     })
     computerScreenImageDiv.addEventListener('click', function() {
@@ -63,10 +59,9 @@ computerPasswordBtn.addEventListener('click', function() {
 
     })
     computerScreenImage.addEventListener('click', function() {
-      //event.stopImmediatePropagation()
+      event.stopImmediatePropagation()
       console.log('trgger')
-
-    })
+    })*/
 
     fileContent.classList.add('screenMenu');
     fileContent.setAttribute('id', 'file-content');
@@ -87,15 +82,13 @@ computerPasswordBtn.addEventListener('click', function() {
   //}
 })
 computerScreenDiv.addEventListener('click', function() {
+  console.log(event.target.id)
   if (event.target.id == 'computer-screen-div' || event.target.id=='computer-screen-image-div') {
-
     //toggle(computerDiv);
-    console.log('click')
     computerDiv.style.visibility = 'hidden';
     fileMenu.style.visibility = 'hidden';
     computerScreen.style.visibility = 'hidden';
     computerScreenDiv.style.visibility = 'hidden';
-    console.log(event.target)
   }
 })
 
