@@ -13,11 +13,13 @@ let computerPasswordBtn = document.getElementById('password-btn');
 let computerDiv = document.querySelector('#computer-screen')
 let computerInput= document.getElementById('password-input');
 let exitArrow = document.getElementById('exit-arrow');
-
 let computerScreenDiv = document.getElementById('computer-screen-div');
 let computerScreenImage = document.getElementById('computer-screen-image');
-computerPasswordBtn.addEventListener('click', function() {
-  if (computerInput.value == '123') {
+
+//computerPasswordBtn.addEventListener('click', function() {
+  //if (computerInput.value == '123') {
+
+
     computerScreenImage.addEventListener('click', function() {
       event.stopPropagation();
     })
@@ -37,10 +39,16 @@ computerPasswordBtn.addEventListener('click', function() {
     fileCloseBtn.setAttribute('id', 'file-close-btn');
     let fileMenu = document.createElement('div');
     fileMenu.setAttribute('id', 'file-menu');
+    //fileMenu.style.visibility = 'hidden';
     fileMenu.appendChild(fileContent);
     fileCloseBtn.addEventListener('click', function() {
       toggle(fileMenu);
     })
+    
+    computerScreen.style.visibility = 'hidden';
+    computerScreenDiv.style.visibility = 'hidden';
+    fileMenu.style.visibility = 'hidden';
+
     fileContent.classList.add('screenMenu');
     fileContent.setAttribute('id', 'file-content');
     let centerFileMenuDiv = document.createElement('div');
@@ -56,10 +64,10 @@ computerPasswordBtn.addEventListener('click', function() {
     fileHeader.setAttribute('id', 'file-header');
     fileHeader.appendChild(fileCloseBtn);
     fileMenu.appendChild(fileHeader)
-    fileMenu.style.visibility = 'hidden';
+    fileMenu.style.visibility = 'visible';
     fileHeader.appendChild(windowName);
-  }
-})
+  //}
+//})
 computerDiv.addEventListener('click', function() {
   toggle(computerDiv);
   fileMenu.style.visibility = 'hidden';
