@@ -6,18 +6,12 @@ import { displayPuzzleInspect } from '../inspect/displayPuzzleInspect.js';
 import { grabObject } from '../item/grabObject.js';
 import { handlePuzzle } from '../handlePuzzle.js';
 import { createRoomVisual } from './createRoomVisual.js';
-
+import { showSolvedImg } from '../showSolvedImg.js';
 const inspectImg = document.querySelector('#inspect-image');
 const inspectText = document.querySelector('#inspect-text');
 
-function showSolvedImg (entity, entityImg) {
-  if (entity.puzzle && entity.puzzle.isSolved&&entity.puzzle.solveImg) {
-    entityImg.src=entity.puzzle.solveImg;
-  } else {
-    entityImg.src=entity.src;
-  }
-}
 function createRoomElement (currRoom) {
+  //inspectMenuInfo.entityImg=inspectImg;
   let roomContainer = createRoomVisual(currRoom);
   //gives interactivity
   currRoom.entities.map((entity)=>{
@@ -34,7 +28,6 @@ function createRoomElement (currRoom) {
     entityImg.addEventListener('click', () => {
       displayPuzzleInspect(entity)
       showSolvedImg(entity, inspectImg);
-      toggleInspectMenu();
       //if item, add to inventory
       grabObject(entity, roomContainer, entityImg)
       //solved
@@ -43,6 +36,10 @@ function createRoomElement (currRoom) {
       }
       inspectText.textContent = inspectMenuInfo.chunkedText[0];
     })
+    //change here
+    
+    //inspectMenuInfo.entityImg = entityImg;
+    //entityImg
     roomContainer.appendChild(entityImg);
   })
   locations.push(roomContainer)

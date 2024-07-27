@@ -1,11 +1,14 @@
 import {inspectMenuInfo} from '../../data/inspectInfoMenu.js';
+import { toggleInspectMenu } from './toggleInspectMenu.js';
 
 function displayInspect(text, limit) {
+  toggleInspectMenu();
   inspectMenuInfo.chunkedText = [];
   inspectMenuInfo.textSplitter = 0;
   let snipTime = Math.floor(text.length/limit)+1;
   if (snipTime == 1) {
-    return inspectMenuInfo.chunkedText.push(text);
+    inspectMenuInfo.chunkedText.push(text);
+    return
   }
   for(let i = 0; i<snipTime;i++) {
     if (i==0) {

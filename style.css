@@ -182,6 +182,7 @@ img{
   width: 100%;
   position:relative;
   height: 100%;
+  z-index:100;
   object-fit: contain;
 
 }
@@ -196,6 +197,8 @@ img{
 }
 #map-icon-div {
   position: absolute;
+  z-index:100;
+
 }
 .map-icon {
   width: 90px;
@@ -243,6 +246,8 @@ img{
   visibility: hidden;
   background-image: radial-gradient(circle 5em at 50% 50%, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
   pointer-events: none;
+  z-index:-4;
+  position:absolute;
 }
 .screenMenu {
   width:100%;
@@ -256,16 +261,20 @@ img{
 
 }
 #computer-screen-image {
-  width: 100%;
+  width: 70%;
   height: 100%;
   object-fit: contain;
+}
+#computer-screen-image-div {
+  width:100%;
+  display:flex;
+  justify-content: center;
 }
 #computer-content {
   width: 545px;
   height: 430px;
   position: relative;
   background-color: rgb(35, 131, 59);
-  left: 230px;
   top:90px;
   display:flex;
   justify-content: center;
@@ -314,7 +323,13 @@ img{
   height: 100%;
   object-fit: contain;
 }
-
+.desktop-icon{
+  display:flex;
+  position:absolute;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .desktop-icon {
   margin:5px;
   width: 80px;
@@ -336,6 +351,8 @@ img{
   height:100%;
   display:flex;
   justify-content: center;
+  position: absolute;
+
   align-items: center;
 }
 #file-close-btn {
@@ -344,21 +361,26 @@ img{
   top:0px;
   font-size: 30px;
   z-index: 20;
-  padding: 5px;
+  padding: 3px;
   font-size: 30px;
-  margin: 5px;
+  margin: 0px;
 }
 #file-header {
-  width: 100%;
-  height: 50px;
+  width: 98.7%;
+  height: 35px;
   display:flex;
+  position:absolute;
+  top:0px;
+  left:3.5px;
+  background-color: green;
+  border-bottom: green 2px solid;
   justify-content: center;
 }
 #file-content {
   left: 5px;
   position: relative;
   width:98.5%;
-  top:35px;
+  top:45px;
 }
 #window-name {
   text-align: 'center';
@@ -368,4 +390,8 @@ img{
   font-size: 20px;
   margin: 5px;
   padding: 5px;
+}
+#computer-screen-div {
+  height: 100%;
+  background-color: #000000a5;
 }

@@ -13,25 +13,28 @@ let computerPasswordBtn = document.getElementById('password-btn');
 let computerDiv = document.querySelector('#computer-screen')
 let computerInput= document.getElementById('password-input');
 let exitArrow = document.getElementById('exit-arrow');
-//let fileContent = document.getElementById('file-menu');
-function display(fileContent){
-  toggle(fileContent);
-}
+let computerScreenDiv = document.getElementById('computer-screen-div');
+let computerScreenImage = document.getElementById('computer-screen-image');
+let fileMenu = document.createElement('div');
+let computerScreenImageDiv = document.getElementById('computer-screen-image-div');
+
+computerScreen.style.visibility = 'hidden';
+computerScreenDiv.style.visibility = 'hidden';
+computerDiv.style.visibility = 'hidden';
+
 computerPasswordBtn.addEventListener('click', function() {
-  if (computerInput.value == '123') {
+  if (computerInput.value == 'Password123!') {
     let windowName = document.createElement('p');
     windowName.setAttribute('id', 'window-name');
     let desktop = document.createElement('div');
     desktop.setAttribute('id', 'desktop');
     computerScreen.textContent='';
     let fileContent = document.createElement('div');
-    //fileContent.setAttribute('id', 'file-menu');
     let fileCloseBtn = document.createElement('p');
     fileCloseBtn.textContent = 'X';
     fileCloseBtn.setAttribute('id', 'file-close-btn');
-
-    let fileMenu = document.createElement('div');
     fileMenu.setAttribute('id', 'file-menu');
+    fileMenu.style.visibility = 'hidden';
     fileMenu.appendChild(fileContent);
     fileCloseBtn.addEventListener('click', function() {
       toggle(fileMenu);
@@ -39,7 +42,6 @@ computerPasswordBtn.addEventListener('click', function() {
     fileContent.classList.add('screenMenu');
     fileContent.setAttribute('id', 'file-content');
     let centerFileMenuDiv = document.createElement('div');
-    //centerFileMenuDiv.appendChild(fileContent);
     centerFileMenuDiv.classList.add('centerDiv');
     centerFileMenuDiv.setAttribute('id', 'centerFileMenuDiv');
     desktop.appendChild(centerFileMenuDiv);
@@ -52,15 +54,17 @@ computerPasswordBtn.addEventListener('click', function() {
     fileHeader.setAttribute('id', 'file-header');
     fileHeader.appendChild(fileCloseBtn);
     fileMenu.appendChild(fileHeader)
-    fileMenu.style.visibility = 'hidden';
-
-    //fileInfo.fileName
     fileHeader.appendChild(windowName);
-
   }
 })
-exitArrow.addEventListener('click', function() {
-  toggle(computerDiv);
+computerScreenDiv.addEventListener('click', function() {
+  console.log(event.target.id)
+  if (event.target.id == 'computer-screen-div' || event.target.id=='computer-screen-image-div') {
+    computerDiv.style.visibility = 'hidden';
+    fileMenu.style.visibility = 'hidden';
+    computerScreen.style.visibility = 'hidden';
+    computerScreenDiv.style.visibility = 'hidden';
+  }
 })
 
 mapIcon.addEventListener('click', function() {

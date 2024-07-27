@@ -6,6 +6,15 @@ import { findInventoryItemWithLib } from "./findInventoryItemWithLib.js";
 import { itemLibrary } from "../../data/itemLibrary.js";
 import { displayInspect } from "../inspect/displayInspectMenu.js";
 import { toggleInspectMenu } from "../inspect/toggleInspectMenu.js";
+import { displayInspectImg } from "../inspect/displayInspectImg.js";
+
+function displayCombineDisplayMenu (itemLibraryIndex) {
+  for (let t = 0; t < itemLibrary.length; t++) {
+    if (itemLibrary[t].name == itemLibrary[itemLibraryIndex].combine.newItem) {
+      displayInspectImg(itemLibrary[t].src);
+    }
+  }
+}
 function checkItemCombination (item) {
   if (item.combine) {
     if (player.selectedItem == 'none') {
@@ -17,10 +26,14 @@ function checkItemCombination (item) {
           if (itemLibrary[i].combine.desc) {
             addItem(itemLibrary[i].combine.newItem);
             displayInspect(itemLibrary[i].combine.desc, 100);
+            //display newItem image
+            displayCombineDisplayMenu(i)
+            //if not found, scan for requiredItem
           } else if (itemLibrary[i].combine.requiredItem) {
             for (let j = 0; j < itemLibrary.length; j++) {
               if (itemLibrary[j].name == itemLibrary[i].combine.requiredItem) {
                 if (itemLibrary[j].combine.desc) {
+                  displayCombineDisplayMenu(j)
                   addItem(itemLibrary[j].combine.newItem);
                   displayInspect(itemLibrary[j].combine.desc, 100);
                 }

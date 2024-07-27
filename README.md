@@ -10,20 +10,27 @@ This is my first project for the arcade event from hackclub. Users should be abl
   photo credit
   a way to inspect item in hand?
   more rooms
-    bedroom
     art room?
   drawing painting art
   dust minigame
-  combine item
   combo locks
-  light switch minigame
+  moon dream eye glasses
+  grandfather clock puzzle
+  acorn tree easter egg
+  bluelight puzzle
+  
 
 #Done:
+  bedroom
+  combine item
   map system
   flashlight/dark system
   inventory
   open valid items
   inventory item used on object
+
+#Dropped:
+  light switch minigame
 
 
 #AI usage

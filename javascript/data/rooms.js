@@ -1,6 +1,11 @@
 import { addItem } from "../functions/item/addItem.js";
 import { displayInspect } from "../functions/inspect/displayInspectMenu.js";
 import { toggleInspectMenu } from "../functions/inspect/toggleInspectMenu.js";
+import { toggle } from "../functions/toggle.js";
+let computerDiv = document.querySelector('#computer-screen')
+let computerScreen = document.getElementById('computer-content');
+let computerScreenDiv = document.getElementById('computer-screen-div');
+
 let rooms = {
   "dims": {
     x: 1000,
@@ -260,7 +265,7 @@ let rooms = {
       {
         "name": 'picture2',
         'src': './assets/wall/artwork/monarch.png',
-        "desc": 'This piece is titled "Monarch". The captions below says: "Meow, meow, meow"',
+        "desc": 'This piece is titled "Monarch". The captions below says: "A piece of art dedicated to his majesty himself"',
         'dims': {
           'x': "620px",
           'y': "20px",
@@ -540,9 +545,9 @@ let rooms = {
     'name': 'bedroom',
     'isDark': false,
     'icon': {
-      "src":'./assets/misc/icons/exit-icon.jpg',
+      "src":'./assets/misc/icons/bedroom-icon.PNG',
       'x': "0px",
-      'y': "100px",
+      'y': "200px",
     },
     'wall': './assets/wall/bedroom-wall.png',
     "floor": './assets/floor/bedroom-floor.png',
@@ -562,7 +567,7 @@ let rooms = {
       {
         "name": 'nightstand',
         'src': './assets/furniture/bedroom/nightstand.png',
-        "desc": "The sheets and pillows are folded and placed neatly",
+        "desc": "There's a bunch of socks, clothing, and dust inside",
         'dims': {
           'x': "80px",
           'y': "360px",
@@ -573,7 +578,7 @@ let rooms = {
       {
         "name": 'lamp',
         'src': './assets/furniture/bedroom/night-light.png',
-        "desc": "There's a bunch of socks, clothing, and dust inside",
+        "desc": "It's a lamp",
         'dims': {
           'x': "130px",
           'y': "210px",
@@ -606,13 +611,23 @@ let rooms = {
       {
         "name": 'computer',
         'src': './assets/furniture/bedroom/computer.png',
-        "desc": "You power up the old computer.",
+        "desc": "It's a really old computer",
         'dims': {
           'x': "770px",
           'y': "255px",
           "width": "110px",
           'z': "3",
-        }
+        },
+        "puzzle": {
+          "type": 'interact',
+          'isSolved':false,
+          "solveDescription": "You power up the old computer.",
+          "solveFunction": () => {
+            toggle(computerDiv);
+            toggle(computerScreen);
+            toggle(computerScreenDiv);
+          },
+        },
       },
       {
         "name": 'elkHead',

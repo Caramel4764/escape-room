@@ -13,12 +13,15 @@ function handlePuzzle (entity, entityImg) {
   } else if (entity.puzzle.type=='inspect') {
     if (entity.puzzle.solveFunction && entity.puzzle.isSolved==false) {
       entity.puzzle.solveFunction();
-      displayInspect(entity.desc, 100);
-    } else {
-      displayInspect(entity.puzzle.afterDesc, 100);
     }
     entity.puzzle.isSolved=true;
-    showSolvedImg(entity, entityImg);
+    showSolvedImg(entity);
+  } else if (entity.puzzle.type=='interact') {
+    if (entity.puzzle.isSolved==false) {
+      entity.puzzle.isSolved=true;
+      displayInspect(entity.puzzle.solveDescription, 100);
+    }
+    entity.puzzle.solveFunction();
   }
 }
 
