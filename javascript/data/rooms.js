@@ -543,7 +543,7 @@ let rooms = {
     'name': 'bedroom',
     'isDark': false,
     'icon': {
-      "src":'./assets/misc/icons/exit-icon.jpg',
+      "src":'./assets/misc/icons/bedroom-icon.PNG',
       'x': "0px",
       'y': "200px",
     },
