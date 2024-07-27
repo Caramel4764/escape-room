@@ -11,6 +11,7 @@ const inspectImg = document.querySelector('#inspect-image');
 const inspectText = document.querySelector('#inspect-text');
 
 function createRoomElement (currRoom) {
+  //inspectMenuInfo.entityImg=inspectImg;
   let roomContainer = createRoomVisual(currRoom);
   //gives interactivity
   currRoom.entities.map((entity)=>{
@@ -36,7 +37,8 @@ function createRoomElement (currRoom) {
       inspectText.textContent = inspectMenuInfo.chunkedText[0];
     })
     //change here
-    inspectMenuInfo.entityImg = entityImg;
+    
+    //inspectMenuInfo.entityImg = entityImg;
     //entityImg
     roomContainer.appendChild(entityImg);
   })
