@@ -86,15 +86,17 @@ computerPasswordBtn.addEventListener('click', function() {
     fileHeader.appendChild(windowName);
   //}
 })
-computerDiv.addEventListener('click', function() {
-  event.stopImmediatePropagation()
-  //toggle(computerDiv);
-  console.log('click')
-  computerDiv.style.visibility = 'hidden';
-  fileMenu.style.visibility = 'hidden';
-  computerScreen.style.visibility = 'hidden';
-  computerScreenDiv.style.visibility = 'hidden';
-  console.log(event.target)
+computerScreenDiv.addEventListener('click', function() {
+  if (event.target.id == 'computer-screen-div' || event.target.id=='computer-screen-image-div') {
+
+    //toggle(computerDiv);
+    console.log('click')
+    computerDiv.style.visibility = 'hidden';
+    fileMenu.style.visibility = 'hidden';
+    computerScreen.style.visibility = 'hidden';
+    computerScreenDiv.style.visibility = 'hidden';
+    console.log(event.target)
+  }
 })
 
 mapIcon.addEventListener('click', function() {
