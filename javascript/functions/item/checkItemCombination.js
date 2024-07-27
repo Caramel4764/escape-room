@@ -19,12 +19,20 @@ function checkItemCombination (item) {
           if (itemLibrary[i].combine.desc) {
             addItem(itemLibrary[i].combine.newItem);
             displayInspect(itemLibrary[i].combine.desc, 100);
+            for (let t = 0; t < itemLibrary.length; t++) {
+              if (itemLibrary[t].name == itemLibrary[i].combine.newItem) {
+                displayInspectImg(itemLibrary[t].src);
+              }
+            }
           } else if (itemLibrary[i].combine.requiredItem) {
             for (let j = 0; j < itemLibrary.length; j++) {
               if (itemLibrary[j].name == itemLibrary[i].combine.requiredItem) {
                 if (itemLibrary[j].combine.desc) {
-                  displayInspectImg(itemLibrary[j].src);
-                  //console.log(itemLibrary[j].src)
+                  for (let t = 0; t < itemLibrary.length; t++) {
+                    if (itemLibrary[t].name == itemLibrary[j].combine.newItem) {
+                      displayInspectImg(itemLibrary[t].src);
+                    }
+                  }
                   addItem(itemLibrary[j].combine.newItem);
                   displayInspect(itemLibrary[j].combine.desc, 100);
                 }
