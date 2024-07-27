@@ -31,7 +31,6 @@ let computerScreenImage = document.getElementById('computer-screen-image');
     
     computerScreen.addEventListener('click', function() {
       event.stopPropagation();
-      
     })
     let fileContent = document.createElement('div');
     let fileCloseBtn = document.createElement('p');
@@ -39,7 +38,7 @@ let computerScreenImage = document.getElementById('computer-screen-image');
     fileCloseBtn.setAttribute('id', 'file-close-btn');
     let fileMenu = document.createElement('div');
     fileMenu.setAttribute('id', 'file-menu');
-    //fileMenu.style.visibility = 'hidden';
+    fileMenu.style.visibility = 'hidden';
     fileMenu.appendChild(fileContent);
     fileCloseBtn.addEventListener('click', function() {
       toggle(fileMenu);
@@ -47,7 +46,8 @@ let computerScreenImage = document.getElementById('computer-screen-image');
     
     computerScreen.style.visibility = 'hidden';
     computerScreenDiv.style.visibility = 'hidden';
-    fileMenu.style.visibility = 'hidden';
+    //fileMenu.style.visibility = 'hidden';
+    computerDiv.style.visibility = 'hidden';
 
     fileContent.classList.add('screenMenu');
     fileContent.setAttribute('id', 'file-content');
@@ -64,13 +64,14 @@ let computerScreenImage = document.getElementById('computer-screen-image');
     fileHeader.setAttribute('id', 'file-header');
     fileHeader.appendChild(fileCloseBtn);
     fileMenu.appendChild(fileHeader)
-    fileMenu.style.visibility = 'visible';
     fileHeader.appendChild(windowName);
   //}
 //})
 computerDiv.addEventListener('click', function() {
   toggle(computerDiv);
   fileMenu.style.visibility = 'hidden';
+  computerScreen.style.visibility = 'hidden';
+  computerScreenDiv.style.visibility = 'hidden';
 })
 
 mapIcon.addEventListener('click', function() {

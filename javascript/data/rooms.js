@@ -3,6 +3,8 @@ import { displayInspect } from "../functions/inspect/displayInspectMenu.js";
 import { toggleInspectMenu } from "../functions/inspect/toggleInspectMenu.js";
 import { toggle } from "../functions/toggle.js";
 let computerDiv = document.querySelector('#computer-screen')
+let computerScreen = document.getElementById('computer-content');
+let computerScreenDiv = document.getElementById('computer-screen-div');
 
 let rooms = {
   "dims": {
@@ -622,6 +624,8 @@ let rooms = {
           "solveDescription": "You power up the old computer.",
           "solveFunction": () => {
             toggle(computerDiv);
+            toggle(computerScreen);
+            toggle(computerScreenDiv);
           },
         },
       },
