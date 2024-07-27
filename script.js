@@ -23,10 +23,7 @@ computerScreenDiv.style.visibility = 'hidden';
 computerDiv.style.visibility = 'hidden';
 
 computerPasswordBtn.addEventListener('click', function() {
-
-  //if (computerInput.value == '123') {
-
-
+  if (computerInput.value == 'Password123!') {
     computerScreenImage.addEventListener('click', function() {
       event.stopPropagation();
     })
@@ -49,20 +46,6 @@ computerPasswordBtn.addEventListener('click', function() {
     fileCloseBtn.addEventListener('click', function() {
       toggle(fileMenu);
     })
-
-    /*fileMenu.addEventListener('click', function() {
-      event.stopImmediatePropagation()
-    })
-    computerScreenImageDiv.addEventListener('click', function() {
-      event.stopImmediatePropagation()
-      console.log('trgger')
-
-    })
-    computerScreenImage.addEventListener('click', function() {
-      event.stopImmediatePropagation()
-      console.log('trgger')
-    })*/
-
     fileContent.classList.add('screenMenu');
     fileContent.setAttribute('id', 'file-content');
     let centerFileMenuDiv = document.createElement('div');
@@ -79,12 +62,11 @@ computerPasswordBtn.addEventListener('click', function() {
     fileHeader.appendChild(fileCloseBtn);
     fileMenu.appendChild(fileHeader)
     fileHeader.appendChild(windowName);
-  //}
+  }
 })
 computerScreenDiv.addEventListener('click', function() {
   console.log(event.target.id)
   if (event.target.id == 'computer-screen-div' || event.target.id=='computer-screen-image-div') {
-    //toggle(computerDiv);
     computerDiv.style.visibility = 'hidden';
     fileMenu.style.visibility = 'hidden';
     computerScreen.style.visibility = 'hidden';
