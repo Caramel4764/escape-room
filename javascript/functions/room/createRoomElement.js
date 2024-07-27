@@ -35,6 +35,7 @@ function createRoomElement (currRoom) {
       }
       inspectText.textContent = inspectMenuInfo.chunkedText[0];
     })
+    //change here
     inspectMenuInfo.entityImg = entityImg;
     //entityImg
     roomContainer.appendChild(entityImg);

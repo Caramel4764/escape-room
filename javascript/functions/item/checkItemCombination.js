@@ -6,6 +6,7 @@ import { findInventoryItemWithLib } from "./findInventoryItemWithLib.js";
 import { itemLibrary } from "../../data/itemLibrary.js";
 import { displayInspect } from "../inspect/displayInspectMenu.js";
 import { toggleInspectMenu } from "../inspect/toggleInspectMenu.js";
+import { displayInspectImg } from "../inspect/displayInspectImg.js";
 function checkItemCombination (item) {
   if (item.combine) {
     if (player.selectedItem == 'none') {
@@ -21,6 +22,8 @@ function checkItemCombination (item) {
             for (let j = 0; j < itemLibrary.length; j++) {
               if (itemLibrary[j].name == itemLibrary[i].combine.requiredItem) {
                 if (itemLibrary[j].combine.desc) {
+                  displayInspectImg(itemLibrary[j].src);
+                  console.log(itemLibrary[j].src)
                   addItem(itemLibrary[j].combine.newItem);
                   displayInspect(itemLibrary[j].combine.desc, 100);
                 }
