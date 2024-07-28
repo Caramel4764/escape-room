@@ -23,6 +23,17 @@ let rooms = {
     "floor": './assets/floor/wood-floor.png',
     'divider': "./assets/floor/floor-divider.png",
     'entities': [
+     {
+        "name": 'carpet',
+        'src': './assets/floor/carpet.png',
+        "desc": "There's something underneath",
+        'dims': {
+          'x': "340px",
+          'y': "450px",
+          "width": "320px",
+          'z': "3",
+        }
+      },
       {
         "name": 'shelf',
         'src': './assets/furniture/entrance/shelf.png',
@@ -57,9 +68,9 @@ let rooms = {
         }
       },
       {
-        "name": 'holes',
+        "name": 'theJoyLuckClub',
         'src': './assets/furniture/entrance/books/holes.png',
-        "desc": 'This book is titled "The Joy Luck Club" by Amy Tan. It is a book made up of sixteen short stories about four Chinese Immigrant Mothers and their America-born daughters. Although the stories are constantly written in different points of view, the stories all interconnect and teach a lesson.',
+        "desc": 'This book is titled "The Joy Luck Club" by Amy Tan. It is a book made up of sixteen short stories about four Chinese Immigrant Mothers and their America-born daughters. Although the stories switches points of view frequently, they all interconnect and teach a lesson with a beautiful prose style.',
         'dims': {
           'x': "950px",
           'y': "86px",
@@ -68,13 +79,79 @@ let rooms = {
         }
       },
       {
-        "name": 'welcomeMat',
-        'src': './assets/floor/carpet.png',
-        "desc": "You feel a bump near the corner.There's something underneath",
+        "name": 'theJoyLuckClub',
+        'src': './assets/furniture/entrance/books/joy-luck-club.png',
+        "desc": 'This book is titled "The Joy Luck Club" by Amy Tan. It is a book made up of sixteen short stories about four Chinese Immigrant Mothers and their America-born daughters. Although the stories switches points of view frequently, they all interconnect and teach a lesson with a beautiful prose style.',
         'dims': {
-          'x': "343px",
-          'y': "450px",
-          "width": "315px",
+          'x': "680px",
+          'y': "414px",
+          "width": "14px",
+          'z': "3",
+        }
+      },
+      {
+        "name": 'rainScript',
+        'src': './assets/furniture/entrance/books/rain-script.jpeg',
+        "desc": "There's not title on this one but it's a fanfiction piece about three friends spending time together on a rainy day. Skimming through the pages, the writing is mediocre at best and the plot diverges routinely. The story itself looks unfinished and the dates of publications for each chapters are spread extremely far apart. The last update has been forever ago and it seems like it may never recieve another update again——so typical of fanfictions.",
+        'dims': {
+          'x': "960px",
+          'y': "220px",
+          "width": "8px",
+          'z': "3",
+        }
+      },
+      {
+        "name": 'sleepScript',
+        'src': './assets/furniture/entrance/books/sleep-script.png',
+        "desc": "It's a folder holding an audio drama script told in second person. The listener is stuck in an interdimensional realm and encounters a dream demon whose obliged to serve outsiders as a tour guide. It's very thin and there contains only a couple pages. With no title and little content, it may have been scaped.",
+        'dims': {
+          'x': "660px",
+          'y': "205px",
+          "width": "12px",
+          'z': "3",
+        }
+      },
+      {
+        "name": 'bookChronicle',
+        'src': './assets/furniture/entrance/books/book-chronicle.png',
+        "desc": "It's a folder holding an audio drama script told in second person. The listener is stuck in an interdimensional realm and encounters a dream demon whose obliged to serve outsiders as a tour guide. It's very thin and there contains only a couple pages. With no title and little content, it may have been scaped.",
+        'dims': {
+          'x': "800px",
+          'y': "398px",
+          "width": "120px",
+          'z': "3",
+        }
+      },
+      {
+        "name": 'succulent',
+        'src': './assets/furniture/entrance/succulent.png',
+        "desc": "Touching the leaves, you know it's an artifical plant.",
+        'dims': {
+          'x': "760px",
+          'y': "210px",
+          "width": "50px",
+          'z': "3",
+        }
+      },
+      {
+        "name": 'cactus',
+        'src': './assets/furniture/entrance/cactus.png',
+        "desc": "Carefully touching the cactus flesh, you connfirm that it's a REAL cactus.",
+        'dims': {
+          'x': "820px",
+          'y': "200px",
+          "width": "44px",
+          'z': "3",
+        }
+      },
+      {
+        "name": 'spiderWeb',
+        'src': './assets/furniture/entrance/spider-web.png',
+        "desc": "It's a thick spider web.",
+        'dims': {
+          'x': "0px",
+          'y': "0px",
+          "width": "200px",
           'z': "3",
         }
       },
