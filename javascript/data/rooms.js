@@ -114,7 +114,7 @@ let rooms = {
       {
         "name": 'bookChronicle',
         'src': './assets/furniture/entrance/books/book-chronicle.png',
-        "desc": "It's a folder holding an audio drama script told in second person. The listener is stuck in an interdimensional realm and encounters a dream demon whose obliged to serve outsiders as a tour guide. It's very thin and there contains only a couple pages. With no title and little content, it may have been scaped.",
+        "desc": "It's stack of books",
         'dims': {
           'x': "800px",
           'y': "398px",
@@ -268,6 +268,17 @@ let rooms = {
         }
       },
       {
+        "name": 'rain',
+        'src': './assets/wall/night-rain.gif',
+        "desc": "The rain seems to have picked up",
+        'dims': {
+          'x': "380px",
+          'y': "60px",
+          "width": "300px",
+          'z': "0",
+        }
+      },
+      {
         "name": 'vase',
         'src': './assets/furniture/lounge/vase.png',
         "desc": "There is not a single drop of water left inside",
@@ -362,11 +373,22 @@ let rooms = {
         }
       },
       {
+        "name": 'grandfatherClock',
+        'src': './assets/furniture/fireplace/grandfather-clock.png',
+        "desc": "It's an old grandfather clock. There's dials on the side to adjust the minute and hour.",
+        'dims': {
+          'x': "430px",
+          'y': "160px",
+          "width": "190px",
+          'z': "3",
+        }
+      },
+      {
         "name": 'picture1',
         'src': './assets/wall/artwork/anxiety.png',
         "desc": 'This piece is titled "Anxiety". The captions below says: "Only you and you alone can conquer yourself"',
         'dims': {
-          'x': "410px",
+          'x': "5px",
           'y': "10px",
           "width": "140px",
           'z': "3",
@@ -388,8 +410,8 @@ let rooms = {
         'src': './assets/wall/artwork/arcade.png',
         "desc": 'This piece is titled "Arcade". It features two familar friends.',
         'dims': {
-          'x': "450px",
-          'y': "200px",
+          'x': "400px",
+          'y': "10px",
           "width": "160px",
           'z': "3",
         }
@@ -558,7 +580,7 @@ let rooms = {
           "solveDescription": "You replace the burned out lightbulb with a new one. Try turning on the switch now",
           'afterDesc': "It's a new light bulb.",
           "itemNeeded": 'blueLightBulb',
-          'solveImg': './assets/wall/blue-hanging-light.png',
+          'solveImg': './assets/wall/lit-blue-hanging-light.png',
           "solveFunction": () => {
             displayInspect('You replace the burned out lightbulb with a new one. The demo ends here as of now but feel free to look around.', 100);
           },

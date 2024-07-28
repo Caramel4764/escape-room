@@ -2,7 +2,6 @@ import { player } from "../data/player.js";
 import { solvePuzzle } from "./solvePuzzle.js";
 import { removeItem } from "./item/removeItem.js";
 import { displayInspect } from "./inspect/displayInspectMenu.js";
-import { showSolvedImg } from "./room/createRoomElement.js";
 
 function handlePuzzle (entity, entityImg) {
   if (entity.puzzle.type=='item' && player.selectedItem.name == entity.puzzle.itemNeeded) {
@@ -15,7 +14,7 @@ function handlePuzzle (entity, entityImg) {
       entity.puzzle.solveFunction();
     }
     entity.puzzle.isSolved=true;
-    showSolvedImg(entity);
+    //showSolvedImg(entity);
   } else if (entity.puzzle.type=='interact') {
     if (entity.puzzle.isSolved==false) {
       entity.puzzle.isSolved=true;

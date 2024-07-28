@@ -74,6 +74,6 @@ for (let i = 1; i < Object.keys(rooms).length; i++) {
   player.currRoom = rooms[Object.keys(rooms)[i]];
   createRoomElement(player.currRoom);
 }
-goRoom('entrance');
+goRoom('attic');
 createMapIcons();
 mountFlashlight();

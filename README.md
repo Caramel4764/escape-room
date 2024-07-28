@@ -18,6 +18,9 @@ This is my first project for the arcade event from hackclub. Users should be abl
   grandfather clock puzzle
   acorn tree easter egg
   bluelight puzzle
+  books
+    choose your own adventure
+    
   
 
 #Done:
