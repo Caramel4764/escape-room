@@ -19,7 +19,6 @@ function limitFunctionInput(limitInfo) {
       isConvert = true;
     } else {
       player.time[type]++;
-      console.log(player.time[type])
     }
   }
   if (value < 10) {
@@ -28,6 +27,7 @@ function limitFunctionInput(limitInfo) {
   return {value, isConvert};
 }
 function convert(convertUnit, isConvert, convertUnitType) {
+  console.log(convertUnit)
   if (isConvert) {
     player.time[convertUnitType]++;
     for (let i = 0; i < timeUnitCounter.length; i++) {
@@ -83,7 +83,7 @@ function createTimeInput(timeUnit) {
       player.time.minute = convertValue;
       player.time.minute = value;
     } else if (timeUnit=='second') {
-      let {value, isConvert} = limitFunctionInput({type:'second', 'value':player.time[timeUnit], 'min':0, 'max':59, 'change':1});
+      let {value, isConvert} = limitFunctionInput({type:'hour', 'value':player.time[timeUnit], 'min':0, 'max':59, 'change':1});
       let convertValue = convert(player.time.minute, isConvert, 'minute');
       player.time.minute = convertValue;
       player.time.second = value;
