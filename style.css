@@ -405,14 +405,9 @@ img{
   display:flex;
   justify-content: center;
   align-items: center;
-  background-color: (0, 0, 0, 0.5);
 }
 .time-input-div {
-  background-color: rgb(82, 82, 82);
-  padding: 10px;
-  border-radius: 10px;
-  top:450px;
-  position: absolute;
+  position: relative;
 }
 #clock-div {
   display:flex;
@@ -427,8 +422,21 @@ img{
   align-items: center;
 }
 .time-input-counter {
-  font-size: 26px;
+  font-size: 36px;
+  margin:8px 0px;
   font-weight: bold;
   background-color: white;
   padding:3px;
+}
+#timeInputFullTimeDiv {
+  position:absolute;
+  background-color: rgb(82, 82, 82);
+  padding: 10px;
+  border-radius: 10px;
+  top:180px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  gap:20px;
+
 }
