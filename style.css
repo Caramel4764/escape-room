@@ -274,7 +274,7 @@ img{
   width: 545px;
   height: 430px;
   position: relative;
-  background-color: rgb(35, 131, 59);
+  background-color: rgba(0, 0, 0, 0.328);
   top:90px;
   display:flex;
   justify-content: center;
@@ -394,4 +394,15 @@ img{
 #computer-screen-div {
   height: 100%;
   background-color: #000000a5;
+}
+.popup {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+#popupClose {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  background-color: (0, 0, 0, 0.5);
 }

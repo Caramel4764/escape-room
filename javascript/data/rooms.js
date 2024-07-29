@@ -2,6 +2,7 @@ import { addItem } from "../functions/item/addItem.js";
 import { displayInspect } from "../functions/inspect/displayInspectMenu.js";
 import { toggleInspectMenu } from "../functions/inspect/toggleInspectMenu.js";
 import { toggle } from "../functions/toggle.js";
+import { mountClock } from "../functions/mountClock.js";
 let computerDiv = document.querySelector('#computer-screen')
 let computerScreen = document.getElementById('computer-content');
 let computerScreenDiv = document.getElementById('computer-screen-div');
@@ -381,7 +382,16 @@ let rooms = {
           'y': "160px",
           "width": "190px",
           'z': "3",
-        }
+        },
+        "puzzle": {
+          "type": 'interact',
+          'isSolved': false,
+          "solveDescription": "Testing",
+          'afterDesc': "After testing",
+          "solveFunction": () => {
+            mountClock();
+          },
+        },
       },
       {
         "name": 'picture1',
