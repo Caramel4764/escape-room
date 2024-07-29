@@ -378,15 +378,15 @@ let rooms = {
         'src': './assets/furniture/fireplace/grandfather-clock.png',
         "desc": "It's an old grandfather clock. There's dials on the side to adjust the minute and hour.",
         'dims': {
-          'x': "430px",
+          'x': "480px",
           'y': "160px",
-          "width": "190px",
+          "width": "100px",
           'z': "3",
         },
         "puzzle": {
           "type": 'interact',
           'isSolved': false,
-          "solveDescription": "Testing",
+          "solveDescription": "You take a closer look at the grandfather clock. There's two dials on the side for adjusting the hour and minute.",
           'afterDesc': "After testing",
           "solveFunction": () => {
             mountClock();
