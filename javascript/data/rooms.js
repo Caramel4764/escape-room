@@ -23,6 +23,17 @@ let rooms = {
     "floor": './assets/floor/wood-floor.png',
     'divider': "./assets/floor/floor-divider.png",
     'entities': [
+     {
+        "name": 'carpet',
+        'src': './assets/floor/carpet.png',
+        "desc": "There's something underneath",
+        'dims': {
+          'x': "340px",
+          'y': "450px",
+          "width": "320px",
+          'z': "3",
+        }
+      },
       {
         "name": 'shelf',
         'src': './assets/furniture/entrance/shelf.png',
@@ -35,13 +46,112 @@ let rooms = {
         }
       },
       {
-        "name": 'welcomeMat',
-        'src': './assets/floor/carpet.png',
-        "desc": "You feel a bump near the corner.There's something underneath",
+        "name": 'darkstalker',
+        'src': './assets/furniture/entrance/books/darkstalker.png',
+        "desc": 'This book is titled Darkstalker by Tui T. Sutherland. It tells the tale of three young dragons, an unavoidable destiny, and the dangers of reality warping powers that comes at a terrible cost',
         'dims': {
-          'x': "343px",
-          'y': "450px",
-          "width": "315px",
+          'x': "760px",
+          'y': "90px",
+          "width": "20px",
+          'z': "3",
+        }
+      },
+      {
+        "name": 'holes',
+        'src': './assets/furniture/entrance/books/holes.png',
+        "desc": 'This book is titled "Holes" by Louis Sachar. It is a young adult novel about a kid who spends his summer at a juvenile detention center after he was falsely accused of theft. In that desert camp, all the boys are forced to dig holes as their punishment but pretty soon, there is more to it than meets the eye. This is a great book for anyone who loves mysteries, a heart-warming story, or that feeling of when everything clicks together.',
+        'dims': {
+          'x': "950px",
+          'y': "86px",
+          "width": "14px",
+          'z': "3",
+        }
+      },
+      {
+        "name": 'theJoyLuckClub',
+        'src': './assets/furniture/entrance/books/holes.png',
+        "desc": 'This book is titled "The Joy Luck Club" by Amy Tan. It is a book made up of sixteen short stories about four Chinese Immigrant Mothers and their America-born daughters. Although the stories switches points of view frequently, they all interconnect and teach a lesson with a beautiful prose style.',
+        'dims': {
+          'x': "950px",
+          'y': "86px",
+          "width": "14px",
+          'z': "3",
+        }
+      },
+      {
+        "name": 'theJoyLuckClub',
+        'src': './assets/furniture/entrance/books/joy-luck-club.png',
+        "desc": 'This book is titled "The Joy Luck Club" by Amy Tan. It is a book made up of sixteen short stories about four Chinese Immigrant Mothers and their America-born daughters. Although the stories switches points of view frequently, they all interconnect and teach a lesson with a beautiful prose style.',
+        'dims': {
+          'x': "680px",
+          'y': "414px",
+          "width": "14px",
+          'z': "3",
+        }
+      },
+      {
+        "name": 'rainScript',
+        'src': './assets/furniture/entrance/books/rain-script.jpeg',
+        "desc": "There's not title on this one but it's a fanfiction piece about three friends spending time together on a rainy day. Skimming through the pages, the writing is mediocre at best and the plot diverges routinely. The story itself looks unfinished and the dates of publications for each chapters are spread extremely far apart. The last update has been forever ago and it seems like it may never recieve another update again——so typical of fanfictions.",
+        'dims': {
+          'x': "960px",
+          'y': "220px",
+          "width": "8px",
+          'z': "3",
+        }
+      },
+      {
+        "name": 'sleepScript',
+        'src': './assets/furniture/entrance/books/sleep-script.png',
+        "desc": "It's a folder holding an audio drama script told in second person. The listener is stuck in an interdimensional realm and encounters a dream demon whose obliged to serve outsiders as a tour guide. It's very thin and there contains only a couple pages. With no title and little content, it may have been scaped.",
+        'dims': {
+          'x': "660px",
+          'y': "205px",
+          "width": "12px",
+          'z': "3",
+        }
+      },
+      {
+        "name": 'bookChronicle',
+        'src': './assets/furniture/entrance/books/book-chronicle.png',
+        "desc": "It's stack of books",
+        'dims': {
+          'x': "800px",
+          'y': "398px",
+          "width": "120px",
+          'z': "3",
+        }
+      },
+      {
+        "name": 'succulent',
+        'src': './assets/furniture/entrance/succulent.png',
+        "desc": "Touching the leaves, you know it's an artifical plant.",
+        'dims': {
+          'x': "760px",
+          'y': "210px",
+          "width": "50px",
+          'z': "3",
+        }
+      },
+      {
+        "name": 'cactus',
+        'src': './assets/furniture/entrance/cactus.png',
+        "desc": "Carefully touching the cactus flesh, you connfirm that it's a REAL cactus.",
+        'dims': {
+          'x': "820px",
+          'y': "200px",
+          "width": "44px",
+          'z': "3",
+        }
+      },
+      {
+        "name": 'spiderWeb',
+        'src': './assets/furniture/entrance/spider-web.png',
+        "desc": "It's a thick spider web.",
+        'dims': {
+          'x': "0px",
+          'y': "0px",
+          "width": "200px",
           'z': "3",
         }
       },
@@ -158,6 +268,17 @@ let rooms = {
         }
       },
       {
+        "name": 'rain',
+        'src': './assets/wall/night-rain.gif',
+        "desc": "The rain seems to have picked up",
+        'dims': {
+          'x': "380px",
+          'y': "60px",
+          "width": "300px",
+          'z': "0",
+        }
+      },
+      {
         "name": 'vase',
         'src': './assets/furniture/lounge/vase.png',
         "desc": "There is not a single drop of water left inside",
@@ -252,11 +373,22 @@ let rooms = {
         }
       },
       {
+        "name": 'grandfatherClock',
+        'src': './assets/furniture/fireplace/grandfather-clock.png',
+        "desc": "It's an old grandfather clock. There's dials on the side to adjust the minute and hour.",
+        'dims': {
+          'x': "430px",
+          'y': "160px",
+          "width": "190px",
+          'z': "3",
+        }
+      },
+      {
         "name": 'picture1',
         'src': './assets/wall/artwork/anxiety.png',
         "desc": 'This piece is titled "Anxiety". The captions below says: "Only you and you alone can conquer yourself"',
         'dims': {
-          'x': "410px",
+          'x': "5px",
           'y': "10px",
           "width": "140px",
           'z': "3",
@@ -278,8 +410,8 @@ let rooms = {
         'src': './assets/wall/artwork/arcade.png',
         "desc": 'This piece is titled "Arcade". It features two familar friends.',
         'dims': {
-          'x': "450px",
-          'y': "200px",
+          'x': "400px",
+          'y': "10px",
           "width": "160px",
           'z': "3",
         }
@@ -448,7 +580,7 @@ let rooms = {
           "solveDescription": "You replace the burned out lightbulb with a new one. Try turning on the switch now",
           'afterDesc': "It's a new light bulb.",
           "itemNeeded": 'blueLightBulb',
-          'solveImg': './assets/wall/blue-hanging-light.png',
+          'solveImg': './assets/wall/lit-blue-hanging-light.png',
           "solveFunction": () => {
             displayInspect('You replace the burned out lightbulb with a new one. The demo ends here as of now but feel free to look around.', 100);
           },

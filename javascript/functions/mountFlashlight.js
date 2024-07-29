@@ -9,7 +9,8 @@ function mountFlashlight() {
 
   if (!rooms[player.currRoom].isDark) {
   } else {
-    flashlight.style.visibility = 'visible';
+    //change this to turn on flashlight
+    flashlight.style.visibility = 'hidden';
   }
   let mouseX;
   let mouseY;

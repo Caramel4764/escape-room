@@ -7,6 +7,7 @@ import { grabObject } from '../item/grabObject.js';
 import { handlePuzzle } from '../handlePuzzle.js';
 import { createRoomVisual } from './createRoomVisual.js';
 import { showSolvedImg } from '../showSolvedImg.js';
+import { displayInspectImg } from '../inspect/displayInspectImg.js';
 const inspectImg = document.querySelector('#inspect-image');
 const inspectText = document.querySelector('#inspect-text');
 
@@ -33,7 +34,14 @@ function createRoomElement (currRoom) {
       //solved
       if (entity.puzzle) {
         handlePuzzle(entity, entityImg)
+        if (entity.puzzle.isSolved == true) {
+          if (entity.puzzle.solveImg) {
+          entityImg.src=entity.puzzle.solveImg;
+          displayInspectImg(entity.puzzle.solveImg);
+          }
+        }
       }
+
       inspectText.textContent = inspectMenuInfo.chunkedText[0];
     })
     //change here
