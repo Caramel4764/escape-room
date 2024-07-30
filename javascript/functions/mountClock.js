@@ -1,5 +1,4 @@
 import { createPopup } from "./createPopup.js";
-import { player } from "../data/player.js";
 import { time } from "../data/time.js";
 import { toggle } from "./toggle.js";
 import { gameMenus } from "../data/gameMenus.js";

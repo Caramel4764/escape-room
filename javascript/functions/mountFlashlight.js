@@ -1,6 +1,5 @@
 import {player} from "../data/player.js";
 import {rooms} from "../data/rooms.js";
-import {createPopup} from "../functions/createPopup.js";
 let room = document.querySelector('#room');
 let roomBox = room.getBoundingClientRect();
 let flashlight = document.querySelector('#flashlight');

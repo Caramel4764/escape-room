@@ -11,10 +11,10 @@ let computerScreenImage = document.getElementById("computer-screen-image");
 let fileMenu = document.createElement("div");
 
 function mountComputer() {
-  computerScreen.style.visibility = "hidden";
-  computerScreenDiv.style.visibility = "hidden";
-  computerDiv.style.visibility = "hidden";
-
+  //computerScreen.style.visibility = "hidden";
+  //computerScreenDiv.style.visibility = "hidden";
+  //computerDiv.style.visibility = "hidden";
+  let {popup, popupClose} = createPopup();
   //createPopup();
   computerPasswordBtn.addEventListener("click", function () {
     if (computerInput.value == "Password123!") {
