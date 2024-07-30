@@ -1,45 +1,10 @@
 import { createPopup } from "./createPopup.js";
 import { player } from "../data/player.js";
 import { time } from "../data/time.js";
+import { toggle } from "./toggle.js";
+import { gameMenus } from "../data/gameMenus.js";
 let timeUnitDom = [];
 
-/*function limitFunctionInput(limitInfo) {
-  let {type, value, min, max, change} = limitInfo;
-  let isConvert = false;
-  if (change < 0) {
-    if (value<=min) {
-      value=max;
-      isConvert = true;
-    } else {
-      player.time[type]--;
-
-    }
-  }
-  if (change > 0) {
-    if (value>=max) {
-      value=min;
-      isConvert = true;
-    } else {
-      player.time[type]++;
-    }
-  }
-  if (value < 10) {
-    value = parseInt("0"+value);
-  }
-  return {value, isConvert};
-}
-function convert(convertUnit, isConvert, convertUnitType) {
-  console.log(convertUnit)
-  if (isConvert) {
-    player.time[convertUnitType]++;
-    for (let i = 0; i < timeUnitCounter.length; i++) {
-      if (timeUnitCounter[i].id == convertUnitType) {
-        timeUnitCounter[i].textContent = player.time[convertUnitType];
-      }
-    }
-  }
-  return convertUnit;
-}*/
 function updateClock(unit) {
   let convertToUnit;
   for (let i = 0; i < timeUnitDom.length; i++) {
@@ -89,7 +54,13 @@ function createTimeInput(timeUnit) {
   hourUp.textContent = "+";
   hourInput.appendChild(hourUp);
   let hourCounter = document.createElement("p");
-  hourCounter.textContent = time[timeUnit].value;
+
+  if (time[timeUnit].value < 10) {
+    hourCounter.textContent = '0'+time[timeUnit].value;
+  } else {
+    hourCounter.textContent = time[timeUnit].value;
+  }
+
   hourCounter.classList.add("time-input-counter");
   hourCounter.setAttribute("id",`${timeUnit}`);
   hourInput.appendChild(hourCounter);
@@ -99,12 +70,9 @@ function createTimeInput(timeUnit) {
   hourDown.addEventListener("click", function () {
     time[timeUnit].value--;
     updateClock(timeUnit);
-    //hourCounter.textContent = time[timeUnit].value;
-
   })
   hourUp.addEventListener("click", function () {
     time[timeUnit].value++;
-    //hourCounter.textContent = time[timeUnit].value;
     updateClock(timeUnit);
   })
   hourInput.appendChild(hourDown);
@@ -112,7 +80,8 @@ function createTimeInput(timeUnit) {
 }
 
 function mountClock() {
-  let menuDiv = createPopup();
+  let {popup, popupClose} = createPopup();
+  let menuDiv = popup;
   clockDiv.setAttribute("id","clock-div");
   let clockImg = document.createElement("img");
   clockImg.src = "./assets/furniture/fireplace/grandfather-clock.png";
@@ -121,9 +90,22 @@ function mountClock() {
   createTimeInput('hour');
   createTimeInput('minute');
   createTimeInput('second');
-
   clockDiv.appendChild(timeInputFullTimeDiv);
   menuDiv.appendChild(clockDiv);
+  let menuDivInfo = {
+    'domElement': menuDiv,
+    'name': 'clock',
+    'open': function() {
+      popupClose.style.visibility = "visible";
+      menuDiv.style.visibility = "visible";
+    },
+  }
+  gameMenus.push(menuDivInfo);
+  setInterval(function() {
+    time.second.value++;
+    updateClock('second');
+  }, 1000);
 }
+
 
 export { mountClock }

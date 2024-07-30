@@ -3,6 +3,8 @@ import { displayInspect } from "../functions/inspect/displayInspectMenu.js";
 import { toggleInspectMenu } from "../functions/inspect/toggleInspectMenu.js";
 import { toggle } from "../functions/toggle.js";
 import { mountClock } from "../functions/mountClock.js";
+import { gameMenus } from "./gameMenus.js";
+import { openMenu } from "../functions/openMenu.js";
 let computerDiv = document.querySelector('#computer-screen')
 let computerScreen = document.getElementById('computer-content');
 let computerScreenDiv = document.getElementById('computer-screen-div');
@@ -389,7 +391,7 @@ let rooms = {
           "solveDescription": "You take a closer look at the grandfather clock. There's two dials on the side for adjusting the hour and minute.",
           'afterDesc': "After testing",
           "solveFunction": () => {
-            mountClock();
+            openMenu('clock');
           },
         },
       },
