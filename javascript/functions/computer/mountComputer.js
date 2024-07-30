@@ -33,6 +33,24 @@ function mountComputer() {
   passwordBtn.setAttribute("id", "password-btn");
   passwordBtnDiv.appendChild(passwordBtn);
 
+  let incorrectPasswordDiv = document.createElement("div");
+  incorrectPasswordDiv.setAttribute("id", "incorrect-password-div");
+  incorrectPasswordDiv.classList.add("flex-centered");
+  incorrectPasswordDiv.style.visibility = "hidden";
+  let test = document.createElement("h1");
+  test.textContent = "Incorrect Password";
+  incorrectPasswordDiv.appendChild(test);
+  let incorrectPasswordCloseBtn = document.createElement("p");
+  incorrectPasswordCloseBtn.textContent = "X";
+  incorrectPasswordCloseBtn.setAttribute("class", "file-close-btn");
+  incorrectPasswordCloseBtn.setAttribute("class", "file-close-btn");
+  incorrectPasswordDiv.appendChild(incorrectPasswordCloseBtn);
+  incorrectPasswordCloseBtn.addEventListener("click", function () {
+    incorrectPasswordDiv.style.visibility = "hidden";
+  })
+
+  computerContent.appendChild(incorrectPasswordDiv);
+
   passwordBtn.addEventListener("click", function () {
     if (passwordInput.value == "Password123!") {
       let windowName = document.createElement("p");
@@ -43,7 +61,7 @@ function mountComputer() {
       let fileContent = document.createElement("div");
       let fileCloseBtn = document.createElement("p");
       fileCloseBtn.textContent = "X";
-      fileCloseBtn.setAttribute("id", "file-close-btn");
+      fileCloseBtn.setAttribute("class", "file-close-btn");
       let fileMenu = document.createElement("div");
       fileMenu.setAttribute("id", "file-menu");
       fileMenu.style.visibility = "hidden";
@@ -77,6 +95,8 @@ function mountComputer() {
       fileHeader.appendChild(fileCloseBtn);
       fileMenu.appendChild(fileHeader);
       fileHeader.appendChild(windowName);
+    } else {
+      incorrectPasswordDiv.style.visibility = "visible";
     }
   });
 

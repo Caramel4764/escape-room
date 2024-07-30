@@ -3,7 +3,7 @@ import {rooms} from "../data/rooms.js";
 let room = document.querySelector('#room');
 let roomBox = room.getBoundingClientRect();
 let flashlight = document.querySelector('#flashlight');
-
+player.flashlight.domRef = flashlight;
 window.addEventListener('resize', function() {
   roomBox = room.getBoundingClientRect();
 })
@@ -21,8 +21,10 @@ function mountFlashlight() {
     if (rooms[player.currRoom].isDark) {
       mouseX = e.clientX-roomBox.x;
       mouseY = e.clientY-roomBox.y;
-      flashlight.style.backgroundImage = `radial-gradient(circle 5em at ${mouseX}px ${mouseY}px, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 1))`;
+      flashlight.style.backgroundImage = `radial-gradient(circle 5em at ${mouseX}px ${mouseY}px, rgba(0, 0, 0, 0.2), ${player.flashlight.color})`;
     }
+    player.mouseX = mouseX;
+    player.mouseY = mouseY;
   })
 }
 

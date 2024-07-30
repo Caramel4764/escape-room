@@ -5,6 +5,7 @@ import { toggle } from "../functions/toggle.js";
 import { mountClock } from "../functions/mountClock.js";
 import { gameMenus } from "./gameMenus.js";
 import { openMenu } from "../functions/openMenu.js";
+import { player } from "./player.js";
 let computerDiv = document.querySelector('#computer-screen')
 let computerScreen = document.getElementById('computer-content');
 let computerScreenDiv = document.getElementById('computer-screen-div');
@@ -594,7 +595,11 @@ let rooms = {
           "itemNeeded": 'blueLightBulb',
           'solveImg': './assets/wall/lit-blue-hanging-light.png',
           "solveFunction": () => {
-            displayInspect('You replace the burned out lightbulb with a new one. The demo ends here as of now but feel free to look around.', 100);
+            //rooms[player.currRoom].entities[2].src = './assets/animation/packing-box.gif';
+            //console.log(rooms[player.currRoom].entities[2].src)
+            player.flashlight.color = 'rgba(30, 30, 255, 0.5)';
+            player.flashlight.domRef.style.backgroundImage = `radial-gradient(circle 5em at ${player.mouseX}px ${player.mouseY}px, rgba(0, 0, 0, 0.2), ${player.flashlight.color})`;
+            displayInspect('You replace the burned out lightbulb with a new one.', 100);
           },
         },
       },
@@ -611,7 +616,7 @@ let rooms = {
       },
       {
         "name": 'packingBox',
-        'src': './assets/furniture/attic//packing-box.png',
+        'src': './assets/furniture/attic/packing-box.png',
         "desc": "The box is filled with folders, books, and papers. With a quick skim, none of them seem particularly useful",
         'dims': {
           'x': "20px",
@@ -664,7 +669,7 @@ let rooms = {
       {
         "name": 'picture-frame-5',
         'src': './assets/wall/artwork/pizzaria.JPG',
-        "desc": 'This work is titled "Pizzeria". The caption below says: "Terrible things come in small packages."',
+        "desc": 'This work is titled "Pizzeria". The caption below says: "I always come back!"',
         'dims': {
           'x': "680px",
           'y': "20px",

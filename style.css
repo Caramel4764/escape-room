@@ -353,7 +353,7 @@ img{
 
   align-items: center;
 }
-#file-close-btn {
+.file-close-btn {
   position:absolute;
   right:0px;
   top:0px;
@@ -443,4 +443,13 @@ img{
   display: flex;
   justify-content: center;
   align-items: center;
+}
+#incorrect-password-div {
+  width: 500px;
+  height: 400px;
+  background-color: black;
+  border: green 2px solid;
+  z-index: 200;
+  position: absolute;
+  font-weight:bold;
 }
