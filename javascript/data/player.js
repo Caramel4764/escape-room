@@ -1,3 +1,5 @@
+let date = new Date();
+
 let player = {
   "selectedItem": 'none',
   "selectedItemDom" : 'none',
