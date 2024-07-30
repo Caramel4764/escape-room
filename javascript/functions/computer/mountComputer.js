@@ -2,32 +2,11 @@ import { createDesktopIcon } from "./createDesktopIcon.js";
 import { laptopFiles } from "../../data/laptopFiles.js";
 import { toggle } from "../toggle.js";
 import { createPopup } from "../createPopup.js";
-
-/*
-structure ref:
-      <div id="computer-content">
-        <div id="login-menu">
-          <label>Enter Password:</label>
-          <input id="password-input">
-          <br>
-          <div id="password-btn-div">
-            <p id="password-btn">Submit</p>
-          </div>
-        </div>
-      </div>
-*/
-
-/*let computerContent = document.getElementById("computer-content");
-let computerPasswordBtn = document.getElementById("password-btn");
-let computerDiv = document.querySelector("#computer-screen");
-let computerInput = document.getElementById("password-input");
-let computerScreenDiv = document.getElementById("computer-screen-div");
-let computerScreenImage = document.getElementById("computer-screen-image");
-let fileMenu = document.createElement("div");*/
+import { gameMenus } from "../../data/gameMenus.js";
 
 function mountComputer() {
-  let {popup, popupClose} = createPopup();
-  popup.style.visibility = "visible";
+  let {popup, popupClose} = createPopup('computer');
+  //popup.style.visibility = "visible";
   let computerScreenImage = document.createElement("img");
   computerScreenImage.src = "./assets/misc/computer/computer-screen.png";
   computerScreenImage.setAttribute("id", "computer-screen-image");
@@ -55,7 +34,7 @@ function mountComputer() {
   passwordBtnDiv.appendChild(passwordBtn);
 
   passwordBtn.addEventListener("click", function () {
-    if (passwordInput.value == "123") {
+    if (passwordInput.value == "Password123!") {
       let windowName = document.createElement("p");
       windowName.setAttribute("id", "window-name");
       let desktop = document.createElement("div");
@@ -101,19 +80,6 @@ function mountComputer() {
     }
   });
 
-
-  /*popup.addEventListener("click", function () {
-    console.log(event.target.id);
-    if (
-      event.target.id == "computer-screen-div" ||
-      event.target.id == "computer-screen-image-div"
-    ) {
-      computerDiv.style.visibility = "hidden";
-      fileMenu.style.visibility = "hidden";
-      computerContent.style.visibility = "hidden";
-      popup.style.visibility = "hidden";
-    }
-  });*/
 }
 
 export { mountComputer };

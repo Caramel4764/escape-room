@@ -79,7 +79,7 @@ function createTimeInput(timeUnit) {
 }
 
 function mountClock() {
-  let {popup, popupClose} = createPopup();
+  let {popup, popupClose} = createPopup('clock');
   let menuDiv = popup;
   clockDiv.setAttribute("id","clock-div");
   let clockImg = document.createElement("img");
@@ -91,15 +91,7 @@ function mountClock() {
   createTimeInput('second');
   clockDiv.appendChild(timeInputFullTimeDiv);
   menuDiv.appendChild(clockDiv);
-  let menuDivInfo = {
-    'domElement': menuDiv,
-    'name': 'clock',
-    'open': function() {
-      popupClose.style.visibility = "visible";
-      menuDiv.style.visibility = "visible";
-    },
-  }
-  gameMenus.push(menuDivInfo);
+
   setInterval(function() {
     time.second.value++;
     updateClock('second');

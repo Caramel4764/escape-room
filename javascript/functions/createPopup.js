@@ -1,6 +1,7 @@
 let interfaceDiv = document.querySelector("#interfaceDiv");
+import {gameMenus} from "../data/gameMenus.js";
 
-function createPopup() {
+function createPopup(menuName) {
   let popupClose = document.createElement("div");
   let popup = document.createElement("div");
   popup.addEventListener("click", function () {
@@ -18,6 +19,15 @@ function createPopup() {
   })
   popupClose.appendChild(popup);
   interfaceDiv.appendChild(popupClose);
+  let menuDivInfo = {
+    'domElement': popup,
+    'name': menuName,
+    'open': function() {
+      popupClose.style.visibility = "visible";
+      popup.style.visibility = "visible";
+    },
+  }
+  gameMenus.push(menuDivInfo);
   return {popup, popupClose};
 }
 

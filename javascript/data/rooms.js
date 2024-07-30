@@ -767,9 +767,7 @@ let rooms = {
           'isSolved':false,
           "solveDescription": "You power up the old computer.",
           "solveFunction": () => {
-            toggle(computerDiv);
-            toggle(computerScreen);
-            toggle(computerScreenDiv);
+            openMenu('computer');
           },
         },
       },
