@@ -5,10 +5,5 @@ let player = {
   "selectedItemDom" : 'none',
   "currRoom": "not initalized",
   "inventory": [],
-  'time': {
-    'hour': date.getHours(),
-    'minute': date.getMinutes(),
-    'second': date.getSeconds(),
-  }
 }
 export {player}

@@ -1,7 +1,9 @@
 import { createPopup } from "./createPopup.js";
 import { player } from "../data/player.js";
-let timeUnitCounter = [];
-function limitFunctionInput(limitInfo) {
+import { time } from "../data/time.js";
+let timeUnitDom = [];
+
+/*function limitFunctionInput(limitInfo) {
   let {type, value, min, max, change} = limitInfo;
   let isConvert = false;
   if (change < 0) {
@@ -37,6 +39,41 @@ function convert(convertUnit, isConvert, convertUnitType) {
     }
   }
   return convertUnit;
+}*/
+function updateClock(unit) {
+  let convertToUnit;
+  for (let i = 0; i < timeUnitDom.length; i++) {
+    if (unit != 'none') {
+      if (timeUnitDom[i].id == time[unit].convertTo) {
+        convertToUnit=timeUnitDom[i];
+      }
+    }
+    if (timeUnitDom[i].id == unit) {
+      if (time[unit].value > time[unit].max) {
+        time[unit].value = time[unit].min;
+        if (time[unit].convertTo != 'none') {
+          time[time[unit].convertTo].value++;
+          convertToUnit.textContent = time[time[unit].convertTo].value;
+        }
+      }
+      if (time[unit].value < time[unit].min) {
+        time[unit].value = time[unit].max;
+        if (time[unit].convertTo != 'none') {
+          time[time[unit].convertTo].value--;
+        convertToUnit.textContent = time[time[unit].convertTo].value;
+        }
+        updateClock(time[unit].convertTo);
+      }
+      if (time[unit].convertTo != 'none') {
+        updateClock(time[unit].convertTo);
+      }
+      if (time[unit].value < 10) {
+        timeUnitDom[i].textContent = '0'+time[unit].value;
+      } else {
+        timeUnitDom[i].textContent = time[unit].value;
+      } 
+    }
+  }
 }
 let clockDiv = document.createElement("div");
 let timeInputFullTimeDiv = document.createElement("div");
@@ -52,43 +89,23 @@ function createTimeInput(timeUnit) {
   hourUp.textContent = "+";
   hourInput.appendChild(hourUp);
   let hourCounter = document.createElement("p");
-  hourCounter.textContent = player.time[timeUnit];
+  hourCounter.textContent = time[timeUnit].value;
   hourCounter.classList.add("time-input-counter");
   hourCounter.setAttribute("id",`${timeUnit}`);
-  timeUnitCounter.push(hourCounter);
   hourInput.appendChild(hourCounter);
   let hourDown = document.createElement("button");
   hourDown.textContent = "-";
+  timeUnitDom.push(hourCounter);
   hourDown.addEventListener("click", function () {
-    if (timeUnit=='hour') {
-      let {value, isConvert} = limitFunctionInput({type:'hour', 'value':player.time[timeUnit], 'min':0, 'max':23, 'change':-1});
-      player.time.hour = value;
-    } else if (timeUnit=='minute') {
-      let {value, isConvert} = limitFunctionInput({type:'minute', 'value':player.time[timeUnit], 'min':0, 'max':59, 'change':-1});
-      player.time.minute = value;
-    } else if (timeUnit=='second') {
-      let {value, isConvert} = limitFunctionInput({type:'second', 'value':player.time[timeUnit], 'min':0, 'max':59, 'change':-1});
-      player.time.second = value;
-    }
-    hourCounter.textContent=player.time[timeUnit]
+    time[timeUnit].value--;
+    updateClock(timeUnit);
+    //hourCounter.textContent = time[timeUnit].value;
+
   })
   hourUp.addEventListener("click", function () {
-    if (timeUnit=='hour') {
-      let {value, isConvert} = limitFunctionInput({type:'hour', 'value':player.time[timeUnit], 'min':0, 'max':23, 'change':1});
-      player.time.minute = convertValue;
-      player.time.hour = value;
-    } else if (timeUnit=='minute') {
-      let {value, isConvert} = limitFunctionInput({type:'minute', 'value':player.time[timeUnit], 'min':0, 'max':59, 'change':1});
-      let convertValue = convert(player.time.minute, isConvert, 'hour');
-      player.time.minute = convertValue;
-      player.time.minute = value;
-    } else if (timeUnit=='second') {
-      let {value, isConvert} = limitFunctionInput({type:'hour', 'value':player.time[timeUnit], 'min':0, 'max':59, 'change':1});
-      let convertValue = convert(player.time.minute, isConvert, 'minute');
-      player.time.minute = convertValue;
-      player.time.second = value;
-    }
-    hourCounter.textContent=player.time[timeUnit];
+    time[timeUnit].value++;
+    //hourCounter.textContent = time[timeUnit].value;
+    updateClock(timeUnit);
   })
   hourInput.appendChild(hourDown);
   timeInputFullTimeDiv.appendChild(timeInputDiv);
@@ -96,7 +113,6 @@ function createTimeInput(timeUnit) {
 
 function mountClock() {
   let menuDiv = createPopup();
-  menuDiv.style.visibility = "visible";
   clockDiv.setAttribute("id","clock-div");
   let clockImg = document.createElement("img");
   clockImg.src = "./assets/furniture/fireplace/grandfather-clock.png";
@@ -105,7 +121,6 @@ function mountClock() {
   createTimeInput('hour');
   createTimeInput('minute');
   createTimeInput('second');
-
 
   clockDiv.appendChild(timeInputFullTimeDiv);
   menuDiv.appendChild(clockDiv);
