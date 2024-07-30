@@ -7,7 +7,6 @@ function toggleMap () {
     map.style.visibility = 'hidden';
   } else {
     map.style.visibility = 'visible';
-  //addItem('blueLightBulb')
   }
 }
 export {toggleMap};

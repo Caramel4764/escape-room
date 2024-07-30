@@ -5,9 +5,12 @@ let room = document.querySelector('#room');
 let roomBox = room.getBoundingClientRect();
 let flashlight = document.querySelector('#flashlight');
 
+window.addEventListener('resize', function() {
+  roomBox = room.getBoundingClientRect();
+})
+
 function mountFlashlight() {
   flashlight.style.visibility = 'hidden';
-
   if (!rooms[player.currRoom].isDark) {
   } else {
     //change this to turn on flashlight
@@ -22,8 +25,6 @@ function mountFlashlight() {
       flashlight.style.backgroundImage = `radial-gradient(circle 5em at ${mouseX}px ${mouseY}px, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 1))`;
     }
   })
-  //createPopup();
-
 }
 
 export {mountFlashlight}
