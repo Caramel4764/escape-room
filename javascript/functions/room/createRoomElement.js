@@ -8,15 +8,19 @@ import { handlePuzzle } from '../handlePuzzle.js';
 import { createRoomVisual } from './createRoomVisual.js';
 import { showSolvedImg } from '../showSolvedImg.js';
 import { displayInspectImg } from '../inspect/displayInspectImg.js';
+import { rooms } from '../../data/rooms.js';
 const inspectImg = document.querySelector('#inspect-image');
 const inspectText = document.querySelector('#inspect-text');
 
 function createRoomElement (currRoom) {
-  //inspectMenuInfo.entityImg=inspectImg;
   let roomContainer = createRoomVisual(currRoom);
   //gives interactivity
-  currRoom.entities.map((entity)=>{
+  currRoom.entities.map((entity, index)=>{
     let entityImg = document.createElement("img");
+    entityImg.setAttribute('id', entity.name);
+    rooms[currRoom.name].entities[index].domElement = entityImg;
+    //console.log(rooms[currRoom.name].entities[index].domElement);
+
     showSolvedImg(entity, entityImg);
     entityImg.style.top=entity.dims.y;
     entityImg.style.left=entity.dims.x;
