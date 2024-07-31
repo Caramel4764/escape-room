@@ -1,10 +1,12 @@
 import { createPopup } from "../createPopup.js";
 import { time } from "../../../data/time.js";
-import { toggle } from "../../toggle.js";
-import { gameMenus } from "../../../data/gameMenus.js";
 let timeUnitDom = [];
 
 function updateClockTens(unit) {
+  if (unit == "none") {
+    console.log('exit')
+    return
+  }
   let convertToUnit;
   let tensMax = Math.floor((time[unit].max-1) / 10) * 10;
   for (let i = 0; i < timeUnitDom.length; i++) {
@@ -15,6 +17,7 @@ function updateClockTens(unit) {
     }
     if (timeUnitDom[i].id == unit) {
       if (time[unit].value > time[unit].max) {
+        
         time[unit].value = time[unit].value%10;
         if (time[unit].value == 4) {
           time[unit].value = 0;
@@ -25,20 +28,15 @@ function updateClockTens(unit) {
         }
       }
       if (time[unit].value < time[unit].min) {
-        //console.log(tensMax+10%time[unit].value)
-        console.log(time[unit].value);
-        //time[unit].value = tensMax+(time[unit].value+10);
         time[unit].value = tensMax+((time[unit].value+10)%10);
-
-
         if (time[unit].convertTo != "none") {
           time[time[unit].convertTo].value--;
           convertToUnit.textContent = time[time[unit].convertTo].value;
         }
-        updateClockTens(time[unit].convertTo);
+        updateClock(time[unit].convertTo);
       }
       if (time[unit].convertTo != "none") {
-        updateClockTens(time[unit].convertTo);
+        updateClock(time[unit].convertTo);
       }
       if (time[unit].value < 10) {
         timeUnitDom[i].textContent = "0" + time[unit].value;
@@ -68,12 +66,18 @@ function updateClock(unit) {
         }
       }
       if (time[unit].value < time[unit].min) {
-        console.log(time[unit].value);
         time[unit].value = time[unit].max;
-
         if (time[unit].convertTo != "none") {
           time[time[unit].convertTo].value--;
-
+          console.log(time[time[unit].convertTo].value)
+          //edge case for hour 0, minute 0, and second 0 while going down
+          if (unit=='second' && time[time[unit].convertTo].value == -1) {
+            time.hour.value=time.hour.max;
+            console.log(time.hour.max)
+          }
+          if (time[time[unit].convertTo].value < 0) {
+            time[time[unit].convertTo].value = time[time[unit].convertTo].max;
+          }
           convertToUnit.textContent = time[time[unit].convertTo].value;
         }
         updateClock(time[unit].convertTo);
