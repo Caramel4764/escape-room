@@ -1,5 +1,5 @@
+import {gameMenus} from "../../data/gameMenus.js";
 let interfaceDiv = document.querySelector("#interfaceDiv");
-import {gameMenus} from "../data/gameMenus.js";
 
 function createPopup(menuName) {
   let popupClose = document.createElement("div");

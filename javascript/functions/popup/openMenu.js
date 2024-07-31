@@ -1,7 +1,6 @@
-import {gameMenus} from "../data/gameMenus.js";
+import { gameMenus } from "../../data/gameMenus.js";
 
-function openMenu (menuName) {
-
+function openMenu(menuName) {
   for (let i = 0; i < gameMenus.length; i++) {
     if (gameMenus[i].name === menuName) {
       gameMenus[i].open();
@@ -9,4 +8,4 @@ function openMenu (menuName) {
   }
 }
 
-export {openMenu}
+export { openMenu };

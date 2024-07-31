@@ -1,67 +1,73 @@
-import { createPopup } from "./createPopup.js";
-import { time } from "../data/time.js";
-import { toggle } from "./toggle.js";
-import { gameMenus } from "../data/gameMenus.js";
+import { createPopup } from "../createPopup.js";
+import { time } from "../../../data/time.js";
+import { toggle } from "../../toggle.js";
+import { gameMenus } from "../../../data/gameMenus.js";
 let timeUnitDom = [];
 
 function updateClock(unit) {
   let convertToUnit;
   for (let i = 0; i < timeUnitDom.length; i++) {
-    if (unit != 'none') {
+    if (unit != "none") {
       if (timeUnitDom[i].id == time[unit].convertTo) {
-        convertToUnit=timeUnitDom[i];
+        convertToUnit = timeUnitDom[i];
       }
     }
     if (timeUnitDom[i].id == unit) {
       if (time[unit].value > time[unit].max) {
         time[unit].value = time[unit].min;
-        if (time[unit].convertTo != 'none') {
+        if (time[unit].convertTo != "none") {
           time[time[unit].convertTo].value++;
           convertToUnit.textContent = time[time[unit].convertTo].value;
         }
       }
       if (time[unit].value < time[unit].min) {
         time[unit].value = time[unit].max;
-        if (time[unit].convertTo != 'none') {
+        if (time[unit].convertTo != "none") {
           time[time[unit].convertTo].value--;
-        convertToUnit.textContent = time[time[unit].convertTo].value;
+          convertToUnit.textContent = time[time[unit].convertTo].value;
         }
         updateClock(time[unit].convertTo);
       }
-      if (time[unit].convertTo != 'none') {
+      if (time[unit].convertTo != "none") {
         updateClock(time[unit].convertTo);
       }
       if (time[unit].value < 10) {
-        timeUnitDom[i].textContent = '0'+time[unit].value;
+        timeUnitDom[i].textContent = "0" + time[unit].value;
       } else {
         timeUnitDom[i].textContent = time[unit].value;
-      } 
+      }
     }
   }
 }
 let clockDiv = document.createElement("div");
 let timeInputFullTimeDiv = document.createElement("div");
-timeInputFullTimeDiv.setAttribute("id","timeInputFullTimeDiv");
+timeInputFullTimeDiv.setAttribute("id", "timeInputFullTimeDiv");
 function createTimeInput(timeUnit) {
   let timeInputDiv = document.createElement("div");
   timeInputDiv.classList.add("time-input-div");
   let hourInput = document.createElement("div");
   hourInput.classList.add("time-input");
-  hourInput.style.display="flex";
+  hourInput.style.display = "flex";
   timeInputDiv.appendChild(hourInput);
+
+  let hourUpDiv = document.createElement("div");
   let hourUp = document.createElement("button");
   hourUp.textContent = "+";
-  hourInput.appendChild(hourUp);
+  hourUpDiv.appendChild(hourUp);
+  let hourUpTens = document.createElement("button");
+  hourUpTens.textContent = "+";
+  hourUpDiv.appendChild(hourUpTens);
+  hourInput.appendChild(hourUpDiv);
   let hourCounter = document.createElement("p");
 
   if (time[timeUnit].value < 10) {
-    hourCounter.textContent = '0'+time[timeUnit].value;
+    hourCounter.textContent = "0" + time[timeUnit].value;
   } else {
     hourCounter.textContent = time[timeUnit].value;
   }
 
   hourCounter.classList.add("time-input-counter");
-  hourCounter.setAttribute("id",`${timeUnit}`);
+  hourCounter.setAttribute("id", `${timeUnit}`);
   hourInput.appendChild(hourCounter);
   let hourDown = document.createElement("button");
   hourDown.textContent = "-";
@@ -69,34 +75,33 @@ function createTimeInput(timeUnit) {
   hourDown.addEventListener("click", function () {
     time[timeUnit].value--;
     updateClock(timeUnit);
-  })
+  });
   hourUp.addEventListener("click", function () {
     time[timeUnit].value++;
     updateClock(timeUnit);
-  })
+  });
   hourInput.appendChild(hourDown);
   timeInputFullTimeDiv.appendChild(timeInputDiv);
 }
 
 function mountClock() {
-  let {popup, popupClose} = createPopup('clock');
+  let { popup, popupClose } = createPopup("clock");
   let menuDiv = popup;
-  clockDiv.setAttribute("id","clock-div");
+  clockDiv.setAttribute("id", "clock-div");
   let clockImg = document.createElement("img");
   clockImg.src = "./assets/furniture/fireplace/grandfather-clock.png";
   clockDiv.appendChild(clockImg);
   menuDiv.appendChild(clockImg);
-  createTimeInput('hour');
-  createTimeInput('minute');
-  createTimeInput('second');
+  createTimeInput("hour");
+  createTimeInput("minute");
+  createTimeInput("second");
   clockDiv.appendChild(timeInputFullTimeDiv);
   menuDiv.appendChild(clockDiv);
 
-  setInterval(function() {
+  setInterval(function () {
     time.second.value++;
-    updateClock('second');
+    updateClock("second");
   }, 1000);
 }
 
-
-export { mountClock }
+export { mountClock };

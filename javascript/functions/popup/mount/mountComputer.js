@@ -1,18 +1,18 @@
-import { createDesktopIcon } from "./createDesktopIcon.js";
-import { laptopFiles } from "../../data/laptopFiles.js";
-import { toggle } from "../toggle.js";
+import { createDesktopIcon } from "../../computer/createDesktopIcon.js";
+import { laptopFiles } from "../../../data/laptopFiles.js";
+import { toggle } from "../../toggle.js";
 import { createPopup } from "../createPopup.js";
-import { gameMenus } from "../../data/gameMenus.js";
+import { gameMenus } from "../../../data/gameMenus.js";
 
 function mountComputer() {
-  let {popup, popupClose} = createPopup('computer');
+  let { popup, popupClose } = createPopup("computer");
   //popup.style.visibility = "visible";
   let computerScreenImage = document.createElement("img");
   computerScreenImage.src = "./assets/misc/computer/computer-screen.png";
   computerScreenImage.setAttribute("id", "computer-screen-image");
   popup.appendChild(computerScreenImage);
   let computerContent = document.createElement("div");
-  computerContent.setAttribute('id', "computer-content");
+  computerContent.setAttribute("id", "computer-content");
   popup.appendChild(computerContent);
   let loginMenu = document.createElement("div");
   loginMenu.setAttribute("id", "login-menu");
@@ -47,7 +47,7 @@ function mountComputer() {
   incorrectPasswordDiv.appendChild(incorrectPasswordCloseBtn);
   incorrectPasswordCloseBtn.addEventListener("click", function () {
     incorrectPasswordDiv.style.visibility = "hidden";
-  })
+  });
 
   computerContent.appendChild(incorrectPasswordDiv);
 
@@ -99,7 +99,6 @@ function mountComputer() {
       incorrectPasswordDiv.style.visibility = "visible";
     }
   });
-
 }
 
 export { mountComputer };
