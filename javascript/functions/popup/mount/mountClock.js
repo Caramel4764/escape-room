@@ -4,6 +4,51 @@ import { toggle } from "../../toggle.js";
 import { gameMenus } from "../../../data/gameMenus.js";
 let timeUnitDom = [];
 
+function updateClockTens(unit) {
+  let convertToUnit;
+  let tensMax = Math.floor((time[unit].max-1) / 10) * 10;
+  for (let i = 0; i < timeUnitDom.length; i++) {
+    if (unit != "none") {
+      if (timeUnitDom[i].id == time[unit].convertTo) {
+        convertToUnit = timeUnitDom[i];
+      }
+    }
+    if (timeUnitDom[i].id == unit) {
+      if (time[unit].value > time[unit].max) {
+        time[unit].value = time[unit].value%10;
+        if (time[unit].value == 4) {
+          time[unit].value = 0;
+        }
+        if (time[unit].convertTo != "none") {
+          time[time[unit].convertTo].value++;
+          convertToUnit.textContent = time[time[unit].convertTo].value;
+        }
+      }
+      if (time[unit].value < time[unit].min) {
+        //console.log(tensMax+10%time[unit].value)
+        console.log(time[unit].value);
+        //time[unit].value = tensMax+(time[unit].value+10);
+        time[unit].value = tensMax+((time[unit].value+10)%10);
+
+
+        if (time[unit].convertTo != "none") {
+          time[time[unit].convertTo].value--;
+          convertToUnit.textContent = time[time[unit].convertTo].value;
+        }
+        updateClockTens(time[unit].convertTo);
+      }
+      if (time[unit].convertTo != "none") {
+        updateClockTens(time[unit].convertTo);
+      }
+      if (time[unit].value < 10) {
+        timeUnitDom[i].textContent = "0" + time[unit].value;
+      } else {
+        timeUnitDom[i].textContent = time[unit].value;
+      }
+    }
+  }
+}
+
 function updateClock(unit) {
   let convertToUnit;
   for (let i = 0; i < timeUnitDom.length; i++) {
@@ -14,19 +59,21 @@ function updateClock(unit) {
     }
     if (timeUnitDom[i].id == unit) {
       if (time[unit].value > time[unit].max) {
-        time[unit].value = time[unit].value%10;
+
+        time[unit].value = time[unit].min;
         if (time[unit].convertTo != "none") {
           time[time[unit].convertTo].value++;
+
           convertToUnit.textContent = time[time[unit].convertTo].value;
         }
       }
       if (time[unit].value < time[unit].min) {
-        let tensMax = Math.ceil((time[unit].max-1) / 10) * 10;;
-        time[unit].value = (time[unit].max+1-time[unit].value)%time[unit].max;
         console.log(time[unit].value);
+        time[unit].value = time[unit].max;
 
         if (time[unit].convertTo != "none") {
           time[time[unit].convertTo].value--;
+
           convertToUnit.textContent = time[time[unit].convertTo].value;
         }
         updateClock(time[unit].convertTo);
@@ -42,6 +89,7 @@ function updateClock(unit) {
     }
   }
 }
+
 let clockDiv = document.createElement("div");
 let timeInputFullTimeDiv = document.createElement("div");
 timeInputFullTimeDiv.setAttribute("id", "timeInputFullTimeDiv");
@@ -89,7 +137,7 @@ function createTimeInput(timeUnit) {
   });
   hourDownTens.addEventListener("click", function () {
     time[timeUnit].value -= 10;
-    updateClock(timeUnit);
+    updateClockTens(timeUnit);
   });
   hourUp.addEventListener("click", function () {
     time[timeUnit].value++;
@@ -97,7 +145,7 @@ function createTimeInput(timeUnit) {
   });
   hourUpTens.addEventListener("click", function () {
     time[timeUnit].value += 10;
-    updateClock(timeUnit);
+    updateClockTens(timeUnit);
   });
   timeInputFullTimeDiv.appendChild(timeInputDiv);
 }
