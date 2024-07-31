@@ -14,6 +14,11 @@ for (let i = 1; i < Object.keys(rooms).length; i++) {
   player.currRoom = rooms[Object.keys(rooms)[i]];
   createRoomElement(player.currRoom);
 }
+window.resizeTo(800, 600)
+
+/*window.addEventListener('resize', function () {
+  window.resizeTo(500, 600)
+})*/
 goRoom("attic");
 createMapIcons();
 mountFlashlight();

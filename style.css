@@ -6,6 +6,8 @@ body {
   height:0;
   font-family:'Courier New', Courier, monospace;
   background-color: rgb(94, 94, 94);
+  /*min-width: '1180px';
+  max-height: '650px';*/
 }
 img{
   position:absolute;
