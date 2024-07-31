@@ -14,14 +14,17 @@ function updateClock(unit) {
     }
     if (timeUnitDom[i].id == unit) {
       if (time[unit].value > time[unit].max) {
-        time[unit].value = time[unit].min;
+        time[unit].value = time[unit].value%10;
         if (time[unit].convertTo != "none") {
           time[time[unit].convertTo].value++;
           convertToUnit.textContent = time[time[unit].convertTo].value;
         }
       }
       if (time[unit].value < time[unit].min) {
-        time[unit].value = time[unit].max;
+        let tensMax = Math.ceil((time[unit].max-1) / 10) * 10;;
+        time[unit].value = (time[unit].max+1-time[unit].value)%time[unit].max;
+        console.log(time[unit].value);
+
         if (time[unit].convertTo != "none") {
           time[time[unit].convertTo].value--;
           convertToUnit.textContent = time[time[unit].convertTo].value;
@@ -53,10 +56,10 @@ function createTimeInput(timeUnit) {
   let hourUpDiv = document.createElement("div");
   let hourUp = document.createElement("button");
   hourUp.textContent = "+";
-  hourUpDiv.appendChild(hourUp);
   let hourUpTens = document.createElement("button");
   hourUpTens.textContent = "+";
   hourUpDiv.appendChild(hourUpTens);
+  hourUpDiv.appendChild(hourUp);
   hourInput.appendChild(hourUpDiv);
   let hourCounter = document.createElement("p");
 
@@ -71,16 +74,31 @@ function createTimeInput(timeUnit) {
   hourInput.appendChild(hourCounter);
   let hourDown = document.createElement("button");
   hourDown.textContent = "-";
+
+  let hourDownDiv = document.createElement("div");
+  let hourDownTens = document.createElement("button");
+  hourDownTens.textContent = "-";
+  hourDownDiv.appendChild(hourDownTens);
+  hourDownDiv.appendChild(hourDown);
+  hourInput.appendChild(hourDownDiv);
+  
   timeUnitDom.push(hourCounter);
   hourDown.addEventListener("click", function () {
     time[timeUnit].value--;
+    updateClock(timeUnit);
+  });
+  hourDownTens.addEventListener("click", function () {
+    time[timeUnit].value -= 10;
     updateClock(timeUnit);
   });
   hourUp.addEventListener("click", function () {
     time[timeUnit].value++;
     updateClock(timeUnit);
   });
-  hourInput.appendChild(hourDown);
+  hourUpTens.addEventListener("click", function () {
+    time[timeUnit].value += 10;
+    updateClock(timeUnit);
+  });
   timeInputFullTimeDiv.appendChild(timeInputDiv);
 }
 
