@@ -1,9 +1,5 @@
 import { addItem } from "../functions/item/addItem.js";
 import { displayInspect } from "../functions/inspect/displayInspectMenu.js";
-import { toggleInspectMenu } from "../functions/inspect/toggleInspectMenu.js";
-import { toggle } from "../functions/toggle.js";
-import { mountClock } from "../functions/mountClock.js";
-import { gameMenus } from "./gameMenus.js";
 import { openMenu } from "../functions/openMenu.js";
 import { player } from "./player.js";
 import { changeRoomImg } from "../functions/room/changeRoomImg.js";
@@ -596,8 +592,6 @@ let rooms = {
           "itemNeeded": 'blueLightBulb',
           'solveImg': './assets/wall/lit-blue-hanging-light.png',
           "solveFunction": () => {
-            //rooms[player.currRoom].entities[2].src = './assets/animation/packing-box.gif';
-            //console.log(rooms[player.currRoom].entities[2].src)
             player.flashlight.color = 'rgba(30, 30, 255, 0.5)';
             player.flashlight.domRef.style.backgroundImage = `radial-gradient(circle 5em at ${player.mouseX}px ${player.mouseY}px, rgba(0, 0, 0, 0.2), ${player.flashlight.color})`;
             displayInspect('You replace the burned out lightbulb with a new one.', 100);
