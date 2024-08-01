@@ -1,4 +1,3 @@
-import {toggleInspectMenu} from '../inspect/toggleInspectMenu.js';
 import {inspectMenuInfo} from '../../data/inspectInfoMenu.js'
 import {locations} from '../../data/locations.js';
 import {itemLibrary} from '../../data/itemLibrary.js';
@@ -8,15 +7,17 @@ import { handlePuzzle } from '../handlePuzzle.js';
 import { createRoomVisual } from './createRoomVisual.js';
 import { showSolvedImg } from '../showSolvedImg.js';
 import { displayInspectImg } from '../inspect/displayInspectImg.js';
+import { rooms } from '../../data/rooms.js';
 const inspectImg = document.querySelector('#inspect-image');
 const inspectText = document.querySelector('#inspect-text');
 
 function createRoomElement (currRoom) {
-  //inspectMenuInfo.entityImg=inspectImg;
   let roomContainer = createRoomVisual(currRoom);
   //gives interactivity
-  currRoom.entities.map((entity)=>{
+  currRoom.entities.map((entity, index)=>{
     let entityImg = document.createElement("img");
+    entityImg.setAttribute('id', entity.name);
+    rooms[currRoom.name].entities[index].domElement = entityImg;
     showSolvedImg(entity, entityImg);
     entityImg.style.top=entity.dims.y;
     entityImg.style.left=entity.dims.x;
@@ -44,10 +45,6 @@ function createRoomElement (currRoom) {
 
       inspectText.textContent = inspectMenuInfo.chunkedText[0];
     })
-    //change here
-    
-    //inspectMenuInfo.entityImg = entityImg;
-    //entityImg
     roomContainer.appendChild(entityImg);
   })
   locations.push(roomContainer)

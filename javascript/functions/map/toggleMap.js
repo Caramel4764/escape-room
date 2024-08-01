@@ -6,8 +6,8 @@ function toggleMap () {
   if (map.style.visibility == 'visible') {
     map.style.visibility = 'hidden';
   } else {
+    addItem('blueLightBulb');
     map.style.visibility = 'visible';
-  //addItem('blueLightBulb')
   }
 }
 export {toggleMap};

@@ -14,7 +14,6 @@ function handlePuzzle (entity, entityImg) {
       entity.puzzle.solveFunction();
     }
     entity.puzzle.isSolved=true;
-    //showSolvedImg(entity);
   } else if (entity.puzzle.type=='interact') {
     if (entity.puzzle.isSolved==false) {
       entity.puzzle.isSolved=true;
