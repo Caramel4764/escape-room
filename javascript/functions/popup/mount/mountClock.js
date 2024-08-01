@@ -1,6 +1,8 @@
 import { createPopup } from "../createPopup.js";
 import { time } from "../../../data/time.js";
 let timeUnitDom = [];
+let sunMoonDialArt = document.createElement("img");
+
 
 function updateClockTens(unit) {
   if (unit == "none") {
@@ -44,6 +46,11 @@ function updateClockTens(unit) {
         timeUnitDom[i].textContent = time[unit].value;
       }
     }
+  }
+  if (time.hour.value >= 12) {
+    sunMoonDialArt.style.rotate="0deg";
+  } else {
+    sunMoonDialArt.style.rotate="185deg";
   }
 }
 
@@ -91,6 +98,11 @@ function updateClock(unit) {
         timeUnitDom[i].textContent = time[unit].value;
       }
     }
+  }
+  if (time.hour.value >= 12) {
+    sunMoonDialArt.style.rotate="0deg";
+  } else {
+    sunMoonDialArt.style.rotate="185deg";
   }
 }
 
@@ -167,6 +179,10 @@ function mountClock() {
   createTimeInput("second");
   clockDiv.appendChild(timeInputFullTimeDiv);
   menuDiv.appendChild(clockDiv);
+
+  sunMoonDialArt.src = "./assets/misc/timeDial.png";
+  sunMoonDialArt.setAttribute("id", "timeDialArt");
+  clockDiv.appendChild(sunMoonDialArt);
 
   setInterval(function () {
     time.second.value++;

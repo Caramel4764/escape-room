@@ -400,7 +400,6 @@ img{
   display:flex;
   justify-content: center;
   align-items: center;
-  background-color: #ff3a3a;
 }
 #popupClose {
   display:flex;
@@ -454,4 +453,11 @@ img{
   z-index: 200;
   position: absolute;
   font-weight:bold;
+}
+#timeDialArt {
+  width: 100px;
+  position: relative;
+  top:165px;
+  left:95px;
+  z-index: -2;
 }
