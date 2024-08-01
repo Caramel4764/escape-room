@@ -695,6 +695,65 @@ let rooms = {
       },
     ],
   },
+  atticDream: {
+    name: "atticDream",
+    isDream: true,
+    isDark: false,
+    icon: {
+      src: "./assets/misc/icons/attic-icon.png",
+      x: "-200px",
+      y: "80px",
+    },
+    wall: "./assets/furniture/atticDream/wood-wall.jpg",
+    floor: "./assets/furniture/atticDream/attic-floor.jpg",
+    divider: "./assets/floor/floor-divider.png",
+    entities: [
+      {
+        name: "hangingLightDream",
+        src: "./assets/furniture/atticDream/blue-light-bulb.gif",
+        desc: "I think it's looking at you.",
+        dims: {
+          x: "500px",
+          y: "0px",
+          width: "50px",
+          z: "5",
+        },
+      },
+      {
+        name: "stoolDream",
+        src: "./assets/furniture/atticDream/toadStool.png",
+        desc: "It's a toad-stool",
+        dims: {
+          x: "800px",
+          y: "300px",
+          width: "170px",
+          z: "3",
+        },
+      },
+      {
+        name: "packingBoxDream",
+        src: "./assets/furniture/atticDream/packing-box.png",
+        desc: "Most of the boxes are taped shut. However, a few of them were opened. It's empty but there's some black goo left behind",
+        dims: {
+          x: "20px",
+          y: "220px",
+          width: "400px",
+          z: "3",
+        },
+      },
+      {
+        name: "craneMachine",
+        src: "./assets/furniture/atticDream/crane-machine.gif",
+        desc: "There's something squirming inside.",
+        dims: {
+          x: "400px",
+          y: "120px",
+          width: "270px",
+          z: "3",
+        },
+      },
+    ],
+  },
   bedroom: {
     name: "bedroom",
     isDark: false,

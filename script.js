@@ -15,7 +15,7 @@ for (let i = 1; i < Object.keys(rooms).length; i++) {
   createRoomElement(player.currRoom);
 }
 
-goRoom("fireplace");
+goRoom("atticDream");
 createMapIcons();
 mountFlashlight();
 mountComputer();

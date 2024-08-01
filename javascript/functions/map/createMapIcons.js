@@ -15,20 +15,23 @@ function createMapIcons() {
     mapIcon.setAttribute('class', 'map-icon-div-img');
     mapIcon.style.zIndex=100;
     for (let i = 1; i < Object.keys(rooms).length; i++) {
-      let currRoom = rooms[Object.keys(rooms)[i]];
-      if (location.id == Object.keys(rooms)[i]) {
-        mapIconDiv.style.left = currRoom.icon.x;
-        mapIcon.src = currRoom.icon.src;
-        mapIconDiv.style.top = currRoom.icon.y;
-        mapIconDiv.addEventListener('click', ()=>{
-          goRoom(currRoom.name);
-          if (currRoom.isDark) {
-            flashlight.style.visibility = 'visible';
-          } else {
-            flashlight.style.visibility = 'hidden';
-          }
-          toggleMap();
-        })
+
+        let currRoom = rooms[Object.keys(rooms)[i]];
+      if (!currRoom.isDream) {
+        if (location.id == Object.keys(rooms)[i]) {
+          mapIconDiv.style.left = currRoom.icon.x;
+          mapIcon.src = currRoom.icon.src;
+          mapIconDiv.style.top = currRoom.icon.y;
+          mapIconDiv.addEventListener('click', ()=>{
+            goRoom(currRoom.name);
+            if (currRoom.isDark) {
+              flashlight.style.visibility = 'visible';
+            } else {
+              flashlight.style.visibility = 'hidden';
+            }
+            toggleMap();
+          })
+        }
       }
     }
     document.querySelector('#map-icon-div').appendChild(mapIconDiv);
