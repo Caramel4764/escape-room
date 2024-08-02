@@ -605,7 +605,8 @@ let rooms = {
               100
             );
             changeRoomImg("packingBox", "./assets/animation/packing-box.gif");
-            createSingleRoomObject("goggle", 9050);
+            createSingleRoomObject("goggle");
+            //9050
           },
         },
       },

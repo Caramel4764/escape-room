@@ -7,6 +7,7 @@ import { showSolvedImg } from "../showSolvedImg.js";
 import { locations } from "../../data/locations.js";
 import { grabObject } from "../item/grabObject.js";
 import {inspectMenuInfo} from '../../data/inspectInfoMenu.js'
+//import { itemLibrary } from "../../data/itemLibrary.js";
 
 const inspectImg = document.querySelector('#inspect-image');
 const inspectText = document.querySelector('#inspect-text');
@@ -18,7 +19,6 @@ function createSingleRoomObjectFunction (entityName) {
     if (entity.name == entityName) {
       for (let i = 1; i < locations.length; i++) {
         if (entity.room == locations[i].id) {
-          console.log('roomFound')
           roomContainer = locations[i];
         }
       }
@@ -54,6 +54,11 @@ function createSingleRoomObjectFunction (entityName) {
         inspectText.textContent = inspectMenuInfo.chunkedText[0];
       })
       roomContainer.appendChild(entityImg);
+
+      /*let itemInfo = {
+        name: entity.name,
+      }
+      itemLibrary.push(itemInfo);*/
     }
   })
 }
