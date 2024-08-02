@@ -58,6 +58,10 @@ let itemLibrary = [
     "name": 'blueLightBulb',
     'src': './assets/object/blue-light-bulb.png',
   },
+  {
+    "name": 'goggle',
+    'src': './assets/object/goggle.png',
+  },
 ]
 
 export {itemLibrary}

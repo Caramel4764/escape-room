@@ -2,6 +2,7 @@ import { addItem } from "../functions/item/addItem.js";
 import { displayInspect } from "../functions/inspect/displayInspectMenu.js";
 import { openMenu } from "../functions/popup/openMenu.js";
 import { player } from "./player.js";
+import { createSingleRoomObject } from "../functions/room/createSingleRoomObject.js";
 import { changeRoomImg } from "../functions/room/changeRoomImg.js";
 let computerDiv = document.querySelector("#computer-screen");
 let computerScreen = document.getElementById("computer-content");
@@ -604,6 +605,7 @@ let rooms = {
               100
             );
             changeRoomImg("packingBox", "./assets/animation/packing-box.gif");
+            createSingleRoomObject("goggle", 9050);
           },
         },
       },
