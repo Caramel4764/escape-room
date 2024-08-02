@@ -12,7 +12,6 @@ let furnitures = [
       } else {
         player.isDreamWorld = false;
       }
-      console.log(player.isDreamWorld);
     },
     desc: "You grab the goggle. It feels weightless",
     dims: {

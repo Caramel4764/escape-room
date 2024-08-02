@@ -6,7 +6,6 @@ function findInventoryItemWithLib (searchQuery) {
     //inventory item matches library item?
     if (singleItem.name == searchQuery) {
       targetItem = singleItem;
-      console.log(singleItem);
     } else {
       singleItem.selected = false;
     }

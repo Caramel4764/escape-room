@@ -1,0 +1,5 @@
+function createDreamMapIcons () {
+  
+}
+
+export {createDreamMapIcons}

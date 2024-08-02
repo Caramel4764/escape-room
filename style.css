@@ -172,7 +172,7 @@ img{
 #inventory::-webkit-scrollbar {
   display: none;
 }
-#map-div {
+#map-div, #dream-map-div  {
   width: 900px;
   display:flex;
   justify-content: center;
@@ -180,7 +180,7 @@ img{
   z-index:100;
   position:relative;
 }
-#map {
+#map, #dream-map {
   width: 100%;
   position:relative;
   height: 100%;
@@ -197,7 +197,7 @@ img{
   visibility: hidden;
   justify-content: center;
 }
-#map-icon-div {
+#map-icon-div, #dream-map-icon-div {
   position: absolute;
   z-index:100;
 
