@@ -7,16 +7,23 @@ import { createMapIcons } from "./javascript/functions/map/createMapIcons.js";
 import { mountFlashlight } from "./javascript/functions/popup/mount/mountFlashlight.js";
 import { mountComputer } from "./javascript/functions/popup/mount/mountComputer.js";
 import { mountClock } from "./javascript/functions/popup/mount/mountClock.js";
+import { createDreamMapIcons } from "./javascript/functions/map/createDreamMapIcons.js";
+import { addItem } from "./javascript/functions/item/addItem.js";
+import { handleMapToggle } from "./javascript/functions/map/handleMapToggle.js";
+
+
 mapIcon.addEventListener("click", function () {
-  toggleMap();
+  handleMapToggle();
 });
+
 for (let i = 1; i < Object.keys(rooms).length; i++) {
   player.currRoom = rooms[Object.keys(rooms)[i]];
   createRoomElement(player.currRoom);
 }
 
-goRoom("fireplace");
+goRoom("entrance");
 createMapIcons();
 mountFlashlight();
 mountComputer();
 mountClock();
+//addItem('blueLightBulb');

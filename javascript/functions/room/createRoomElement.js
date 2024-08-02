@@ -8,6 +8,8 @@ import { createRoomVisual } from './createRoomVisual.js';
 import { showSolvedImg } from '../showSolvedImg.js';
 import { displayInspectImg } from '../inspect/displayInspectImg.js';
 import { rooms } from '../../data/rooms.js';
+import { createSingleRoomObject } from './createSingleRoomObject.js';
+
 const inspectImg = document.querySelector('#inspect-image');
 const inspectText = document.querySelector('#inspect-text');
 

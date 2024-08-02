@@ -11,6 +11,9 @@ function enlargeItem (newInventoryInfo) {
       openItemDiv.style.visibility = 'visible';
     }
   }
+  if (newInventoryInfo.useFunction) {
+    newInventoryInfo.useFunction();
+  }
 }
 
 export {enlargeItem}

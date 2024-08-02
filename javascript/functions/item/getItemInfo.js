@@ -9,6 +9,8 @@ function getItemInfo (entity) {
       src: entity.src,
       desc: entity.desc,
       selected: false,
+      openSrc: entity.openSrc,
+      useFunction: entity.useFunction,
     }
   } else {
     for (let i = 0; i < itemLibrary.length; i++) {
