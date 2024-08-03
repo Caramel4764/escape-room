@@ -27,3 +27,5 @@ mountFlashlight();
 mountComputer();
 mountClock();
 //addItem('blueLightBulb');
+addItem('goggle');
+

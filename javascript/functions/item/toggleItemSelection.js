@@ -1,11 +1,20 @@
 import {resetSelectedItem} from './resetSelectedItem.js';
 
 function toggleItemSelection (item) {
-  if (item.selected == true) {
-    item.selected = false;
-    resetSelectedItem();
+  console.log(item)
+  if (item.name!='goggle') {
+    if (item.selected == true) {
+      item.selected = false;
+      resetSelectedItem();
+    } else {
+      item.selected = true;
+    }
   } else {
-    item.selected = true;
+    if (item.isEquipped == true) {
+      item.isEquipped = false;
+    } else {
+      item.isEquipped = true;
+    }
   }
 }
 

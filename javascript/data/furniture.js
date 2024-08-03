@@ -5,6 +5,7 @@ let furnitures = [
     name: "goggle",
     room: 'attic',
     isItem: true,
+    isEquipped: false,
     src: "./assets/object/goggle.png",
     useFunction: function() {
       if (player.isDreamWorld == false) {

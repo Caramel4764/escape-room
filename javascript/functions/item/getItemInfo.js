@@ -1,5 +1,5 @@
 import {itemLibrary} from '../../data/itemLibrary.js';
-
+import { furnitures } from '../../data/furniture.js';
 //return the needed properties of an inputted object or searches a string to find an object
 function getItemInfo (entity) {
   let newInventoryInfo = {};
@@ -24,6 +24,26 @@ function getItemInfo (entity) {
         }
         if (itemLibrary[i].combine) {
           newInventoryInfo.combine = itemLibrary[i].combine;
+        }
+        if (itemLibrary[i].combine) {
+          newInventoryInfo.useFunction = furnitures[i].useFunction;
+        }
+      }
+    }
+    for (let i = 0; i < furnitures.length; i++) {
+      if (furnitures[i].name==entity) {
+        newInventoryInfo.name = entity;
+        newInventoryInfo.src = furnitures[i].src;
+        newInventoryInfo.desc = furnitures[i].desc;
+        newInventoryInfo.selected = false;
+        if (itemLibrary[i].openSrc) {
+          newInventoryInfo.openSrc = itemLibrary[i].openSrc;
+        }
+        if (itemLibrary[i].combine) {
+          newInventoryInfo.combine = itemLibrary[i].combine;
+        }
+        if (furnitures[i].useFunction) {
+          newInventoryInfo.useFunction = furnitures[i].useFunction;
         }
       }
     }

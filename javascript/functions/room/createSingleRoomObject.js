@@ -7,7 +7,6 @@ import { showSolvedImg } from "../showSolvedImg.js";
 import { locations } from "../../data/locations.js";
 import { grabObject } from "../item/grabObject.js";
 import {inspectMenuInfo} from '../../data/inspectInfoMenu.js'
-//import { itemLibrary } from "../../data/itemLibrary.js";
 
 const inspectImg = document.querySelector('#inspect-image');
 const inspectText = document.querySelector('#inspect-text');
@@ -16,6 +15,7 @@ let roomContainer;
 
 function createSingleRoomObjectFunction (entityName) {
   furnitures.map((entity)=>{
+    console.log(entity)
     if (entity.name == entityName) {
       for (let i = 1; i < locations.length; i++) {
         if (entity.room == locations[i].id) {
@@ -57,6 +57,9 @@ function createSingleRoomObjectFunction (entityName) {
 
       /*let itemInfo = {
         name: entity.name,
+        src: entityImg.src,
+        combine: entity.combine,
+        useFunction: entity.useFunction,
       }
       itemLibrary.push(itemInfo);*/
     }
