@@ -25,7 +25,7 @@ function getItemInfo (entity) {
         if (itemLibrary[i].combine) {
           newInventoryInfo.combine = itemLibrary[i].combine;
         }
-        if (itemLibrary[i].combine) {
+        if (itemLibrary[i].useFunction) {
           newInventoryInfo.useFunction = furnitures[i].useFunction;
         }
       }

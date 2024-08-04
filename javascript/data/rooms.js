@@ -292,6 +292,12 @@ let rooms = {
           width: "160px",
           z: "5",
         },
+        /*specialWrongItem: [
+            {
+              item: 'filledCup',
+              desc: 'There's no reason to fill it up. The rose is already dead.'
+            }
+          ], */
       },
       {
         name: "deadRose",
@@ -605,8 +611,7 @@ let rooms = {
               100
             );
             changeRoomImg("packingBox", "./assets/animation/packing-box.gif");
-            createSingleRoomObject("goggle");
-            //9050
+            createSingleRoomObject("goggle", 9050);
           },
         },
       },

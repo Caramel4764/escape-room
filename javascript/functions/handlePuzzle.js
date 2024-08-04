@@ -5,6 +5,7 @@ import { displayInspect } from "./inspect/displayInspectMenu.js";
 
 function handlePuzzle (entity, entityImg) {
   if (entity.puzzle.type=='item' && player.selectedItem.name == entity.puzzle.itemNeeded) {
+    //entity.puzzle.solveFunction();
     solvePuzzle(entity, entityImg);
     removeItem(entity);
   } else if (entity.puzzle.type=='item' && player.selectedItem.name != 'none' && player.selectedItem.name && player.selectedItem.name!=entity.puzzle.itemNeeded) {
