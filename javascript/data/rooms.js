@@ -901,8 +901,8 @@ let rooms = {
         src: './assets/furniture/graveyard/earth-mound.png',
         desc: "It looks like something was buried here",
         dims: {
-          x: "590px",
-          y: "500px",
+          x: "730px",
+          y: "550px",
           width: "80px",
           z: "3",
         }
@@ -910,11 +910,88 @@ let rooms = {
       {
         name: 'fish-fountain',
         src: './assets/animation/fountain.gif',
-        desc: "Splish Splash",
+        desc: "Splish Splash. Built in honor of a cat named fluffy.",
         dims: {
           x: "160px",
           y: "200px",
           width: "250px",
+          z: "3",
+        }
+      },
+      {
+        name: 'cat-grave1',
+        src: './assets/furniture/graveyard/cat-graves/cat-grave1.png',
+        desc: "It looks like something was buried here",
+        dims: {
+          x: "120px",
+          y: "450px",
+          width: "80px",
+          z: "3",
+        }
+      },
+      {
+        name: 'cat-grave2',
+        src: './assets/furniture/graveyard/cat-graves/cat-grave2.png',
+        desc: "It looks like something was buried here",
+        dims: {
+          x: "120px",
+          y: "450px",
+          width: "80px",
+          z: "3",
+        }
+      },
+      {
+        name: 'cat-grave3',
+        src: './assets/furniture/graveyard/cat-graves/cat-grave3.png',
+        desc: "It looks like something was buried here",
+        dims: {
+          x: "570px",
+          y: "450px",
+          width: "80px",
+          z: "3",
+        }
+      },
+      {
+        name: 'cat-grave4',
+        src: './assets/furniture/graveyard/cat-graves/cat-grave4.png',
+        desc: "It looks like something was buried here",
+        dims: {
+          x: "480px",
+          y: "440px",
+          width: "80px",
+          z: "3",
+        }
+      },
+      {
+        name: 'cat-grave5',
+        src: './assets/furniture/graveyard/cat-graves/cat-grave5.png',
+        desc: "It looks like something was buried here",
+        dims: {
+          x: "380px",
+          y: "420px",
+          width: "80px",
+          z: "3",
+        }
+      },
+      {
+        name: 'cat-grave6',
+        src: './assets/furniture/graveyard/cat-graves/cat-grave6.png',
+        desc: "It looks like something was buried here",
+        dims: {
+          x: "0px",
+          y: "450px",
+          width: "80px",
+          z: "3",
+        }
+      },
+      {
+        name: 'cat-grave7',
+        src: './assets/furniture/graveyard/cat-graves/cat-grave7.png',
+        desc: "It looks like something was buried here",
+        dims: {
+          x: "260px",
+          y: "470px",
+          width: "80px",
           z: "3",
         }
       },
