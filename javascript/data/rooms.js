@@ -861,33 +861,93 @@ let rooms = {
       },
     ],
   },
+  graveyard: {
+    name: 'graveyard',
+    isDream: true,
+    isDark: false,
+    icon: {
+      "src":'./assets/misc/icons/exit-icon.jpg',
+      'x': "0px",
+      'y': "100px",
+    },
+    wall: './assets/wall/outside-sky.png',
+    floor: './assets/floor/grass-floor.png',
+    divider: "./assets/floor/floor-divider.png",
+    entities: [
+      {
+        name: 'grave1',
+        src: './assets/furniture/graveyard/grave1.png',
+        desc: "RIP Jeff. Died full of himself",
+        dims: {
+          x: "840px",
+          y: "370px",
+          width: "150px",
+          z: "3",
+        }
+      },
+      {
+        name: 'grave2',
+        src: './assets/furniture/graveyard/grave2.png',
+        desc: "Here lies Avery. Crushed by a vending machine",
+        dims: {
+          x: "700px",
+          y: "340px",
+          width: "150px",
+          z: "3",
+        }
+      },
+      {
+        name: 'earthMound',
+        src: './assets/furniture/graveyard/earth-mound.png',
+        desc: "It looks like something was buried here",
+        dims: {
+          x: "590px",
+          y: "500px",
+          width: "80px",
+          z: "3",
+        }
+      },
+      {
+        name: 'fish-fountain',
+        src: './assets/animation/fountain.gif',
+        desc: "Splish Splash",
+        dims: {
+          x: "160px",
+          y: "200px",
+          width: "250px",
+          z: "3",
+        }
+      },
+    ]
+  },
   //insert new rooms here
 };
 
 export { rooms };
 
 /*
-"entrance": {
-    'name': 'fireplace',
-    'isDark': false,
-    'icon': {
+entrance: {
+    name: 'graveyard',
+    isDream: true,
+    isDark: true,
+    icon: {
       "src":'./assets/misc/icons/exit-icon.jpg',
       'x': "0px",
       'y': "100px",
     },
-    'wall': './assets/wall/wood-wall.jpg',
-    "floor": './assets/floor/wood-floor.png',
-    'divider': "./assets/floor/floor-divider.png",
-    'entities': [
+    wall: './assets/wall/wood-wall.jpg',
+    floor: './assets/floor/wood-floor.png',
+    divider: "./assets/floor/floor-divider.png",
+    entities: [
       {
-        "name": 'shelf',
-        'src': './assets/furniture/shelf.png',
-        "desc": "Replace",
-        'dims': {
-          'x': "640px",
-          'y': "90px",
-          "width": "350px",
-          'z': "3",
+        name: 'shelf',
+        src: './assets/furniture/shelf.png',
+        desc: "Replace",
+        dims: {
+          x: "640px",
+          y: "90px",
+          width: "350px",
+          z: "3",
         }
       },
     ]
