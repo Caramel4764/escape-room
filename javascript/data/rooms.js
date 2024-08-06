@@ -171,7 +171,7 @@ let rooms = {
       {
         name: "shoeRack",
         src: "./assets/furniture/entrance/shoe-rack.png",
-        desc: "All the shoes are brand new and look unworn. The sizes from left to right are 8, 10, 15",
+        desc: "All the shoes are brand new and look unworn. The sizes from left to right are 8, 10, 5",
         dims: {
           x: "40px",
           y: "370px",
@@ -905,7 +905,18 @@ let rooms = {
           y: "550px",
           width: "80px",
           z: "3",
-        }
+        },
+        puzzle: {
+          type: "item",
+          isSolved: false,
+          solveDescription:
+            "With the shovel, you dig the object out. Whenever it belonged to, they probably don't need it anymore",
+          afterDesc: "It's an empty hole. The empty hole you dug. The hole that's empty because you dug.",
+          itemNeeded: "shovel",
+          solveFunction: () => {
+            addItem("crowbar");
+          },
+        },
       },
       {
         name: 'fish-fountain',
@@ -921,10 +932,10 @@ let rooms = {
       {
         name: 'cat-grave1',
         src: './assets/furniture/graveyard/cat-graves/cat-grave1.png',
-        desc: "It looks like something was buried here",
+        desc: "In memory of Fluffy. Killed by curiosity",
         dims: {
-          x: "120px",
-          y: "450px",
+          x: "90px",
+          y: "370px",
           width: "80px",
           z: "3",
         }
@@ -932,9 +943,9 @@ let rooms = {
       {
         name: 'cat-grave2',
         src: './assets/furniture/graveyard/cat-graves/cat-grave2.png',
-        desc: "It looks like something was buried here",
+        desc: "Fluffy hit the ground too hard",
         dims: {
-          x: "120px",
+          x: "200px",
           y: "450px",
           width: "80px",
           z: "3",
@@ -943,10 +954,10 @@ let rooms = {
       {
         name: 'cat-grave3',
         src: './assets/furniture/graveyard/cat-graves/cat-grave3.png',
-        desc: "It looks like something was buried here",
+        desc: "In memory of Fluffy. Had an accident with the neighborhood dog",
         dims: {
-          x: "570px",
-          y: "450px",
+          x: "610px",
+          y: "480px",
           width: "80px",
           z: "3",
         }
@@ -954,9 +965,9 @@ let rooms = {
       {
         name: 'cat-grave4',
         src: './assets/furniture/graveyard/cat-graves/cat-grave4.png',
-        desc: "It looks like something was buried here",
+        desc: "Fluffy discovered gravity",
         dims: {
-          x: "480px",
+          x: "510px",
           y: "440px",
           width: "80px",
           z: "3",
@@ -965,10 +976,10 @@ let rooms = {
       {
         name: 'cat-grave5',
         src: './assets/furniture/graveyard/cat-graves/cat-grave5.png',
-        desc: "It looks like something was buried here",
+        desc: "In memory of Fluffy. Became liquid and couldn't turn back",
         dims: {
-          x: "380px",
-          y: "420px",
+          x: "420px",
+          y: "370px",
           width: "80px",
           z: "3",
         }
@@ -976,9 +987,9 @@ let rooms = {
       {
         name: 'cat-grave6',
         src: './assets/furniture/graveyard/cat-graves/cat-grave6.png',
-        desc: "It looks like something was buried here",
+        desc: "In memory of Fluffy. Accidentally exploded",
         dims: {
-          x: "0px",
+          x: "10px",
           y: "450px",
           width: "80px",
           z: "3",
@@ -987,10 +998,32 @@ let rooms = {
       {
         name: 'cat-grave7',
         src: './assets/furniture/graveyard/cat-graves/cat-grave7.png',
-        desc: "It looks like something was buried here",
+        desc: "In memory of Fluffy. Did not land on her feet",
         dims: {
-          x: "260px",
+          x: "310px",
           y: "470px",
+          width: "80px",
+          z: "3",
+        }
+      },
+      {
+        name: 'cat-grave8',
+        src: './assets/furniture/graveyard/cat-graves/cat-grave8.png',
+        desc: "In memory of Fluffy. Had too much catnip",
+        dims: {
+          x: "120px",
+          y: "480px",
+          width: "80px",
+          z: "3",
+        }
+      },
+      {
+        name: 'cat-grave9',
+        src: './assets/furniture/graveyard/cat-graves/cat-grave9.png',
+        desc: "In memory of Fluffy. Failed world domination",
+        dims: {
+          x: "400px",
+          y: "480px",
           width: "80px",
           z: "3",
         }
