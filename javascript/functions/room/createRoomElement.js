@@ -44,7 +44,6 @@ function createRoomElement (currRoom) {
           }
         }
       }
-
       inspectText.textContent = inspectMenuInfo.chunkedText[0];
     })
     roomContainer.appendChild(entityImg);
