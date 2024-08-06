@@ -886,9 +886,9 @@ let rooms = {
     isDream: true,
     isDark: false,
     icon: {
-      "src":'./assets/misc/icons/exit-icon.jpg',
-      'x': "0px",
-      'y': "100px",
+      src: "./assets/misc/icons/courtyard-icon.png",
+      x: "160px",
+      y: "200px",
     },
     wall: './assets/wall/outside-sky.png',
     floor: './assets/floor/grass-floor.png',
@@ -1050,16 +1050,10 @@ let rooms = {
       },
     ]
   },
-  //insert new rooms here
-};
-
-export { rooms };
-
-/*
-entrance: {
-    name: 'graveyard',
+  hallway: {
+    name: 'hallway',
     isDream: true,
-    isDark: true,
+    isDark: false,
     icon: {
       "src":'./assets/misc/icons/exit-icon.jpg',
       'x': "0px",
@@ -1070,8 +1064,73 @@ entrance: {
     divider: "./assets/floor/floor-divider.png",
     entities: [
       {
-        name: 'shelf',
-        src: './assets/furniture/shelf.png',
+        name: 'nailedDoor',
+        src: './assets/furniture/hallway/exit-door.png',
+        desc: "Something glows green on the top window but unless you remove the boards, you won't be able to go inside.",
+        dims: {
+          x: "450px",
+          y: "120px",
+          width: "170px",
+          z: "3",
+        }
+      },
+      {
+        name: 'acidHole',
+        src: './assets/furniture/hallway/bottomless-pit.png',
+        desc: "The acid melt through the floor and now, you can't see the end.",
+        dims: {
+          x: "800px",
+          y: "500px",
+          width: "170px",
+          z: "3",
+        }
+      },
+      {
+        name: 'biohazardSign',
+        src: './assets/furniture/hallway/biohazard.png',
+        desc: "Haha, I wonder what this sign means",
+        dims: {
+          x: "320px",
+          y: "210px",
+          width: "100px",
+          z: "3",
+        }
+      },
+      {
+        name: 'blackSpiderWeb',
+        src: './assets/furniture/hallway/spider-web.png',
+        desc: "It's a spider web",
+        dims: {
+          x: "0px",
+          y: "0px",
+          width: "190px",
+          z: "3",
+        }
+      },
+    ]
+  },
+  //insert new rooms here
+};
+
+export { rooms };
+
+/*
+entrance: {
+    name: 'graveyard',
+    isDream: true,
+    isDark: false,
+    icon: {
+      "src":'./assets/misc/icons/exit-icon.jpg',
+      'x': "0px",
+      'y': "100px",
+    },
+    wall: './assets/wall/wood-wall.jpg',
+    floor: './assets/floor/wood-floor.png',
+    divider: "./assets/floor/floor-divider.png",
+    entities: [
+      {
+        name: 'replace',
+        src: './assets/furniture/graveyard/earth-mound.png',
         desc: "Replace",
         dims: {
           x: "640px",
