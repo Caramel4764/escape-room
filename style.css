@@ -102,8 +102,6 @@ img{
   height: 80px;
   border-bottom: rgb(179, 90, 27) 2px solid;
 }
-
-
 .item:hover {
   width:80px;
   height: 80px;
@@ -460,4 +458,18 @@ img{
   top:165px;
   left:95px;
   z-index: -2;
+}
+#combo-input-div {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: gray;
+  z-index: 10;
+  top: 120px;
+  font-size: 18px;
+  position:relative
+}
+.combo-input {
+  margin:8px 0px;
 }

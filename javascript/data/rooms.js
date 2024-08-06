@@ -560,6 +560,16 @@ let rooms = {
           width: "200px",
           z: "3",
         },
+        puzzle: {
+          type: "interact",
+          isSolved: false,
+          solveDescription:
+            "With a click, the lock drops to the ground.",
+          afterDesc: "After testing",
+          solveFunction: () => {
+            openMenu("shedLock");
+          },
+        },
       },
       {
         name: "fountain",

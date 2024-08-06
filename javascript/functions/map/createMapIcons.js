@@ -31,8 +31,6 @@ function createMapIcons() {
             flashlight.style.visibility = 'hidden';
           }
           handleMapToggle();
-          mapIcon.style.visibility = 'inherit';
-          mapIconDiv.style.visibility = 'inherit';
         })
         if (currRoom.isDream) {
           document.querySelector('#dream-map-icon-div').appendChild(mapIconDiv);
