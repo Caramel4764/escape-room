@@ -739,6 +739,17 @@ let rooms = {
         },
       },
       {
+        name: "craw-mark",
+        src: "./assets/furniture/atticDream/claw-mark.png",
+        desc: "It's a giant claw mark",
+        dims: {
+          x: "700px",
+          y: "180px",
+          width: "90px",
+          z: "5",
+        },
+      },
+      {
         name: "stoolDream",
         src: "./assets/furniture/atticDream/toadStool.png",
         desc: "It's a toad-stool",
@@ -886,7 +897,7 @@ let rooms = {
     isDream: true,
     isDark: false,
     icon: {
-      src: "./assets/misc/icons/courtyard-icon.png",
+      src: "./assets/misc/icons/graveyardIcon.png",
       x: "160px",
       y: "200px",
     },
@@ -941,10 +952,10 @@ let rooms = {
       {
         name: 'fish-fountain',
         src: './assets/animation/fountain.gif',
-        desc: "Splish Splash. Built in honor of a cat named fluffy.",
+        desc: "Splish Splash. Built in honor of a cat named Fluffy.",
         dims: {
           x: "160px",
-          y: "200px",
+          y: "140px",
           width: "250px",
           z: "3",
         }
@@ -1059,8 +1070,8 @@ let rooms = {
       'x': "0px",
       'y': "100px",
     },
-    wall: './assets/wall/wood-wall.jpg',
-    floor: './assets/floor/wood-floor.png',
+    wall: './assets/wall/stone-wall.png',
+    floor: './assets/floor/stone-floor.png',
     divider: "./assets/floor/floor-divider.png",
     entities: [
       {
@@ -1077,7 +1088,7 @@ let rooms = {
       {
         name: 'acidHole',
         src: './assets/furniture/hallway/bottomless-pit.png',
-        desc: "The acid melt through the floor and now, you can't see the end.",
+        desc: "Some acid melted through the floor and now, you can't see the end.",
         dims: {
           x: "800px",
           y: "500px",
@@ -1104,6 +1115,17 @@ let rooms = {
           x: "0px",
           y: "0px",
           width: "190px",
+          z: "3",
+        }
+      },
+      {
+        name: 'comedian',
+        src: './assets/wall/artwork/comedian-framed.png',
+        desc: "Potassium. This art piece sold for $120,000",
+        dims: {
+          x: "800px",
+          y: "200px",
+          width: "130px",
           z: "3",
         }
       },

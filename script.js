@@ -21,7 +21,7 @@ for (let i = 1; i < Object.keys(rooms).length; i++) {
   createRoomElement(player.currRoom);
 }
 
-goRoom("hallway");
+goRoom("atticDream");
 createMapIcons();
 mountFlashlight();
 mountComputer();
