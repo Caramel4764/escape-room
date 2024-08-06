@@ -58,6 +58,18 @@ let itemLibrary = [
     "name": 'blueLightBulb',
     'src': './assets/object/blue-light-bulb.png',
   },
+  {
+    "name": 'crowbar',
+    'src': './assets/object/crowbar.png',
+  },
+  {
+    "name": 'shovel',
+    'src': './assets/object/shovel.png',
+  },
+  {
+    name: 'goop',
+    src: './assets/object/goop.png',
+  }
 ]
 
 export {itemLibrary}

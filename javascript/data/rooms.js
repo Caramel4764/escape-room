@@ -478,7 +478,7 @@ let rooms = {
         src: "./assets/furniture/courtyard/frog-statue.png",
         desc: "It's a statue of a frog. There's something gleaming inside its throat but your hands are too big to reach inside",
         dims: {
-          x: "600px",
+          x: "550px",
           y: "420px",
           width: "150px",
           z: "4",
@@ -508,7 +508,7 @@ let rooms = {
       },
       {
         name: "bush2",
-        src: "./assets/furniture/courtyard//long-bush.png",
+        src: "./assets/furniture/courtyard/long-bush.png",
         desc: "It's a bushy bush",
         dims: {
           x: "500px",
@@ -519,10 +519,10 @@ let rooms = {
       },
       {
         name: "gnome",
-        src: "./assets/furniture/courtyard//gnome.webp",
+        src: "./assets/furniture/courtyard/gnome.webp",
         desc: "Okay, tell me that isn't creepy looking",
         dims: {
-          x: "260px",
+          x: "160px",
           y: "340px",
           width: "80px",
           z: "3",
@@ -530,7 +530,7 @@ let rooms = {
       },
       {
         name: "blueFlower",
-        src: "./assets/furniture/courtyard//blue-flower.png",
+        src: "./assets/furniture/courtyard/blue-flower.png",
         desc: "Very healthy looking",
         dims: {
           x: "-75px",
@@ -541,21 +541,32 @@ let rooms = {
       },
       {
         name: "pinkFlower",
-        src: "./assets/furniture/courtyard//pink-flower.png",
+        src: "./assets/furniture/courtyard/pink-flower.png",
         desc: "It's some pretty flowers",
         dims: {
           x: "780px",
           y: "440px",
           width: "370px",
+          z: "4",
+        },
+      },
+      {
+        name: "toolShed",
+        src: "./assets/furniture/courtyard/toolShed.png",
+        desc: "There's definitely something you can use in the tool shed but you'll to solve the lock",
+        dims: {
+          x: "750px",
+          y: "70px",
+          width: "200px",
           z: "3",
         },
       },
       {
         name: "fountain",
-        src: "./assets/furniture/courtyard//fountain.png",
+        src: "./assets/furniture/courtyard/fountain.png",
         desc: "There's a bunch of dead flies in the fountain. Gross.",
         dims: {
-          x: "340px",
+          x: "260px",
           y: "120px",
           width: "300px",
           z: "3",
@@ -747,6 +758,15 @@ let rooms = {
           y: "220px",
           width: "400px",
           z: "3",
+        },
+        puzzle: {
+          type: "inspect",
+          isSolved: false,
+          solveDescription: "There's a slip of paper sticking out.",
+          afterDesc: "There's nothing else of interest now",
+          solveFunction: () => {
+            addItem("goop");
+          },
         },
       },
       {
