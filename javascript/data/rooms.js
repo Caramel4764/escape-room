@@ -565,7 +565,7 @@ let rooms = {
           isSolved: false,
           solveDescription:
             "There's definitely something you can use in the tool shed but you'll to solve the lock",
-          finishDescription: "With a click, the lock drops to the ground",
+          finishDescription: "With a click, the lock drops to the ground. There's fertilizer, soil, watering cans, and a bunch of gardening equipment, but only the shovel seems useful",
           afterDesc: "There's nothing of interest now",
           solveFunction: () => {
             if (player.shedPuzzle.isSolved) {

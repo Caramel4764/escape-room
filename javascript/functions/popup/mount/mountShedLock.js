@@ -1,17 +1,21 @@
 import { createPopup } from "../createPopup.js";
 import { player } from "../../../data/player.js";
 import { addItem } from "../../item/addItem.js";
+import { displayInspect } from "../../inspect/displayInspectMenu.js";
+import { searchRoom } from "../../room/searchRoom.js";
+import {searchItem} from "../../item/searchItem.js";
 let { popup, popupClose } = createPopup("shedLock");
 
 let correctCombo = [8,1,0,5]
 let combo = [0,0,0,0]
 function checkCorrectCombo() {
-  if (correctCombo[0] == combo[0] && correctCombo[1] == combo[1] && correctCombo[2] == combo[2] && correctCombo[3] == combo[3]) {
+  //if (correctCombo[0] == combo[0] && correctCombo[1] == combo[1] && correctCombo[2] == combo[2] && correctCombo[3] == combo[3]) {
     player.shedPuzzle.isSolved = true;
     popup.style.visibility = "hidden";
     popupClose.style.visibility = "hidden";
     addItem("shovel");
-  }
+    displayInspect(searchRoom("courtyard", "toolShed").puzzle.finishDescription, 100, searchItem("shovel").src)
+  //}
 }
 
 function mountShedLock() {
