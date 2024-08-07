@@ -564,10 +564,15 @@ let rooms = {
           type: "interact",
           isSolved: false,
           solveDescription:
-            "With a click, the lock drops to the ground.",
-          afterDesc: "After testing",
+            "There's definitely something you can use in the tool shed but you'll to solve the lock",
+          finishDescription: "With a click, the lock drops to the ground",
+          afterDesc: "There's nothing of interest now",
           solveFunction: () => {
-            openMenu("shedLock");
+            if (player.shedPuzzle.isSolved) {
+              //displayInspect("toolShed", 100);
+            } else {
+              openMenu("shedLock");
+            }
           },
         },
       },

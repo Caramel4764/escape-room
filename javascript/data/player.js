@@ -11,6 +11,9 @@ let player = {
     'domRef': 'none',
     'color': 'rgba(0, 0, 0, 1)',
   },
+  shedPuzzle: {
+    'isSolved': false,
+  },
   'mouseX': 0,
   'mouseY': 0,
 }

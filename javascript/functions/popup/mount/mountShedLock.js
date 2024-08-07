@@ -1,8 +1,20 @@
 import { createPopup } from "../createPopup.js";
+import { player } from "../../../data/player.js";
+import { addItem } from "../../item/addItem.js";
+let { popup, popupClose } = createPopup("shedLock");
 
+let correctCombo = [8,1,0,5]
 let combo = [0,0,0,0]
+function checkCorrectCombo() {
+  if (correctCombo[0] == combo[0] && correctCombo[1] == combo[1] && correctCombo[2] == combo[2] && correctCombo[3] == combo[3]) {
+    player.shedPuzzle.isSolved = true;
+    popup.style.visibility = "hidden";
+    popupClose.style.visibility = "hidden";
+    addItem("shovel");
+  }
+}
+
 function mountShedLock() {
-  let { popup, popupClose } = createPopup("shedLock");
   popup.style.visibility = "visible";
   popupClose.style.visibility = "visible";
   let shedLockImage = document.createElement("img");
@@ -15,22 +27,46 @@ function mountShedLock() {
   popup.appendChild(comboInputDiv);
   for (let i = 0; i < 4; i++) {
     let singleComboDiv = document.createElement("div");
+    singleComboDiv.style.display = "flex";
+    singleComboDiv.style.justifyContent = "center";
+    singleComboDiv.style.alignItems = "center";
+    singleComboDiv.style.gap = "8px";
     comboInputDiv.appendChild(singleComboDiv);
 
+    let comboInput = document.createElement("p");
+
     let comboInputDown = document.createElement("button");
+    comboInputDown.setAttribute("class", 'combo-btn');
     comboInputDown.textContent = "-";
     singleComboDiv.appendChild(comboInputDown);
+    comboInputDown.addEventListener("click", function () {
+      if (combo[i] > 0) {
+        combo[i]--;
+      } else {
+        combo[i]=9;
+      }
+      comboInput.textContent = combo[i];
+      checkCorrectCombo();
+    })
 
-    let comboInput = document.createElement("p");
     comboInput.textContent = combo[i];
-    comboInput.setAttribute("id", `combo-input-${i}`);
     comboInput.setAttribute("class", `combo-input`);
+    singleComboDiv.appendChild(comboInput);
 
     let comboInputUp = document.createElement("button");
     comboInputUp.textContent = "+";
+    comboInputUp.setAttribute("class", 'combo-btn');
     singleComboDiv.appendChild(comboInputUp);
+    comboInputUp.addEventListener("click", function () {
+      if (combo[i] < 9) {
+        combo[i]++;
+      } else {
+        combo[i]=0;
+      }
+      comboInput.textContent = combo[i];
+      checkCorrectCombo();
+    })
 
-    singleComboDiv.appendChild(comboInput);
   }
 }
 

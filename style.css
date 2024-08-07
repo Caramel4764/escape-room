@@ -464,12 +464,21 @@ img{
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: gray;
+  background-color: #16161d;
   z-index: 10;
   top: 120px;
-  font-size: 18px;
+  font-size: 30px;
+  font-weight: bold;
+
   position:relative
 }
 .combo-input {
   margin:8px 0px;
+}
+.combo-btn {
+  width: 30px;
+  height: 30px;
+}
+.combo-input {
+  color: white;
 }
