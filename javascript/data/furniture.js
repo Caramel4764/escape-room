@@ -1,5 +1,5 @@
 import { player } from "./player.js";
-
+import { handleMapToggle } from "../functions/map/handleMapToggle.js";
 let furnitures = [
   {
     name: "goggle",
@@ -10,8 +10,11 @@ let furnitures = [
     useFunction: function() {
       if (player.isDreamWorld == false) {
         player.isDreamWorld = true;
+        //handleMapToggle();
       } else {
         player.isDreamWorld = false;
+        //handleMapToggle();
+
       }
     },
     desc: "You grab the goggle. It feels weightless",

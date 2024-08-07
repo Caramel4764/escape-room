@@ -25,7 +25,7 @@ function displayInspect(text, limit, newImg) {
         inspectMenuInfo.textSplitter++;
       }
       let test = text.slice(0, inspectMenuInfo.textSplitter)
-        inspectText.textContent = text;
+        inspectText.textContent = test;
 
       inspectMenuInfo.chunkedText.push(test);
     } else {

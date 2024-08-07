@@ -1,4 +1,6 @@
-import {player} from "../../data/player.js"
+import {player} from "../../data/player.js";
+import {handleMapToggle} from "../map/handleMapToggle.js";
+
 let inventory = document.querySelector('#inventory')
 //item selection
 function syncInventory () {
