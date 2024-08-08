@@ -1,5 +1,0 @@
-function createDreamMapIcons () {
-  
-}
-
-export {createDreamMapIcons}

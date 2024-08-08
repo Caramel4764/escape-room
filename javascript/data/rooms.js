@@ -37,6 +37,28 @@ let rooms = {
         },
       },
       {
+        name: "carpetSection",
+        src: "./assets/floor/carpet-small-section.png",
+        desc: "You flip the rug",
+        dims: {
+          x: "560px",
+          y: "495px",
+          width: "100px",
+          z: "5",
+        },
+        puzzle: {
+          type: "inspect",
+          isSolved: false,
+          //solveImg: './assets/furniture/entrance/shelf.png',
+          newZ: '3',
+          solveDescription: "Dummy text",
+          afterDesc: "There's nothing else underneath now",
+          solveFunction: () => {
+            console.log('test')
+          },
+        },
+      },
+      {
         name: "shelf",
         src: "./assets/furniture/entrance/shelf.png",
         desc: "Smells like freshly cut pine wood.",
@@ -235,6 +257,17 @@ let rooms = {
           x: "660px",
           y: "200px",
           width: "350px",
+          z: "3",
+        },
+      },
+      {
+        name: "deltaruneArt",
+        src: "./assets/wall/artwork/deltarune-framed.png",
+        desc: "The power of fluffy boys and means girls shine within you!",
+        dims: {
+          x: "770px",
+          y: "20px",
+          width: "150px",
           z: "3",
         },
       },
@@ -507,6 +540,17 @@ let rooms = {
         },
       },
       {
+        name: "dandelion",
+        src: "./assets/furniture/courtyard/dandelions.png",
+        desc: "Add description later",
+        dims: {
+          x: "500px",
+          y: "460px",
+          width: "40px",
+          z: "5",
+        },
+      },
+      {
         name: "bush2",
         src: "./assets/furniture/courtyard/long-bush.png",
         desc: "It's a bushy bush",
@@ -559,6 +603,21 @@ let rooms = {
           y: "70px",
           width: "200px",
           z: "3",
+        },
+        puzzle: {
+          type: "interact",
+          isSolved: false,
+          solveDescription:
+            "There's definitely something you can use in the tool shed but you'll to solve the lock",
+          finishDescription: "With a click, the lock drops to the ground. There's fertilizer, soil, watering cans, and a bunch of gardening equipment, but only the shovel seems useful",
+          afterDesc: "There's nothing of interest now",
+          solveFunction: () => {
+            if (player.shedPuzzle.isSolved) {
+              //displayInspect("toolShed", 100);
+            } else {
+              openMenu("shedLock");
+            }
+          },
         },
       },
       {
@@ -719,7 +778,7 @@ let rooms = {
     isDream: true,
     isDark: false,
     icon: {
-      src: "./assets/misc/icons/attic-icon.png",
+      src: "./assets/misc/icons/dream-attic-icon.png",
       x: "-200px",
       y: "80px",
     },
@@ -735,6 +794,17 @@ let rooms = {
           x: "500px",
           y: "0px",
           width: "50px",
+          z: "5",
+        },
+      },
+      {
+        name: "craw-mark",
+        src: "./assets/furniture/atticDream/claw-mark.png",
+        desc: "It's a giant claw mark",
+        dims: {
+          x: "700px",
+          y: "180px",
+          width: "90px",
           z: "5",
         },
       },
@@ -808,12 +878,21 @@ let rooms = {
       {
         name: "nightstand",
         src: "./assets/furniture/bedroom/nightstand.png",
-        desc: "There's a bunch of socks, clothing, and dust inside",
+        desc: "There's a bunch of socks, clothings, and dust inside. A paper sticks out and you pull it out",
         dims: {
           x: "80px",
           y: "360px",
           width: "200px",
           z: "3",
+        },
+        puzzle: {
+          type: "inspect",
+          isSolved: false,
+          solveDescription: "There's a slip of paper sticking out.",
+          afterDesc: "Nothing else worth taking",
+          solveFunction: () => {
+            addItem("plushPaper");
+          },
         },
       },
       {
@@ -886,7 +965,7 @@ let rooms = {
     isDream: true,
     isDark: false,
     icon: {
-      src: "./assets/misc/icons/courtyard-icon.png",
+      src: "./assets/misc/icons/graveyardIcon.png",
       x: "160px",
       y: "200px",
     },
@@ -941,10 +1020,10 @@ let rooms = {
       {
         name: 'fish-fountain',
         src: './assets/animation/fountain.gif',
-        desc: "Splish Splash. Built in honor of a cat named fluffy.",
+        desc: "Splish Splash. Built in honor of a cat named Fluffy.",
         dims: {
           x: "160px",
-          y: "200px",
+          y: "140px",
           width: "250px",
           z: "3",
         }
@@ -1050,17 +1129,17 @@ let rooms = {
       },
     ]
   },
-  hallway: {
-    name: 'hallway',
+  basement: {
+    name: 'basement',
     isDream: true,
     isDark: false,
     icon: {
-      "src":'./assets/misc/icons/exit-icon.jpg',
-      'x': "0px",
-      'y': "100px",
+      "src":'./assets/misc/icons/basement-icon.png',
+      x: "0px",
+      y: "200px",
     },
-    wall: './assets/wall/wood-wall.jpg',
-    floor: './assets/floor/wood-floor.png',
+    wall: './assets/wall/stone-wall.png',
+    floor: './assets/floor/stone-floor.png',
     divider: "./assets/floor/floor-divider.png",
     entities: [
       {
@@ -1072,12 +1151,23 @@ let rooms = {
           y: "120px",
           width: "170px",
           z: "3",
-        }
+        },
+        puzzle: {
+          type: "item",
+          isSolved: false,
+          solveDescription:
+            "The key fits perfectly into the lock and you open the box",
+          afterDesc: "There's no more stuff in here. Look elsewhere",
+          itemNeeded: "crowbar",
+          solveFunction: () => {
+            displayInspect("The demo ends here. Otherwise this door would open and unlock a new location.", 100);
+          },
+        },
       },
       {
         name: 'acidHole',
         src: './assets/furniture/hallway/bottomless-pit.png',
-        desc: "The acid melt through the floor and now, you can't see the end.",
+        desc: "Some acid melted through the floor and now, you can't see the end.",
         dims: {
           x: "800px",
           y: "500px",
@@ -1104,6 +1194,17 @@ let rooms = {
           x: "0px",
           y: "0px",
           width: "190px",
+          z: "3",
+        }
+      },
+      {
+        name: 'comedian',
+        src: './assets/wall/artwork/comedian-framed.png',
+        desc: "Potassium. This art piece sold for $120,000",
+        dims: {
+          x: "800px",
+          y: "200px",
+          width: "130px",
           z: "3",
         }
       },

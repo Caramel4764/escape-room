@@ -1,6 +1,7 @@
 import {locations} from '../../data/locations.js'
 import {rooms} from '../../data/rooms.js'
 import { goRoom } from "../room/goRoom.js";
+import { player } from "../../data/player.js";
 import { handleMapToggle } from './handleMapToggle.js';
 let map = document.querySelector('#map-div');
 let dreamMap = document.querySelector("#dream-map");
@@ -25,14 +26,13 @@ function createMapIcons() {
         mapIconDiv.style.top = currRoom.icon.y;
         mapIconDiv.addEventListener('click', ()=>{
           goRoom(currRoom.name);
+          player.isMapOpened = false;
           if (currRoom.isDark) {
             flashlight.style.visibility = 'visible';
           } else {
             flashlight.style.visibility = 'hidden';
           }
           handleMapToggle();
-          mapIcon.style.visibility = 'inherit';
-          mapIconDiv.style.visibility = 'inherit';
         })
         if (currRoom.isDream) {
           document.querySelector('#dream-map-icon-div').appendChild(mapIconDiv);

@@ -1,8 +1,16 @@
 import {inspectMenuInfo} from '../../data/inspectInfoMenu.js';
 import { toggleInspectMenu } from './toggleInspectMenu.js';
+import { displayInspectImg } from './displayInspectImg.js';
+let inspectText = document.querySelector('#inspect-text');
 
-function displayInspect(text, limit) {
+function displayInspect(text, limit, newImg) {
   toggleInspectMenu();
+  if (text.length <= limit) {
+    inspectText.textContent = text;
+  }
+  if (newImg) {
+    displayInspectImg(newImg);
+  }
   inspectMenuInfo.chunkedText = [];
   inspectMenuInfo.textSplitter = 0;
   let snipTime = Math.floor(text.length/limit)+1;
@@ -17,6 +25,8 @@ function displayInspect(text, limit) {
         inspectMenuInfo.textSplitter++;
       }
       let test = text.slice(0, inspectMenuInfo.textSplitter)
+        inspectText.textContent = test;
+
       inspectMenuInfo.chunkedText.push(test);
     } else {
       inspectMenuInfo.prevTextSplitter = inspectMenuInfo.textSplitter;

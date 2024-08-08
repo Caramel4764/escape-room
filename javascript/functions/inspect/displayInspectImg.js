@@ -7,7 +7,6 @@ function displayInspectImg (inspectImgString) {
   } else {
     inspectImg.src=inspectImgString;
   }
-  console.log(inspectImgString)
 }
 
 export {displayInspectImg}

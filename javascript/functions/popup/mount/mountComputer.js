@@ -69,6 +69,9 @@ function mountComputer() {
       fileCloseBtn.addEventListener("click", function () {
         toggle(fileMenu);
       });
+      popupClose.addEventListener("click", function () {
+        fileMenu.style.visibility = "hidden";
+      })
       fileContent.classList.add("screenMenu");
       fileContent.setAttribute("id", "file-content");
       let centerFileMenuDiv = document.createElement("div");
