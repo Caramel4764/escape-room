@@ -10,11 +10,11 @@ let furnitures = [
     useFunction: function() {
       if (player.isDreamWorld == false) {
         player.isDreamWorld = true;
-        //handleMapToggle();
       } else {
         player.isDreamWorld = false;
-        //handleMapToggle();
-
+      }
+      if (player.isMapOpened == true) {
+        handleMapToggle();
       }
     },
     desc: "You grab the goggle. It feels weightless",

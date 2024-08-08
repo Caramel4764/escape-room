@@ -21,10 +21,8 @@ function handleMapToggle () {
 
   if (map.style.visibility == 'visible' || dreamMap.style.visibility == 'visible') {
     player.isMapOpened = true;
-    console.log('map open')
   } else {
     player.isMapOpened = false;
-    console.log('map close')
   }
 }
 
