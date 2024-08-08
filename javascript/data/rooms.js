@@ -37,6 +37,28 @@ let rooms = {
         },
       },
       {
+        name: "carpetSection",
+        src: "./assets/floor/carpet-small-section.png",
+        desc: "You flip the rug",
+        dims: {
+          x: "560px",
+          y: "495px",
+          width: "100px",
+          z: "5",
+        },
+        puzzle: {
+          type: "inspect",
+          isSolved: false,
+          //solveImg: './assets/furniture/entrance/shelf.png',
+          newZ: '3',
+          solveDescription: "Dummy text",
+          afterDesc: "There's nothing else underneath now",
+          solveFunction: () => {
+            console.log('test')
+          },
+        },
+      },
+      {
         name: "shelf",
         src: "./assets/furniture/entrance/shelf.png",
         desc: "Smells like freshly cut pine wood.",
@@ -235,6 +257,17 @@ let rooms = {
           x: "660px",
           y: "200px",
           width: "350px",
+          z: "3",
+        },
+      },
+      {
+        name: "deltaruneArt",
+        src: "./assets/wall/artwork/deltarune-framed.png",
+        desc: "The power of fluffy boys and means girls shine within you!",
+        dims: {
+          x: "770px",
+          y: "20px",
+          width: "150px",
           z: "3",
         },
       },
@@ -507,6 +540,17 @@ let rooms = {
         },
       },
       {
+        name: "dandelion",
+        src: "./assets/furniture/courtyard/dandelions.png",
+        desc: "Add description later",
+        dims: {
+          x: "500px",
+          y: "460px",
+          width: "40px",
+          z: "5",
+        },
+      },
+      {
         name: "bush2",
         src: "./assets/furniture/courtyard/long-bush.png",
         desc: "It's a bushy bush",
@@ -734,7 +778,7 @@ let rooms = {
     isDream: true,
     isDark: false,
     icon: {
-      src: "./assets/misc/icons/attic-icon.png",
+      src: "./assets/misc/icons/dream-attic-icon.png",
       x: "-200px",
       y: "80px",
     },
@@ -1076,14 +1120,14 @@ let rooms = {
       },
     ]
   },
-  hallway: {
-    name: 'hallway',
+  basement: {
+    name: 'basement',
     isDream: true,
     isDark: false,
     icon: {
-      "src":'./assets/misc/icons/exit-icon.jpg',
-      'x': "0px",
-      'y': "100px",
+      "src":'./assets/misc/icons/basement-icon.png',
+      x: "0px",
+      y: "200px",
     },
     wall: './assets/wall/stone-wall.png',
     floor: './assets/floor/stone-floor.png',

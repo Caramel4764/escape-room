@@ -42,6 +42,9 @@ function createRoomElement (currRoom) {
           entityImg.src=entity.puzzle.solveImg;
           displayInspectImg(entity.puzzle.solveImg);
           }
+          if (entity.puzzle.newZ) {
+            entityImg.style.zIndex=entity.puzzle.newZ;
+          }
         }
       }
       inspectText.textContent = inspectMenuInfo.chunkedText[0];
