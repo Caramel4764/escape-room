@@ -26,5 +26,3 @@ mountComputer();
 mountClock();
 mountShedLock();
 addItem('goggle');
-
-

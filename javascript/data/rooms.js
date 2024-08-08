@@ -878,12 +878,21 @@ let rooms = {
       {
         name: "nightstand",
         src: "./assets/furniture/bedroom/nightstand.png",
-        desc: "There's a bunch of socks, clothing, and dust inside",
+        desc: "There's a bunch of socks, clothings, and dust inside. A paper sticks out and you pull it out",
         dims: {
           x: "80px",
           y: "360px",
           width: "200px",
           z: "3",
+        },
+        puzzle: {
+          type: "inspect",
+          isSolved: false,
+          solveDescription: "There's a slip of paper sticking out.",
+          afterDesc: "Nothing else worth taking",
+          solveFunction: () => {
+            addItem("plushPaper");
+          },
         },
       },
       {
@@ -1142,7 +1151,18 @@ let rooms = {
           y: "120px",
           width: "170px",
           z: "3",
-        }
+        },
+        puzzle: {
+          type: "item",
+          isSolved: false,
+          solveDescription:
+            "The key fits perfectly into the lock and you open the box",
+          afterDesc: "There's no more stuff in here. Look elsewhere",
+          itemNeeded: "crowbar",
+          solveFunction: () => {
+            displayInspect("The demo ends here. Otherwise this door would open and unlock a new location.", 100);
+          },
+        },
       },
       {
         name: 'acidHole',
