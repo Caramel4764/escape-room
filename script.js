@@ -19,7 +19,7 @@ for (let i = 1; i < Object.keys(rooms).length; i++) {
   createRoomElement(player.currRoom);
 }
 
-goRoom("courtyard");
+goRoom("laboratory");
 createMapIcons();
 mountFlashlight();
 mountComputer();

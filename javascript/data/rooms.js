@@ -1210,6 +1210,65 @@ let rooms = {
       },
     ]
   },
+  laboratory: {
+    name: 'laboratory',
+    isDream: true,
+    isDark: false,
+    icon: {
+      "src":'./assets/misc/icons/plant-room-icon.png',
+      x: "10px",
+      y: "350px",
+    },
+    wall: './assets/wall/stone-wall.png',
+    floor: './assets/floor/stone-floor.png',
+    divider: "./assets/floor/floor-divider.png",
+    entities: [
+      {
+        name: 'labTable',
+        src: './assets/furniture/plantRoom/labTable.png',
+        desc: "There's a crank in the bottom cabinet",
+        dims: {
+          x: "10px",
+          y: "300px",
+          width: "500px",
+          z: "3",
+        }
+      },
+      {
+        name: 'labCabinet',
+        src: './assets/furniture/plantRoom/labCabinet.png',
+        desc: "There's a crank in the bottom cabinet",
+        dims: {
+          x: "10px",
+          y: "30px",
+          width: "500px",
+          z: "3",
+        }
+      },
+      {
+        name: 'chomper',
+        src: './assets/furniture/plantRoom/chomper.png',
+        desc: "Familar plant",
+        dims: {
+          x: "400px",
+          y: "145px",
+          width: "130px",
+          z: "3",
+        }
+      },
+      {
+        name: 'mouthPlant',
+        src: './assets/furniture/plantRoom/mouthPlant.png',
+        desc: "For safety reasons, you do not stick your fingers inside",
+        dims: {
+          x: "200px",
+          y: "160px",
+          width: "130px",
+          z: "3",
+        }
+      },
+    ]
+  },
   //insert new rooms here
 };
 
