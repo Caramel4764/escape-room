@@ -1267,6 +1267,52 @@ let rooms = {
           z: "3",
         }
       },
+      {
+        name: 'roots',
+        src: './assets/furniture/plantRoom/roots.png',
+        desc: "A bunch of roots have grown through the ceilings",
+        dims: {
+          x: "700px",
+          y: "0px",
+          width: "200px",
+          z: "3",
+        }
+      },
+      {
+        name: 'mold',
+        src: './assets/furniture/plantRoom/mold.png',
+        desc: "A colony of mold",
+        dims: {
+          x: "800px",
+          y: "230px",
+          width: "200px",
+          z: "2",
+        }
+      },
+      {
+        name: 'mouseTrap',
+        src: './assets/furniture/plantRoom/mouseTrap.png',
+        desc: "A giant oversized mouse trap. Something has already triggered it and ate the cheese, leaving behind only a few crumbs",
+        dims: {
+          x: "550px",
+          y: "470px",
+          width: "200px",
+          z: "3",
+        }
+      },
+      {
+        name: 'knife',
+        isItem: true,
+        src: './assets/furniture/plantRoom/knife.png',
+        desc: "You grab the knife on the counter",
+        dims: {
+          x: "100px",
+          y: "250px",
+          width: "25px",
+          z: "3",
+          rotation: "90"
+        },
+      },
     ]
   },
   //insert new rooms here
