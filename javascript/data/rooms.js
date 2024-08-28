@@ -1295,7 +1295,7 @@ let rooms = {
         desc: "A giant oversized mouse trap. Something has already triggered it and ate the cheese, leaving behind only a few crumbs",
         dims: {
           x: "550px",
-          y: "470px",
+          y: "540px",
           width: "200px",
           z: "3",
         }
@@ -1307,11 +1307,48 @@ let rooms = {
         desc: "You grab the knife on the counter",
         dims: {
           x: "100px",
-          y: "250px",
+          y: "260px",
           width: "25px",
           z: "3",
-          rotation: "90"
+          rotation: "-90"
         },
+      },
+      {
+        name: 'cauldron',
+        src: './assets/furniture/plantRoom/cauldron.gif',
+        desc: "How long has this been here?",
+        dims: {
+          x: "530px",
+          y: "230px",
+          width: "300px",
+          z: "3",
+        },
+      },
+    ]
+  },
+  heart: {
+    name: 'heart',
+    isDream: true,
+    isDark: false,
+    icon: {
+      "src":'./assets/misc/icons/crystal-icon.png',
+      'x': "-200px",
+      'y': "300px",
+    },
+    wall: './assets/wall/wood-wall.jpg',
+    floor: './assets/floor/wood-floor.png',
+    divider: "./assets/floor/floor-divider.png",
+    entities: [
+      {
+        name: 'replace',
+        src: './assets/misc/icons/crystal-icon.png',
+        desc: "Replace",
+        dims: {
+          x: "450px",
+          y: "120px",
+          width: "200px",
+          z: "3",
+        }
       },
     ]
   },
