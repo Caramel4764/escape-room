@@ -69,7 +69,15 @@ let itemLibrary = [
   {
     name: 'goop',
     src: './assets/object/goop.png',
-  }
+  },
+  {
+    name: 'redGem',
+    src: './assets/object/redGem.png',
+  },
+  {
+    name: 'blueGem',
+    src: './assets/object/blueGem.png',
+  },
 ]
 
 export {itemLibrary}

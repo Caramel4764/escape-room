@@ -1335,21 +1335,100 @@ let rooms = {
       'x': "-200px",
       'y': "300px",
     },
-    wall: './assets/wall/wood-wall.jpg',
-    floor: './assets/floor/wood-floor.png',
+    wall: './assets/wall/stone-wall.png',
+    floor: './assets/floor/stone-floor.png',
     divider: "./assets/floor/floor-divider.png",
     entities: [
       {
-        name: 'replace',
+        name: 'gem',
+        isItem: true,
         src: './assets/misc/icons/crystal-icon.png',
-        desc: "Replace",
+        desc: "There it is! You've gotten what you've came for. It's time to leave now.",
         dims: {
           x: "450px",
-          y: "120px",
+          y: "60px",
           width: "200px",
           z: "3",
         }
       },
+      {
+        name: 'purplePillar',
+        src: './assets/furniture/heart/gemPillar.png',
+        desc: "Made to hold something.",
+        dims: {
+          x: "450px",
+          y: "230px",
+          width: "200px",
+          z: "2",
+        }
+      },
+      {
+        name: 'torch6',
+        src: './assets/furniture/heart/torch.png',
+        desc: "A torch...With the right tools, you could ignite it",
+        dims: {
+          x: "280px",
+          y: "430px",
+          width: "30px",
+          z: "2",
+        }
+      },
+      {
+        name: 'torch1',
+        src: './assets/furniture/heart/torch.png',
+        desc: "A torch...With the right tools, you could ignite it",
+        dims: {
+          x: "360px",
+          y: "400px",
+          width: "30px",
+          z: "2",
+        }
+      },
+      {
+        name: 'torch8',
+        src: './assets/furniture/heart/torch.png',
+        desc: "A torch...With the right tools, you could ignite it",
+        dims: {
+          x: "440px",
+          y: "430px",
+          width: "30px",
+          z: "2",
+        }
+      },
+      {
+        name: 'torch2',
+        src: './assets/furniture/heart/torch.png',
+        desc: "A torch...With the right tools, you could ignite it",
+        dims: {
+          x: "520px",
+          y: "400px",
+          width: "30px",
+          z: "2",
+        }
+      },
+      {
+        name: 'torch7',
+        src: './assets/furniture/heart/torch.png',
+        desc: "A torch...With the right tools, you could ignite it",
+        dims: {
+          x: "610px",
+          y: "440px",
+          width: "30px",
+          z: "2",
+        }
+      },
+      {
+        name: 'torch9',
+        src: './assets/furniture/heart/torch.png',
+        desc: "A torch...With the right tools, you could ignite it",
+        dims: {
+          x: "690px",
+          y: "400px",
+          width: "30px",
+          z: "2",
+        }
+      },
+      
     ]
   },
   //insert new rooms here
