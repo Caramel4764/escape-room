@@ -30,8 +30,8 @@ function createSingleRoomObjectFunction (entityName) {
       entityImg.style.left=entity.dims.x;
       entityImg.style.width=entity.dims.width;
       entityImg.style.zIndex=entity.dims.z;
-      if (entityImg.dims.rotation) {
-        entityImg.style.transform = `rotate(${entityImg.dims.rotation}deg)`
+      if (entity.dims.rotation) {
+        entityImg.style.transform = `rotate(${entity.dims.rotation}deg)`
       }
       //if item, add to item library
       if (entity.isItem) {

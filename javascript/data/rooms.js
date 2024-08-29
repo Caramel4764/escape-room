@@ -1370,7 +1370,7 @@ let rooms = {
           x: "280px",
           y: "430px",
           width: "30px",
-          z: "2",
+          z: "3",
         }
       },
       {
@@ -1381,7 +1381,7 @@ let rooms = {
           x: "360px",
           y: "400px",
           width: "30px",
-          z: "2",
+          z: "3",
         }
       },
       {
@@ -1392,7 +1392,7 @@ let rooms = {
           x: "440px",
           y: "430px",
           width: "30px",
-          z: "2",
+          z: "3",
         }
       },
       {
@@ -1403,7 +1403,7 @@ let rooms = {
           x: "520px",
           y: "400px",
           width: "30px",
-          z: "2",
+          z: "3",
         }
       },
       {
@@ -1414,7 +1414,7 @@ let rooms = {
           x: "610px",
           y: "440px",
           width: "30px",
-          z: "2",
+          z: "3",
         }
       },
       {
@@ -1425,10 +1425,97 @@ let rooms = {
           x: "690px",
           y: "400px",
           width: "30px",
+          z: "3",
+        }
+      },
+      {
+        name: 'torch5',
+        src: './assets/furniture/heart/torch.png',
+        desc: "A torch...With the right tools, you could ignite it",
+        dims: {
+          x: "770px",
+          y: "430px",
+          width: "30px",
+          z: "3",
+        }
+      },
+      {
+        name: 'torch4',
+        src: './assets/furniture/heart/torch.png',
+        desc: "A torch...With the right tools, you could ignite it",
+        dims: {
+          x: "860px",
+          y: "400px",
+          width: "30px",
+          z: "3",
+        }
+      },
+      {
+        name: 'torch3',
+        src: './assets/furniture/heart/torch.png',
+        desc: "A torch...With the right tools, you could ignite it",
+        dims: {
+          x: "940px",
+          y: "420px",
+          width: "30px",
+          z: "3",
+        }
+      },
+      {
+        name: 'fluffyPhoto',
+        src: './assets/furniture/heart/fluffyPortrait.png',
+        desc: "A framed picture of a cat. 'Fluffy' is written beneath it",
+        dims: {
+          x: "100px",
+          y: "260px",
+          width: "100px",
           z: "2",
         }
       },
-      
+      {
+        name: 'redPillar',
+        src: './assets/furniture/heart/redGemPillar.png',
+        desc: 'Made to hold something. A red gem is engraved and painted below some text which reads "A gem of firey red from above"',
+        dims: {
+          x: "280px",
+          y: "350px",
+          width: "150px",
+          z: "2",
+        },
+        puzzle: {
+          type: "item",
+          isSolved: false,
+          solveDescription: "As you move the gem closer to the pillar, a magnetic field suspends it into the air.",
+          afterDesc: 'Made to hold something. A red gem is engraved and painted below some text which reads "A gem of firey red from above"',
+          itemNeeded: "redGem",
+          solveFunction: () => {
+            //solved here
+            createSingleRoomObject("redGem");
+          },
+        },
+      },
+      {
+        name: 'bluePillar',
+        src: './assets/furniture/heart/blueGemPillar.png',
+        desc: 'Made to hold something. A blue gem is engraved and painted below some text which reads "A gem of deep blue from below"',
+        dims: {
+          x: "680px",
+          y: "350px",
+          width: "150px",
+          z: "2",
+        },
+        puzzle: {
+          type: "item",
+          isSolved: false,
+          solveDescription: "As you move the gem closer to the pillar, a magnetic field suspends it into the air.",
+          afterDesc: "The gem is where it needs to be. No matter how hard you pull, it won't budge",
+          itemNeeded: "blueGem",
+          solveFunction: () => {
+            //solved here
+            createSingleRoomObject("blueGem");
+          },
+        },
+      },
     ]
   },
   //insert new rooms here

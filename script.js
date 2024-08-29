@@ -26,3 +26,6 @@ mountComputer();
 mountClock();
 mountShedLock();
 addItem('goggle');
+addItem('redGem');
+addItem('blueGem');
+
