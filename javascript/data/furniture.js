@@ -30,8 +30,6 @@ let furnitures = [
     room: 'heart',
     isItem: false,
     src: "./assets/object/redGem.png",
-    useFunction: function() {
-    },
     desc: "The gem is where it needs to be. No matter how hard you pull, it won't budge",
     dims: {
       x: "300px",
@@ -45,8 +43,6 @@ let furnitures = [
     room: 'heart',
     isItem: false,
     src: "./assets/object/blueGem.png",
-    useFunction: function() {
-    },
     desc: "The gem is where it needs to be. No matter how hard you pull, it won't budge",
     dims: {
       x: "710px",

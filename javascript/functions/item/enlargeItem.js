@@ -3,6 +3,7 @@ let openItemDiv = document.querySelector('#open-item-div');
 
 //displays enlarged item if enlarge img exists. Must pass item info.
 function enlargeItem (newInventoryInfo) {
+  console.log(newInventoryInfo.openSrc)
   if (newInventoryInfo.openSrc) {
     openItemImage.src = newInventoryInfo.openSrc;
     if (openItemDiv.style.visibility == 'visible') {
