@@ -2,8 +2,11 @@ import { addItem } from "../functions/item/addItem.js";
 import { displayInspect } from "../functions/inspect/displayInspectMenu.js";
 import { openMenu } from "../functions/popup/openMenu.js";
 import { player } from "./player.js";
+import { updateGemPillar } from "../functions/updatePuzzle/updateGemPillar.js";
 import { createSingleRoomObject } from "../functions/room/createSingleRoomObject.js";
 import { changeRoomImg } from "../functions/room/changeRoomImg.js";
+import { updateTorch } from "../functions/updatePuzzle/updateTorch.js";
+
 let computerDiv = document.querySelector("#computer-screen");
 let computerScreen = document.getElementById("computer-content");
 let computerScreenDiv = document.getElementById("computer-screen-div");
@@ -1340,21 +1343,9 @@ let rooms = {
     divider: "./assets/floor/floor-divider.png",
     entities: [
       {
-        name: 'gem',
-        isItem: true,
-        src: './assets/misc/icons/crystal-icon.png',
-        desc: "There it is! You've gotten what you've came for. It's time to leave now.",
-        dims: {
-          x: "450px",
-          y: "60px",
-          width: "200px",
-          z: "3",
-        }
-      },
-      {
         name: 'purplePillar',
         src: './assets/furniture/heart/gemPillar.png',
-        desc: "Made to hold something.",
+        desc: "Made to hold something. The gem should've been here...",
         dims: {
           x: "450px",
           y: "230px",
@@ -1375,12 +1366,14 @@ let rooms = {
         puzzle: {
           type: "item",
           isSolved: false,
-          useUpItem: false,
+          willUseItem: false,
           solveDescription: "You light the torch",
           afterDesc: "It's on fire",
           itemNeeded: "match",
           solveFunction: () => {
             createSingleRoomObject("fire6");
+            player.purpleGemPuzzle.fireOrder.push(6);
+            updateTorch();
           },
         },
       },
@@ -1397,12 +1390,14 @@ let rooms = {
         puzzle: {
           type: "item",
           isSolved: false,
-          useUpItem: false,
+          willUseItem: false,
           solveDescription: "You light the torch",
           afterDesc: "It's on fire",
           itemNeeded: "match",
           solveFunction: () => {
             createSingleRoomObject("fire1");
+            player.purpleGemPuzzle.fireOrder.push(1);
+            updateTorch();
           },
         },
       },
@@ -1419,12 +1414,14 @@ let rooms = {
         puzzle: {
           type: "item",
           isSolved: false,
-          useUpItem: false,
+          willUseItem: false,
           solveDescription: "You light the torch",
           afterDesc: "It's on fire",
           itemNeeded: "match",
           solveFunction: () => {
             createSingleRoomObject("fire8");
+            player.purpleGemPuzzle.fireOrder.push(8);
+            updateTorch();
           },
         },
       },
@@ -1441,12 +1438,14 @@ let rooms = {
         puzzle: {
           type: "item",
           isSolved: false,
-          useUpItem: false,
+          willUseItem: false,
           solveDescription: "You light the torch",
           afterDesc: "It's on fire",
           itemNeeded: "match",
           solveFunction: () => {
             createSingleRoomObject("fire2");
+            player.purpleGemPuzzle.fireOrder.push(2);
+            updateTorch();
           },
         },
       },
@@ -1463,12 +1462,14 @@ let rooms = {
         puzzle: {
           type: "item",
           isSolved: false,
-          useUpItem: false,
+          willUseItem: false,
           solveDescription: "You light the torch",
           afterDesc: "It's on fire",
           itemNeeded: "match",
           solveFunction: () => {
             createSingleRoomObject("fire7");
+            player.purpleGemPuzzle.fireOrder.push(7);
+            updateTorch();
           },
         },
       },
@@ -1485,12 +1486,14 @@ let rooms = {
         puzzle: {
           type: "item",
           isSolved: false,
-          useUpItem: false,
+          willUseItem: false,
           solveDescription: "You light the torch",
           afterDesc: "It's on fire",
           itemNeeded: "match",
           solveFunction: () => {
             createSingleRoomObject("fire9");
+            player.purpleGemPuzzle.fireOrder.push(9);
+            updateTorch();
           },
         },
       },
@@ -1507,12 +1510,14 @@ let rooms = {
         puzzle: {
           type: "item",
           isSolved: false,
-          useUpItem: false,
+          willUseItem: false,
           solveDescription: "You light the torch",
           afterDesc: "It's on fire",
           itemNeeded: "match",
           solveFunction: () => {
             createSingleRoomObject("fire5");
+            player.purpleGemPuzzle.fireOrder.push(5);
+            updateTorch();
           },
         },
       },
@@ -1529,12 +1534,14 @@ let rooms = {
         puzzle: {
           type: "item",
           isSolved: false,
-          useUpItem: false,
+          willUseItem: false,
           solveDescription: "You light the torch",
           afterDesc: "It's on fire",
           itemNeeded: "match",
           solveFunction: () => {
             createSingleRoomObject("fire4");
+            player.purpleGemPuzzle.fireOrder.push(4);
+            updateTorch();
           },
         },
       },
@@ -1551,12 +1558,14 @@ let rooms = {
         puzzle: {
           type: "item",
           isSolved: false,
-          useUpItem: false,
+          willUseItem: false,
           solveDescription: "You light the torch",
           afterDesc: "It's on fire",
           itemNeeded: "match",
           solveFunction: () => {
             createSingleRoomObject("fire3");
+            player.purpleGemPuzzle.fireOrder.push(3);
+            updateTorch();
           },
         },
       },
@@ -1590,6 +1599,7 @@ let rooms = {
           solveFunction: () => {
             //solved here
             createSingleRoomObject("redGem");
+            updateGemPillar();
           },
         },
       },
@@ -1612,6 +1622,7 @@ let rooms = {
           solveFunction: () => {
             //solved here
             createSingleRoomObject("blueGem");
+            updateGemPillar();
           },
         },
       },

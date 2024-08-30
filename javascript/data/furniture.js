@@ -35,7 +35,7 @@ let furnitures = [
       x: "300px",
       y: "300px",
       width: "100px",
-      z: 8,
+      z: 7,
     },
   },
   {
@@ -48,7 +48,7 @@ let furnitures = [
       x: "710px",
       y: "300px",
       width: "100px",
-      z: 8,
+      z: 7,
     },
   },
   {
@@ -84,8 +84,8 @@ let furnitures = [
     src: "../../assets/furniture/heart/fire.gif",
     desc: "It burns steadily",
     dims: {
-      x: "320px",
-      y: "400px",
+      x: "400px",
+      y: "380px",
       width: "100px",
       z: 8,
     },
@@ -167,6 +167,18 @@ let furnitures = [
       width: "100px",
       z: 8,
     },
+  },
+  {
+    name: 'purpleGem',
+    isItem: true,
+    src: './assets/misc/icons/crystal-icon.png',
+    desc: "There it is! You've gotten what you've came for. It's time to leave now.",
+    dims: {
+      x: "450px",
+      y: "60px",
+      width: "200px",
+      z: "3",
+    }
   },
 ];
 

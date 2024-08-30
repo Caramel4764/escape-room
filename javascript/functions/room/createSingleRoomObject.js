@@ -71,10 +71,10 @@ function createSingleRoomObjectFunction (entityName) {
 function createSingleRoomObject (entityName, delay) {
   if (delay) {
     setTimeout(function(){
-      createSingleRoomObjectFunction(entityName)
+      return createSingleRoomObjectFunction(entityName)
     }, delay)
   } else {
-    createSingleRoomObjectFunction(entityName)
+    return createSingleRoomObjectFunction(entityName)
   }
 }
 
