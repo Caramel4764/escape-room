@@ -25,6 +25,9 @@ function createRoomElement (currRoom) {
     entityImg.style.left=entity.dims.x;
     entityImg.style.width=entity.dims.width;
     entityImg.style.zIndex=entity.dims.z;
+    if (entity.dims.rotation) {
+      entityImg.style.transform = `rotate(${(entity.dims.rotation)}deg)`
+    }
     //if item, add to item library
     if (entity.isItem) {
       itemLibrary.push(entity);

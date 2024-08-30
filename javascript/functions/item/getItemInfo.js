@@ -3,6 +3,7 @@ import { furnitures } from '../../data/furniture.js';
 //return the needed properties of an inputted object or searches a string to find an object
 function getItemInfo (entity) {
   let newInventoryInfo = {};
+  let foundIndex = undefined;
   if (typeof entity == 'object') {
     newInventoryInfo = {
       name: entity.name,
@@ -15,10 +16,13 @@ function getItemInfo (entity) {
   } else {
     for (let i = 0; i < itemLibrary.length; i++) {
       if (itemLibrary[i].name==entity) {
+        //console.log(newInventoryInfo)
+        //console.log(itemLibrary[i].openSrc)
         newInventoryInfo.name = entity;
         newInventoryInfo.src = itemLibrary[i].src;
         newInventoryInfo.desc = itemLibrary[i].desc;
         newInventoryInfo.selected = false;
+        foundIndex = i;
         if (itemLibrary[i].openSrc) {
           newInventoryInfo.openSrc = itemLibrary[i].openSrc;
         }
@@ -36,11 +40,11 @@ function getItemInfo (entity) {
         newInventoryInfo.src = furnitures[i].src;
         newInventoryInfo.desc = furnitures[i].desc;
         newInventoryInfo.selected = false;
-        if (itemLibrary[i].openSrc) {
-          newInventoryInfo.openSrc = itemLibrary[i].openSrc;
+        if (foundIndex && itemLibrary[foundIndex].openSrc) {
+          newInventoryInfo.openSrc = itemLibrary[foundIndex].openSrc;
         }
-        if (itemLibrary[i].combine) {
-          newInventoryInfo.combine = itemLibrary[i].combine;
+        if (foundIndex && itemLibrary[foundIndex].combine) {
+          newInventoryInfo.combine = itemLibrary[foundIndex].combine;
         }
         if (furnitures[i].useFunction) {
           newInventoryInfo.useFunction = furnitures[i].useFunction;

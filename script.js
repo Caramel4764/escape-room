@@ -19,10 +19,14 @@ for (let i = 1; i < Object.keys(rooms).length; i++) {
   createRoomElement(player.currRoom);
 }
 
-goRoom("courtyard");
+goRoom("heart");
 createMapIcons();
 mountFlashlight();
 mountComputer();
 mountClock();
 mountShedLock();
 addItem('goggle');
+addItem('blueGem');
+addItem('redGem');
+addItem('match')
+

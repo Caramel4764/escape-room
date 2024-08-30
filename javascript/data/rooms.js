@@ -1210,6 +1210,413 @@ let rooms = {
       },
     ]
   },
+  laboratory: {
+    name: 'laboratory',
+    isDream: true,
+    isDark: false,
+    icon: {
+      "src":'./assets/misc/icons/plant-room-icon.png',
+      x: "10px",
+      y: "350px",
+    },
+    wall: './assets/wall/stone-wall.png',
+    floor: './assets/floor/stone-floor.png',
+    divider: "./assets/floor/floor-divider.png",
+    entities: [
+      {
+        name: 'labTable',
+        src: './assets/furniture/plantRoom/labTable.png',
+        desc: "There's a crank in the bottom cabinet",
+        dims: {
+          x: "10px",
+          y: "300px",
+          width: "500px",
+          z: "3",
+        }
+      },
+      {
+        name: 'labCabinet',
+        src: './assets/furniture/plantRoom/labCabinet.png',
+        desc: "There's a crank in the bottom cabinet",
+        dims: {
+          x: "10px",
+          y: "30px",
+          width: "500px",
+          z: "3",
+        }
+      },
+      {
+        name: 'chomper',
+        src: './assets/furniture/plantRoom/chomper.png',
+        desc: "Familar plant",
+        dims: {
+          x: "400px",
+          y: "145px",
+          width: "130px",
+          z: "3",
+        }
+      },
+      {
+        name: 'mouthPlant',
+        src: './assets/furniture/plantRoom/mouthPlant.png',
+        desc: "For safety reasons, you do not stick your fingers inside",
+        dims: {
+          x: "200px",
+          y: "160px",
+          width: "130px",
+          z: "3",
+        }
+      },
+      {
+        name: 'roots',
+        src: './assets/furniture/plantRoom/roots.png',
+        desc: "A bunch of roots have grown through the ceilings",
+        dims: {
+          x: "700px",
+          y: "0px",
+          width: "200px",
+          z: "3",
+        }
+      },
+      {
+        name: 'mold',
+        src: './assets/furniture/plantRoom/mold.png',
+        desc: "A colony of mold",
+        dims: {
+          x: "800px",
+          y: "230px",
+          width: "200px",
+          z: "2",
+        }
+      },
+      {
+        name: 'mouseTrap',
+        src: './assets/furniture/plantRoom/mouseTrap.png',
+        desc: "A giant oversized mouse trap. Something has already triggered it and ate the cheese, leaving behind only a few crumbs",
+        dims: {
+          x: "550px",
+          y: "540px",
+          width: "200px",
+          z: "3",
+        }
+      },
+      {
+        name: 'knife',
+        isItem: true,
+        src: './assets/furniture/plantRoom/knife.png',
+        desc: "You grab the knife on the counter",
+        dims: {
+          x: "100px",
+          y: "260px",
+          width: "25px",
+          z: "3",
+          rotation: "-90"
+        },
+      },
+      {
+        name: 'cauldron',
+        src: './assets/furniture/plantRoom/cauldron.gif',
+        desc: "How long has this been here?",
+        dims: {
+          x: "530px",
+          y: "230px",
+          width: "300px",
+          z: "3",
+        },
+      },
+    ]
+  },
+  heart: {
+    name: 'heart',
+    isDream: true,
+    isDark: false,
+    icon: {
+      "src":'./assets/misc/icons/crystal-icon.png',
+      'x': "-200px",
+      'y': "300px",
+    },
+    wall: './assets/wall/stone-wall.png',
+    floor: './assets/floor/stone-floor.png',
+    divider: "./assets/floor/floor-divider.png",
+    entities: [
+      {
+        name: 'gem',
+        isItem: true,
+        src: './assets/misc/icons/crystal-icon.png',
+        desc: "There it is! You've gotten what you've came for. It's time to leave now.",
+        dims: {
+          x: "450px",
+          y: "60px",
+          width: "200px",
+          z: "3",
+        }
+      },
+      {
+        name: 'purplePillar',
+        src: './assets/furniture/heart/gemPillar.png',
+        desc: "Made to hold something.",
+        dims: {
+          x: "450px",
+          y: "230px",
+          width: "200px",
+          z: "2",
+        }
+      },
+      {
+        name: 'torch6',
+        src: './assets/furniture/heart/torch.png',
+        desc: "A torch...With the right tools, you could ignite it",
+        dims: {
+          x: "280px",
+          y: "430px",
+          width: "30px",
+          z: "3",
+        },
+        puzzle: {
+          type: "item",
+          isSolved: false,
+          useUpItem: false,
+          solveDescription: "You light the torch",
+          afterDesc: "It's on fire",
+          itemNeeded: "match",
+          solveFunction: () => {
+            createSingleRoomObject("fire6");
+          },
+        },
+      },
+      {
+        name: 'torch1',
+        src: './assets/furniture/heart/torch.png',
+        desc: "A torch...With the right tools, you could ignite it",
+        dims: {
+          x: "360px",
+          y: "400px",
+          width: "30px",
+          z: "3",
+        },
+        puzzle: {
+          type: "item",
+          isSolved: false,
+          useUpItem: false,
+          solveDescription: "You light the torch",
+          afterDesc: "It's on fire",
+          itemNeeded: "match",
+          solveFunction: () => {
+            createSingleRoomObject("fire1");
+          },
+        },
+      },
+      {
+        name: 'torch8',
+        src: './assets/furniture/heart/torch.png',
+        desc: "A torch...With the right tools, you could ignite it",
+        dims: {
+          x: "440px",
+          y: "430px",
+          width: "30px",
+          z: "3",
+        },
+        puzzle: {
+          type: "item",
+          isSolved: false,
+          useUpItem: false,
+          solveDescription: "You light the torch",
+          afterDesc: "It's on fire",
+          itemNeeded: "match",
+          solveFunction: () => {
+            createSingleRoomObject("fire8");
+          },
+        },
+      },
+      {
+        name: 'torch2',
+        src: './assets/furniture/heart/torch.png',
+        desc: "A torch...With the right tools, you could ignite it",
+        dims: {
+          x: "520px",
+          y: "400px",
+          width: "30px",
+          z: "3",
+        },
+        puzzle: {
+          type: "item",
+          isSolved: false,
+          useUpItem: false,
+          solveDescription: "You light the torch",
+          afterDesc: "It's on fire",
+          itemNeeded: "match",
+          solveFunction: () => {
+            createSingleRoomObject("fire2");
+          },
+        },
+      },
+      {
+        name: 'torch7',
+        src: './assets/furniture/heart/torch.png',
+        desc: "A torch...With the right tools, you could ignite it",
+        dims: {
+          x: "610px",
+          y: "440px",
+          width: "30px",
+          z: "3",
+        },
+        puzzle: {
+          type: "item",
+          isSolved: false,
+          useUpItem: false,
+          solveDescription: "You light the torch",
+          afterDesc: "It's on fire",
+          itemNeeded: "match",
+          solveFunction: () => {
+            createSingleRoomObject("fire7");
+          },
+        },
+      },
+      {
+        name: 'torch9',
+        src: './assets/furniture/heart/torch.png',
+        desc: "A torch...With the right tools, you could ignite it",
+        dims: {
+          x: "690px",
+          y: "400px",
+          width: "30px",
+          z: "3",
+        },
+        puzzle: {
+          type: "item",
+          isSolved: false,
+          useUpItem: false,
+          solveDescription: "You light the torch",
+          afterDesc: "It's on fire",
+          itemNeeded: "match",
+          solveFunction: () => {
+            createSingleRoomObject("fire9");
+          },
+        },
+      },
+      {
+        name: 'torch5',
+        src: './assets/furniture/heart/torch.png',
+        desc: "A torch...With the right tools, you could ignite it",
+        dims: {
+          x: "770px",
+          y: "430px",
+          width: "30px",
+          z: "3",
+        },
+        puzzle: {
+          type: "item",
+          isSolved: false,
+          useUpItem: false,
+          solveDescription: "You light the torch",
+          afterDesc: "It's on fire",
+          itemNeeded: "match",
+          solveFunction: () => {
+            createSingleRoomObject("fire5");
+          },
+        },
+      },
+      {
+        name: 'torch4',
+        src: './assets/furniture/heart/torch.png',
+        desc: "A torch...With the right tools, you could ignite it",
+        dims: {
+          x: "860px",
+          y: "400px",
+          width: "30px",
+          z: "3",
+        },
+        puzzle: {
+          type: "item",
+          isSolved: false,
+          useUpItem: false,
+          solveDescription: "You light the torch",
+          afterDesc: "It's on fire",
+          itemNeeded: "match",
+          solveFunction: () => {
+            createSingleRoomObject("fire4");
+          },
+        },
+      },
+      {
+        name: 'torch3',
+        src: './assets/furniture/heart/torch.png',
+        desc: "A torch...With the right tools, you could ignite it",
+        dims: {
+          x: "940px",
+          y: "420px",
+          width: "30px",
+          z: "3",
+        },
+        puzzle: {
+          type: "item",
+          isSolved: false,
+          useUpItem: false,
+          solveDescription: "You light the torch",
+          afterDesc: "It's on fire",
+          itemNeeded: "match",
+          solveFunction: () => {
+            createSingleRoomObject("fire3");
+          },
+        },
+      },
+      {
+        name: 'fluffyPhoto',
+        src: './assets/furniture/heart/fluffyPortrait.png',
+        desc: "A framed picture of a cat. 'Fluffy' is written beneath it",
+        dims: {
+          x: "100px",
+          y: "260px",
+          width: "100px",
+          z: "2",
+        }
+      },
+      {
+        name: 'redPillar',
+        src: './assets/furniture/heart/redGemPillar.png',
+        desc: 'Made to hold something. A red gem is engraved and painted below some text which reads "A gem of firey red from above"',
+        dims: {
+          x: "280px",
+          y: "350px",
+          width: "150px",
+          z: "2",
+        },
+        puzzle: {
+          type: "item",
+          isSolved: false,
+          solveDescription: "As you move the gem closer to the pillar, a magnetic field suspends it into the air.",
+          afterDesc: 'Made to hold something. A red gem is engraved and painted below some text which reads "A gem of firey red from above"',
+          itemNeeded: "redGem",
+          solveFunction: () => {
+            //solved here
+            createSingleRoomObject("redGem");
+          },
+        },
+      },
+      {
+        name: 'bluePillar',
+        src: './assets/furniture/heart/blueGemPillar.png',
+        desc: 'Made to hold something. A blue gem is engraved and painted below some text which reads "A gem of deep blue from below"',
+        dims: {
+          x: "680px",
+          y: "350px",
+          width: "150px",
+          z: "2",
+        },
+        puzzle: {
+          type: "item",
+          isSolved: false,
+          solveDescription: "As you move the gem closer to the pillar, a magnetic field suspends it into the air.",
+          afterDesc: 'Made to hold something. A blue gem is engraved and painted below some text which reads "A gem of deep blue from below"',
+          itemNeeded: "blueGem",
+          solveFunction: () => {
+            //solved here
+            createSingleRoomObject("blueGem");
+          },
+        },
+      },
+    ]
+  },
   //insert new rooms here
 };
 

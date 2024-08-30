@@ -15,7 +15,6 @@ let roomContainer;
 
 function createSingleRoomObjectFunction (entityName) {
   furnitures.map((entity)=>{
-    console.log(entity)
     if (entity.name == entityName) {
       for (let i = 1; i < locations.length; i++) {
         if (entity.room == locations[i].id) {
@@ -30,6 +29,9 @@ function createSingleRoomObjectFunction (entityName) {
       entityImg.style.left=entity.dims.x;
       entityImg.style.width=entity.dims.width;
       entityImg.style.zIndex=entity.dims.z;
+      if (entity.dims.rotation) {
+        entityImg.style.transform = `rotate(${entity.dims.rotation}deg)`
+      }
       //if item, add to item library
       if (entity.isItem) {
         itemLibrary.push(entity);
