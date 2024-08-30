@@ -28,5 +28,5 @@ mountShedLock();
 addItem('goggle');
 addItem('blueGem');
 addItem('redGem');
-
+addItem('match')
 

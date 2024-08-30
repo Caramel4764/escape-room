@@ -15,7 +15,6 @@ let roomContainer;
 
 function createSingleRoomObjectFunction (entityName) {
   furnitures.map((entity)=>{
-    console.log(entity)
     if (entity.name == entityName) {
       for (let i = 1; i < locations.length; i++) {
         if (entity.room == locations[i].id) {

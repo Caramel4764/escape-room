@@ -24,7 +24,6 @@ function getItemInfo (entity) {
         newInventoryInfo.selected = false;
         foundIndex = i;
         if (itemLibrary[i].openSrc) {
-          console.log(itemLibrary[i])
           newInventoryInfo.openSrc = itemLibrary[i].openSrc;
         }
         if (itemLibrary[i].combine) {
@@ -41,11 +40,11 @@ function getItemInfo (entity) {
         newInventoryInfo.src = furnitures[i].src;
         newInventoryInfo.desc = furnitures[i].desc;
         newInventoryInfo.selected = false;
-        if (foundIndex) {
+        if (foundIndex && itemLibrary[foundIndex].openSrc) {
           newInventoryInfo.openSrc = itemLibrary[foundIndex].openSrc;
         }
-        if (itemLibrary[i].combine) {
-          newInventoryInfo.combine = itemLibrary[i].combine;
+        if (foundIndex && itemLibrary[foundIndex].combine) {
+          newInventoryInfo.combine = itemLibrary[foundIndex].combine;
         }
         if (furnitures[i].useFunction) {
           newInventoryInfo.useFunction = furnitures[i].useFunction;

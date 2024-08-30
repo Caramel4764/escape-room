@@ -1371,7 +1371,18 @@ let rooms = {
           y: "430px",
           width: "30px",
           z: "3",
-        }
+        },
+        puzzle: {
+          type: "item",
+          isSolved: false,
+          useUpItem: false,
+          solveDescription: "You light the torch",
+          afterDesc: "It's on fire",
+          itemNeeded: "match",
+          solveFunction: () => {
+            createSingleRoomObject("fire6");
+          },
+        },
       },
       {
         name: 'torch1',
@@ -1382,7 +1393,18 @@ let rooms = {
           y: "400px",
           width: "30px",
           z: "3",
-        }
+        },
+        puzzle: {
+          type: "item",
+          isSolved: false,
+          useUpItem: false,
+          solveDescription: "You light the torch",
+          afterDesc: "It's on fire",
+          itemNeeded: "match",
+          solveFunction: () => {
+            createSingleRoomObject("fire1");
+          },
+        },
       },
       {
         name: 'torch8',
@@ -1393,7 +1415,18 @@ let rooms = {
           y: "430px",
           width: "30px",
           z: "3",
-        }
+        },
+        puzzle: {
+          type: "item",
+          isSolved: false,
+          useUpItem: false,
+          solveDescription: "You light the torch",
+          afterDesc: "It's on fire",
+          itemNeeded: "match",
+          solveFunction: () => {
+            createSingleRoomObject("fire8");
+          },
+        },
       },
       {
         name: 'torch2',
@@ -1404,7 +1437,18 @@ let rooms = {
           y: "400px",
           width: "30px",
           z: "3",
-        }
+        },
+        puzzle: {
+          type: "item",
+          isSolved: false,
+          useUpItem: false,
+          solveDescription: "You light the torch",
+          afterDesc: "It's on fire",
+          itemNeeded: "match",
+          solveFunction: () => {
+            createSingleRoomObject("fire2");
+          },
+        },
       },
       {
         name: 'torch7',
@@ -1415,7 +1459,18 @@ let rooms = {
           y: "440px",
           width: "30px",
           z: "3",
-        }
+        },
+        puzzle: {
+          type: "item",
+          isSolved: false,
+          useUpItem: false,
+          solveDescription: "You light the torch",
+          afterDesc: "It's on fire",
+          itemNeeded: "match",
+          solveFunction: () => {
+            createSingleRoomObject("fire7");
+          },
+        },
       },
       {
         name: 'torch9',
@@ -1426,7 +1481,18 @@ let rooms = {
           y: "400px",
           width: "30px",
           z: "3",
-        }
+        },
+        puzzle: {
+          type: "item",
+          isSolved: false,
+          useUpItem: false,
+          solveDescription: "You light the torch",
+          afterDesc: "It's on fire",
+          itemNeeded: "match",
+          solveFunction: () => {
+            createSingleRoomObject("fire9");
+          },
+        },
       },
       {
         name: 'torch5',
@@ -1437,7 +1503,18 @@ let rooms = {
           y: "430px",
           width: "30px",
           z: "3",
-        }
+        },
+        puzzle: {
+          type: "item",
+          isSolved: false,
+          useUpItem: false,
+          solveDescription: "You light the torch",
+          afterDesc: "It's on fire",
+          itemNeeded: "match",
+          solveFunction: () => {
+            createSingleRoomObject("fire5");
+          },
+        },
       },
       {
         name: 'torch4',
@@ -1448,7 +1525,18 @@ let rooms = {
           y: "400px",
           width: "30px",
           z: "3",
-        }
+        },
+        puzzle: {
+          type: "item",
+          isSolved: false,
+          useUpItem: false,
+          solveDescription: "You light the torch",
+          afterDesc: "It's on fire",
+          itemNeeded: "match",
+          solveFunction: () => {
+            createSingleRoomObject("fire4");
+          },
+        },
       },
       {
         name: 'torch3',
@@ -1459,7 +1547,18 @@ let rooms = {
           y: "420px",
           width: "30px",
           z: "3",
-        }
+        },
+        puzzle: {
+          type: "item",
+          isSolved: false,
+          useUpItem: false,
+          solveDescription: "You light the torch",
+          afterDesc: "It's on fire",
+          itemNeeded: "match",
+          solveFunction: () => {
+            createSingleRoomObject("fire3");
+          },
+        },
       },
       {
         name: 'fluffyPhoto',
@@ -1508,7 +1607,7 @@ let rooms = {
           type: "item",
           isSolved: false,
           solveDescription: "As you move the gem closer to the pillar, a magnetic field suspends it into the air.",
-          afterDesc: "The gem is where it needs to be. No matter how hard you pull, it won't budge",
+          afterDesc: 'Made to hold something. A blue gem is engraved and painted below some text which reads "A gem of deep blue from below"',
           itemNeeded: "blueGem",
           solveFunction: () => {
             //solved here

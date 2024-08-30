@@ -5,7 +5,6 @@ let inspectText = document.querySelector('#inspect-text');
 
 function displayInspect(text, limit, newImg) {
   toggleInspectMenu();
-  console.log(text)
   if (text.length <= limit) {
     inspectText.textContent = text;
   }

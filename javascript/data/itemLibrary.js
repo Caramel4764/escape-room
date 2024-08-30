@@ -78,6 +78,10 @@ let itemLibrary = [
     name: 'blueGem',
     src: './assets/object/blueGem.png',
   },
+  {
+    name: 'match',
+    src: './assets/furniture/atticDream/matchbox.png',
+  },
 ]
 
 export {itemLibrary}
