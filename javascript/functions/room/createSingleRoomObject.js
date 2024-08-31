@@ -60,7 +60,6 @@ function createSingleRoomObjectFunction (entityName) {
       for (let i = 0; i <= 9; i++) {
         if (entity.name == `fire${i}`) {
           player.purpleGemPuzzle.fireElement.push(entityImg);
-          //console.log(player.purpleGemPuzzle.fireElement)
         }
       }
       return entityImg;

@@ -7,6 +7,7 @@ import { createSingleRoomObject } from "../functions/room/createSingleRoomObject
 import { changeRoomImg } from "../functions/room/changeRoomImg.js";
 import { updateTorch } from "../functions/updatePuzzle/updateTorch.js";
 import { deleteRoomElement } from "../functions/room/deleteRoomElement.js";
+import { spawnGem } from "../functions/updatePuzzle/spawnGem.js";
 
 let computerDiv = document.querySelector("#computer-screen");
 let computerScreen = document.getElementById("computer-content");
@@ -793,12 +794,25 @@ let rooms = {
       {
         name: "hangingLightDream",
         src: "./assets/furniture/atticDream/blue-light-bulb.gif",
-        desc: "I think it's looking at I.",
+        desc: "I think it's looking at me.",
         dims: {
           x: "500px",
           y: "0px",
           width: "50px",
           z: "5",
+        },
+      },
+      {
+        name: "matchbox",
+        isItem: true,
+        src: "./assets/furniture/atticDream/matchbox.png",
+        desc: "Found a box of matches",
+        dims: {
+          x: "680px",
+          y: "480px",
+          width: "50px",
+          z: "5",
+          rotation: "90",
         },
       },
       {
@@ -1247,8 +1261,9 @@ let rooms = {
           solveFunction: () => {
             deleteRoomElement('powerSignal')
             createSingleRoomObject("powerSignalOn");
-
-            //createSingleRoomObject("powerSignalOn");
+            player.purpleGemPuzzle.isPowerOn = true;
+            spawnGem();
+            rooms.heart.isDark = false;
           },
         },
       },
@@ -1357,8 +1372,8 @@ let rooms = {
   },
   heart: {
     name: 'heart',
+    isDark: true,
     isDream: true,
-    isDark: false,
     icon: {
       "src":'./assets/misc/icons/crystal-icon.png',
       'x': "-200px",
@@ -1371,7 +1386,7 @@ let rooms = {
       {
         name: 'purplePillar',
         src: './assets/furniture/heart/gemPillar.png',
-        desc: "Made to hold something. The gem should've been here...",
+        desc: "Made to hold something. The purple gem should've been here...",
         dims: {
           x: "450px",
           y: "230px",

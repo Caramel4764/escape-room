@@ -3,6 +3,7 @@ import { displayInspect } from "../inspect/displayInspectMenu.js";
 import { removeItem } from "../item/removeItem.js";
 import { deleteRoomElement } from "../room/deleteRoomElement.js";
 import { rooms } from "../../data/rooms.js";
+import { spawnGem } from "./spawnGem.js";
 let correctOrder = [6, 1, 8, 2, 7, 9, 5, 4, 3];
 function updateTorch() {
   let isWrong = false;
@@ -29,6 +30,7 @@ function updateTorch() {
     if (!isWrong) {
       player.purpleGemPuzzle.isFireSolved = true;
       removeItem('match');
+      spawnGem();
       displayInspect('You hear a loud click', 100)
     }
   }

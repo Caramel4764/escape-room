@@ -19,7 +19,7 @@ for (let i = 1; i < Object.keys(rooms).length; i++) {
   createRoomElement(player.currRoom);
 }
 
-goRoom("laboratory");
+goRoom("bedroom");
 createMapIcons();
 mountFlashlight();
 mountComputer();
@@ -28,5 +28,4 @@ mountShedLock();
 addItem('goggle');
 addItem('blueGem');
 addItem('redGem');
-addItem('match')
 
