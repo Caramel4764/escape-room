@@ -18,6 +18,7 @@ let player = {
     gemPlaced: 0,
     fireOrder: [],
     isFireSolved: false,
+    fireElement: []
   },
   isMapOpened: false,
   'mouseX': 0,

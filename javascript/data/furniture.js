@@ -52,7 +52,7 @@ let furnitures = [
     },
   },
   {
-    name: "fire6",
+    name: "fire1",
     room: 'heart',
     isItem: false,
     src: "../../assets/furniture/heart/fire.gif",
@@ -65,7 +65,7 @@ let furnitures = [
     },
   },
   {
-    name: "fire1",
+    name: "fire2",
     room: 'heart',
     isItem: false,
     src: "../../assets/furniture/heart/fire.gif",
@@ -78,7 +78,7 @@ let furnitures = [
     },
   },
   {
-    name: "fire8",
+    name: "fire3",
     room: 'heart',
     isItem: false,
     src: "../../assets/furniture/heart/fire.gif",
@@ -91,7 +91,7 @@ let furnitures = [
     },
   },
   {
-    name: "fire2",
+    name: "fire4",
     room: 'heart',
     isItem: false,
     src: "../../assets/furniture/heart/fire.gif",
@@ -104,7 +104,7 @@ let furnitures = [
     },
   },
   {
-    name: "fire7",
+    name: "fire5",
     room: 'heart',
     isItem: false,
     src: "../../assets/furniture/heart/fire.gif",
@@ -117,7 +117,7 @@ let furnitures = [
     },
   },
   {
-    name: "fire9",
+    name: "fire6",
     room: 'heart',
     isItem: false,
     src: "../../assets/furniture/heart/fire.gif",
@@ -130,7 +130,7 @@ let furnitures = [
     },
   },
   {
-    name: "fire5",
+    name: "fire7",
     room: 'heart',
     isItem: false,
     src: "../../assets/furniture/heart/fire.gif",
@@ -143,7 +143,7 @@ let furnitures = [
     },
   },
   {
-    name: "fire4",
+    name: "fire8",
     room: 'heart',
     isItem: false,
     src: "../../assets/furniture/heart/fire.gif",
@@ -156,7 +156,7 @@ let furnitures = [
     },
   },
   {
-    name: "fire3",
+    name: "fire9",
     room: 'heart',
     isItem: false,
     src: "../../assets/furniture/heart/fire.gif",

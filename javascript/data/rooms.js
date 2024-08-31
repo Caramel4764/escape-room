@@ -1354,36 +1354,12 @@ let rooms = {
         }
       },
       {
-        name: 'torch6',
-        src: './assets/furniture/heart/torch.png',
+        name: 'torch1',
+        src: './assets/furniture/heart/torch/torch1.png',
         desc: "A torch...With the right tools, you could ignite it",
         dims: {
           x: "280px",
           y: "430px",
-          width: "30px",
-          z: "3",
-        },
-        puzzle: {
-          type: "item",
-          isSolved: false,
-          willUseItem: false,
-          solveDescription: "You light the torch",
-          afterDesc: "It's on fire",
-          itemNeeded: "match",
-          solveFunction: () => {
-            createSingleRoomObject("fire6");
-            player.purpleGemPuzzle.fireOrder.push(6);
-            updateTorch();
-          },
-        },
-      },
-      {
-        name: 'torch1',
-        src: './assets/furniture/heart/torch.png',
-        desc: "A torch...With the right tools, you could ignite it",
-        dims: {
-          x: "360px",
-          y: "400px",
           width: "30px",
           z: "3",
         },
@@ -1402,35 +1378,11 @@ let rooms = {
         },
       },
       {
-        name: 'torch8',
-        src: './assets/furniture/heart/torch.png',
-        desc: "A torch...With the right tools, you could ignite it",
-        dims: {
-          x: "440px",
-          y: "430px",
-          width: "30px",
-          z: "3",
-        },
-        puzzle: {
-          type: "item",
-          isSolved: false,
-          willUseItem: false,
-          solveDescription: "You light the torch",
-          afterDesc: "It's on fire",
-          itemNeeded: "match",
-          solveFunction: () => {
-            createSingleRoomObject("fire8");
-            player.purpleGemPuzzle.fireOrder.push(8);
-            updateTorch();
-          },
-        },
-      },
-      {
         name: 'torch2',
-        src: './assets/furniture/heart/torch.png',
+        src: './assets/furniture/heart/torch/torch2.png',
         desc: "A torch...With the right tools, you could ignite it",
         dims: {
-          x: "520px",
+          x: "360px",
           y: "400px",
           width: "30px",
           z: "3",
@@ -1450,59 +1402,11 @@ let rooms = {
         },
       },
       {
-        name: 'torch7',
-        src: './assets/furniture/heart/torch.png',
+        name: 'torch3',
+        src: './assets/furniture/heart/torch/torch3.png',
         desc: "A torch...With the right tools, you could ignite it",
         dims: {
-          x: "610px",
-          y: "440px",
-          width: "30px",
-          z: "3",
-        },
-        puzzle: {
-          type: "item",
-          isSolved: false,
-          willUseItem: false,
-          solveDescription: "You light the torch",
-          afterDesc: "It's on fire",
-          itemNeeded: "match",
-          solveFunction: () => {
-            createSingleRoomObject("fire7");
-            player.purpleGemPuzzle.fireOrder.push(7);
-            updateTorch();
-          },
-        },
-      },
-      {
-        name: 'torch9',
-        src: './assets/furniture/heart/torch.png',
-        desc: "A torch...With the right tools, you could ignite it",
-        dims: {
-          x: "690px",
-          y: "400px",
-          width: "30px",
-          z: "3",
-        },
-        puzzle: {
-          type: "item",
-          isSolved: false,
-          willUseItem: false,
-          solveDescription: "You light the torch",
-          afterDesc: "It's on fire",
-          itemNeeded: "match",
-          solveFunction: () => {
-            createSingleRoomObject("fire9");
-            player.purpleGemPuzzle.fireOrder.push(9);
-            updateTorch();
-          },
-        },
-      },
-      {
-        name: 'torch5',
-        src: './assets/furniture/heart/torch.png',
-        desc: "A torch...With the right tools, you could ignite it",
-        dims: {
-          x: "770px",
+          x: "440px",
           y: "430px",
           width: "30px",
           z: "3",
@@ -1515,18 +1419,18 @@ let rooms = {
           afterDesc: "It's on fire",
           itemNeeded: "match",
           solveFunction: () => {
-            createSingleRoomObject("fire5");
-            player.purpleGemPuzzle.fireOrder.push(5);
+            createSingleRoomObject("fire3");
+            player.purpleGemPuzzle.fireOrder.push(3);
             updateTorch();
           },
         },
       },
       {
         name: 'torch4',
-        src: './assets/furniture/heart/torch.png',
+        src: './assets/furniture/heart/torch/torch4.png',
         desc: "A torch...With the right tools, you could ignite it",
         dims: {
-          x: "860px",
+          x: "520px",
           y: "400px",
           width: "30px",
           z: "3",
@@ -1546,8 +1450,104 @@ let rooms = {
         },
       },
       {
-        name: 'torch3',
-        src: './assets/furniture/heart/torch.png',
+        name: 'torch5',
+        src: './assets/furniture/heart/torch/torch5.png',
+        desc: "A torch...With the right tools, you could ignite it",
+        dims: {
+          x: "610px",
+          y: "440px",
+          width: "30px",
+          z: "3",
+        },
+        puzzle: {
+          type: "item",
+          isSolved: false,
+          willUseItem: false,
+          solveDescription: "You light the torch",
+          afterDesc: "It's on fire",
+          itemNeeded: "match",
+          solveFunction: () => {
+            createSingleRoomObject("fire5");
+            player.purpleGemPuzzle.fireOrder.push(5);
+            updateTorch();
+          },
+        },
+      },
+      {
+        name: 'torch6',
+        src: './assets/furniture/heart/torch/torch6.png',
+        desc: "A torch...With the right tools, you could ignite it",
+        dims: {
+          x: "690px",
+          y: "400px",
+          width: "30px",
+          z: "3",
+        },
+        puzzle: {
+          type: "item",
+          isSolved: false,
+          willUseItem: false,
+          solveDescription: "You light the torch",
+          afterDesc: "It's on fire",
+          itemNeeded: "match",
+          solveFunction: () => {
+            createSingleRoomObject("fire6");
+            player.purpleGemPuzzle.fireOrder.push(6);
+            updateTorch();
+          },
+        },
+      },
+      {
+        name: 'torch7',
+        src: './assets/furniture/heart/torch/torch7.png',
+        desc: "A torch...With the right tools, you could ignite it",
+        dims: {
+          x: "770px",
+          y: "430px",
+          width: "30px",
+          z: "3",
+        },
+        puzzle: {
+          type: "item",
+          isSolved: false,
+          willUseItem: false,
+          solveDescription: "You light the torch",
+          afterDesc: "It's on fire",
+          itemNeeded: "match",
+          solveFunction: () => {
+            createSingleRoomObject("fire7");
+            player.purpleGemPuzzle.fireOrder.push(7);
+            updateTorch();
+          },
+        },
+      },
+      {
+        name: 'torch8',
+        src: './assets/furniture/heart/torch/torch8.png',
+        desc: "A torch...With the right tools, you could ignite it",
+        dims: {
+          x: "860px",
+          y: "400px",
+          width: "30px",
+          z: "3",
+        },
+        puzzle: {
+          type: "item",
+          isSolved: false,
+          willUseItem: false,
+          solveDescription: "You light the torch",
+          afterDesc: "It's on fire",
+          itemNeeded: "match",
+          solveFunction: () => {
+            createSingleRoomObject("fire8");
+            player.purpleGemPuzzle.fireOrder.push(8);
+            updateTorch();
+          },
+        },
+      },
+      {
+        name: 'torch9',
+        src: './assets/furniture/heart/torch/torch9.png',
         desc: "A torch...With the right tools, you could ignite it",
         dims: {
           x: "940px",
@@ -1563,8 +1563,8 @@ let rooms = {
           afterDesc: "It's on fire",
           itemNeeded: "match",
           solveFunction: () => {
-            createSingleRoomObject("fire3");
-            player.purpleGemPuzzle.fireOrder.push(3);
+            createSingleRoomObject("fire9");
+            player.purpleGemPuzzle.fireOrder.push(9);
             updateTorch();
           },
         },
