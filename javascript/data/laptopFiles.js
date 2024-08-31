@@ -3,8 +3,8 @@ let laptopFiles = [
   'type':'file',
   'x':3,
   'y':2, 
-  'fileName':'eye.txt',
-  'fileContent': "!!!IMPORTANT!!!<br><br>&ensp;/---/<br>|&ensp;&ensp;&ensp;&ensp;/&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;|-\\&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;/--|--\\<br>|&ensp;&ensp;&ensp;&ensp;\\&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;|&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;|&ensp;&ensp;&ensp;X&ensp;&ensp;&ensp;|<br>&ensp;\\---\\&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;(|&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;\\--|--/<br>&ensp;&ensp;moon&ensp;&ensp;&ensp;&ensp; +&ensp;&ensp;&ensp;&ensp; music &ensp;&ensp;&ensp;&ensp; => &ensp;&ensp;&ensp;&ensp;&ensp;eye",
+  'fileName':'moon.txt',
+  'fileContent': "!!!IMPORTANT!!!<br><br>&ensp;/---/<br>|&ensp;&ensp;&ensp;&ensp;/&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;|-\\&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;/--|--\\<br>|&ensp;&ensp;&ensp;&ensp;\\&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;|&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;|&ensp;&ensp;&ensp;X&ensp;&ensp;&ensp;|<br>&ensp;\\---\\&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;(|&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;\\--|--/<br>midnight&ensp;&ensp;&ensp;+&ensp;&ensp;&ensp; music &ensp;&ensp;&ensp;&ensp; => &ensp;&ensp;&ensp;&ensp;&ensp;eye",
   },
   {
     'type':'file',

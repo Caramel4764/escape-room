@@ -7,6 +7,7 @@ import { showSolvedImg } from "../showSolvedImg.js";
 import { locations } from "../../data/locations.js";
 import { grabObject } from "../item/grabObject.js";
 import {inspectMenuInfo} from '../../data/inspectInfoMenu.js'
+import { player } from "../../data/player.js";
 
 const inspectImg = document.querySelector('#inspect-image');
 const inspectText = document.querySelector('#inspect-text');
@@ -56,14 +57,12 @@ function createSingleRoomObjectFunction (entityName) {
         inspectText.textContent = inspectMenuInfo.chunkedText[0];
       })
       roomContainer.appendChild(entityImg);
-
-      /*let itemInfo = {
-        name: entity.name,
-        src: entityImg.src,
-        combine: entity.combine,
-        useFunction: entity.useFunction,
+      for (let i = 0; i <= 9; i++) {
+        if (entity.name == `fire${i}`) {
+          player.purpleGemPuzzle.fireElement.push(entityImg);
+        }
       }
-      itemLibrary.push(itemInfo);*/
+      return entityImg;
     }
   })
 }
@@ -71,10 +70,10 @@ function createSingleRoomObjectFunction (entityName) {
 function createSingleRoomObject (entityName, delay) {
   if (delay) {
     setTimeout(function(){
-      createSingleRoomObjectFunction(entityName)
+      return createSingleRoomObjectFunction(entityName)
     }, delay)
   } else {
-    createSingleRoomObjectFunction(entityName)
+    return createSingleRoomObjectFunction(entityName)
   }
 }
 

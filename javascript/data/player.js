@@ -14,6 +14,13 @@ let player = {
   shedPuzzle: {
     isSolved: false,
   },
+  purpleGemPuzzle: {
+    gemPlaced: 0,
+    fireOrder: [],
+    isFireSolved: false,
+    isPowerOn: false,
+    fireElement: []
+  },
   isMapOpened: false,
   'mouseX': 0,
   'mouseY': 0,

@@ -35,7 +35,7 @@ let furnitures = [
       x: "300px",
       y: "300px",
       width: "100px",
-      z: 8,
+      z: 7,
     },
   },
   {
@@ -48,11 +48,11 @@ let furnitures = [
       x: "710px",
       y: "300px",
       width: "100px",
-      z: 8,
+      z: 7,
     },
   },
   {
-    name: "fire6",
+    name: "fire1",
     room: 'heart',
     isItem: false,
     src: "../../assets/furniture/heart/fire.gif",
@@ -65,7 +65,7 @@ let furnitures = [
     },
   },
   {
-    name: "fire1",
+    name: "fire2",
     room: 'heart',
     isItem: false,
     src: "../../assets/furniture/heart/fire.gif",
@@ -78,20 +78,20 @@ let furnitures = [
     },
   },
   {
-    name: "fire8",
+    name: "fire3",
     room: 'heart',
     isItem: false,
     src: "../../assets/furniture/heart/fire.gif",
     desc: "It burns steadily",
     dims: {
-      x: "320px",
-      y: "400px",
+      x: "400px",
+      y: "380px",
       width: "100px",
       z: 8,
     },
   },
   {
-    name: "fire2",
+    name: "fire4",
     room: 'heart',
     isItem: false,
     src: "../../assets/furniture/heart/fire.gif",
@@ -104,7 +104,7 @@ let furnitures = [
     },
   },
   {
-    name: "fire7",
+    name: "fire5",
     room: 'heart',
     isItem: false,
     src: "../../assets/furniture/heart/fire.gif",
@@ -117,7 +117,7 @@ let furnitures = [
     },
   },
   {
-    name: "fire9",
+    name: "fire6",
     room: 'heart',
     isItem: false,
     src: "../../assets/furniture/heart/fire.gif",
@@ -130,7 +130,7 @@ let furnitures = [
     },
   },
   {
-    name: "fire5",
+    name: "fire7",
     room: 'heart',
     isItem: false,
     src: "../../assets/furniture/heart/fire.gif",
@@ -143,7 +143,7 @@ let furnitures = [
     },
   },
   {
-    name: "fire4",
+    name: "fire8",
     room: 'heart',
     isItem: false,
     src: "../../assets/furniture/heart/fire.gif",
@@ -156,7 +156,7 @@ let furnitures = [
     },
   },
   {
-    name: "fire3",
+    name: "fire9",
     room: 'heart',
     isItem: false,
     src: "../../assets/furniture/heart/fire.gif",
@@ -166,6 +166,30 @@ let furnitures = [
       y: "380px",
       width: "100px",
       z: 8,
+    },
+  },
+  {
+    name: 'purpleGem',
+    isItem: true,
+    src: './assets/misc/icons/crystal-icon.png',
+    desc: "There it is! You've gotten what you've came for. It's time to leave now.",
+    dims: {
+      x: "450px",
+      y: "60px",
+      width: "200px",
+      z: "3",
+    }
+  },
+  {
+    name: 'powerSignalOn',
+    room: 'heart',
+    src: './assets/furniture/heart/powerOn.png',
+    desc: "The power is on",
+    dims: {
+      x: "850px",
+      y: "100px",
+      width: "100px",
+      z: "2",
     },
   },
 ];

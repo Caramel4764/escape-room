@@ -7,7 +7,9 @@ function handlePuzzle (entity, entityImg) {
   if (entity.puzzle.type=='item' && player.selectedItem.name == entity.puzzle.itemNeeded) {
     //entity.puzzle.solveFunction();
     solvePuzzle(entity, entityImg);
-    removeItem(entity);
+    if (entity.puzzle.willUseItem == undefined || entity.puzzle.willUseItem==true) {
+      removeItem(entity);
+    }
   } else if (entity.puzzle.type=='item' && player.selectedItem.name != 'none' && player.selectedItem.name && player.selectedItem.name!=entity.puzzle.itemNeeded) {
     displayInspect("Unfortunately, that doesn't go there", 100);
   } else if (entity.puzzle.type=='inspect') {

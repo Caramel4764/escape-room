@@ -52,7 +52,7 @@ function mountComputer() {
   computerContent.appendChild(incorrectPasswordDiv);
 
   passwordBtn.addEventListener("click", function () {
-    if (passwordInput.value == "Password123!") {
+    //if (passwordInput.value == "Password123!") {
       let windowName = document.createElement("p");
       windowName.setAttribute("id", "window-name");
       let desktop = document.createElement("div");
@@ -98,9 +98,9 @@ function mountComputer() {
       fileHeader.appendChild(fileCloseBtn);
       fileMenu.appendChild(fileHeader);
       fileHeader.appendChild(windowName);
-    } else {
+    //} else {
       incorrectPasswordDiv.style.visibility = "visible";
-    }
+    //}
   });
 }
 
