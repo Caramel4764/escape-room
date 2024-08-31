@@ -6,6 +6,7 @@ import { updateGemPillar } from "../functions/updatePuzzle/updateGemPillar.js";
 import { createSingleRoomObject } from "../functions/room/createSingleRoomObject.js";
 import { changeRoomImg } from "../functions/room/changeRoomImg.js";
 import { updateTorch } from "../functions/updatePuzzle/updateTorch.js";
+import { deleteRoomElement } from "../functions/room/deleteRoomElement.js";
 
 let computerDiv = document.querySelector("#computer-screen");
 let computerScreen = document.getElementById("computer-content");
@@ -42,7 +43,7 @@ let rooms = {
       {
         name: "carpetSection",
         src: "./assets/floor/carpet-small-section.png",
-        desc: "You flip the rug",
+        desc: "I flip the rug",
         dims: {
           x: "560px",
           y: "495px",
@@ -152,7 +153,7 @@ let rooms = {
       {
         name: "succulent",
         src: "./assets/furniture/entrance/succulent.png",
-        desc: "Touching the leaves, you know it's an artifical plant.",
+        desc: "Touching the leaves, I know it's an artifical plant.",
         dims: {
           x: "760px",
           y: "210px",
@@ -163,7 +164,7 @@ let rooms = {
       {
         name: "cactus",
         src: "./assets/furniture/entrance/cactus.png",
-        desc: "Carefully touching the cactus flesh, you connfirm that it's a REAL cactus.",
+        desc: "Carefully touching the cactus flesh, I confirm that it's a REAL cactus.",
         dims: {
           x: "820px",
           y: "200px",
@@ -185,7 +186,7 @@ let rooms = {
       {
         name: "exitDoor",
         src: "./assets/wall/exit-door.png",
-        desc: "The door which you came in from",
+        desc: "The door which I came in from",
         dims: {
           x: "400px",
           y: "54px",
@@ -218,7 +219,7 @@ let rooms = {
           type: "item",
           isSolved: false,
           solveDescription:
-            "The key fits perfectly into the lock and you open the box",
+            "The key fits perfectly into the lock and I open the box",
           afterDesc: "There's no more stuff in here. Look elsewhere",
           itemNeeded: "key2",
           solveFunction: () => {
@@ -230,7 +231,7 @@ let rooms = {
         name: "key",
         isItem: true,
         src: "./assets/object/key.png",
-        desc: "You've found a key!",
+        desc: "I've found a key!",
         dims: {
           x: "590px",
           y: "510px",
@@ -288,7 +289,7 @@ let rooms = {
           type: "item",
           isSolved: false,
           solveDescription:
-            "The key fits perfectly into the lock and you open the box",
+            "The key fits perfectly into the lock and I open the box",
           afterDesc: "The drawer is already unlocked.",
           itemNeeded: "key",
           solveFunction: () => {
@@ -360,7 +361,7 @@ let rooms = {
           type: "inspect",
           isSolved: false,
           solveDescription: "Dummy text",
-          afterDesc: "You already got an umbrella.",
+          afterDesc: "I already got an umbrella.",
           solveFunction: () => {
             addItem("umbrella");
           },
@@ -370,7 +371,7 @@ let rooms = {
         name: "scissor",
         isItem: true,
         src: "./assets/object/scissor.png",
-        desc: "You grab the scissor",
+        desc: "I grab the scissor",
         dims: {
           x: "240px",
           y: "260px",
@@ -421,7 +422,7 @@ let rooms = {
       {
         name: "grandfatherClock",
         src: "./assets/furniture/fireplace/grandfather-clock.png",
-        desc: "It's an old grandfather clock. There's dials on the side to adjust the minute and hour.",
+        desc: "It's an old grandfather clock. There's dials on the side to adjust the hour, minute, and second",
         dims: {
           x: "480px",
           y: "160px",
@@ -432,7 +433,7 @@ let rooms = {
           type: "interact",
           isSolved: false,
           solveDescription:
-            "You take a closer look at the grandfather clock. There's two dials on the side for adjusting the hour and minute.",
+            "I take a closer look at the grandfather clock. There's three dials on the side for adjusting the hour, minute, and second",
           afterDesc: "After testing",
           solveFunction: () => {
             openMenu("clock");
@@ -487,7 +488,7 @@ let rooms = {
         name: "emptyGlass",
         isItem: true,
         src: "./assets/object/empty-glass.png",
-        desc: "You've obtained an empty glass!",
+        desc: "I've obtained an empty glass!",
         dims: {
           x: "790px",
           y: "200px",
@@ -523,7 +524,7 @@ let rooms = {
           type: "item",
           isSolved: false,
           solveDescription:
-            "You pour the water into the frog's mouth and the water raises the object inside. You grab the quarter inside. Coin Obtained!",
+            "I pour the water into the frog's mouth and the water raises the object inside. I grab the quarter inside. Coin Obtained!",
           afterDesc: "It's a frog statue",
           itemNeeded: "filledGlass",
           solveFunction: () => {
@@ -600,7 +601,7 @@ let rooms = {
       {
         name: "toolShed",
         src: "./assets/furniture/courtyard/toolShed.png",
-        desc: "There's definitely something you can use in the tool shed but you'll to solve the lock",
+        desc: "There's definitely something I can use in the toolshed but I'll have to solve the lock first",
         dims: {
           x: "750px",
           y: "70px",
@@ -611,7 +612,7 @@ let rooms = {
           type: "interact",
           isSolved: false,
           solveDescription:
-            "There's definitely something you can use in the tool shed but you'll to solve the lock",
+            "There's definitely something I can use in the tool shed but I'll to solve the lock",
           finishDescription: "With a click, the lock drops to the ground. There's fertilizer, soil, watering cans, and a bunch of gardening equipment, but only the shovel seems useful",
           afterDesc: "There's nothing of interest now",
           solveFunction: () => {
@@ -636,7 +637,7 @@ let rooms = {
         puzzle: {
           type: "item",
           isSolved: false,
-          solveDescription: "You fill up your cup with the fountain.",
+          solveDescription: "I fill up your cup with the fountain.",
           afterDesc: "It's still gross",
           itemNeeded: "emptyGlass",
           solveFunction: () => {
@@ -672,7 +673,7 @@ let rooms = {
           type: "item",
           isSolved: false,
           solveDescription:
-            "You replace the burned out lightbulb with a new one. Try turning on the switch now",
+            "I replace the burned out lightbulb with a new one. Try turning on the switch now",
           afterDesc: "It's a new light bulb.",
           itemNeeded: "blueLightBulb",
           solveImg: "./assets/wall/lit-blue-hanging-light.png",
@@ -680,7 +681,7 @@ let rooms = {
             player.flashlight.color = "rgba(30, 30, 255, 0.5)";
             player.flashlight.domRef.style.backgroundImage = `radial-gradient(circle 5em at ${player.mouseX}px ${player.mouseY}px, rgba(0, 0, 0, 0.2), ${player.flashlight.color})`;
             displayInspect(
-              "You replace the burned out lightbulb with a new one.",
+              "I replace the burned out lightbulb with a new one.",
               100
             );
             changeRoomImg("packingBox", "./assets/animation/packing-box.gif");
@@ -744,7 +745,7 @@ let rooms = {
           type: "item",
           isSolved: false,
           solveDescription:
-            "Congrats! Against all odds and due to plot armor, you've obtained a plush",
+            "Congrats! Against all odds and due to plot armor, I've obtained a plush",
           afterDesc: "No more. That's enough",
           itemNeeded: "coin",
           solveFunction: () => {
@@ -792,7 +793,7 @@ let rooms = {
       {
         name: "hangingLightDream",
         src: "./assets/furniture/atticDream/blue-light-bulb.gif",
-        desc: "I think it's looking at you.",
+        desc: "I think it's looking at I.",
         dims: {
           x: "500px",
           y: "0px",
@@ -881,7 +882,7 @@ let rooms = {
       {
         name: "nightstand",
         src: "./assets/furniture/bedroom/nightstand.png",
-        desc: "There's a bunch of socks, clothings, and dust inside. A paper sticks out and you pull it out",
+        desc: "There's a bunch of socks, clothings, and dust inside. A paper sticks out and I pull it out",
         dims: {
           x: "80px",
           y: "360px",
@@ -944,7 +945,7 @@ let rooms = {
         puzzle: {
           type: "interact",
           isSolved: false,
-          solveDescription: "You power up the old computer.",
+          solveDescription: "I power up the old computer.",
           solveFunction: () => {
             openMenu("computer");
           },
@@ -1012,8 +1013,8 @@ let rooms = {
           type: "item",
           isSolved: false,
           solveDescription:
-            "With the shovel, you dig the object out. Whenever it belonged to, they probably don't need it anymore",
-          afterDesc: "It's an empty hole. The empty hole you dug. The hole that's empty because you dug.",
+            "With the shovel, I dig the object out. Whenever it belonged to, they probably don't need it anymore",
+          afterDesc: "It's an empty hole. The empty hole I dug. The hole that's empty because I dug.",
           itemNeeded: "shovel",
           solveFunction: () => {
             addItem("crowbar");
@@ -1148,7 +1149,7 @@ let rooms = {
       {
         name: 'nailedDoor',
         src: './assets/furniture/hallway/exit-door.png',
-        desc: "Something glows green on the top window but unless you remove the boards, you won't be able to go inside.",
+        desc: "Something glows green on the top window but unless I remove the boards, I won't be able to go inside.",
         dims: {
           x: "450px",
           y: "120px",
@@ -1159,7 +1160,7 @@ let rooms = {
           type: "item",
           isSolved: false,
           solveDescription:
-            "The key fits perfectly into the lock and you open the box",
+            "The key fits perfectly into the lock and I open the box",
           afterDesc: "There's no more stuff in here. Look elsewhere",
           itemNeeded: "crowbar",
           solveFunction: () => {
@@ -1170,7 +1171,7 @@ let rooms = {
       {
         name: 'acidHole',
         src: './assets/furniture/hallway/bottomless-pit.png',
-        desc: "Some acid melted through the floor and now, you can't see the end.",
+        desc: "Some acid melted through the floor and now, I can't see the end.",
         dims: {
           x: "800px",
           y: "500px",
@@ -1227,6 +1228,31 @@ let rooms = {
     divider: "./assets/floor/floor-divider.png",
     entities: [
       {
+        name: "powerswitch",
+        src: "./assets/furniture/plantRoom/powerswitchOff.png",
+        desc: "I flip the switch",
+        dims: {
+          x: "550px",
+          y: "225px",
+          width: "80px",
+          z: "5",
+        },
+        puzzle: {
+          type: "inspect",
+          isSolved: false,
+          solveImg: './assets/furniture/plantRoom/powerswitchOn.png',
+          newZ: '3',
+          solveDescription: "Dummy text",
+          afterDesc: "There's no reason to turn the power back off",
+          solveFunction: () => {
+            deleteRoomElement('powerSignal')
+            createSingleRoomObject("powerSignalOn");
+
+            //createSingleRoomObject("powerSignalOn");
+          },
+        },
+      },
+      {
         name: 'labTable',
         src: './assets/furniture/plantRoom/labTable.png',
         desc: "There's a crank in the bottom cabinet",
@@ -1240,7 +1266,7 @@ let rooms = {
       {
         name: 'labCabinet',
         src: './assets/furniture/plantRoom/labCabinet.png',
-        desc: "There's a crank in the bottom cabinet",
+        desc: "All empty except some dust and a very tiny spider",
         dims: {
           x: "10px",
           y: "30px",
@@ -1262,7 +1288,7 @@ let rooms = {
       {
         name: 'mouthPlant',
         src: './assets/furniture/plantRoom/mouthPlant.png',
-        desc: "For safety reasons, you do not stick your fingers inside",
+        desc: "For safety reasons, I do not stick your fingers inside",
         dims: {
           x: "200px",
           y: "160px",
@@ -1307,7 +1333,7 @@ let rooms = {
         name: 'knife',
         isItem: true,
         src: './assets/furniture/plantRoom/knife.png',
-        desc: "You grab the knife on the counter",
+        desc: "I grab the knife on the counter",
         dims: {
           x: "100px",
           y: "260px",
@@ -1321,7 +1347,7 @@ let rooms = {
         src: './assets/furniture/plantRoom/cauldron.gif',
         desc: "How long has this been here?",
         dims: {
-          x: "530px",
+          x: "650px",
           y: "230px",
           width: "300px",
           z: "3",
@@ -1356,7 +1382,7 @@ let rooms = {
       {
         name: 'torch1',
         src: './assets/furniture/heart/torch/torch1.png',
-        desc: "A torch...With the right tools, you could ignite it",
+        desc: "A torch...With the right tools, I could ignite it",
         dims: {
           x: "280px",
           y: "430px",
@@ -1367,7 +1393,7 @@ let rooms = {
           type: "item",
           isSolved: false,
           willUseItem: false,
-          solveDescription: "You light the torch",
+          solveDescription: "I light the torch",
           afterDesc: "It's on fire",
           itemNeeded: "match",
           solveFunction: () => {
@@ -1380,7 +1406,7 @@ let rooms = {
       {
         name: 'torch2',
         src: './assets/furniture/heart/torch/torch2.png',
-        desc: "A torch...With the right tools, you could ignite it",
+        desc: "A torch...With the right tools, I could ignite it",
         dims: {
           x: "360px",
           y: "400px",
@@ -1391,7 +1417,7 @@ let rooms = {
           type: "item",
           isSolved: false,
           willUseItem: false,
-          solveDescription: "You light the torch",
+          solveDescription: "I light the torch",
           afterDesc: "It's on fire",
           itemNeeded: "match",
           solveFunction: () => {
@@ -1404,7 +1430,7 @@ let rooms = {
       {
         name: 'torch3',
         src: './assets/furniture/heart/torch/torch3.png',
-        desc: "A torch...With the right tools, you could ignite it",
+        desc: "A torch...With the right tools, I could ignite it",
         dims: {
           x: "440px",
           y: "430px",
@@ -1415,7 +1441,7 @@ let rooms = {
           type: "item",
           isSolved: false,
           willUseItem: false,
-          solveDescription: "You light the torch",
+          solveDescription: "I light the torch",
           afterDesc: "It's on fire",
           itemNeeded: "match",
           solveFunction: () => {
@@ -1428,7 +1454,7 @@ let rooms = {
       {
         name: 'torch4',
         src: './assets/furniture/heart/torch/torch4.png',
-        desc: "A torch...With the right tools, you could ignite it",
+        desc: "A torch...With the right tools, I could ignite it",
         dims: {
           x: "520px",
           y: "400px",
@@ -1439,7 +1465,7 @@ let rooms = {
           type: "item",
           isSolved: false,
           willUseItem: false,
-          solveDescription: "You light the torch",
+          solveDescription: "I light the torch",
           afterDesc: "It's on fire",
           itemNeeded: "match",
           solveFunction: () => {
@@ -1452,7 +1478,7 @@ let rooms = {
       {
         name: 'torch5',
         src: './assets/furniture/heart/torch/torch5.png',
-        desc: "A torch...With the right tools, you could ignite it",
+        desc: "A torch...With the right tools, I could ignite it",
         dims: {
           x: "610px",
           y: "440px",
@@ -1463,7 +1489,7 @@ let rooms = {
           type: "item",
           isSolved: false,
           willUseItem: false,
-          solveDescription: "You light the torch",
+          solveDescription: "I light the torch",
           afterDesc: "It's on fire",
           itemNeeded: "match",
           solveFunction: () => {
@@ -1476,7 +1502,7 @@ let rooms = {
       {
         name: 'torch6',
         src: './assets/furniture/heart/torch/torch6.png',
-        desc: "A torch...With the right tools, you could ignite it",
+        desc: "A torch...With the right tools, I could ignite it",
         dims: {
           x: "690px",
           y: "400px",
@@ -1487,7 +1513,7 @@ let rooms = {
           type: "item",
           isSolved: false,
           willUseItem: false,
-          solveDescription: "You light the torch",
+          solveDescription: "I light the torch",
           afterDesc: "It's on fire",
           itemNeeded: "match",
           solveFunction: () => {
@@ -1500,7 +1526,7 @@ let rooms = {
       {
         name: 'torch7',
         src: './assets/furniture/heart/torch/torch7.png',
-        desc: "A torch...With the right tools, you could ignite it",
+        desc: "A torch...With the right tools, I could ignite it",
         dims: {
           x: "770px",
           y: "430px",
@@ -1511,7 +1537,7 @@ let rooms = {
           type: "item",
           isSolved: false,
           willUseItem: false,
-          solveDescription: "You light the torch",
+          solveDescription: "I light the torch",
           afterDesc: "It's on fire",
           itemNeeded: "match",
           solveFunction: () => {
@@ -1524,7 +1550,7 @@ let rooms = {
       {
         name: 'torch8',
         src: './assets/furniture/heart/torch/torch8.png',
-        desc: "A torch...With the right tools, you could ignite it",
+        desc: "A torch...With the right tools, I could ignite it",
         dims: {
           x: "860px",
           y: "400px",
@@ -1535,7 +1561,7 @@ let rooms = {
           type: "item",
           isSolved: false,
           willUseItem: false,
-          solveDescription: "You light the torch",
+          solveDescription: "I light the torch",
           afterDesc: "It's on fire",
           itemNeeded: "match",
           solveFunction: () => {
@@ -1548,7 +1574,7 @@ let rooms = {
       {
         name: 'torch9',
         src: './assets/furniture/heart/torch/torch9.png',
-        desc: "A torch...With the right tools, you could ignite it",
+        desc: "A torch...With the right tools, I could ignite it",
         dims: {
           x: "940px",
           y: "420px",
@@ -1559,7 +1585,7 @@ let rooms = {
           type: "item",
           isSolved: false,
           willUseItem: false,
-          solveDescription: "You light the torch",
+          solveDescription: "I light the torch",
           afterDesc: "It's on fire",
           itemNeeded: "match",
           solveFunction: () => {
@@ -1593,7 +1619,7 @@ let rooms = {
         puzzle: {
           type: "item",
           isSolved: false,
-          solveDescription: "As you move the gem closer to the pillar, a magnetic field suspends it into the air.",
+          solveDescription: "As I move the gem closer to the pillar, a magnetic field suspends it into the air.",
           afterDesc: 'Made to hold something. A red gem is engraved and painted below some text which reads "A gem of firey red from above"',
           itemNeeded: "redGem",
           solveFunction: () => {
@@ -1616,7 +1642,7 @@ let rooms = {
         puzzle: {
           type: "item",
           isSolved: false,
-          solveDescription: "As you move the gem closer to the pillar, a magnetic field suspends it into the air.",
+          solveDescription: "As I move the gem closer to the pillar, a magnetic field suspends it into the air.",
           afterDesc: 'Made to hold something. A blue gem is engraved and painted below some text which reads "A gem of deep blue from below"',
           itemNeeded: "blueGem",
           solveFunction: () => {
@@ -1624,6 +1650,17 @@ let rooms = {
             createSingleRoomObject("blueGem");
             updateGemPillar();
           },
+        },
+      },
+      {
+        name: 'powerSignal',
+        src: './assets/furniture/heart/powerOff.png',
+        desc: "Seems like the power is out. I should look for a way to turn it back on",
+        dims: {
+          x: "850px",
+          y: "100px",
+          width: "100px",
+          z: "2",
         },
       },
     ]

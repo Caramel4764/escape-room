@@ -180,6 +180,18 @@ let furnitures = [
       z: "3",
     }
   },
+  {
+    name: 'powerSignalOn',
+    room: 'heart',
+    src: './assets/furniture/heart/powerOn.png',
+    desc: "The power is on",
+    dims: {
+      x: "850px",
+      y: "100px",
+      width: "100px",
+      z: "2",
+    },
+  },
 ];
 
 export {furnitures}
